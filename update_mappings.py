@@ -1,23 +1,18 @@
-"""
-Anime ID Collector - A tool to collect and aggregate anime IDs from various sources.
-
-This module provides functionality to collect and aggregate anime IDs from different sources
-including Anime-Lists, Manami-Project, and AnimeAggregations. It consolidates this information
-into a single JSON file mapping AniList IDs to other platform IDs.
-"""
-
 import json
 import logging
 import sys
-from dataclasses import asdict, dataclass
 from datetime import UTC, datetime
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
+from pydantic import BaseModel
+
 if sys.version_info < (3, 11):
     print(
-        f"Version Error: Version: {sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro} incompatible please use Python 3.11+"
+        f"Version Error: Version: {sys.version_info.major}.{sys.version_info.minor}.{
+            sys.version_info.micro
+        } incompatible please use Python 3.11+"
     )
     sys.exit(1)
 
@@ -30,14 +25,13 @@ except ImportError:
     sys.exit(1)
 
 
-@dataclass
-class AnimeEntry:
+class AniMap(BaseModel):
     """
-    Data class representing an anime entry with IDs from various platforms.
+    Model representing an anime mapping.
 
     Attributes:
-        anidb_id: The AniDB ID of the anime
         anilist_id: Optional AniList ID
+        anidb_id: Optional AniDB ID
         tvdb_id: Optional TVDB ID
         tvdb_season: Optional TVDB season number
         tvdb_epoffset: Episode offset for TVDB matching
@@ -47,8 +41,8 @@ class AnimeEntry:
         tmdb_movie_id: Optional TMDB movie ID
     """
 
-    anidb_id: int
     anilist_id: int | None = None
+    anidb_id: int | None = None
     tvdb_id: int | None = None
     tvdb_season: int | None = None
     tvdb_epoffset: int = 0
@@ -72,8 +66,8 @@ class AnimeIDCollector:
         self.base_dir: Path = Path(__file__).parent.resolve()
         self.logger: logging.Logger = self._setup_logger()
         self.session: requests.Session = requests.Session()
-        self.anime_entries: dict[int, AnimeEntry] = {}
-        self.temp_entries: dict[int, AnimeEntry] = {}
+        self.anime_entries: dict[int, AniMap] = {}
+        self.temp_entries: dict[int, AniMap] = {}
 
     def _setup_logger(self) -> logging.Logger:
         """
@@ -134,7 +128,7 @@ class AnimeIDCollector:
                 continue
 
             anidb_id = int(anidb_id[1:]) if anidb_id[0] == "a" else int(anidb_id)
-            entry = AnimeEntry(anidb_id=anidb_id)
+            entry = AniMap(anidb_id=anidb_id)
 
             tvdb_id = str(anime.xpath("@tvdbid")[0])
             try:
@@ -275,23 +269,10 @@ class AnimeIDCollector:
         with edits_path.open("r") as f:
             edits = json.load(f)
 
-        for anidb_id_str, ids in edits.items():
-            anidb_id = int(anidb_id_str)
-            entry = next(
-                (
-                    data
-                    for _, data in self.anime_entries.items()
-                    if data.anidb_id == anidb_id
-                ),
-                self.temp_entries.get(anidb_id),
-            )
-
-            if entry:
-                for attr, value in ids.items():
-                    if isinstance(value, str) and "," in value:
-                        setattr(entry, attr, value.split(","))
-                    else:
-                        setattr(entry, attr, value)
+        for anilist_id_str, ids in edits.items():
+            anilist_id = int(anilist_id_str)
+            entry = AniMap(anilist_id=anilist_id, **ids)
+            self.anime_entries[anilist_id] = entry
 
     def save_results(self) -> None:
         """
@@ -308,10 +289,9 @@ class AnimeIDCollector:
         # Convert to dictionary format, excluding anilist_id from the value dictionary
         output_dict: dict[int, dict[str, Any]] = {}
         for anilist_id, entry in self.anime_entries.items():
-            entry_dict = asdict(entry)
-            # Only include non-None values
-            filtered_dict = {k: v for k, v in entry_dict.items() if v is not None}
-            output_dict[anilist_id] = filtered_dict
+            output_dict[anilist_id] = entry.model_dump(
+                exclude={"anilist_id"}, exclude_none=True
+            )
 
         output_path = self.base_dir / "mappings.json"
         with output_path.open("w") as f:
@@ -333,9 +313,9 @@ class AnimeIDCollector:
             with readme_path.open("r") as f:
                 data = f.readlines()
 
-            data[2] = (
-                f"Last generated at: {datetime.now(UTC).strftime('%B %d, %Y %I:%M %p')} UTC\n"
-            )
+            data[2] = f"Last generated at: {
+                datetime.now(UTC).strftime('%B %d, %Y %I:%M %p')
+            } UTC\n"
 
             with readme_path.open("w") as f:
                 f.writelines(data)
@@ -351,7 +331,6 @@ class AnimeIDCollector:
         self.logger.info("Starting Anime IDs Collection")
 
         try:
-            # Execute tasks sequentially since they depend on each other
             self.process_anime_lists()
             self.process_manami_project()
             self.process_aggregations()
