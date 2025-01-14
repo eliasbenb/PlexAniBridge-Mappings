@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlexAniBridge Mapping Lookup</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <style>
+      :root {
+        --primary: #6366f1;
+        --primary-dark: #4f46e5;
+        --background: #f8fafc;
+        --surface: #ffffff;
+        --text: #1e293b;
+        --text-light: #64748b;
+        --border: #e2e8f0;
+        --radius: 0.75rem;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+        background-color: var(--background);
+        color: var(--text);
+        line-height: 1.6;
+        padding: 2rem;
+      }
+
+      .wrapper {
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: var(--text);
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+        color: var(--text);
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        margin: 2rem 0 1rem;
+        color: var(--text);
+      }
+
+      .container {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .docs {
+        background: var(--surface);
+        padding: 2rem;
+        border-radius: var(--radius);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        overflow-x: auto;
+        width: 100%;
+      }
+
+      .query-builder {
+        background: var(--surface);
+        padding: 2rem;
+        border-radius: var(--radius);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 2rem;
+        min-width: max-content;
+      }
+
+      .field-group {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1rem;
+        margin-bottom: 1rem;
+        position: relative;
+      }
+
+      .remove-field {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background: none;
+        border: none;
+        color: var(--text-light);
+        cursor: pointer;
+        padding: 0.25rem;
+        width: auto;
+      }
+
+      .remove-field:hover {
+        color: #ef4444;
+        background: none;
+      }
+
+      .field-row {
+        margin-bottom: 1.5rem;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: var(--text);
+      }
+
+      select,
+      input {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid var(--border);
+        border-radius: calc(var(--radius) / 2);
+        font-size: 1rem;
+        color: var(--text);
+        background-color: var(--background);
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+
+      select:focus,
+      input:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+      }
+
+      .button-group {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      button {
+        width: 100%;
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.75rem 0.25rem;
+        border-radius: calc(var(--radius) / 2);
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      button:hover {
+        background: var(--primary-dark);
+      }
+
+      button.secondary {
+        background: var(--text-light);
+      }
+
+      button.secondary:hover {
+        background: var(--text);
+      }
+
+      pre {
+        background: var(--background);
+        padding: 1.5rem;
+        border-radius: calc(var(--radius) / 2);
+        overflow-x: auto;
+        font-size: 0.9rem;
+        border: 1px solid var(--border);
+      }
+
+      code {
+        font-family: "Menlo", "Monaco", "Courier New", monospace;
+        font-size: 0.9em;
+      }
+
+      .param-list {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      .param-list li {
+        margin-bottom: 1.5rem;
+      }
+
+      .param-name {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      #result {
+        margin-top: 1.5rem;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+
+      #result:empty {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <h1>PlexAniBridge Mapping Lookup</h1>
+
+      <div class="container">
+        <div class="docs">
+          <h2>API Documentation</h2>
+          <p>
+            Query the anime database using multiple fields. Results will show
+            entries that match ALL specified criteria.
+          </p>
+
+          <h3>Query Parameters</h3>
+          <ul class="param-list">
+            <li>
+              <div class="param-name">Fields</div>
+              <code>
+                "anilist_id" | "anidb_id" | "mal_id" | "imdb_id" |
+                "tmdb_movie_id" | "tvdb_id" | "tvdb_season" | "tvdb_epoffset"
+              </code>
+            </li>
+            <li>
+              <div class="param-name">URL Format</div>
+              <code>?field1=value1&field2=value2&field3=value3...</code>
+            </li>
+          </ul>
+
+          <h3>Example Queries</h3>
+          <pre id="exampleQueries"></pre>
+        </div>
+
+        <div class="query-builder">
+          <h2>Query Builder</h2>
+          <div id="queryFields"></div>
+          <div class="button-group">
+            <button onclick="addQueryField()" class="secondary">
+              Add Field
+            </button>
+            <button onclick="executeQuery()">Execute Query</button>
+          </div>
+          <div id="result"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const VALID_FIELDS = [
+        "anidb_id",
+        "anilist_id",
+        "tvdb_id",
+        "tvdb_season",
+        "tvdb_epoffset",
+        "mal_id",
+        "imdb_id",
+        "tmdb_show_id",
+        "tmdb_movie_id",
+      ];
+
+      let animeData = null;
+      let dataLoaded = false;
+
+      function createFieldGroup() {
+        const group = document.createElement("div");
+        group.className = "field-group";
+
+        const removeButton = document.createElement("button");
+        removeButton.className = "remove-field";
+        removeButton.innerHTML = "✕";
+        removeButton.onclick = () => group.remove();
+
+        const fieldSelect = document.createElement("div");
+        fieldSelect.className = "field-row";
+        fieldSelect.innerHTML = `
+          <label>Field</label>
+          <select>
+            <option value="anilist_id">AniList ID</option>
+            <option value="anidb_id">AniDB ID</option>
+            <option value="mal_id">MAL ID</option>
+            <option value="imdb_id">IMDB ID</option>
+            <option value="tmdb_movie_id">TMDB Movie ID</option>
+            <option value="tvdb_id">TVDB ID</option>
+            <option value="tvdb_season">TVDB Season</option>
+            <option value="tvdb_epoffset">TVDB Episode Offset</option>
+          </select>
+        `;
+
+        const valueInput = document.createElement("div");
+        valueInput.className = "field-row";
+        valueInput.innerHTML = `
+          <label>Value</label>
+          <input type="text" placeholder="Enter search value">
+        `;
+
+        group.appendChild(removeButton);
+        group.appendChild(fieldSelect);
+        group.appendChild(valueInput);
+
+        return group;
+      }
+
+      function addQueryField() {
+        const queryFields = document.getElementById("queryFields");
+        queryFields.appendChild(createFieldGroup());
+      }
+
+      async function loadData() {
+        try {
+          const response = await fetch("mappings.json");
+          animeData = await response.json();
+          dataLoaded = true;
+          updateExampleQueries();
+          addQueryField();
+          handleUrlParams();
+        } catch (error) {
+          console.error("Error loading data:", error);
+        }
+      }
+
+      function updateExampleQueries() {
+        const baseUrl = window.location.href.split("?")[0];
+        const examples = [
+          `${baseUrl}?anilist_id=21234`,
+          `${baseUrl}?imdb_id=tt7236034`,
+          `${baseUrl}?tvdb_id=65249&tvdb_season=1`,
+        ];
+
+        document.getElementById("exampleQueries").textContent =
+          examples.join("\n");
+      }
+
+      function queryData(queries) {
+        if (!animeData) return null;
+
+        return Object.entries(animeData).reduce((acc, [id, entry]) => {
+          const matchesAllQueries = queries.every(({ field, value }) => {
+            const searchValue = isNaN(value) ? value : Number(value);
+
+            if (Array.isArray(entry[field])) {
+              return entry[field].includes(searchValue);
+            }
+            return entry[field] === searchValue;
+          });
+
+          if (matchesAllQueries) {
+            acc[id] = entry;
+          }
+          return acc;
+        }, {});
+      }
+
+      function handleUrlParams() {
+        if (!dataLoaded) return;
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const queries = [];
+
+        for (const [field, value] of urlParams.entries()) {
+          if (VALID_FIELDS.includes(field)) {
+            queries.push({ field, value });
+          }
+        }
+
+        if (queries.length > 0) {
+          const result = queryData(queries);
+          if (result) {
+            document.body.innerHTML = `<pre>${JSON.stringify(
+              result,
+              null,
+              2
+            )}</pre>`;
+          }
+        }
+      }
+
+      function executeQuery() {
+        const fieldGroups = document.querySelectorAll(".field-group");
+        const queries = [];
+
+        fieldGroups.forEach((group) => {
+          const field = group.querySelector("select").value;
+          const value = group.querySelector("input").value;
+
+          if (field && value) {
+            queries.push({ field, value });
+          }
+        });
+
+        if (queries.length > 0) {
+          const result = queryData(queries);
+          document.getElementById("result").innerHTML = `<pre>${JSON.stringify(
+            result,
+            null,
+            2
+          )}</pre>`;
+        }
+      }
+
+      loadData();
+    </script>
+  </body>
+</html>
