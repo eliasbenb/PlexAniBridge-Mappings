@@ -230,7 +230,7 @@ class AnimeIDCollector:
             entry = next(
                 (
                     data
-                    for _, data in self.anime_entries.items()
+                    for data in self.anime_entries.values()
                     if data.anidb_id == anidb_id
                 ),
                 self.temp_entries.get(anidb_id),
@@ -309,7 +309,7 @@ class AnimeIDCollector:
                 self.anime_entries[entry.anilist_id] = entry
 
         output_dict: dict[int | str, dict[str, Any]] = {
-            "$schema": "https://raw.githubusercontent.com/eliasbenb/PlexAniBridge-Mappings/main/mappings.schema.json",
+            "$schema": "https://cdn.jsdelivr.net/gh/eliasbenb/PlexAniBridge-Mappings@main/mappings.json",
         }
         for anilist_id, entry in sorted(self.anime_entries.items()):
             output_dict[anilist_id] = entry.model_dump(
