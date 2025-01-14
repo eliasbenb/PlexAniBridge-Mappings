@@ -54,9 +54,16 @@
           "title": "Tvdb Season"
         },
         "tvdb_epoffset": {
-          "default": 0,
-          "title": "Tvdb Epoffset",
-          "type": "integer"
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tvdb Epoffset"
         },
         "mal_id": {
           "anyOf": [
