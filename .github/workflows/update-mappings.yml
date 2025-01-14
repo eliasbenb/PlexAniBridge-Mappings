@@ -43,4 +43,4 @@ jobs:
           git config --local user.name "GitHub Action"
           git add -A
           git commit -m "Update at ${{ steps.date.outputs.date }} UTC" -a
-          git push origin master
+          git push origin main
