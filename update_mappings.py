@@ -309,7 +309,7 @@ class AnimeIDCollector:
                 self.anime_entries[entry.anilist_id] = entry
 
         output_dict: dict[int | str, dict[str, Any]] = {
-            "$schema": "https://cdn.jsdelivr.net/gh/eliasbenb/PlexAniBridge-Mappings@main/mappings.json",
+            "$schema": "https://cdn.jsdelivr.net/gh/eliasbenb/PlexAniBridge-Mappings@main/mappings.schema.json",
         }
         for anilist_id, entry in sorted(self.anime_entries.items()):
             output_dict[anilist_id] = entry.model_dump(
