@@ -1,0 +1,9 @@
+certifi==2024.12.14
+charset-normalizer==3.4.1
+gitdb==4.0.12
+GitPython==3.1.44
+idna==3.10
+lxml==5.3.0
+requests==2.32.3
+smmap==5.0.2
+urllib3==2.3.0
