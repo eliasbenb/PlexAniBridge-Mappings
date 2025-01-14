@@ -2,7 +2,6 @@ import json
 import logging
 import sys
 from datetime import UTC, datetime
-from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -48,8 +47,8 @@ class AniMap(BaseModel):
     tvdb_epoffset: int = 0
     mal_id: int | list[int] | None = None
     imdb_id: str | list[str] | None = None
-    tmdb_show_id: int | None = None
-    tmdb_movie_id: int | None = None
+    tmdb_show_id: int | list[int] | None = None
+    tmdb_movie_id: int | list[int] | None = None
 
 
 class AnimeIDCollector:
@@ -89,7 +88,6 @@ class AnimeIDCollector:
         )
         return logger
 
-    @lru_cache(maxsize=3)
     def _fetch_url(self, url: str, as_bytes: bool = False) -> str | bytes:
         """
         Fetch URL content with caching for frequently accessed URLs.
@@ -281,21 +279,30 @@ class AnimeIDCollector:
         Consolidates all collected anime entries and saves them to mappings.json,
         organizing them by AniList ID.
         """
-        # Move remaining temp entries with anilist_id to main dictionary
+        ani_map_schema = AniMap.model_json_schema()
+        schema = {
+            "title": "Anime ID Mappings",
+            "type": "object",
+            "patternProperties": {"^[0-9]+$": ani_map_schema},
+        }
+        with Path(self.base_dir / "mappings.schema.json").open("w") as f:
+            json.dump(schema, f, indent=2)
+
         for entry in self.temp_entries.values():
             if entry.anilist_id:
                 self.anime_entries[entry.anilist_id] = entry
 
-        # Convert to dictionary format, excluding anilist_id from the value dictionary
-        output_dict: dict[int, dict[str, Any]] = {}
-        for anilist_id, entry in self.anime_entries.items():
+        output_dict: dict[int | str, dict[str, Any]] = {
+            "$schema": "https://raw.githubusercontent.com/eliasbenb/PlexAniBridge-Mappings/main/mappings.schema.json",
+        }
+        for anilist_id, entry in sorted(self.anime_entries.items()):
             output_dict[anilist_id] = entry.model_dump(
                 exclude={"anilist_id"}, exclude_none=True
             )
 
         output_path = self.base_dir / "mappings.json"
         with output_path.open("w") as f:
-            json.dump(output_dict, f, indent=2, sort_keys=True)
+            json.dump(output_dict, f, indent=2)
 
     def update_readme(self) -> None:
         """

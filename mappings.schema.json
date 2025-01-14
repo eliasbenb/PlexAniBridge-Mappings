@@ -1,0 +1,138 @@
+{
+  "title": "Anime ID Mappings",
+  "type": "object",
+  "patternProperties": {
+    "^[0-9]+$": {
+      "description": "Model representing an anime mapping.\n\nAttributes:\n    anilist_id: Optional AniList ID\n    anidb_id: Optional AniDB ID\n    tvdb_id: Optional TVDB ID\n    tvdb_season: Optional TVDB season number\n    tvdb_epoffset: Episode offset for TVDB matching\n    mal_id: Optional MyAnimeList ID(s)\n    imdb_id: Optional IMDB ID(s)\n    tmdb_show_id: Optional TMDB show ID\n    tmdb_movie_id: Optional TMDB movie ID",
+      "properties": {
+        "anilist_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Anilist Id"
+        },
+        "anidb_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Anidb Id"
+        },
+        "tvdb_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tvdb Id"
+        },
+        "tvdb_season": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tvdb Season"
+        },
+        "tvdb_epoffset": {
+          "default": 0,
+          "title": "Tvdb Epoffset",
+          "type": "integer"
+        },
+        "mal_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mal Id"
+        },
+        "imdb_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Imdb Id"
+        },
+        "tmdb_show_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tmdb Show Id"
+        },
+        "tmdb_movie_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tmdb Movie Id"
+        }
+      },
+      "title": "AniMap",
+      "type": "object"
+    }
+  }
+}
