@@ -5,7 +5,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ValidationInfo, field_validator, model_validator
 
 if sys.version_info < (3, 11):
     print(
@@ -44,11 +44,26 @@ class AniMap(BaseModel):
     anidb_id: int | None = None
     tvdb_id: int | None = None
     tvdb_season: int | None = None
-    tvdb_epoffset: int = 0
+    tvdb_epoffset: int | None = None
     mal_id: int | list[int] | None = None
     imdb_id: str | list[str] | None = None
     tmdb_show_id: int | list[int] | None = None
     tmdb_movie_id: int | list[int] | None = None
+
+    @model_validator(mode="after")
+    def id_validator(self):
+        if not any(
+            getattr(self, field) is not None
+            for field in self.model_fields
+            if field.endswith("_id")
+        ):
+            raise ValueError("At least one ID field must be provided")
+        return self
+
+    @field_validator("tvdb_id")
+    def tvdb_validator(cls, v: int, info: ValidationInfo):
+        if v is not None and (cls.tvdb_season is None or cls.tvdb_epoffset is None):
+            raise ValueError("TVDB ID requires season and episode offset")
 
 
 class AnimeIDCollector:
@@ -145,7 +160,8 @@ class AnimeIDCollector:
             try:
                 entry.tvdb_epoffset = int(str(anime.xpath("@episodeoffset")[0]))
             except ValueError:
-                entry.tvdb_epoffset = 0
+                if entry.tvdb_season is not None:
+                    entry.tvdb_epoffset = 0
 
             imdb_id = str(anime.xpath("@imdbid")[0])
             if imdb_id.startswith("tt"):
