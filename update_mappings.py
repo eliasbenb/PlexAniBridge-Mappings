@@ -268,16 +268,16 @@ class AnimeIDCollector:
 
     def process_edits(self) -> None:
         """
-        Process manual edits from mappings_edits.json.
+        Process manual edits from mappings.edits.json.
 
         Applies manual corrections and additions to the collected anime entries
         from a local edits file.
         """
         self.logger.info("Scanning Anime ID Edits")
-        edits_path = self.base_dir / "mappings_edits.json"
+        edits_path = self.base_dir / "mappings.edits.json"
 
         if not edits_path.exists():
-            self.logger.warning("mappings_edits.json not found")
+            self.logger.warning("mappings.edits.json not found")
             return
 
         with edits_path.open("r") as f:
