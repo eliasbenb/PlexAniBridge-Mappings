@@ -281,9 +281,11 @@ class AnimeIDCollector:
             return
 
         with edits_path.open("r") as f:
-            edits = json.load(f)
+            edits: dict[str, Any] = json.load(f)
 
         for anilist_id_str, ids in edits.items():
+            if anilist_id_str.startswith("$"):
+                continue
             anilist_id = int(anilist_id_str)
             entry = AniMap(anilist_id=anilist_id, **ids)
             self.anime_entries[anilist_id] = entry
