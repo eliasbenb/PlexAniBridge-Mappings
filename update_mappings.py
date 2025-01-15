@@ -295,11 +295,10 @@ class AnimeIDCollector:
         Consolidates all collected anime entries and saves them to mappings.json,
         organizing them by AniList ID.
         """
-        ani_map_schema = AniMap.model_json_schema()
         schema = {
             "title": "Anime ID Mappings",
             "type": "object",
-            "patternProperties": {"^[0-9]+$": ani_map_schema},
+            "patternProperties": {"^[0-9]+$": AniMap.model_json_schema()},
         }
         with Path(self.base_dir / "mappings.schema.json").open("w") as f:
             json.dump(schema, f, indent=2)
@@ -312,9 +311,13 @@ class AnimeIDCollector:
             "$schema": "https://cdn.jsdelivr.net/gh/eliasbenb/PlexAniBridge-Mappings/mappings.schema.json",
         }
         for anilist_id, entry in sorted(self.anime_entries.items()):
-            output_dict[anilist_id] = entry.model_dump(
-                exclude={"anilist_id"}, exclude_none=True
-            )
+            sorted_entry = {
+                k: v
+                for k, v in sorted(
+                    entry.model_dump(exclude={"anilist_id"}, exclude_none=True).items()
+                )
+            }
+            output_dict[anilist_id] = sorted_entry
 
         output_path = self.base_dir / "mappings.json"
         with output_path.open("w") as f:
