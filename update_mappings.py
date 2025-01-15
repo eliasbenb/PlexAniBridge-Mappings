@@ -307,9 +307,7 @@ class AnimeIDCollector:
             if entry.anilist_id:
                 self.anime_entries[entry.anilist_id] = entry
 
-        output_dict: dict[int | str, dict[str, Any]] = {
-            "$schema": "https://cdn.jsdelivr.net/gh/eliasbenb/PlexAniBridge-Mappings/mappings.schema.json",
-        }
+        output_dict: dict[int | str, dict[str, Any]] = {}
         for anilist_id, entry in sorted(self.anime_entries.items()):
             sorted_entry = {
                 k: v
