@@ -354,6 +354,10 @@
           const matchesAllQueries = queries.every(({ field, value }) => {
             const searchValue = isNaN(value) ? value : Number(value);
 
+            if (field === "anilist_id") {
+              return id === searchValue.toString();
+            }
+
             if (Array.isArray(entry[field])) {
               return entry[field].includes(searchValue);
             }
