@@ -230,7 +230,8 @@
               <div class="param-name">Fields</div>
               <code>
                 "anilist_id" | "anidb_id" | "mal_id" | "imdb_id" |
-                "tmdb_movie_id" | "tvdb_id" | "tvdb_season" | "tvdb_epoffset"
+                "tmdb_movie_id" | "tmdb_show_id" | "tvdb_id" | "tvdb_season" |
+                "tvdb_epoffset"
               </code>
             </li>
             <li>
@@ -264,15 +265,15 @@
 
     <script>
       const VALID_FIELDS = [
-        "anidb_id",
         "anilist_id",
-        "tvdb_id",
-        "tvdb_season",
-        "tvdb_epoffset",
+        "anidb_id",
         "mal_id",
         "imdb_id",
-        "tmdb_show_id",
         "tmdb_movie_id",
+        "tmdb_show_id",
+        "tvdb_epoffset",
+        "tvdb_id",
+        "tvdb_season",
       ];
 
       let animeData = null;
@@ -290,25 +291,26 @@
         const fieldSelect = document.createElement("div");
         fieldSelect.className = "field-row";
         fieldSelect.innerHTML = `
-          <label>Field</label>
-          <select>
-            <option value="anilist_id">AniList ID</option>
-            <option value="anidb_id">AniDB ID</option>
-            <option value="mal_id">MAL ID</option>
-            <option value="imdb_id">IMDB ID</option>
-            <option value="tmdb_movie_id">TMDB Movie ID</option>
-            <option value="tvdb_id">TVDB ID</option>
-            <option value="tvdb_season">TVDB Season</option>
-            <option value="tvdb_epoffset">TVDB Episode Offset</option>
-          </select>
-        `;
+            <label>Field</label>
+            <select>
+              <option value="anilist_id">AniList ID</option>
+              <option value="anidb_id">AniDB ID</option>
+              <option value="mal_id">MAL ID</option>
+              <option value="imdb_id">IMDB ID</option>
+              <option value="tmdb_movie_id">TMDB Movie ID</option>
+              <option value="tmdb_show_id">TMDB Show ID</option>
+              <option value="tvdb_epoffset">TVDB Episode Offset</option>
+              <option value="tvdb_id">TVDB ID</option>
+              <option value="tvdb_season">TVDB Season</option>
+            </select>
+          `;
 
         const valueInput = document.createElement("div");
         valueInput.className = "field-row";
         valueInput.innerHTML = `
-          <label>Value</label>
-          <input type="text" placeholder="Enter search value">
-        `;
+            <label>Value</label>
+            <input type="text" placeholder="Enter search value">
+          `;
 
         group.appendChild(removeButton);
         group.appendChild(fieldSelect);
