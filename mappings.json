@@ -77379,7 +77379,10 @@
     "anidb_id": 18754,
     "imdb_id": "tt3111906",
     "mal_id": 59010,
-    "tmdb_show_id": 56559
+    "tmdb_show_id": 56559,
+    "tvdb_epoffset": 0,
+    "tvdb_id": 271591,
+    "tvdb_season": 13
   },
   "177937": {
     "anidb_id": 18677,
