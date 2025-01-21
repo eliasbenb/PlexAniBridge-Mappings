@@ -160,7 +160,7 @@ class AnimeIDCollector:
             try:
                 entry.tvdb_epoffset = int(str(anime.xpath("@episodeoffset")[0]))
             except ValueError:
-                if entry.tvdb_season is not None:
+                if entry.tvdb_season:
                     entry.tvdb_epoffset = 0
 
             imdb_id = str(anime.xpath("@imdbid")[0])
@@ -339,9 +339,9 @@ class AnimeIDCollector:
             with readme_path.open("r") as f:
                 data = f.readlines()
 
-            data[2] = f"Last generated at: {
-                datetime.now(UTC).strftime('%B %d, %Y %I:%M %p')
-            } UTC\n"
+            data[2] = (
+                f"Last generated at: {datetime.now(UTC).strftime('%B %d, %Y %I:%M %p')} UTC\n"
+            )
 
             with readme_path.open("w") as f:
                 f.writelines(data)
