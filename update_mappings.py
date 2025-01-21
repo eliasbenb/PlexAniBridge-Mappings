@@ -60,11 +60,6 @@ class AniMap(BaseModel):
             raise ValueError("At least one ID field must be provided")
         return self
 
-    @field_validator("tvdb_id")
-    def tvdb_validator(cls, v: int, info: ValidationInfo):
-        if v is not None and (cls.tvdb_season is None or cls.tvdb_epoffset is None):
-            raise ValueError("TVDB ID requires season and episode offset")
-
 
 class AnimeIDCollector:
     """
