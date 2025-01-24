@@ -1,199 +1,266 @@
 {
   "$schema": "https://cdn.jsdelivr.net/gh/eliasbenb/PlexAniBridge-Mappings/mappings.schema.json",
   "424": {
-      "tvdb_epoffset": 0
+    "tvdb_epoffset": 0
   },
   "887": {
-      "tvdb_season": 0
+    "tvdb_season": 0
+  },
+  "894": {
+    "tvdb_epoffset": 0
+  },
+  "897": {
+    "tvdb_epoffset": 3
+  },
+  "898": {
+    "tvdb_epoffset": 4
+  },
+  "899": {
+    "tvdb_epoffset": 5
+  },
+  "900": {
+    "tvdb_epoffset": 6
+  },
+  "901": {
+    "tvdb_epoffset": 7
+  },
+  "902": {
+    "tvdb_epoffset": 8
+  },
+  "903": {
+    "tvdb_epoffset": 9
+  },
+  "904": {
+    "tvdb_epoffset": 10
+  },
+  "905": {
+    "tvdb_epoffset": 11
+  },
+  "906": {
+    "tvdb_epoffset": 12
+  },
+  "984": {
+    "tvdb_epoffset": 19
+  },
+  "985": {
+    "tvdb_epoffset": 17
+  },
+  "986": {
+    "tvdb_epoffset": 15
   },
   "1006": {
-      "tvdb_epoffset": 1
+    "tvdb_epoffset": 1
   },
   "1144": {
-      "tvdb_epoffset": 3
+    "tvdb_epoffset": 3
   },
   "1146": {
-      "tvdb_epoffset": 6
+    "tvdb_epoffset": 6
   },
   "1295": {
-      "tvdb_epoffset": 4
+    "tvdb_epoffset": 4
   },
   "1296": {
-      "tvdb_epoffset": 1
+    "tvdb_epoffset": 1
   },
   "1297": {
-      "tvdb_epoffset": 2
+    "tvdb_epoffset": 2
   },
   "1298": {
-      "tvdb_epoffset": 3
+    "tvdb_epoffset": 3
   },
   "1336": {
-      "tvdb_epoffset": 6
+    "tvdb_epoffset": 6
   },
   "1337": {
-      "tvdb_id": 403064
+    "tvdb_id": 403064
   },
   "1372": {
-      "tvdb_epoffset": 4
+    "tvdb_epoffset": 4
   },
   "1795": {
-      "tvdb_epoffset": 12
+    "tvdb_epoffset": 12
   },
   "1796": {
-      "tvdb_epoffset": 11
+    "tvdb_epoffset": 11
   },
   "1803": {
-      "tvdb_epoffset": 24
+    "tvdb_epoffset": 24
   },
   "1935": {
-      "anidb_id": 1729,
-      "mal_id": 1935,
-      "tvdb_id": 113671,
-      "tvdb_season": 1,
-      "tvdb_epoffset": 0
+    "anidb_id": 1729,
+    "mal_id": 1935,
+    "tvdb_id": 113671,
+    "tvdb_season": 1,
+    "tvdb_epoffset": 0
   },
   "2013": {
-      "tvdb_epoffset": 22,
-      "tvdb_season": 0
+    "tvdb_epoffset": 22,
+    "tvdb_season": 0
   },
   "2062": {
-      "tvdb_epoffset": 2
+    "tvdb_epoffset": 2
   },
   "2063": {
-      "tvdb_epoffset": 3
+    "tvdb_epoffset": 3
   },
   "2064": {
-      "tvdb_epoffset": 4
+    "tvdb_epoffset": 4
   },
   "2065": {
-      "tvdb_epoffset": 7
+    "tvdb_epoffset": 7
   },
   "2066": {
-      "tvdb_epoffset": 9
+    "tvdb_epoffset": 9
   },
   "2466": {
-      "tvdb_epoffset": 1
+    "tvdb_epoffset": 1
+  },
+  "2819": {
+    "tvdb_id": 138211,
+    "tvdb_season": -1
   },
   "2829": {
-      "tvdb_id": 261387
+    "tvdb_id": 261387
   },
   "3021": {
-      "tvdb_id": 82981
+    "tvdb_id": 82981
   },
   "3154": {
-      "tvdb_epoffset": 1,
-      "tvdb_season": 0
+    "tvdb_epoffset": 1,
+    "tvdb_season": 0
   },
   "4197": {
-      "tvdb_season": 2
+    "tvdb_season": 2
   },
   "4314": {
-      "tvdb_epoffset": 12
+    "tvdb_epoffset": 12
   },
   "4316": {
-      "tvdb_epoffset": 28
+    "tvdb_epoffset": 28
   },
   "5031": {
-      "tvdb_epoffset": 4,
-      "tvdb_season": 0
+    "tvdb_epoffset": 4,
+    "tvdb_season": 0
   },
   "5147": {
-      "tvdb_epoffset": 4,
-      "tvdb_season": 0
+    "tvdb_epoffset": 4,
+    "tvdb_season": 0
+  },
+  "5152": {
+    "tvdb_epoffset": 22
   },
   "6165": {
-      "tvdb_epoffset": 13
+    "tvdb_epoffset": 13
+  },
+  "6714": {
+    "tvdb_epoffset": 18
   },
   "7897": {
-      "tvdb_epoffset": 1
+    "tvdb_epoffset": 1
   },
   "9744": {
-      "tvdb_epoffset": 2
+    "tvdb_epoffset": 2
   },
   "10016": {
-      "tvdb_epoffset": 2
+    "tvdb_epoffset": 2
+  },
+  "10177": {
+    "tvdb_season": 0
   },
   "10471": {
-      "mal_id": 10471,
-      "tvdb_id": 261387,
-      "tvdb_season": 1,
-      "tvdb_epoffset": 23,
-      "tmdb_show_id": 44742
+    "mal_id": 10471,
+    "tvdb_id": 261387,
+    "tvdb_season": 1,
+    "tvdb_epoffset": 23,
+    "tmdb_show_id": 44742
   },
   "10500": {
-      "tvdb_epoffset": 1
+    "tvdb_epoffset": 1
   },
   "10502": {
-      "tvdb_epoffset": 3
+    "tvdb_epoffset": 3
   },
   "11313": {
-      "tvdb_season": 0
+    "tvdb_season": 0
+  },
+  "12231": {
+    "tvdb_epoffset": 24
   },
   "12437": {
-      "tvdb_epoffset": 1
+    "tvdb_epoffset": 1
   },
   "12907": {
-      "tvdb_id": 269157
+    "tvdb_id": 269157
   },
   "13171": {
-      "tvdb_epoffset": 1
+    "tvdb_epoffset": 1
   },
   "13173": {
-      "tvdb_epoffset": 2
+    "tvdb_epoffset": 2
   },
   "13175": {
-      "tvdb_epoffset": 3
+    "tvdb_epoffset": 3
   },
   "13863": {
-      "tvdb_epoffset": 3
+    "tvdb_epoffset": 3
   },
   "14347": {
-      "tvdb_epoffset": 1
+    "tvdb_epoffset": 1
   },
   "14519": {
-      "tvdb_season": 2
+    "tvdb_season": 2
+  },
+  "14837": {
+    "tvdb_epoffset": 13
   },
   "16033": {
-      "tvdb_season": 0
+    "tvdb_season": 0
   },
   "17705": {
-      "tvdb_season": 1
+    "tvdb_season": 1
   },
   "17727": {
-      "tvdb_season": 2
+    "tvdb_season": 2
+  },
+  "20381": {
+    "tvdb_epoffset": 0
   },
   "20502": {
-      "tvdb_epoffset": 2
+    "tvdb_epoffset": 2
   },
   "20504": {
-      "tvdb_epoffset": 3
+    "tvdb_epoffset": 3
   },
   "20505": {
-      "tvdb_epoffset": 1
+    "tvdb_epoffset": 1
   },
   "20715": {
-      "tvdb_epoffset": 2
+    "tvdb_epoffset": 2
+  },
+  "20778": {
+    "tvdb_epoffset": 14
   },
   "111048": {
-      "tvdb_epoffset": 12,
-      "tvdb_season": 1
+    "tvdb_epoffset": 12,
+    "tvdb_season": 1
   },
   "119939": {
-      "tvdb_epoffset": 3
+    "tvdb_epoffset": 3
   },
   "129591": {
-      "tvdb_epoffset": 2
+    "tvdb_epoffset": 2
   },
   "129595": {
-      "tvdb_epoffset": 1
+    "tvdb_epoffset": 1
   },
   "169692": {
-      "mal_id": 56704,
-      "tvdb_epoffset": 12,
-      "tvdb_id": 354179,
-      "tvdb_season": 2
+    "mal_id": 56704,
+    "tvdb_epoffset": 12,
+    "tvdb_id": 354179,
+    "tvdb_season": 2
   },
   "182920": {
-      "tvdb_epoffset": 26
+    "tvdb_epoffset": 26
   }
 }
