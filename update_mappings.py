@@ -5,7 +5,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-from pydantic import BaseModel, ValidationInfo, field_validator, model_validator
+from pydantic import BaseModel, model_validator
 
 if sys.version_info < (3, 11):
     print(
@@ -59,11 +59,6 @@ class AniMap(BaseModel):
         ):
             raise ValueError("At least one ID field must be provided")
         return self
-
-    @field_validator("tvdb_id")
-    def tvdb_validator(cls, v: int, info: ValidationInfo):
-        if v is not None and (cls.tvdb_season is None or cls.tvdb_epoffset is None):
-            raise ValueError("TVDB ID requires season and episode offset")
 
 
 class AnimeIDCollector:
@@ -160,7 +155,7 @@ class AnimeIDCollector:
             try:
                 entry.tvdb_epoffset = int(str(anime.xpath("@episodeoffset")[0]))
             except ValueError:
-                if entry.tvdb_season is not None:
+                if entry.tvdb_season:
                     entry.tvdb_epoffset = 0
 
             imdb_id = str(anime.xpath("@imdbid")[0])
@@ -339,9 +334,9 @@ class AnimeIDCollector:
             with readme_path.open("r") as f:
                 data = f.readlines()
 
-            data[2] = f"Last generated at: {
-                datetime.now(UTC).strftime('%B %d, %Y %I:%M %p')
-            } UTC\n"
+            data[2] = (
+                f"Last generated at: {datetime.now(UTC).strftime('%B %d, %Y %I:%M %p')} UTC\n"
+            )
 
             with readme_path.open("w") as f:
                 f.writelines(data)

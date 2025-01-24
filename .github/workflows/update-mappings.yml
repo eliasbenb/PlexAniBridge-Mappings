@@ -34,13 +34,14 @@ jobs:
       - name: Check Diff
         id: verify_diff
         run: |
+          git diff .
           git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit & Push Changes
-        if: steps.verify_diff.outputs.changed == 'true'
+        if: steps.verify_diff.outputs.changed == 'true' && github.event_name != 'pull_request'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
           git commit -m "Update at ${{ steps.date.outputs.date }} UTC" -a
-          git push origin main
+          git push
