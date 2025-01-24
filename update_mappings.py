@@ -282,8 +282,13 @@ class AnimeIDCollector:
             if anilist_id_str.startswith("$"):
                 continue
             anilist_id = int(anilist_id_str)
-            entry = AniMap(anilist_id=anilist_id, **ids)
-            self.anime_entries[anilist_id] = entry
+            if anilist_id in self.anime_entries:
+                existing_entry = self.anime_entries[anilist_id]
+                for key, value in ids.items():
+                    setattr(existing_entry, key, value)
+            else:
+                entry = AniMap(anilist_id=anilist_id, **ids)
+                self.anime_entries[anilist_id] = entry
 
     def save_results(self) -> None:
         """
