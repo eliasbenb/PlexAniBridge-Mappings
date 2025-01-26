@@ -282,6 +282,13 @@ class AnimeIDCollector:
             if anilist_id_str.startswith("$"):
                 continue
             anilist_id = int(anilist_id_str)
+            if not all(key in AniMap.model_fields for key in ids.keys()):
+                for key in ids.keys():
+                    if key not in AniMap.model_fields:
+                        self.logger.warning(
+                            f"Unknown field '{key}' in edit for ID {anilist_id}"
+                        )
+                continue
             if anilist_id in self.anime_entries:
                 existing_entry = self.anime_entries[anilist_id]
                 for key, value in ids.items():
