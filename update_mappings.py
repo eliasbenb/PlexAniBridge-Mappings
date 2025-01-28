@@ -142,21 +142,21 @@ class AnimeIDCollector:
             try:
                 if tvdb_id:
                     entry.tvdb_id = int(tvdb_id)
+
+                    tvdb_season = str(anime.xpath("@defaulttvdbseason")[0])
+                    try:
+                        if tvdb_season:
+                            entry.tvdb_season = int(tvdb_season) if tvdb_season != "a" else -1
+                    except ValueError:
+                        pass
+
+                    try:
+                        entry.tvdb_epoffset = int(str(anime.xpath("@episodeoffset")[0]))
+                    except ValueError:
+                        if entry.tvdb_season:
+                            entry.tvdb_epoffset = 0
             except ValueError:
                 pass
-
-            tvdb_season = str(anime.xpath("@defaulttvdbseason")[0])
-            try:
-                if tvdb_season:
-                    entry.tvdb_season = int(tvdb_season) if tvdb_season != "a" else -1
-            except ValueError:
-                pass
-
-            try:
-                entry.tvdb_epoffset = int(str(anime.xpath("@episodeoffset")[0]))
-            except ValueError:
-                if entry.tvdb_season:
-                    entry.tvdb_epoffset = 0
 
             imdb_id = str(anime.xpath("@imdbid")[0])
             if imdb_id.startswith("tt"):
