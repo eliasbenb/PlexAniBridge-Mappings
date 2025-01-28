@@ -138,24 +138,24 @@ class AnimeIDCollector:
             anidb_id = int(anidb_id[1:]) if anidb_id[0] == "a" else int(anidb_id)
             entry = AniMap(anidb_id=anidb_id)
 
-            tvdb_id = str(anime.xpath("@tvdbid")[0])
             try:
-                if tvdb_id:
-                    entry.tvdb_id = int(tvdb_id)
+                entry.tvdb_id = int(anime.xpath("@tvdbid")[0])
 
-                    tvdb_season = str(anime.xpath("@defaulttvdbseason")[0])
-                    try:
-                        if tvdb_season:
-                            entry.tvdb_season = int(tvdb_season) if tvdb_season != "a" else -1
-                    except ValueError:
-                        pass
+                tvdb_season = str(anime.xpath("@defaulttvdbseason")[0])
+                try:
+                    if tvdb_season:
+                        entry.tvdb_season = (
+                            int(tvdb_season) if tvdb_season != "a" else -1
+                        )
+                except ValueError:
+                    pass
 
-                    try:
-                        entry.tvdb_epoffset = int(str(anime.xpath("@episodeoffset")[0]))
-                    except ValueError:
-                        if entry.tvdb_season:
-                            entry.tvdb_epoffset = 0
-            except ValueError:
+                try:
+                    entry.tvdb_epoffset = int(anime.xpath("@episodeoffset")[0])
+                except ValueError:
+                    if entry.tvdb_season:
+                        entry.tvdb_epoffset = 0
+            except (ValueError, IndexError):
                 pass
 
             imdb_id = str(anime.xpath("@imdbid")[0])
