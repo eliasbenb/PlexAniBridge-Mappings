@@ -1,321 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PlexAniBridge Mapping Lookup</title>
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
-    <style>
-      :root {
-        --primary: #6366f1;
-        --primary-dark: #4f46e5;
-        --background: #f8fafc;
-        --surface: #ffffff;
-        --text: #1e293b;
-        --text-light: #64748b;
-        --border: #e2e8f0;
-        --radius: 0.75rem;
-      }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlexAniBridge Mapping Lookup</title>
 
-      body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, sans-serif;
-        background-color: var(--background);
-        color: var(--text);
-        line-height: 1.6;
-        padding: 2rem;
-      }
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-      .wrapper {
-        margin: 0 auto;
-      }
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 
-      h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 2rem;
-        color: var(--text);
-        text-align: center;
-      }
+  <style>
+    .field-group {
+      position: relative;
+    }
 
-      h2 {
-        font-size: 1.75rem;
-        margin-bottom: 1.5rem;
-        color: var(--text);
-      }
+    .remove-field {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+  </style>
+</head>
 
-      h3 {
-        font-size: 1.25rem;
-        margin: 2rem 0 1rem;
-        color: var(--text);
-      }
+<body class="bg-light py-4">
+  <div class="container">
+    <h1 class="text-center mb-4">PlexAniBridge Mapping Lookup</h1>
 
-      .container {
-        display: flex;
-        gap: 2rem;
-      }
+    <div class="row g-4">
+      <!-- Documentation Column -->
+      <div class="col-lg-8">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h2 class="card-title">API Documentation</h2>
+            <p class="card-text">
+              Query the anime database using multiple fields. Results will show
+              entries that match ALL specified criteria.
+            </p>
 
-      .docs {
-        background: var(--surface);
-        padding: 2rem;
-        border-radius: var(--radius);
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        overflow-x: auto;
-        width: 100%;
-      }
+            <h3 class="mt-4">Query Parameters</h3>
+            <ul class="list-unstyled">
+              <li class="mb-4">
+                <div class="fw-bold mb-2">Fields</div>
+                <code class="bg-light p-2 rounded d-block">
+                    "anilist_id" | "anidb_id" | "mal_id" | "imdb_id" |
+                    "tmdb_movie_id" | "tmdb_show_id" | "tvdb_id" | "tvdb_season" |
+                    "tvdb_epoffset"
+                  </code>
+              </li>
+              <li class="mb-4">
+                <div class="fw-bold mb-2">URL Format</div>
+                <code class="bg-light p-2 rounded d-block">?field1=value1&field2=value2&field3=value3...</code>
+              </li>
+            </ul>
 
-      .query-builder {
-        background: var(--surface);
-        padding: 2rem;
-        border-radius: var(--radius);
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        position: sticky;
-        top: 2rem;
-        min-width: max-content;
-      }
+            <h3>Example Queries</h3>
+            <pre id="exampleQueries" class="bg-light p-3 rounded border mb-4"></pre>
 
-      .field-group {
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 1rem;
-        margin-bottom: 1rem;
-        position: relative;
-      }
-
-      .remove-field {
-        position: absolute;
-        top: 0.5rem;
-        right: 0.5rem;
-        background: none;
-        border: none;
-        color: var(--text-light);
-        cursor: pointer;
-        padding: 0.25rem;
-        width: auto;
-      }
-
-      .remove-field:hover {
-        color: #ef4444;
-        background: none;
-      }
-
-      .field-row {
-        margin-bottom: 1.5rem;
-      }
-
-      label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: 500;
-        color: var(--text);
-      }
-
-      select,
-      input {
-        width: 100%;
-        padding: 0.75rem;
-        border: 1px solid var(--border);
-        border-radius: calc(var(--radius) / 2);
-        font-size: 1rem;
-        color: var(--text);
-        background-color: var(--background);
-        transition: border-color 0.2s, box-shadow 0.2s;
-      }
-
-      select:focus,
-      input:focus {
-        outline: none;
-        border-color: var(--primary);
-        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-      }
-
-      .button-group {
-        display: flex;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
-      }
-
-      button {
-        width: 100%;
-        background: var(--primary);
-        color: white;
-        border: none;
-        padding: 0.75rem 0.25rem;
-        border-radius: calc(var(--radius) / 2);
-        font-size: 1rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition: background-color 0.2s;
-      }
-
-      button:hover {
-        background: var(--primary-dark);
-      }
-
-      button.secondary {
-        background: var(--text-light);
-      }
-
-      button.secondary:hover {
-        background: var(--text);
-      }
-
-      pre {
-        background: var(--background);
-        padding: 1.5rem;
-        border-radius: calc(var(--radius) / 2);
-        overflow-x: auto;
-        font-size: 0.9rem;
-        border: 1px solid var(--border);
-      }
-
-      code {
-        font-family: "Menlo", "Monaco", "Courier New", monospace;
-        font-size: 0.9em;
-      }
-
-      .param-list {
-        list-style-type: none;
-        padding-left: 0;
-      }
-
-      .param-list li {
-        margin-bottom: 1.5rem;
-      }
-
-      .param-name {
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-      }
-
-      #result {
-        margin-top: 1.5rem;
-        max-height: 400px;
-        overflow-y: auto;
-      }
-
-      #result:empty {
-        display: none;
-      }
-
-      @media (max-width: 768px) {
-        .container {
-          flex-direction: column;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="wrapper">
-      <h1>PlexAniBridge Mapping Lookup</h1>
-
-      <div class="container">
-        <div class="docs">
-          <h2>API Documentation</h2>
-          <p>
-            Query the anime database using multiple fields. Results will show
-            entries that match ALL specified criteria.
-          </p>
-
-          <h3>Query Parameters</h3>
-          <ul class="param-list">
-            <li>
-              <div class="param-name">Fields</div>
-              <code>
-                "anilist_id" | "anidb_id" | "mal_id" | "imdb_id" |
-                "tmdb_movie_id" | "tmdb_show_id" | "tvdb_id" | "tvdb_season" |
-                "tvdb_epoffset"
-              </code>
-            </li>
-            <li>
-              <div class="param-name">URL Format</div>
-              <code>?field1=value1&field2=value2&field3=value3...</code>
-            </li>
-          </ul>
-
-          <h3>Example Queries</h3>
-          <pre id="exampleQueries"></pre>
-
-          <h3>JSON Mappings</h3>
-          <div class="button-group">
-            <a href="./mappings.json" rel="noopener noreferrer" target="_blank">
-              <button style="width: 212px">Open JSON Mappings</button>
-            </a>
-            <a
-              href="https://github.com/eliasbenb/PlexAniBridge-Mappings"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <button style="width: 212px" class="secondary">
-                <div>
-                  <svg
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    style="fill: currentColor"
-                  >
-                    <path
-                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
-                    ></path>
-                  </svg>
-                  View on GitHub
-                </div>
-              </button>
-            </a>
+            <h3>JSON Mappings</h3>
+            <div class="d-flex gap-2 mb-3">
+              <a href="./mappings.json" class="btn btn-primary" rel="noopener noreferrer" target="_blank">
+                <i class="bi bi-filetype-json"></i>
+                Open JSON Mappings
+              </a>
+              <a href="https://github.com/eliasbenb/PlexAniBridge-Mappings" class="btn btn-secondary"
+                rel="noopener noreferrer" target="_blank">
+                <i class="bi bi-github"></i>
+                View on GitHub
+              </a>
+            </div>
           </div>
         </div>
+      </div>
 
-        <div class="query-builder">
-          <h2>Query Builder</h2>
-          <div id="queryFields"></div>
-          <div class="button-group">
-            <button onclick="executeQuery()">Execute Query</button>
-            <button onclick="addQueryField()" class="secondary">
-              Add Field
-            </button>
+      <!-- Query Builder Column -->
+      <div class="col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h2 class="card-title">Query Builder</h2>
+            <div id="queryFields"></div>
+            <div class="d-flex gap-2 mb-3">
+              <button onclick="executeQuery()" class="btn btn-primary flex-grow-1">Execute Query</button>
+              <button onclick="addQueryField()" class="btn btn-secondary flex-grow-1">Add Field</button>
+            </div>
+            <div id="result" class="overflow-auto" style="max-height: 400px;"></div>
           </div>
-          <div id="result"></div>
         </div>
       </div>
     </div>
+  </div>
 
-    <script>
-      const VALID_FIELDS = [
-        "anilist_id",
-        "anidb_id",
-        "mal_id",
-        "imdb_id",
-        "tmdb_movie_id",
-        "tmdb_show_id",
-        "tvdb_epoffset",
-        "tvdb_id",
-        "tvdb_season",
-      ];
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-      let animeData = null;
-      let dataLoaded = false;
+  <script>
+    const VALID_FIELDS = [
+      "anilist_id",
+      "anidb_id",
+      "mal_id",
+      "imdb_id",
+      "tmdb_movie_id",
+      "tmdb_show_id",
+      "tvdb_epoffset",
+      "tvdb_id",
+      "tvdb_season",
+    ];
 
-      function createFieldGroup() {
-        const group = document.createElement("div");
-        group.className = "field-group";
+    let animeData = null;
+    let dataLoaded = false;
 
-        const removeButton = document.createElement("button");
-        removeButton.className = "remove-field";
-        removeButton.innerHTML = "✕";
-        removeButton.onclick = () => group.remove();
+    function createFieldGroup() {
+      const group = document.createElement("div");
+      group.className = "field-group border rounded p-4 mb-3 bg-white";
 
-        const fieldSelect = document.createElement("div");
-        fieldSelect.className = "field-row";
-        fieldSelect.innerHTML = `
-            <label>Field</label>
-            <select>
+      const removeButton = document.createElement("button");
+      removeButton.className = "remove-field btn btn-light border-0";
+      removeButton.innerHTML = "✕";
+      removeButton.onclick = () => group.remove();
+
+      const fieldSelect = document.createElement("div");
+      fieldSelect.className = "mb-3";
+      fieldSelect.innerHTML = `
+            <label class="form-label">Field</label>
+            <select class="form-select">
               <option value="anilist_id">AniList ID</option>
               <option value="anidb_id">AniDB ID</option>
               <option value="mal_id">MAL ID</option>
@@ -328,122 +135,118 @@
             </select>
           `;
 
-        const valueInput = document.createElement("div");
-        valueInput.className = "field-row";
-        valueInput.innerHTML = `
-            <label>Value</label>
-            <input type="text" placeholder="Enter search value">
+      const valueInput = document.createElement("div");
+      valueInput.className = "mb-3";
+      valueInput.innerHTML = `
+            <label class="form-label">Value</label>
+            <input type="text" class="form-control" placeholder="Enter search value">
           `;
 
-        group.appendChild(removeButton);
-        group.appendChild(fieldSelect);
-        group.appendChild(valueInput);
+      group.appendChild(removeButton);
+      group.appendChild(fieldSelect);
+      group.appendChild(valueInput);
 
-        return group;
+      return group;
+    }
+
+    function addQueryField() {
+      const queryFields = document.getElementById("queryFields");
+      queryFields.appendChild(createFieldGroup());
+    }
+
+    async function loadData() {
+      try {
+        const response = await fetch("./mappings.json");
+        animeData = await response.json();
+        dataLoaded = true;
+        updateExampleQueries();
+        addQueryField();
+        handleUrlParams();
+      } catch (error) {
+        console.error("Error loading data:", error);
       }
+    }
 
-      function addQueryField() {
-        const queryFields = document.getElementById("queryFields");
-        queryFields.appendChild(createFieldGroup());
-      }
+    function updateExampleQueries() {
+      const baseUrl = window.location.href.split("?")[0];
+      const examples = [
+        `${baseUrl}?anilist_id=21234`,
+        `${baseUrl}?imdb_id=tt7236034`,
+        `${baseUrl}?tvdb_id=65249&tvdb_season=1`,
+      ];
 
-      async function loadData() {
-        try {
-          const response = await fetch("./mappings.json");
-          animeData = await response.json();
-          dataLoaded = true;
-          updateExampleQueries();
-          addQueryField();
-          handleUrlParams();
-        } catch (error) {
-          console.error("Error loading data:", error);
-        }
-      }
+      document.getElementById("exampleQueries").textContent = examples.join("\n");
+    }
 
-      function updateExampleQueries() {
-        const baseUrl = window.location.href.split("?")[0];
-        const examples = [
-          `${baseUrl}?anilist_id=21234`,
-          `${baseUrl}?imdb_id=tt7236034`,
-          `${baseUrl}?tvdb_id=65249&tvdb_season=1`,
-        ];
+    function queryData(queries) {
+      if (!animeData) return null;
 
-        document.getElementById("exampleQueries").textContent =
-          examples.join("\n");
-      }
+      return Object.entries(animeData).reduce((acc, [id, entry]) => {
+        const matchesAllQueries = queries.every(({ field, value }) => {
+          const searchValue = isNaN(value) ? value : Number(value);
 
-      function queryData(queries) {
-        if (!animeData) return null;
-
-        return Object.entries(animeData).reduce((acc, [id, entry]) => {
-          const matchesAllQueries = queries.every(({ field, value }) => {
-            const searchValue = isNaN(value) ? value : Number(value);
-
-            if (field === "anilist_id") {
-              return id === searchValue.toString();
-            }
-
-            if (Array.isArray(entry[field])) {
-              return entry[field].includes(searchValue);
-            }
-            return entry[field] === searchValue;
-          });
-
-          if (matchesAllQueries) {
-            acc[id] = entry;
+          if (field === "anilist_id") {
+            return id === searchValue.toString();
           }
-          return acc;
-        }, {});
-      }
 
-      function handleUrlParams() {
-        if (!dataLoaded) return;
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const queries = [];
-
-        for (const [field, value] of urlParams.entries()) {
-          if (VALID_FIELDS.includes(field)) {
-            queries.push({ field, value });
+          if (Array.isArray(entry[field])) {
+            return entry[field].includes(searchValue);
           }
-        }
-
-        if (queries.length > 0) {
-          const result = queryData(queries);
-          if (result) {
-            document.body.innerHTML = `<pre>${JSON.stringify(
-              result,
-              null,
-              2
-            )}</pre>`;
-          }
-        }
-      }
-
-      function executeQuery() {
-        const fieldGroups = document.querySelectorAll(".field-group");
-        const queries = [];
-
-        fieldGroups.forEach((group) => {
-          const field = group.querySelector("select").value;
-          const value = group.querySelector("input").value;
-
-          if (field && value) {
-            queries.push({ field, value });
-          }
+          return entry[field] === searchValue;
         });
 
-        if (queries.length > 0) {
-          const result = queryData(queries);
-          document.getElementById("result").innerHTML = `<pre>${JSON.stringify(
-            result,
-            null,
-            2
-          )}</pre>`;
+        if (matchesAllQueries) {
+          acc[id] = entry;
+        }
+        return acc;
+      }, {});
+    }
+
+    function handleUrlParams() {
+      if (!dataLoaded) return;
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const queries = [];
+
+      for (const [field, value] of urlParams.entries()) {
+        if (VALID_FIELDS.includes(field)) {
+          queries.push({ field, value });
         }
       }
 
-      loadData();
-    </script>
-  </body>
+      if (queries.length > 0) {
+        const result = queryData(queries);
+        if (result) {
+          document.body.innerHTML = `<pre class="bg-light p-3 rounded">${JSON.stringify(result, null, 2)}</pre>`;
+        }
+      }
+    }
+
+    function executeQuery() {
+      const fieldGroups = document.querySelectorAll(".field-group");
+      const queries = [];
+
+      fieldGroups.forEach((group) => {
+        const field = group.querySelector("select").value;
+        const value = group.querySelector("input").value;
+
+        if (field && value) {
+          queries.push({ field, value });
+        }
+      });
+
+      if (queries.length > 0) {
+        const result = queryData(queries);
+        document.getElementById("result").innerHTML = `<pre class="bg-light p-3 rounded mb-0">${JSON.stringify(
+          result,
+          null,
+          2
+        )}</pre>`;
+      }
+    }
+
+    loadData();
+  </script>
+</body>
+
 </html>
