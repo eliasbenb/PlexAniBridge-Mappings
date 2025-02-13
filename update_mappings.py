@@ -309,7 +309,7 @@ class AnimeIDCollector:
             "type": "object",
             "patternProperties": {"^[0-9]+$": AniMap.model_json_schema()},
         }
-        with Path(self.base_dir / "mappings.schema.json").open("w") as f:
+        with Path(self.base_dir / "mappings.schema.json").open("w", newline="\n") as f:
             json.dump(schema, f, indent=2)
 
         for entry in self.temp_entries.values():
@@ -327,7 +327,7 @@ class AnimeIDCollector:
             output_dict[anilist_id] = sorted_entry
 
         output_path = self.base_dir / "mappings.json"
-        with output_path.open("w") as f:
+        with output_path.open("w", newline="\n") as f:
             json.dump(output_dict, f, indent=2)
 
     def update_readme(self) -> None:
@@ -350,7 +350,7 @@ class AnimeIDCollector:
                 f"Last generated at: {datetime.now(UTC).strftime('%B %d, %Y %I:%M %p')} UTC\n"
             )
 
-            with readme_path.open("w") as f:
+            with readme_path.open("w", newline="\n") as f:
                 f.writelines(data)
         else:
             self.logger.info("No Anime ID Changes Detected")
