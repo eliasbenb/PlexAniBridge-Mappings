@@ -28,7 +28,6 @@ except ImportError:
 class EpisodePattern(BaseModel):
     """Represents a parsed episode pattern with all its components."""
 
-    scope: str | None
     season: int
     start_episode: int | None
     end_episode: int | None
@@ -54,7 +53,6 @@ class EpisodePattern(BaseModel):
         """
         pattern_regex = r"""
             ^                           # Start of string
-            (?P<scope>[+-])?            # Optional +/- for scope
             s(?P<season>\d+):           # Season number (required)
             (?:                         # Non-capturing group for episode part
                 (?:e(?P<start>\d+))?    # Optional start episode
@@ -74,7 +72,6 @@ class EpisodePattern(BaseModel):
 
         groups = match.groupdict()
 
-        scope = groups["scope"]
         season = int(groups["season"])
 
         # Handle the case where we have a "before" episode number
@@ -90,7 +87,6 @@ class EpisodePattern(BaseModel):
         ratio = int(groups["ratio"]) if groups["ratio"] is not None else None
 
         return EpisodePattern(
-            scope=scope,
             season=season,
             start_episode=start_episode if start_episode is not None else 1,
             end_episode=end_episode,
@@ -112,14 +108,13 @@ class EpisodePattern(BaseModel):
         return self
 
     def __repr__(self):
-        scope = f"{self.scope}" if self.scope is not None else ""
         start = f"e{self.start_episode}" if self.start_episode is not None else ""
         end = f"-e{self.end_episode}" if self.end_episode is not None else ""
         ratio = f"|{self.ratio}" if self.ratio is not None else ""
-        return f"{scope}s{self.season}:{start}{end}{ratio}"
+        return f"s{self.season}:{start}{end}{ratio}"
 
     def __str__(self):
-        return f"{self.__class__.__name__}(scope={self.scope}, season={self.season}, start_episode={self.start_episode}, end_episode={self.end_episode}, ratio={self.ratio}, length={self.length})"
+        return f"{self.__class__.__name__}(season={self.season}, start_episode={self.start_episode}, end_episode={self.end_episode}, ratio={self.ratio}, length={self.length})"
 
 
 class AniMap(BaseModel):
@@ -265,7 +260,8 @@ class AnimeIDCollector:
                 tvdb_season = str(anime.xpath("@defaulttvdbseason")[0])
                 try:
                     if tvdb_season == "a":
-                        entry.tvdb_mappings = ["+s1:"]
+                        # entry.tvdb_mappings = ["s-1:"]
+                        continue
                     else:
                         entry.tvdb_mappings = [f"s{int(tvdb_season)}:"]
 
