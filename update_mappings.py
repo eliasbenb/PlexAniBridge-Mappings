@@ -436,6 +436,9 @@ class TVDBMapping(BaseModel):
             else:
                 continue
 
+            start = start if start > 0 else 1
+            end = end if end and end > 0 else None
+
             episode_ranges.append(cls(season=season, start=start, end=end, ratio=ratio))
 
         return episode_ranges
