@@ -275,6 +275,20 @@ class AnimeIDCollector:
         Consolidates all collected anime entries and saves them to mappings.json,
         organizing them by AniList ID.
         """
+
+        def order_dict(d: dict[str, Any]) -> dict[str, Any]:
+            return {k: sort_value(v) for k, v in sorted(d.items())}
+
+        def sort_value(v: Any) -> Any:
+            if isinstance(v, dict):
+                return order_dict(v)
+            elif isinstance(v, list):
+                return sorted(
+                    sort_value(item) if isinstance(item, (dict, list)) else item
+                    for item in v
+                )
+            return v
+
         schema = {
             "title": "Anime ID Mappings",
             "type": "object",
@@ -287,15 +301,12 @@ class AnimeIDCollector:
             if entry.anilist_id:
                 self.anime_entries[entry.anilist_id] = entry
 
-        output_dict: dict[int | str, dict[str, Any]] = {}
-        for anilist_id, entry in sorted(self.anime_entries.items()):
-            sorted_entry = {
-                k: v
-                for k, v in sorted(
-                    entry.model_dump(exclude={"anilist_id"}, exclude_none=True).items()
-                )
-            }
-            output_dict[anilist_id] = sorted_entry
+        output_dict = {
+            anilist_id: order_dict(
+                entry.model_dump(exclude={"anilist_id"}, exclude_none=True)
+            )
+            for anilist_id, entry in sorted(self.anime_entries.items())
+        }
 
         output_path = self.base_dir / "mappings.json"
         with output_path.open("w", newline="\n") as f:
