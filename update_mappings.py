@@ -161,13 +161,17 @@ class AnimeIDCollector:
                 elif "anilist.co" in source:
                     ids["anilist"] = int(source.partition("anime/")[2])
 
-            if ids["anidb"] and ids["anilist"] and ids["anidb"] in self.temp_entries:
-                entry = self.temp_entries[ids["anidb"]]
-                if ids["mal"]:
-                    entry.mal_id = ids["mal"]
-                entry.anilist_id = ids["anilist"]
+            if ids["anilist"]:
+                if ids["anidb"] and ids["anidb"] in self.temp_entries:
+                    entry = self.temp_entries[ids["anidb"]]
+                    del self.temp_entries[ids["anidb"]]
+                else:
+                    entry = AniMap(
+                        anidb_id=ids.get("anidb"),
+                        anilist_id=ids["anilist"],
+                        mal_id=ids.get("mal"),
+                    )
                 self.anime_entries[ids["anilist"]] = entry
-                del self.temp_entries[ids["anidb"]]
 
     def process_aggregations(self) -> None:
         """
@@ -524,6 +528,22 @@ class AniMap(BaseModel):
             res = TVDBMapping.from_string(pattern)
             if res is None:
                 raise ValueError(f"Invalid TVDB mapping pattern: {pattern}")
+
+        return self
+
+    @model_validator(mode="after")
+    def reduce_ids(self) -> Self:
+        """Reduce ID lists to single values if possible."""
+        id_fields = ["imdb_id", "mal_id", "tmdb_movie_id", "tmdb_show_id"]
+        updates = {}
+
+        for field in id_fields:
+            value = getattr(self, field)
+            if value is not None and isinstance(value, list) and len(value) == 1:
+                updates[field] = value[0]
+
+        if updates:
+            return self.model_copy(update=updates)
 
         return self
 
