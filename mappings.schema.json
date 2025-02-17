@@ -116,10 +116,10 @@
         "tvdb_mappings": {
           "anyOf": [
             {
-              "items": {
+              "additionalProperties": {
                 "type": "string"
               },
-              "type": "array"
+              "type": "object"
             },
             {
               "type": "null"
