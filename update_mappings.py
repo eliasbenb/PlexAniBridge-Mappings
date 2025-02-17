@@ -353,14 +353,6 @@ class AnimeIDCollector:
         self.logger.info("Anime IDs Collection Finished")
 
 
-class EpisodeRange(BaseModel):
-    """Model for a single episode range within a season."""
-
-    start: int = Field(default=1, gt=0)
-    end: int | None = Field(default=None, gt=0)
-    ratio: int = Field(default=1)
-
-
 class TVDBMapping(BaseModel):
     """Model for parsing and validating TVDB episode mapping patterns.
 
@@ -368,10 +360,12 @@ class TVDBMapping(BaseModel):
     """
 
     season: int = Field(ge=0)
-    ranges: list[EpisodeRange] = Field(default_factory=list)
+    start: int = Field(default=1, gt=0)
+    end: int | None = Field(default=None, gt=0)
+    ratio: int = Field(default=1)
 
     @classmethod
-    def from_string(cls, season: int, s: str) -> Self | None:
+    def from_string(cls, season: int, s: str) -> list[Self]:
         """Parse a string pattern into a TVDBMapping instance.
         Args:
             season (int): Season number
@@ -384,7 +378,7 @@ class TVDBMapping(BaseModel):
         Returns:
             Self | None: New TVDBMapping instance if pattern is valid, None otherwise
         """
-        RANGE_PATTERN = re.compile(
+        PATTERN = re.compile(
             r"""
             (?:^|,)
             (?:
@@ -394,17 +388,16 @@ class TVDBMapping(BaseModel):
                     e(?P<range_end>\d+)
                 )
                 |
+                (?P<is_open_ep_range_after>     # Open range after (e.g. e1-)
+                    e(?P<after_start>\d+)-(?=\||$|,)
+                )
+                |
                 (?P<is_single_ep>               # Single episode (e.g. e2)
-                    e(?P<single_ep>\d+)
-                    (?!-)
+                    e(?P<single_ep>\d+)(?!-)
                 )
                 |
                 (?P<is_open_ep_range_before>    # Open range before (e.g. -e5)
                     -e(?P<before_end>\d+)
-                )
-                |
-                (?P<is_open_ep_range_after>     # Open range after (e.g. e1-)
-                    e(?P<after_start>\d+)-
                 )
             )
             (?:\|(?P<ratio>-?\d+))?            # Optional ratio for each range
@@ -413,14 +406,14 @@ class TVDBMapping(BaseModel):
         )
 
         if not s:
-            return cls(season=season, ranges=[EpisodeRange(start=1, end=None, ratio=1)])
+            return [cls(season=season)]
 
-        episode_ranges = []
-        range_matches = list(RANGE_PATTERN.finditer(s))
+        range_matches = list(PATTERN.finditer(s))
 
         if not range_matches or any(m.end() < len(s) for m in range_matches[:-1]):
-            return None
+            return []
 
+        episode_ranges = []
         for match in range_matches:
             groups = match.groupdict()
             ratio = int(groups["ratio"]) if groups["ratio"] else 1
@@ -443,26 +436,25 @@ class TVDBMapping(BaseModel):
             else:
                 continue
 
-            episode_ranges.append(EpisodeRange(start=start, end=end, ratio=ratio))
+            episode_ranges.append(cls(season=season, start=start, end=end, ratio=ratio))
 
-        return cls(season=season, ranges=episode_ranges)
+        return episode_ranges
 
     def __str__(self) -> str:
-        """Convert the mapping back to its string representation."""
-        range_strs = []
-        for r in self.ranges:
-            if r.start == r.end:
-                range_str = f"e{r.start}"
-            elif r.end is None:
-                range_str = f"e{r.start}-"
-            else:
-                range_str = f"e{r.start}-e{r.end}"
+        season = f"S{self.season:02d}"
+        if self.start == 1 and self.end is None:
+            return season
+        result = f"{season}E{self.start:02d}"
+        return result + (
+            "+"
+            if self.end is None and self.start != 1
+            else f"-E{self.end:02d}"
+            if self.end and self.end != self.start
+            else ""
+        )
 
-            if r.ratio != 1:
-                range_str += f"|{r.ratio}"
-            range_strs.append(range_str)
-
-        return ",".join(range_strs) if range_strs else ""
+    def __hash__(self) -> int:
+        return hash(repr(self))
 
 
 class AniMap(BaseModel):
@@ -507,8 +499,8 @@ class AniMap(BaseModel):
 
         for season, s in self.tvdb_mappings.items():
             season = int(season.lstrip("s"))
-            res = TVDBMapping.from_string(season, s)
-            if res is None:
+            mappings = TVDBMapping.from_string(season, s)
+            if not mappings:
                 raise ValueError(f"Invalid TVDB mapping string: {s}")
 
         return self
