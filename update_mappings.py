@@ -149,31 +149,28 @@ class AnimeIDCollector:
             if "sources" not in anime:
                 continue
 
-            ids: dict[str, int | None] = {
-                "anidb": None,
-                "mal": None,
-                "anilist": None,
-            }
+            ids: dict[str, int] = {}
 
             for source in anime["sources"]:
                 if "anidb.net" in source:
-                    ids["anidb"] = int(source.partition("anime/")[2])
+                    ids["anidb_id"] = int(source.partition("anime/")[2])
                 elif "myanimelist" in source:
-                    ids["mal"] = int(source.partition("anime/")[2])
+                    ids["mal_id"] = int(source.partition("anime/")[2])
                 elif "anilist.co" in source:
-                    ids["anilist"] = int(source.partition("anime/")[2])
+                    ids["anilist_id"] = int(source.partition("anime/")[2])
 
-            if ids["anilist"]:
-                if ids["anidb"] and ids["anidb"] in self.temp_entries:
-                    entry = self.temp_entries[ids["anidb"]]
-                    del self.temp_entries[ids["anidb"]]
+            if "anilist_id" in ids:
+                if "anidb_id" in ids and ids["anidb_id"] in self.temp_entries:
+                    entry = self.temp_entries[ids["anidb_id"]]
+                    entry = entry.model_copy(update={**ids})
+                    self.temp_entries[ids["anidb_id"]] = entry
+                elif "anidb_id" in ids:
+                    entry = AniMap(**ids)
+                    self.temp_entries[ids["anidb_id"]] = entry
                 else:
-                    entry = AniMap(
-                        anidb_id=ids.get("anidb"),
-                        anilist_id=ids["anilist"],
-                        mal_id=ids.get("mal"),
-                    )
-                self.anime_entries[ids["anilist"]] = entry
+                    entry = AniMap(**ids)
+
+                self.anime_entries[ids["anilist_id"]] = entry
 
     def process_aggregations(self) -> None:
         """
