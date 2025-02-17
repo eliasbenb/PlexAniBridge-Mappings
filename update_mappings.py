@@ -6,7 +6,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Self
 
-from pydantic import BaseModel, Field, model_validator
+from pydantic import BaseModel, Field, field_validator
 
 if sys.version_info < (3, 11):
     print(
@@ -353,7 +353,7 @@ class AnimeIDCollector:
         self.logger.info("Anime IDs Collection Finished")
 
 
-class TVDBMapping(BaseModel):
+class TVDBMapping(BaseModel, validate_assignment=True):
     """Model for parsing and validating TVDB episode mapping patterns.
 
     Handles conversion between string patterns and episode mapping objects.
@@ -436,9 +436,6 @@ class TVDBMapping(BaseModel):
             else:
                 continue
 
-            start = start if start > 0 else 1
-            end = end if end and end > 0 else None
-
             episode_ranges.append(cls(season=season, start=start, end=end, ratio=ratio))
 
         return episode_ranges
@@ -484,29 +481,19 @@ class AniMap(BaseModel):
     tvdb_id: int | None = None
     tvdb_mappings: dict[str, str] | None = None
 
-    @model_validator(mode="after")
-    def id_validator(self) -> Self:
-        """Validate that at least one ID field is provided."""
-        if not any(
-            getattr(self, field) is not None
-            for field in self.model_fields
-            if field.endswith("_id")
-        ):
-            raise ValueError("At least one ID field must be provided")
-        return self
+    @field_validator("tvdb_mappings")
+    @classmethod
+    def validate_tvdb_mappings(cls, v: dict[str, str] | None) -> dict[str, str] | None:
+        if not v:
+            return v
 
-    @model_validator(mode="after")
-    def validate_tvdb_mappings(self) -> Self:
-        if not self.tvdb_mappings:
-            return self
-
-        for season, s in self.tvdb_mappings.items():
+        for season, s in v.items():
             season = int(season.lstrip("s"))
             mappings = TVDBMapping.from_string(season, s)
             if not mappings:
                 raise ValueError(f"Invalid TVDB mapping string: {s}")
 
-        return self
+        return v
 
     def model_dump(self, **kwargs) -> dict[str, Any]:
         """
