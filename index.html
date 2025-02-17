@@ -45,8 +45,7 @@
                 <div class="fw-bold mb-2">Fields</div>
                 <code class="bg-light p-2 rounded d-block">
                     "anilist_id" | "anidb_id" | "mal_id" | "imdb_id" |
-                    "tmdb_movie_id" | "tmdb_show_id" | "tvdb_id" | "tvdb_season" |
-                    "tvdb_epoffset"
+                    "tmdb_movie_id" | "tmdb_show_id" | "tvdb_id"
                   </code>
               </li>
               <li class="mb-4">
@@ -101,9 +100,7 @@
       "imdb_id",
       "tmdb_movie_id",
       "tmdb_show_id",
-      "tvdb_epoffset",
       "tvdb_id",
-      "tvdb_season",
     ];
 
     let animeData = null;
@@ -129,9 +126,7 @@
               <option value="imdb_id">IMDB ID</option>
               <option value="tmdb_movie_id">TMDB Movie ID</option>
               <option value="tmdb_show_id">TMDB Show ID</option>
-              <option value="tvdb_epoffset">TVDB Episode Offset</option>
               <option value="tvdb_id">TVDB ID</option>
-              <option value="tvdb_season">TVDB Season</option>
             </select>
           `;
 
@@ -172,7 +167,7 @@
       const examples = [
         `${baseUrl}?anilist_id=21234`,
         `${baseUrl}?imdb_id=tt7236034`,
-        `${baseUrl}?tvdb_id=65249&tvdb_season=1`,
+        `${baseUrl}?tvdb_id=65249`,
       ];
 
       document.getElementById("exampleQueries").textContent = examples.join("\n");
