@@ -6,7 +6,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Self
 
-from pydantic import BaseModel, field_validator, model_validator
+from pydantic import BaseModel, Field, model_validator
 
 if sys.version_info < (3, 11):
     print(
@@ -23,158 +23,6 @@ try:
 except ImportError:
     print("Requirements Error: Requirements are not installed")
     sys.exit(1)
-
-
-class EpisodePattern(BaseModel):
-    """Represents a parsed episode pattern with all its components."""
-
-    season: int
-    start_episode: int | None
-    end_episode: int | None
-    ratio: int | None
-
-    @property
-    def length(self) -> int | None:
-        """Return the number of episodes in the pattern."""
-        if self.end_episode is None:
-            return None
-        return self.end_episode - (self.start_episode or 1) + 1
-
-    @staticmethod
-    def parse(pattern: str) -> Self | None:
-        """
-        Parse an episode pattern string into its components.
-
-        Args:
-            pattern: A string like "s1:e1-e12|3" or "+s2:e1" or "-s1:e5|2"
-
-        Returns:
-            EpisodePattern object with parsed components or None if invalid
-        """
-        pattern_regex = r"""
-            ^                           # Start of string
-            s(?P<season>\d+):           # Season number (required)
-            (?:                         # Non-capturing group for episode part
-                (?:e(?P<start>\d+))?    # Optional start episode
-                (?:                     # Non-capturing group for end part
-                    -(?:e(?P<end>\d+))?     # Optional end episode with optional number
-                )?                          # End part is optional
-                |                       # OR
-                -e(?P<before>\d+)           # Single episode with leading dash
-            )?                          # Entire episode part is optional
-            (?:\|(?P<ratio>-?\d+))?     # Optional ratio with pipe
-            $                           # End of string
-        """
-
-        match = re.match(pattern_regex, pattern, re.VERBOSE)
-        if not match:
-            return None
-
-        groups = match.groupdict()
-
-        season = int(groups["season"])
-
-        # Handle the case where we have a "before" episode number
-        if groups["before"]:
-            end_episode = int(groups["before"])
-            start_episode = None
-        else:
-            start_episode = (
-                int(groups["start"]) if groups["start"] is not None else None
-            )
-            end_episode = int(groups["end"]) if groups["end"] is not None else None
-
-        ratio = int(groups["ratio"]) if groups["ratio"] is not None else None
-
-        return EpisodePattern(
-            season=season,
-            start_episode=start_episode if start_episode is not None else 1,
-            end_episode=end_episode,
-            ratio=ratio if ratio is not None else 1,
-        )
-
-    @model_validator(mode="after")
-    def validate_bounds(self):
-        """Validate that the episode bounds are correct."""
-        if self.start_episode is not None and self.end_episode is not None:
-            if self.start_episode > self.end_episode:
-                raise ValueError(
-                    "Start episode must be less than or equal to end episode"
-                )
-
-        if self.season < 0:
-            raise ValueError("Season number must be positive")
-
-        return self
-
-    def __repr__(self):
-        start = f"e{self.start_episode}" if self.start_episode is not None else ""
-        end = f"-e{self.end_episode}" if self.end_episode is not None else ""
-        ratio = f"|{self.ratio}" if self.ratio is not None else ""
-        return f"s{self.season}:{start}{end}{ratio}"
-
-    def __str__(self):
-        return f"{self.__class__.__name__}(season={self.season}, start_episode={self.start_episode}, end_episode={self.end_episode}, ratio={self.ratio}, length={self.length})"
-
-
-class AniMap(BaseModel):
-    """
-    Model representing an anime mapping.
-
-    Attributes:
-        anidb_id: Optional AniDB ID
-        anilist_id: Optional AniList ID
-        imdb_id: Optional IMDB ID(s)
-        mal_id: Optional MyAnimeList ID(s)
-        tmdb_movie_id: Optional TMDB movie ID
-        tmdb_show_id: Optional TMDB show ID
-        tvdb_id: Optional TVDB ID
-        tvdb_mappings: Optional list of TVDB mapping patterns
-    """
-
-    anidb_id: int | None = None
-    anilist_id: int | None = None
-    imdb_id: str | list[str] | None = None
-    mal_id: int | list[int] | None = None
-    tmdb_movie_id: int | list[int] | None = None
-    tmdb_show_id: int | list[int] | None = None
-    tvdb_id: int | None = None
-    tvdb_mappings: list[str] | None = None
-
-    @model_validator(mode="after")
-    def id_validator(self):
-        """Validate that at least one ID field is provided."""
-        if not any(
-            getattr(self, field) is not None
-            for field in self.model_fields
-            if field.endswith("_id")
-        ):
-            raise ValueError("At least one ID field must be provided")
-        return self
-
-    @field_validator("tvdb_mappings")
-    def validate_tvdb_mappings(cls, v: list[str] | None) -> list[str] | None:
-        """
-        Validate TVDB mapping patterns.
-
-        Args:
-            v: List of mapping patterns or None
-
-        Returns:
-            Validated list of mapping patterns or None
-
-        Raises:
-            ValueError: If any mapping pattern is invalid
-        """
-        if v is None:
-            return None
-
-        for pattern in v:
-            res = EpisodePattern.parse(pattern)
-            if res is None:
-                raise ValueError(f"Invalid TVDB mapping pattern: {pattern}")
-
-        return v
 
 
 class AnimeIDCollector:
@@ -223,7 +71,7 @@ class AnimeIDCollector:
             as_bytes: Whether to return the response as bytes
 
         Returns:
-            Union[str, bytes]: Response content
+            str | bytes: Response content
 
         Raises:
             requests.RequestException: If the request fails
@@ -493,6 +341,191 @@ class AnimeIDCollector:
             sys.exit(1)
 
         self.logger.info("Anime IDs Collection Finished")
+
+
+class TVDBMapping(BaseModel):
+    """Model for parsing and validating TVDB episode mapping patterns.
+
+    Handles conversion between string patterns and episode mapping objects.
+    """
+
+    season: int = Field(ge=0)
+    start: int = Field(default=1, ge=0)
+    end: int | None = Field(default=None, ge=0)
+    ratio: int = Field(default=1)
+
+    @classmethod
+    def from_string(cls, s: str) -> Self | None:
+        """Parse a string pattern into a TVDBMapping instance.
+
+        Args:
+            s (str): Pattern string in format 's{season}:e{start}-e{end}|{ratio}'
+                    Example: 's1:e1-e12|2' or 's1:'
+
+        Returns:
+            Self | None: New TVDBMapping instance if pattern is valid, None otherwise
+        """
+        PATTERN = re.compile(
+            r"""
+            ^
+            s(?P<season>\d+):                   # Season number (required)
+            (?:
+                (?P<is_ep_range>                # Episode range (e.g. s1:e1-e4)
+                    e(?P<range_start>\d+)
+                    -
+                    e(?P<range_end>\d+)
+                )
+                |
+                (?P<is_single_ep>               # Single episode (e.g. s1:e2)
+                    e(?P<single_ep>\d+)
+                    (?!-)
+                )
+                |
+                (?P<is_open_ep_range_before>    # Open range before (e.g. s1:-e5)
+                    -e(?P<before_end>\d+)
+                )
+                |
+                (?P<is_open_ep_range_after>     # Open range after (e.g. s1:e1-)
+                    e(?P<after_start>\d+)-
+                )
+            )?
+            (?:\|(?P<ratio>-?\d+))?             # Optional ratio for each episode
+            $
+            """,
+            re.VERBOSE,
+        )
+
+        match = PATTERN.match(s)
+        if not match:
+            return None
+
+        groups = match.groupdict()
+
+        season = int(groups["season"])
+        ratio = int(groups["ratio"]) if groups["ratio"] else 1
+
+        # Explicit start and end episode range
+        if groups["is_ep_range"]:
+            start = int(groups["range_start"])
+            end = int(groups["range_end"])
+        # Single episode
+        elif groups["is_single_ep"]:
+            start = end = int(groups["single_ep"])
+        # Open range with unknown start and explicit end
+        elif groups["is_open_ep_range_before"]:
+            start = 1
+            end = int(groups["before_end"])
+        # Open range with explicit start and unknown end
+        elif groups["is_open_ep_range_after"]:
+            start = int(groups["after_start"])
+            end = None
+        # Open range starting from episode 1 (full season)
+        else:
+            start = 1
+            end = None
+
+        return cls(
+            season=season,
+            start=start,
+            end=end,
+            ratio=ratio,
+        )
+
+    @model_validator(mode="after")
+    def validate_range(self) -> Self:
+        """Validate that the episode range is valid."""
+        if self.end is not None and self.start > self.end:
+            raise ValueError("Start episode must be less than or equal to end episode")
+        return self
+
+    def __contains__(self, episode: tuple[int, int]) -> bool:
+        """Check if a season/episode tuple falls within this mapping's range.
+
+        Args:
+            episode (tuple[int, int]): Tuple of (season_number, episode_number)
+
+        Returns:
+            bool: True if episode is within mapping range, False otherwise
+        """
+        if self.season != episode[0]:
+            return False
+        if self.end is not None:
+            return self.start <= episode[1] <= self.end
+        return self.start <= episode[1]
+
+    def __repr__(self) -> str:
+        """Convert the mapping object to its string representation.
+
+        Returns:
+            str: String in format 's{season}:e{start}|{ratio}'
+        """
+        return f"s{self.season}:e{self.start}" + (
+            f"|{self.ratio}" if self.ratio is not None else ""
+        )
+
+    def __str__(self) -> str:
+        season = f"S{self.season:02d}"
+        if self.start == 1 and self.end is None:
+            return season
+        result = f"{season}E{self.start:02d}"
+        return result + (
+            "+"
+            if self.end is None and self.start != 1
+            else f"-E{self.end:02d}"
+            if self.end and self.end != self.start
+            else ""
+        )
+
+    def __hash__(self) -> int:
+        return hash(repr(self))
+
+
+class AniMap(BaseModel):
+    """
+    Model representing an anime mapping.
+
+    Attributes:
+        anidb_id: Optional AniDB ID
+        anilist_id: Optional AniList ID
+        imdb_id: Optional IMDB ID(s)
+        mal_id: Optional MyAnimeList ID(s)
+        tmdb_movie_id: Optional TMDB movie ID
+        tmdb_show_id: Optional TMDB show ID
+        tvdb_id: Optional TVDB ID
+        tvdb_mappings: Optional list of TVDB mapping patterns
+    """
+
+    anidb_id: int | None = None
+    anilist_id: int | None = None
+    imdb_id: str | list[str] | None = None
+    mal_id: int | list[int] | None = None
+    tmdb_movie_id: int | list[int] | None = None
+    tmdb_show_id: int | list[int] | None = None
+    tvdb_id: int | None = None
+    tvdb_mappings: list[str] | None = None
+
+    @model_validator(mode="after")
+    def id_validator(self) -> Self:
+        """Validate that at least one ID field is provided."""
+        if not any(
+            getattr(self, field) is not None
+            for field in self.model_fields
+            if field.endswith("_id")
+        ):
+            raise ValueError("At least one ID field must be provided")
+        return self
+
+    @model_validator(mode="after")
+    def validate_tvdb_mappings(self) -> Self:
+        if not self.tvdb_mappings:
+            return self
+
+        for pattern in self.tvdb_mappings:
+            res = TVDBMapping.from_string(pattern)
+            if res is None:
+                raise ValueError(f"Invalid TVDB mapping pattern: {pattern}")
+
+        return self
 
 
 if __name__ == "__main__":
