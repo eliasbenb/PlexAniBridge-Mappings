@@ -108,14 +108,16 @@ class AnimeIDCollector:
                 tvdb_season = str(anime.xpath("@defaulttvdbseason")[0])
                 try:
                     if tvdb_season == "a":
-                        # entry.tvdb_mappings = ["s-1:"]
+                        # TODO: Handle full series mappings
                         continue
                     else:
-                        entry.tvdb_mappings = [f"s{int(tvdb_season)}:"]
+                        entry.tvdb_mappings = {f"s{tvdb_season}": ""}
 
                     episode_offset = int(anime.xpath("@episodeoffset")[0])
                     if episode_offset:
-                        entry.tvdb_mappings[0] += f"e{episode_offset + 1}-"
+                        entry.tvdb_mappings[f"s{tvdb_season}"] = (
+                            f"e{episode_offset + 1}-"
+                        )
                 except (ValueError, IndexError):
                     pass
 
@@ -250,13 +252,17 @@ class AnimeIDCollector:
             if anilist_id_str.startswith("$"):
                 continue
             anilist_id = int(anilist_id_str)
-            if not all(key in AniMap.model_fields for key in ids.keys()):
-                for key in ids.keys():
-                    if key not in AniMap.model_fields:
-                        self.logger.warning(
-                            f"Unknown field '{key}' in edit for ID {anilist_id}"
-                        )
+
+            skip_entry = False
+            for key in ids.keys():
+                if key not in AniMap.model_fields:
+                    self.logger.warning(
+                        f"Unknown field '{key}' in edit for ID {anilist_id}"
+                    )
+                    skip_entry = True
+            if skip_entry:
                 continue
+
             if anilist_id in self.anime_entries:
                 existing_entry = self.anime_entries[anilist_id]
                 for key, value in ids.items():
@@ -347,6 +353,14 @@ class AnimeIDCollector:
         self.logger.info("Anime IDs Collection Finished")
 
 
+class EpisodeRange(BaseModel):
+    """Model for a single episode range within a season."""
+
+    start: int = Field(default=1, gt=0)
+    end: int | None = Field(default=None, gt=0)
+    ratio: int = Field(default=1)
+
+
 class TVDBMapping(BaseModel):
     """Model for parsing and validating TVDB episode mapping patterns.
 
@@ -354,134 +368,101 @@ class TVDBMapping(BaseModel):
     """
 
     season: int = Field(ge=0)
-    start: int = Field(default=1, ge=0)
-    end: int | None = Field(default=None, ge=0)
-    ratio: int = Field(default=1)
+    ranges: list[EpisodeRange] = Field(default_factory=list)
 
     @classmethod
-    def from_string(cls, s: str) -> Self | None:
+    def from_string(cls, season: int, s: str) -> Self | None:
         """Parse a string pattern into a TVDBMapping instance.
-
         Args:
-            s (str): Pattern string in format 's{season}:e{start}-e{end}|{ratio}'
-                    Example: 's1:e1-e12|2' or 's1:'
-
+            season (int): Season number
+            s (str): Pattern string in format 'e{start}-e{end}|{ratio},e{start2}-e{end2}|{ratio2}'
+                    Examples:
+                    - 'e1-e12|2'
+                    - 'e12-,e2'
+                    - 'e1-e5,e8-e10'
+                    - '' (empty string for full season)
         Returns:
             Self | None: New TVDBMapping instance if pattern is valid, None otherwise
         """
-        PATTERN = re.compile(
+        RANGE_PATTERN = re.compile(
             r"""
-            ^
-            s(?P<season>\d+):                   # Season number (required)
+            (?:^|,)
             (?:
-                (?P<is_ep_range>                # Episode range (e.g. s1:e1-e4)
+                (?P<is_ep_range>                # Episode range (e.g. e1-e4)
                     e(?P<range_start>\d+)
                     -
                     e(?P<range_end>\d+)
                 )
                 |
-                (?P<is_single_ep>               # Single episode (e.g. s1:e2)
+                (?P<is_single_ep>               # Single episode (e.g. e2)
                     e(?P<single_ep>\d+)
                     (?!-)
                 )
                 |
-                (?P<is_open_ep_range_before>    # Open range before (e.g. s1:-e5)
+                (?P<is_open_ep_range_before>    # Open range before (e.g. -e5)
                     -e(?P<before_end>\d+)
                 )
                 |
-                (?P<is_open_ep_range_after>     # Open range after (e.g. s1:e1-)
+                (?P<is_open_ep_range_after>     # Open range after (e.g. e1-)
                     e(?P<after_start>\d+)-
                 )
-            )?
-            (?:\|(?P<ratio>-?\d+))?             # Optional ratio for each episode
-            $
+            )
+            (?:\|(?P<ratio>-?\d+))?            # Optional ratio for each range
             """,
             re.VERBOSE,
         )
 
-        match = PATTERN.match(s)
-        if not match:
+        if not s:
+            return cls(season=season, ranges=[EpisodeRange(start=1, end=None, ratio=1)])
+
+        episode_ranges = []
+        range_matches = list(RANGE_PATTERN.finditer(s))
+
+        if not range_matches or any(m.end() < len(s) for m in range_matches[:-1]):
             return None
 
-        groups = match.groupdict()
+        for match in range_matches:
+            groups = match.groupdict()
+            ratio = int(groups["ratio"]) if groups["ratio"] else 1
 
-        season = int(groups["season"])
-        ratio = int(groups["ratio"]) if groups["ratio"] else 1
+            # Explicit start and end episode range
+            if groups["is_ep_range"]:
+                start = int(groups["range_start"])
+                end = int(groups["range_end"])
+            # Single episode
+            elif groups["is_single_ep"]:
+                start = end = int(groups["single_ep"])
+            # Open range with unknown start and explicit end
+            elif groups["is_open_ep_range_before"]:
+                start = 1
+                end = int(groups["before_end"])
+            # Open range with explicit start and unknown end
+            elif groups["is_open_ep_range_after"]:
+                start = int(groups["after_start"])
+                end = None
+            else:
+                continue
 
-        # Explicit start and end episode range
-        if groups["is_ep_range"]:
-            start = int(groups["range_start"])
-            end = int(groups["range_end"])
-        # Single episode
-        elif groups["is_single_ep"]:
-            start = end = int(groups["single_ep"])
-        # Open range with unknown start and explicit end
-        elif groups["is_open_ep_range_before"]:
-            start = 1
-            end = int(groups["before_end"])
-        # Open range with explicit start and unknown end
-        elif groups["is_open_ep_range_after"]:
-            start = int(groups["after_start"])
-            end = None
-        # Open range starting from episode 1 (full season)
-        else:
-            start = 1
-            end = None
+            episode_ranges.append(EpisodeRange(start=start, end=end, ratio=ratio))
 
-        return cls(
-            season=season,
-            start=start,
-            end=end,
-            ratio=ratio,
-        )
-
-    @model_validator(mode="after")
-    def validate_range(self) -> Self:
-        """Validate that the episode range is valid."""
-        if self.end is not None and self.start > self.end:
-            raise ValueError("Start episode must be less than or equal to end episode")
-        return self
-
-    def __contains__(self, episode: tuple[int, int]) -> bool:
-        """Check if a season/episode tuple falls within this mapping's range.
-
-        Args:
-            episode (tuple[int, int]): Tuple of (season_number, episode_number)
-
-        Returns:
-            bool: True if episode is within mapping range, False otherwise
-        """
-        if self.season != episode[0]:
-            return False
-        if self.end is not None:
-            return self.start <= episode[1] <= self.end
-        return self.start <= episode[1]
-
-    def __repr__(self) -> str:
-        """Convert the mapping object to its string representation.
-
-        Returns:
-            str: String in format 's{season}:e{start}|{ratio}'
-        """
-        return f"s{self.season}:e{self.start}" + (
-            f"|{self.ratio}" if self.ratio is not None else ""
-        )
+        return cls(season=season, ranges=episode_ranges)
 
     def __str__(self) -> str:
-        season = f"S{self.season:02d}"
-        if self.start == 1 and self.end is None:
-            return season
-        result = f"{season}E{self.start:02d}"
-        return result + (
-            "+"
-            if self.end is None and self.start != 1
-            else f"-E{self.end:02d}"
-            if self.end and self.end != self.start
-            else ""
-        )
+        """Convert the mapping back to its string representation."""
+        range_strs = []
+        for r in self.ranges:
+            if r.start == r.end:
+                range_str = f"e{r.start}"
+            elif r.end is None:
+                range_str = f"e{r.start}-"
+            else:
+                range_str = f"e{r.start}-e{r.end}"
 
-    def __hash__(self) -> int:
-        return hash(repr(self))
+            if r.ratio != 1:
+                range_str += f"|{r.ratio}"
+            range_strs.append(range_str)
+
+        return ",".join(range_strs) if range_strs else ""
 
 
 class AniMap(BaseModel):
@@ -506,7 +487,7 @@ class AniMap(BaseModel):
     tmdb_movie_id: int | list[int] | None = None
     tmdb_show_id: int | list[int] | None = None
     tvdb_id: int | None = None
-    tvdb_mappings: list[str] | None = None
+    tvdb_mappings: dict[str, str] | None = None
 
     @model_validator(mode="after")
     def id_validator(self) -> Self:
@@ -524,10 +505,11 @@ class AniMap(BaseModel):
         if not self.tvdb_mappings:
             return self
 
-        for pattern in self.tvdb_mappings:
-            res = TVDBMapping.from_string(pattern)
+        for season, s in self.tvdb_mappings.items():
+            season = int(season.lstrip("s"))
+            res = TVDBMapping.from_string(season, s)
             if res is None:
-                raise ValueError(f"Invalid TVDB mapping pattern: {pattern}")
+                raise ValueError(f"Invalid TVDB mapping string: {s}")
 
         return self
 
