@@ -188,30 +188,30 @@ class AnimeIDCollector:
 
         for anidb_id_str, anime in content["animes"].items():
             anidb_id = int(anidb_id_str)
-
-            entry = next(
-                (
-                    data
-                    for data in self.anime_entries.values()
-                    if data.anidb_id == anidb_id
-                ),
-                self.temp_entries.get(anidb_id),
-            )
+            entry = self.temp_entries.get(anidb_id)
 
             if not entry:
                 continue
 
             resources = anime["resources"]
 
-            if "IMDB" in resources and not entry.imdb_id:
-                entry.imdb_id = (
-                    resources["IMDB"][0]
-                    if len(resources["IMDB"]) == 1
-                    else resources["IMDB"]
+            if "IMDB" in resources:
+                existing_imdb = (
+                    [entry.imdb_id]
+                    if isinstance(entry.imdb_id, str)
+                    else (entry.imdb_id or [])
                 )
+                entry.imdb_id = list(set(existing_imdb) | set(resources["IMDB"]))
 
-            if "MAL" in resources and not entry.mal_id:
-                entry.mal_id = [int(id) for id in resources["MAL"]]
+            if "MAL" in resources:
+                existing_mal = (
+                    [entry.mal_id]
+                    if isinstance(entry.mal_id, int)
+                    else (entry.mal_id or [])
+                )
+                entry.mal_id = list(
+                    set(existing_mal) | set(int(mid) for mid in resources["MAL"])
+                )
 
             if "TMDB" in resources:
                 tv_ids = [
