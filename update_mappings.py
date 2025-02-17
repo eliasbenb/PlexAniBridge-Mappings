@@ -508,21 +508,19 @@ class AniMap(BaseModel):
 
         return self
 
-    @model_validator(mode="after")
-    def reduce_ids(self) -> Self:
-        """Reduce ID lists to single values if possible."""
-        id_fields = ["imdb_id", "mal_id", "tmdb_movie_id", "tmdb_show_id"]
-        updates = {}
+    def model_dump(self, **kwargs) -> dict[str, Any]:
+        """
+        Dumps the model to a dictionary, flattening single-item lists to scalar values.
+        """
+        data = super().model_dump(**kwargs)
 
-        for field in id_fields:
-            value = getattr(self, field)
+        for key, value in data.items():
+            if not key.endswith("_id"):
+                continue
             if value is not None and isinstance(value, list) and len(value) == 1:
-                updates[field] = value[0]
+                data[key] = value[0]
 
-        if updates:
-            return self.model_copy(update=updates)
-
-        return self
+        return data
 
 
 if __name__ == "__main__":
