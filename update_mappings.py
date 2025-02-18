@@ -117,7 +117,7 @@ class AnimeIDCollector:
                         entry.tvdb_mappings = {f"s{tvdb_season}": ""}
 
                     episode_offset = int(anime.xpath("@episodeoffset")[0])
-                    if episode_offset:
+                    if episode_offset >= 0:
                         entry.tvdb_mappings[f"s{tvdb_season}"] = (
                             f"e{episode_offset + 1}-"
                         )
