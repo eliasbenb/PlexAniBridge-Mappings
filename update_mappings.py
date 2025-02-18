@@ -34,6 +34,9 @@ class AnimeIDCollector:
     and saves it to a JSON file.
     """
 
+    SCHEMA_VERSION = "v2"
+    SCHEMA_URL = f"https://raw.githubusercontent.com/eliasbenb/PlexAniBridge-Mappings/{SCHEMA_VERSION}/mappings.schema.json"
+
     def __init__(self) -> None:
         """Initialize the AnimeIDCollector with necessary attributes and setup."""
         self.base_dir: Path = Path(__file__).parent.resolve()
@@ -276,18 +279,14 @@ class AnimeIDCollector:
         organizing them by AniList ID.
         """
 
-        def order_dict(d: dict[str, Any]) -> dict[str, Any]:
-            return {k: sort_value(v) for k, v in sorted(d.items())}
-
         def sort_value(v: Any) -> Any:
-            if isinstance(v, dict):
-                return order_dict(v)
-            elif isinstance(v, list):
-                return sorted(
-                    sort_value(item) if isinstance(item, (dict, list)) else item
-                    for item in v
-                )
-            return v
+            match v:
+                case dict():
+                    return {k: sort_value(v) for k, v in sorted(v.items())}
+                case list():
+                    return sorted(map(sort_value, v))
+                case _:
+                    return v
 
         schema = {
             "title": "Anime ID Mappings",
@@ -297,12 +296,17 @@ class AnimeIDCollector:
         with Path(self.base_dir / "mappings.schema.json").open("w", newline="\n") as f:
             json.dump(schema, f, indent=2)
 
-        for entry in self.temp_entries.values():
-            if entry.anilist_id:
-                self.anime_entries[entry.anilist_id] = entry
+        if self.temp_entries:
+            self.anime_entries.update(
+                {
+                    entry.anilist_id: entry
+                    for entry in self.temp_entries.values()
+                    if entry.anilist_id
+                }
+            )
 
         output_dict = {
-            anilist_id: order_dict(
+            str(anilist_id): sort_value(
                 entry.model_dump(exclude={"anilist_id"}, exclude_none=True)
             )
             for anilist_id, entry in sorted(self.anime_entries.items())
@@ -311,6 +315,22 @@ class AnimeIDCollector:
         output_path = self.base_dir / "mappings.json"
         with output_path.open("w", newline="\n") as f:
             json.dump(output_dict, f, indent=2)
+
+        edits_path = self.base_dir / "mappings.edits.json"
+        if edits_path.exists():
+            logging.info("Ordering mappings.edits.json keys and values")
+            with edits_path.open("r") as f:
+                edits = json.load(f)
+                schema_url = edits.pop("$schema", None)
+                edits = {
+                    str(k): sort_value(v)
+                    for k, v in sorted((int(k), v) for k, v in edits.items())
+                }
+                if schema_url:
+                    edits = {"$schema": schema_url, **edits}
+
+            with edits_path.open("w", newline="\n") as f:
+                json.dump(edits, f, indent=2)
 
     def update_readme(self) -> None:
         """
