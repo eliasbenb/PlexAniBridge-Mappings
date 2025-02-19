@@ -45,7 +45,7 @@
                 <div class="fw-bold mb-2">Fields</div>
                 <code class="bg-light p-2 rounded d-block">
                     "anilist_id" | "anidb_id" | "mal_id" | "imdb_id" |
-                    "tmdb_movie_id" | "tmdb_show_id" | "tvdb_id"
+                    "tmdb_movie_id" | "tmdb_show_id" | "tvdb_id" | "tvdb_season"
                   </code>
               </li>
               <li class="mb-4">
@@ -84,6 +84,9 @@
               <button onclick="addQueryField()" class="btn btn-secondary flex-grow-1">Add Field</button>
             </div>
             <div id="result" class="overflow-auto" style="max-height: 400px;"></div>
+            <div id="resultLength" class="text-muted text-end mt-2" style="display: none;">
+              <small>Results: <span id="resultCount">0</span></small>
+            </div>
           </div>
         </div>
       </div>
@@ -101,6 +104,7 @@
       "tmdb_movie_id",
       "tmdb_show_id",
       "tvdb_id",
+      "tvdb_season",
     ];
 
     let animeData = null;
@@ -127,6 +131,7 @@
               <option value="tmdb_movie_id">TMDB Movie ID</option>
               <option value="tmdb_show_id">TMDB Show ID</option>
               <option value="tvdb_id">TVDB ID</option>
+              <option value="tvdb_season">TVDB Season</option>
             </select>
           `;
 
@@ -167,7 +172,7 @@
       const examples = [
         `${baseUrl}?anilist_id=21234`,
         `${baseUrl}?imdb_id=tt7236034`,
-        `${baseUrl}?tvdb_id=65249`,
+        `${baseUrl}?tvdb_id=65249&tvdb_season=1`,
       ];
 
       document.getElementById("exampleQueries").textContent = examples.join("\n");
@@ -176,21 +181,35 @@
     function queryData(queries) {
       if (!animeData) return null;
 
-      return Object.entries(animeData).reduce((acc, [id, entry]) => {
-        const matchesAllQueries = queries.every(({ field, value }) => {
+      const anilistQuery = queries.find(q => q.field === 'anilist_id');
+      if (anilistQuery) {
+        const entry = animeData[anilistQuery.value];
+        if (!entry) return {};
+
+        const otherQueries = queries.filter(q => q.field !== 'anilist_id');
+        return otherQueries.every(({ field, value }) => {
+          if (field === 'tvdb_season') {
+            return entry.tvdb_mappings?.[`s${value}`] !== undefined;
+          }
+
           const searchValue = isNaN(value) ? value : Number(value);
+          return Array.isArray(entry[field]) ?
+            entry[field].includes(searchValue) :
+            entry[field] === searchValue;
+        }) ? { [anilistQuery.value]: entry } : {};
+      }
 
-          if (field === "anilist_id") {
-            return id === searchValue.toString();
+      return Object.entries(animeData).reduce((acc, [id, entry]) => {
+        if (queries.every(({ field, value }) => {
+          if (field === 'tvdb_season') {
+            return entry.tvdb_mappings?.[`s${value}`] !== undefined;
           }
 
-          if (Array.isArray(entry[field])) {
-            return entry[field].includes(searchValue);
-          }
-          return entry[field] === searchValue;
-        });
-
-        if (matchesAllQueries) {
+          const searchValue = isNaN(value) ? value : Number(value);
+          return Array.isArray(entry[field]) ?
+            entry[field].includes(searchValue) :
+            entry[field] === searchValue;
+        })) {
           acc[id] = entry;
         }
         return acc;
@@ -237,6 +256,11 @@
           null,
           2
         )}</pre>`;
+        document.getElementById("resultCount").textContent = Object.keys(result).length;
+        document.getElementById("resultLength").style.display = "block";
+      } else {
+        document.getElementById("result").innerHTML = "";
+        document.getElementById("resultLength").style.display = "none";
       }
     }
 
