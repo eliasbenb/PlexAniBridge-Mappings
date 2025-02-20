@@ -266,12 +266,9 @@ class AnimeIDCollector:
             if anilist_id in self.anime_entries:
                 existing_entry = self.anime_entries[anilist_id]
                 for key, value in fields.items():
-                    if key == "tvdb_mappings":
-                        if not existing_entry.tvdb_mappings:
-                            existing_entry.tvdb_mappings = {}
-                        existing_entry.tvdb_mappings.update(value)
-                    else:
-                        setattr(existing_entry, key, value)
+                    if key == "tvdb_mappings" and value:
+                        value = {**(existing_entry.tvdb_mappings or {}), **value}
+                    setattr(existing_entry, key, value)
             else:
                 entry = AniMap(anilist_id=anilist_id, **fields)
                 self.anime_entries[anilist_id] = entry
@@ -323,7 +320,6 @@ class AnimeIDCollector:
 
         edits_path = self.base_dir / "mappings.edits.json"
         if edits_path.exists():
-            logging.info("Ordering mappings.edits.json keys and values")
             with edits_path.open("r") as f:
                 edits = json.load(f)
                 schema_url = edits.pop("$schema", None)
@@ -455,9 +451,6 @@ class TVDBMapping(BaseModel, validate_assignment=True):
             return [cls(season=season)]
 
         range_matches = list(PATTERN.finditer(s))
-
-        if not range_matches or any(m.end() < len(s) for m in range_matches[:-1]):
-            return []
 
         episode_ranges = []
         for match in range_matches:
