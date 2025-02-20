@@ -246,15 +246,15 @@ class AnimeIDCollector:
             return
 
         with edits_path.open("r") as f:
-            edits: dict[str, Any] = json.load(f)
+            edits: dict[str, dict[str, Any]] = json.load(f)
 
-        for anilist_id_str, ids in edits.items():
+        for anilist_id_str, fields in edits.items():
             if anilist_id_str.startswith("$"):
                 continue
             anilist_id = int(anilist_id_str)
 
             skip_entry = False
-            for key in ids.keys():
+            for key in fields.keys():
                 if key not in AniMap.model_fields:
                     self.logger.warning(
                         f"Unknown field '{key}' in edit for ID {anilist_id}"
@@ -265,10 +265,15 @@ class AnimeIDCollector:
 
             if anilist_id in self.anime_entries:
                 existing_entry = self.anime_entries[anilist_id]
-                for key, value in ids.items():
-                    setattr(existing_entry, key, value)
+                for key, value in fields.items():
+                    if key == "tvdb_mappings":
+                        if not existing_entry.tvdb_mappings:
+                            existing_entry.tvdb_mappings = {}
+                        existing_entry.tvdb_mappings.update(value)
+                    else:
+                        setattr(existing_entry, key, value)
             else:
-                entry = AniMap(anilist_id=anilist_id, **ids)
+                entry = AniMap(anilist_id=anilist_id, **fields)
                 self.anime_entries[anilist_id] = entry
 
     def save_results(self) -> None:
