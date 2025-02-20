@@ -6,7 +6,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Self
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 if sys.version_info < (3, 11):
     print(
@@ -397,6 +397,19 @@ class TVDBMapping(BaseModel, validate_assignment=True):
     end: int | None = Field(default=None, gt=0)
     ratio: int = Field(default=1)
 
+    @staticmethod
+    def check_overlap(ranges: list["TVDBMapping"]) -> bool:
+        """Check if any episode ranges overlap."""
+        if len(ranges) <= 1:
+            return False
+        sorted_ranges = sorted(
+            ranges, key=lambda x: (x.start, float("inf") if x.end is None else x.end)
+        )
+        return any(
+            curr.end is None or curr.end >= next_range.start
+            for curr, next_range in zip(sorted_ranges, sorted_ranges[1:])
+        )
+
     @classmethod
     def from_string(cls, season: int, s: str) -> list[Self]:
         """Parse a string pattern into a TVDBMapping instance.
@@ -489,8 +502,23 @@ class TVDBMapping(BaseModel, validate_assignment=True):
     def __hash__(self) -> int:
         return hash(repr(self))
 
+    @model_validator(mode="after")
+    def validate_range(self) -> Self:
+        if self.ratio == 0:
+            raise ValueError("Ratio must not be zero")
+        if self.end is not None:
+            if self.start > self.end:
+                raise ValueError(
+                    "Start episode must be less than or equal to end episode"
+                )
+            if self.ratio > 0 and (self.end - self.start + 1) % self.ratio != 0:
+                raise ValueError(
+                    "A positive ratio must divide the episode range evenly"
+                )
+        return self
 
-class AniMap(BaseModel):
+
+class AniMap(BaseModel, validate_assignment=True):
     """
     Model representing an anime mapping.
 
@@ -520,12 +548,16 @@ class AniMap(BaseModel):
         if not v:
             return v
 
-        for season, s in v.items():
-            season = int(season.lstrip("s"))
-            mappings = TVDBMapping.from_string(season, s)
+        season_groups = {}
+        for season_str, mapping_str in v.items():
+            season = int(season_str.lstrip("s"))
+            mappings = TVDBMapping.from_string(season, mapping_str)
             if not mappings:
-                raise ValueError(f"Invalid TVDB mapping string: {s}")
+                raise ValueError(f"Invalid mapping: {mapping_str}")
+            season_groups.setdefault(season, []).extend(mappings)
 
+        if any(TVDBMapping.check_overlap(maps) for maps in season_groups.values()):
+            raise ValueError("Overlapping episode ranges detected")
         return v
 
     def model_dump(self, **kwargs) -> dict[str, Any]:
