@@ -94,8 +94,13 @@ def update_anilist_counts(wanted_anilist: list[int | str]):
         for k, v in data.items():
             episode_counts_anilist[k.lstrip("a")] = v.get("episodes")
 
+    sorted_episode_counts_anilist = {
+        k: episode_counts_anilist[k]
+        for k in sorted(episode_counts_anilist.keys(), key=lambda x: int(x))
+    }
+
     with Path("data/anilist_episode_counts.json").open("w", newline="\n") as f:
-        json.dump(episode_counts_anilist, f, indent=2)
+        json.dump(sorted_episode_counts_anilist, f, indent=2)
 
     print("AniList episode counts updated successfully!")
     return episode_counts_anilist
@@ -119,8 +124,18 @@ def update_tvdb_counts(wanted_tvdb):
             tvdb_id, counts = future.result()
             episode_counts_tvdb[tvdb_id] = counts
 
+    sorted_episode_counts_tvdb = {
+        tvdb_id: {
+            int(season): count
+            for season, count in sorted(
+                episode_counts_tvdb[tvdb_id].items(), key=lambda x: int(x[0])
+            )
+        }
+        for tvdb_id in sorted(episode_counts_tvdb.keys(), key=lambda x: int(x))
+    }
+
     with Path("data/tvdb_episode_counts.json").open("w", newline="\n") as f:
-        json.dump(episode_counts_tvdb, f, indent=2)
+        json.dump(sorted_episode_counts_tvdb, f, indent=2)
 
     print("TVDB episode counts updated successfully!")
     return episode_counts_tvdb
