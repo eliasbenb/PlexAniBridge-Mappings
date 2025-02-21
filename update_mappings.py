@@ -284,7 +284,20 @@ class AnimeIDCollector:
         def sort_value(v: Any) -> Any:
             match v:
                 case dict():
-                    return {k: sort_value(v) for k, v in sorted(v.items())}
+
+                    def key_sorter(item):
+                        k = item[0]
+                        if isinstance(k, str) and k.startswith("s") and k[1:].isdigit():
+                            return (0, int(k[1:]))  # Sort by the numeric part
+                        elif isinstance(k, str) and k.isdigit():
+                            return (
+                                1,
+                                int(k),
+                            )
+                        return (2, k)
+
+                    sorted_items = sorted(v.items(), key=key_sorter)
+                    return {k: sort_value(v) for k, v in sorted_items}
                 case list():
                     return sorted(map(sort_value, v))
                 case _:
@@ -322,13 +335,9 @@ class AnimeIDCollector:
         if edits_path.exists():
             with edits_path.open("r") as f:
                 edits = json.load(f)
-                schema_url = edits.pop("$schema", None)
-                edits = {
-                    str(k): sort_value(v)
-                    for k, v in sorted((int(k), v) for k, v in edits.items())
-                }
-                if schema_url:
-                    edits = {"$schema": schema_url, **edits}
+                edits.pop("$schema", None)
+                edits = sort_value(edits)
+                edits = {"$schema": self.SCHEMA_URL, **edits}
 
             with edits_path.open("w", newline="\n") as f:
                 json.dump(edits, f, indent=2)
