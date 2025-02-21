@@ -175,16 +175,14 @@ class AnimeIDCollector:
                     except (ValueError, IndexError):
                         episode_offset = 0
 
+                    entry.tvdb_mappings = {}
+
                     if tvdb_season == "a":
-                        entry.tvdb_mappings = {}
+                        pass
                     elif (
                         entry.anilist_id
                         and self.anilist_ep_counts.get(entry.anilist_id) is not None
                     ):
-                        entry.tvdb_mappings = {
-                            f"s{tvdb_season}": f"e{episode_offset + 1}-"
-                        }
-
                         anilist_ep_count = self.anilist_ep_counts[entry.anilist_id]
                         tvdb_ep_count = self.tvdb_ep_counts.get(entry.tvdb_id, {}).get(
                             tvdb_season
@@ -197,14 +195,20 @@ class AnimeIDCollector:
                                 f"AniList entry {entry.anilist_id} needs more episodes than TVDB entry {entry.tvdb_id} has available "
                                 f"({anilist_ep_count} > {tvdb_ep_count - episode_offset}). Manual mapping may be required."
                             )
+                        elif episode_offset == 0 and anilist_ep_count == tvdb_ep_count:
+                            entry.tvdb_mappings[f"s{tvdb_season}"] = ""
+                        elif anilist_ep_count == 1:
+                            entry.tvdb_mappings[f"s{tvdb_season}"] = (
+                                f"e{episode_offset + 1}"
+                            )
                         else:
-                            entry.tvdb_mappings[f"s{tvdb_season}"] += (
-                                f"e{anilist_ep_count + episode_offset}"
+                            entry.tvdb_mappings[f"s{tvdb_season}"] = (
+                                f"e{episode_offset + 1}-e{anilist_ep_count + episode_offset}"
                             )
                     else:
-                        entry.tvdb_mappings = {
-                            f"s{tvdb_season}": f"e{episode_offset + 1}-"
-                        }
+                        entry.tvdb_mappings[f"s{tvdb_season}"] = (
+                            f"e{episode_offset + 1}-"
+                        )
             except (ValueError, IndexError):
                 pass
 
