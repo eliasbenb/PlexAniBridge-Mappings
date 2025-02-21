@@ -35,11 +35,11 @@ jobs:
 
       - name: Run Update Episode Counts (scheduled)
         if: github.event_name == 'schedule'
-        run: python script.py --source both
+        run: python scripts/update_ep_counts.py --source both
 
       - name: Run Update Episode Counts (manual)
         if: github.event_name == 'workflow_dispatch'
-        run: python script.py --source ${{ github.event.inputs.source }}
+        run: python scripts/update_ep_counts.py --source ${{ github.event.inputs.source }}
 
       - name: Check Diff
         id: verify_diff
