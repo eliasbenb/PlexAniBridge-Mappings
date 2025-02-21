@@ -145,8 +145,7 @@ if __name__ == "__main__":
 
     args = parse_arguments()
 
-    mappings_path = Path("mappings.json")
-    with mappings_path.open("r") as f:
+    with Path("mappings.json").open("r") as f:
         mappings: dict[str, dict[str, Any]] = json.load(f)
 
     wanted_anilist = []
