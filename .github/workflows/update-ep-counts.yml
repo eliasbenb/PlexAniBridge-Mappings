@@ -19,7 +19,11 @@ jobs:
   update-episode-counts:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%B %d, %Y %I:%M %p')" >> $GITHUB_OUTPUT
+
+      - name: Check Out Repo
         uses: actions/checkout@v4
 
       - name: Setup Python
@@ -48,7 +52,7 @@ jobs:
           git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit & Push Changes
-        if: steps.verify_diff.outputs.changed == 'true' && github.event_name != 'pull_request'
+        if: steps.verify_diff.outputs.changed == 'true'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
