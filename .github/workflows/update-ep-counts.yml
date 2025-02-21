@@ -1,0 +1,57 @@
+name: Episode Count Update
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+    inputs:
+      source:
+        description: 'Source to update (anilist, tvdb, or both)'
+        required: true
+        default: 'both'
+        type: choice
+        options:
+          - anilist
+          - tvdb
+          - both
+
+jobs:
+  update-episode-counts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run Update Episode Counts (scheduled)
+        if: github.event_name == 'schedule'
+        run: python script.py --source both
+
+      - name: Run Update Episode Counts (manual)
+        if: github.event_name == 'workflow_dispatch'
+        run: python script.py --source ${{ github.event.inputs.source }}
+
+      - name: Check Diff
+        id: verify_diff
+        run: |
+          git diff .
+          git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit & Push Changes
+        if: steps.verify_diff.outputs.changed == 'true' && github.event_name != 'pull_request'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "Update at ${{ steps.date.outputs.date }} UTC" -a
+          git push
