@@ -46,8 +46,8 @@ class AnimeIDCollector:
         self.anilist_ep_counts: dict[int, int] = {}
         self.tvdb_ep_counts: dict[int, dict[str, int]] = {}
 
-        self.anime_entries: dict[int, AniMap] = {}
-        self.temp_entries: dict[int, AniMap] = {}
+        self.anilist_entries: dict[int, AniMap] = {}
+        self.anidb_entries: dict[int, AniMap] = {}
 
     def _setup_logger(self) -> logging.Logger:
         """
@@ -102,57 +102,6 @@ class AnimeIDCollector:
             with tvdb_path.open("r") as f:
                 self.tvdb_ep_counts = {int(k): v for k, v in json.load(f).items()}
 
-    def process_anime_lists(self) -> None:
-        """
-        Process anime data from Anime-Lists XML source.
-
-        Extracts anime IDs and related information from the Anime-Lists XML file
-        and stores them in temporary entries.
-        """
-        self.logger.info("Scanning Anime-Lists")
-        content = self._fetch_url(
-            "https://raw.githubusercontent.com/Anime-Lists/anime-lists/master/anime-list-master.xml",
-            as_bytes=True,
-        )
-        root = html.fromstring(content)
-
-        for anime in root.xpath("//anime"):
-            anidb_id = str(anime.xpath("@anidbid")[0])
-            if not anidb_id:
-                continue
-
-            anidb_id = int(anidb_id[1:]) if anidb_id[0] == "a" else int(anidb_id)
-            entry = AniMap(anidb_id=anidb_id)
-
-            try:
-                entry.tvdb_id = int(anime.xpath("@tvdbid")[0])
-
-                tvdb_season = str(anime.xpath("@defaulttvdbseason")[0])
-                try:
-                    if tvdb_season == "a":
-                        # TODO: Handle full series mappings
-                        pass
-                    else:
-                        entry.tvdb_mappings = {f"s{tvdb_season}": ""}
-
-                    episode_offset = int(anime.xpath("@episodeoffset")[0])
-                    if episode_offset >= 0 and entry.tvdb_mappings:
-                        entry.tvdb_mappings[f"s{tvdb_season}"] = (
-                            f"e{episode_offset + 1}-"
-                        )
-                except (ValueError, IndexError):
-                    pass
-
-            except (ValueError, IndexError):
-                pass
-
-            imdb_id = str(anime.xpath("@imdbid")[0])
-            if imdb_id.startswith("tt"):
-                imdb_ids = imdb_id.split(",")
-                entry.imdb_id = imdb_ids[0] if len(imdb_ids) == 1 else imdb_ids
-
-            self.temp_entries[anidb_id] = entry
-
     def process_manami_project(self) -> None:
         """
         Process anime data from the Manami Project.
@@ -181,18 +130,95 @@ class AnimeIDCollector:
                 elif "anilist.co" in source:
                     ids["anilist_id"] = int(source.partition("anime/")[2])
 
-            if "anilist_id" in ids:
-                if "anidb_id" in ids and ids["anidb_id"] in self.temp_entries:
-                    entry = self.temp_entries[ids["anidb_id"]]
-                    entry = entry.model_copy(update={**ids})
-                    self.temp_entries[ids["anidb_id"]] = entry
-                elif "anidb_id" in ids:
-                    entry = AniMap(**ids)
-                    self.temp_entries[ids["anidb_id"]] = entry
-                else:
-                    entry = AniMap(**ids)
+            if not ids:
+                continue
+            entry = AniMap(**ids)
 
-                self.anime_entries[ids["anilist_id"]] = entry
+            if "anilist_id" in ids:
+                self.anilist_entries[ids["anilist_id"]] = entry
+            if "anidb_id" in ids:
+                self.anidb_entries[ids["anidb_id"]] = entry
+
+    def process_anime_lists(self) -> None:
+        """
+        Process anime data from Anime-Lists XML source.
+
+        Extracts anime IDs and related information from the Anime-Lists XML file
+        and updates entries with TVDB mappings.
+        """
+        self.logger.info("Scanning Anime-Lists")
+        content = self._fetch_url(
+            "https://raw.githubusercontent.com/Anime-Lists/anime-lists/master/anime-list-master.xml",
+            as_bytes=True,
+        )
+        root = html.fromstring(content)
+
+        for anime in root.xpath("//anime"):
+            anidb_id = str(anime.xpath("@anidbid")[0])
+            if not anidb_id:
+                continue
+            anidb_id = int(anidb_id[1:]) if anidb_id[0] == "a" else int(anidb_id)
+
+            entry = self.anidb_entries.get(anidb_id, AniMap(anidb_id=anidb_id))
+
+            try:
+                tvdb_id_str = anime.xpath("@tvdbid")[0]
+                if tvdb_id_str and tvdb_id_str != "0":
+                    entry.tvdb_id = int(tvdb_id_str)
+
+                    try:
+                        tvdb_season = str(anime.xpath("@defaulttvdbseason")[0])
+                    except (ValueError, IndexError):
+                        tvdb_season = "a"
+                    try:
+                        episode_offset = int(anime.xpath("@episodeoffset")[0])
+                    except (ValueError, IndexError):
+                        episode_offset = 0
+
+                    if tvdb_season == "a":
+                        entry.tvdb_mappings = {}
+                    elif (
+                        entry.anilist_id
+                        and self.anilist_ep_counts.get(entry.anilist_id) is not None
+                    ):
+                        entry.tvdb_mappings = {
+                            f"s{tvdb_season}": f"e{episode_offset + 1}-"
+                        }
+
+                        anilist_ep_count = self.anilist_ep_counts[entry.anilist_id]
+                        tvdb_ep_count = self.tvdb_ep_counts.get(entry.tvdb_id, {}).get(
+                            tvdb_season
+                        )
+
+                        if tvdb_ep_count is None:
+                            pass
+                        elif anilist_ep_count > tvdb_ep_count - episode_offset:
+                            logging.debug(
+                                f"AniList entry {entry.anilist_id} needs more episodes than TVDB entry {entry.tvdb_id} has available "
+                                f"({anilist_ep_count} > {tvdb_ep_count - episode_offset}). Manual mapping may be required."
+                            )
+                        else:
+                            entry.tvdb_mappings[f"s{tvdb_season}"] += (
+                                f"e{anilist_ep_count + episode_offset}"
+                            )
+                    else:
+                        entry.tvdb_mappings = {
+                            f"s{tvdb_season}": f"e{episode_offset + 1}-"
+                        }
+            except (ValueError, IndexError):
+                pass
+
+            try:
+                imdb_id = str(anime.xpath("@imdbid")[0])
+                if imdb_id.startswith("tt"):
+                    imdb_ids = imdb_id.split(",")
+                    entry.imdb_id = imdb_ids[0] if len(imdb_ids) == 1 else imdb_ids
+            except (ValueError, IndexError):
+                pass
+
+            self.anidb_entries[anidb_id] = entry
+            if entry.anilist_id:
+                self.anilist_entries[entry.anilist_id] = entry
 
     def process_aggregations(self) -> None:
         """
@@ -210,7 +236,7 @@ class AnimeIDCollector:
 
         for anidb_id_str, anime in content["animes"].items():
             anidb_id = int(anidb_id_str)
-            entry = self.temp_entries.get(anidb_id)
+            entry = self.anidb_entries.get(anidb_id)
 
             if not entry:
                 continue
@@ -282,15 +308,15 @@ class AnimeIDCollector:
             if skip_entry:
                 continue
 
-            if anilist_id in self.anime_entries:
-                existing_entry = self.anime_entries[anilist_id]
+            if anilist_id in self.anilist_entries:
+                existing_entry = self.anilist_entries[anilist_id]
                 for key, value in fields.items():
                     if key == "tvdb_mappings" and value:
                         value = {**(existing_entry.tvdb_mappings or {}), **value}
                     setattr(existing_entry, key, value)
             else:
                 entry = AniMap(anilist_id=anilist_id, **fields)
-                self.anime_entries[anilist_id] = entry
+                self.anilist_entries[anilist_id] = entry
 
     def save_results(self) -> None:
         """
@@ -330,11 +356,11 @@ class AnimeIDCollector:
         with Path(self.base_dir / "mappings.schema.json").open("w", newline="\n") as f:
             json.dump(schema, f, indent=2)
 
-        if self.temp_entries:
-            self.anime_entries.update(
+        if self.anidb_entries:
+            self.anilist_entries.update(
                 {
                     entry.anilist_id: entry
-                    for entry in self.temp_entries.values()
+                    for entry in self.anidb_entries.values()
                     if entry.anilist_id
                 }
             )
@@ -343,7 +369,7 @@ class AnimeIDCollector:
             str(anilist_id): sort_value(
                 entry.model_dump(exclude={"anilist_id"}, exclude_none=True)
             )
-            for anilist_id, entry in sorted(self.anime_entries.items())
+            for anilist_id, entry in sorted(self.anilist_entries.items())
         }
 
         output_path = self.base_dir / "mappings.json"
@@ -398,6 +424,7 @@ class AnimeIDCollector:
             self.load_episode_counts()
 
             self.process_manami_project()
+            self.process_anime_lists()
             self.process_aggregations()
             self.process_edits()
 
