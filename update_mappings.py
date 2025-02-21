@@ -42,6 +42,10 @@ class AnimeIDCollector:
         self.base_dir: Path = Path(__file__).parent.resolve()
         self.logger: logging.Logger = self._setup_logger()
         self.session: requests.Session = requests.Session()
+
+        self.anilist_ep_counts: dict[int, int] = {}
+        self.tvdb_ep_counts: dict[int, dict[str, int]] = {}
+
         self.anime_entries: dict[int, AniMap] = {}
         self.temp_entries: dict[int, AniMap] = {}
 
@@ -82,6 +86,21 @@ class AnimeIDCollector:
         response = self.session.get(url)
         response.raise_for_status()
         return response.content if as_bytes else response.text
+
+    def load_episode_counts(self) -> None:
+        """Load the episode counts for AniList and TVDB IDs from the data folder."""
+        anilist_path = self.base_dir / "data" / "anilist_episode_counts.json"
+        tvdb_path = self.base_dir / "data" / "tvdb_episode_counts.json"
+
+        self.logger.info("Loading episode counts")
+
+        if anilist_path.exists():
+            with anilist_path.open("r") as f:
+                self.anilist_ep_counts = {int(k): v for k, v in json.load(f).items()}
+
+        if tvdb_path.exists():
+            with tvdb_path.open("r") as f:
+                self.tvdb_ep_counts = {int(k): v for k, v in json.load(f).items()}
 
     def process_anime_lists(self) -> None:
         """
@@ -376,7 +395,8 @@ class AnimeIDCollector:
         self.logger.info("Starting Anime IDs Collection")
 
         try:
-            self.process_anime_lists()
+            self.load_episode_counts()
+
             self.process_manami_project()
             self.process_aggregations()
             self.process_edits()
