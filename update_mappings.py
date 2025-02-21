@@ -136,8 +136,8 @@ class AnimeIDCollector:
 
             if "anilist_id" in ids:
                 self.anilist_entries[ids["anilist_id"]] = entry
-            if "anidb_id" in ids:
-                self.anidb_entries[ids["anidb_id"]] = entry
+                if "anidb_id" in ids:
+                    self.anidb_entries[ids["anidb_id"]] = entry
 
     def process_anime_lists(self) -> None:
         """
@@ -159,7 +159,9 @@ class AnimeIDCollector:
                 continue
             anidb_id = int(anidb_id[1:]) if anidb_id[0] == "a" else int(anidb_id)
 
-            entry = self.anidb_entries.get(anidb_id, AniMap(anidb_id=anidb_id))
+            entry = self.anidb_entries.get(anidb_id)
+            if not entry:
+                continue
 
             try:
                 tvdb_id_str = anime.xpath("@tvdbid")[0]
@@ -219,10 +221,6 @@ class AnimeIDCollector:
                     entry.imdb_id = imdb_ids[0] if len(imdb_ids) == 1 else imdb_ids
             except (ValueError, IndexError):
                 pass
-
-            self.anidb_entries[anidb_id] = entry
-            if entry.anilist_id:
-                self.anilist_entries[entry.anilist_id] = entry
 
     def process_aggregations(self) -> None:
         """
