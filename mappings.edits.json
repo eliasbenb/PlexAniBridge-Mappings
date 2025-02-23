@@ -700,6 +700,9 @@
       "s2": "e1-e25"
     }
   },
+  "849": {
+    "tvdb_mappings": null
+  },
   "887": {
     "tvdb_mappings": {
       "s0": "e1"
@@ -1998,6 +2001,9 @@
       "s3": "e1-e13"
     }
   },
+  "4382": {
+    "tvdb_mappings": null
+  },
   "4664": {
     "tvdb_id": 70863,
     "tvdb_mappings": {
@@ -2266,6 +2272,9 @@
     "tvdb_mappings": {
       "s1": "e1-e5"
     }
+  },
+  "7311": {
+    "tvdb_mappings": null
   },
   "7338": {
     "imdb_id": "tt0995941",
