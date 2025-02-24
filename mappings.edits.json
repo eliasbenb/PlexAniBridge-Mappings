@@ -416,7 +416,7 @@
     "tmdb_show_id": 11279,
     "tvdb_id": 78916,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e13"
     }
   },
   "392": {
@@ -433,12 +433,17 @@
     "tmdb_show_id": 11279,
     "tvdb_id": 78916,
     "tvdb_mappings": {
-      "s2": ""
+      "s2": "e1-e13"
     }
   },
   "401": {
     "tvdb_mappings": {
       "s0": "e6-e7"
+    }
+  },
+  "422": {
+    "tvdb_mappings": {
+      "s0": "e2-e3"
     }
   },
   "424": {
@@ -452,13 +457,23 @@
       "s2": "e1-e25"
     }
   },
+  "428": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "429": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
   "435": {
     "imdb_id": "tt0112057",
     "mal_id": 435,
     "tmdb_show_id": 34158,
     "tvdb_id": 71634,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e20"
     }
   },
   "440": {
@@ -477,6 +492,31 @@
   "446": {
     "tvdb_mappings": {
       "s2": "e1-e13"
+    }
+  },
+  "448": {
+    "tvdb_mappings": {
+      "s0": "e1-e2"
+    }
+  },
+  "449": {
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
+  "450": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "451": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
+  "452": {
+    "tvdb_mappings": {
+      "s0": "e1"
     }
   },
   "460": {
@@ -504,6 +544,11 @@
       "s0": "e1"
     }
   },
+  "468": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
   "481": {
     "tvdb_mappings": {
       "s1": "e1-e49",
@@ -519,6 +564,27 @@
       "s2": "e1-e52",
       "s3": "e1-e52",
       "s4": "e1-e24"
+    }
+  },
+  "484": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "491": {
+    "tvdb_id": 120351,
+    "tvdb_mappings": {
+      "s1": "e1-e13"
+    }
+  },
+  "492": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "493": {
+    "tvdb_mappings": {
+      "s0": "e1"
     }
   },
   "495": {
@@ -563,10 +629,40 @@
       "s0": "e1"
     }
   },
+  "531": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "536": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
   "543": {
     "tmdb_movie_id": 15999,
     "tvdb_id": null,
     "tvdb_mappings": null
+  },
+  "547": {
+    "tvdb_mappings": {
+      "s0": "e5-e7"
+    }
+  },
+  "556": {
+    "tvdb_mappings": {
+      "s0": "e1-e3"
+    }
+  },
+  "557": {
+    "tvdb_mappings": {
+      "s1": "e25-e28"
+    }
+  },
+  "560": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
   },
   "567": {
     "anidb_id": 904,
@@ -575,7 +671,7 @@
     "tmdb_show_id": 18241,
     "tvdb_id": 73988,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e13"
     }
   },
   "594": {
@@ -601,6 +697,29 @@
     "tvdb_id": null,
     "tvdb_mappings": null
   },
+  "641": {
+    "tvdb_id": 80759,
+    "tvdb_mappings": {
+      "s0": "e6"
+    }
+  },
+  "642": {
+    "tvdb_id": 80759,
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "647": {
+    "tvdb_mappings": {
+      "s0": "e1-e2"
+    }
+  },
+  "651": {
+    "tvdb_id": 80608,
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
   "652": {
     "tvdb_mappings": {
       "s2": "e1-e18|2"
@@ -616,6 +735,22 @@
       "s4": "e1-e26|2"
     }
   },
+  "656": {
+    "tvdb_id": 79101,
+    "tvdb_mappings": {
+      "s0": "e2-e3"
+    }
+  },
+  "659": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "679": {
+    "tvdb_mappings": {
+      "s0": "e1-e3"
+    }
+  },
   "687": {
     "tvdb_mappings": {
       "s1": "e1-e26",
@@ -626,6 +761,9 @@
     "tvdb_mappings": {
       "s1": "e1-e26"
     }
+  },
+  "711": {
+    "tvdb_id": 77773
   },
   "721": {
     "tvdb_mappings": {
@@ -652,6 +790,17 @@
       "s2": "e1-e26"
     }
   },
+  "756": {
+    "tvdb_id": 80478,
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "760": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
   "761": {
     "tvdb_id": 78857,
     "tvdb_mappings": {
@@ -662,6 +811,31 @@
     "tvdb_mappings": {
       "s1": "e1-e34",
       "s2": "e1-e33"
+    }
+  },
+  "779": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "780": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "781": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
+  "793": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "808": {
+    "tvdb_mappings": {
+      "s0": "e1-e3"
     }
   },
   "813": {
@@ -675,6 +849,16 @@
       "s7": "e1-e25",
       "s8": "e1-e34",
       "s9": "e1-e38"
+    }
+  },
+  "814": {
+    "tvdb_mappings": {
+      "s0": "e5"
+    }
+  },
+  "815": {
+    "tvdb_mappings": {
+      "s0": "e3"
     }
   },
   "818": {
@@ -694,6 +878,11 @@
       "s0": "e2"
     }
   },
+  "837": {
+    "tvdb_mappings": {
+      "s0": "e1-e4"
+    }
+  },
   "845": {
     "tvdb_mappings": {
       "s1": "e1-e26",
@@ -702,6 +891,36 @@
   },
   "849": {
     "tvdb_mappings": null
+  },
+  "866": {
+    "tvdb_mappings": {
+      "s0": "e12"
+    }
+  },
+  "867": {
+    "tvdb_mappings": {
+      "s0": "e10"
+    }
+  },
+  "868": {
+    "tvdb_mappings": {
+      "s0": "e6"
+    }
+  },
+  "869": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "882": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "883": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
   },
   "887": {
     "tvdb_mappings": {
@@ -782,6 +1001,11 @@
       "s0": "e5"
     }
   },
+  "950": {
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
   "961": {
     "tvdb_mappings": {
       "s1": "e1-e35"
@@ -793,6 +1017,16 @@
       "s2": "e1-e35",
       "s3": "e1-e25",
       "s4": "e1-e27"
+    }
+  },
+  "979": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
+  "981": {
+    "tvdb_mappings": {
+      "s0": "e2-e5"
     }
   },
   "984": {
@@ -814,6 +1048,16 @@
     "tvdb_id": 79275,
     "tvdb_mappings": {
       "s0": "e1"
+    }
+  },
+  "997": {
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
+  "999": {
+    "tvdb_mappings": {
+      "s0": "e1-e3"
     }
   },
   "1000": {
@@ -841,7 +1085,7 @@
     "tmdb_show_id": 19238,
     "tvdb_id": 73492,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e24"
     }
   },
   "1065": {
@@ -861,6 +1105,21 @@
     "tvdb_id": 81797,
     "tvdb_mappings": {
       "s0": "e3"
+    }
+  },
+  "1095": {
+    "tvdb_mappings": {
+      "s0": "e8"
+    }
+  },
+  "1096": {
+    "tvdb_mappings": {
+      "s0": "e9"
+    }
+  },
+  "1099": {
+    "tvdb_mappings": {
+      "s0": "e5"
     }
   },
   "1117": {
@@ -893,6 +1152,17 @@
       "s0": "e8"
     }
   },
+  "1135": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "1137": {
+    "tvdb_id": 72350,
+    "tvdb_mappings": {
+      "s1": "e1-e32"
+    }
+  },
   "1138": {
     "tvdb_mappings": {
       "s1": "e1-e26",
@@ -921,10 +1191,26 @@
       "s1": "e1-e12"
     }
   },
+  "1174": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "1190": {
+    "tvdb_id": 73532,
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
   "1192": {
     "tmdb_movie_id": 27812,
     "tvdb_id": null,
     "tvdb_mappings": null
+  },
+  "1228": {
+    "tvdb_mappings": {
+      "s0": "e4-e5"
+    }
   },
   "1237": {
     "tvdb_id": 81797,
@@ -938,6 +1224,11 @@
       "s0": "e10"
     }
   },
+  "1240": {
+    "tvdb_mappings": {
+      "s0": "e8"
+    }
+  },
   "1254": {
     "tvdb_mappings": {
       "s1": "e1-e73",
@@ -945,9 +1236,55 @@
       "s3": "e1-e15"
     }
   },
+  "1255": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
+  "1256": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "1259": {
+    "tvdb_mappings": {
+      "s0": "e5"
+    }
+  },
+  "1265": {
+    "tvdb_mappings": {
+      "s0": "e1-e2"
+    }
+  },
+  "1266": {
+    "tvdb_mappings": {
+      "s0": "e3-e6"
+    }
+  },
+  "1267": {
+    "tvdb_mappings": {
+      "s0": "e7-e11"
+    }
+  },
   "1268": {
     "tvdb_mappings": {
       "s0": "e1"
+    }
+  },
+  "1278": {
+    "tvdb_id": 78500,
+    "tvdb_mappings": {
+      "s0": "e9"
+    }
+  },
+  "1288": {
+    "tvdb_mappings": {
+      "s0": "e1-e7"
+    }
+  },
+  "1290": {
+    "tvdb_mappings": {
+      "s0": "e10"
     }
   },
   "1293": {
@@ -995,6 +1332,46 @@
       "s6": "e1-e30"
     }
   },
+  "1362": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "1363": {
+    "tvdb_mappings": {
+      "s0": "e5"
+    }
+  },
+  "1364": {
+    "tvdb_mappings": {
+      "s0": "e6"
+    }
+  },
+  "1365": {
+    "tvdb_mappings": {
+      "s0": "e8"
+    }
+  },
+  "1366": {
+    "tvdb_mappings": {
+      "s0": "e10"
+    }
+  },
+  "1367": {
+    "tvdb_mappings": {
+      "s0": "e12"
+    }
+  },
+  "1368": {
+    "tvdb_mappings": {
+      "s0": "e15"
+    }
+  },
+  "1369": {
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
   "1372": {
     "tvdb_mappings": {
       "s1": "e5-e51"
@@ -1004,6 +1381,16 @@
     "tvdb_id": 81092,
     "tvdb_mappings": {
       "s1": "e1-e4"
+    }
+  },
+  "1379": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "1396": {
+    "tvdb_mappings": {
+      "s0": "e2-e3"
     }
   },
   "1398": {
@@ -1022,7 +1409,7 @@
     "tmdb_show_id": 23475,
     "tvdb_id": 73011,
     "tvdb_mappings": {
-      "s2": ""
+      "s2": "e1-e13"
     }
   },
   "1414": {
@@ -1177,6 +1564,11 @@
       "s2": "e1-e51"
     }
   },
+  "1501": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
   "1502": {
     "tvdb_mappings": {
       "s1": "e1-e26"
@@ -1187,6 +1579,16 @@
     "tvdb_id": 71283,
     "tvdb_mappings": {
       "s0": "e4-e8,e9|-2"
+    }
+  },
+  "1505": {
+    "tvdb_mappings": {
+      "s0": "e14"
+    }
+  },
+  "1506": {
+    "tvdb_mappings": {
+      "s0": "e16"
     }
   },
   "1516": {
@@ -1217,7 +1619,12 @@
     "tmdb_show_id": 34158,
     "tvdb_id": 71634,
     "tvdb_mappings": {
-      "s2": ""
+      "s2": "e1-e29"
+    }
+  },
+  "1566": {
+    "tvdb_mappings": {
+      "s0": "e5"
     }
   },
   "1573": {
@@ -1226,8 +1633,18 @@
       "s2": "e1-e26"
     }
   },
+  "1584": {
+    "tvdb_mappings": {
+      "s0": "e5-e6"
+    }
+  },
   "1587": {
     "tvdb_id": 79543
+  },
+  "1593": {
+    "tvdb_mappings": {
+      "s0": "e9"
+    }
   },
   "1604": {
     "tvdb_mappings": {
@@ -1248,6 +1665,20 @@
       "s8": "e1-e26"
     }
   },
+  "1619": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "1650": {
+    "tvdb_id": 77773
+  },
+  "1651": {
+    "tvdb_id": 77773
+  },
+  "1652": {
+    "tvdb_id": 77773
+  },
   "1676": {
     "tvdb_id": 299019
   },
@@ -1255,6 +1686,12 @@
     "tvdb_mappings": {
       "s0": "e6-e8",
       "s1": "e1-e48"
+    }
+  },
+  "1679": {
+    "tvdb_id": 80608,
+    "tvdb_mappings": {
+      "s0": "e3-e5"
     }
   },
   "1689": {
@@ -1270,6 +1707,11 @@
     "tvdb_id": 72172,
     "tvdb_mappings": {
       "s1": "e1-e56"
+    }
+  },
+  "1732": {
+    "tvdb_mappings": {
+      "s0": "e2"
     }
   },
   "1735": {
@@ -1314,6 +1756,51 @@
       "s1": "e1-e6"
     }
   },
+  "1752": {
+    "tvdb_mappings": {
+      "s0": "e14"
+    }
+  },
+  "1753": {
+    "tvdb_id": 73501,
+    "tvdb_mappings": {
+      "s0": "e15"
+    }
+  },
+  "1754": {
+    "tvdb_mappings": {
+      "s0": "e1-e4"
+    }
+  },
+  "1755": {
+    "tvdb_id": 73501,
+    "tvdb_mappings": {
+      "s0": "e6-e9"
+    }
+  },
+  "1756": {
+    "tvdb_id": 73501,
+    "tvdb_mappings": {
+      "s0": "e10-e14"
+    }
+  },
+  "1757": {
+    "tvdb_id": 73501,
+    "tvdb_mappings": {
+      "s0": "e5"
+    }
+  },
+  "1758": {
+    "tvdb_id": 73501,
+    "tvdb_mappings": {
+      "s0": "e16-e17"
+    }
+  },
+  "1768": {
+    "tvdb_mappings": {
+      "s0": "e1-e4"
+    }
+  },
   "1773": {
     "tvdb_mappings": {
       "s0": "e5"
@@ -1345,6 +1832,11 @@
     "tvdb_id": null,
     "tvdb_mappings": null
   },
+  "1813": {
+    "tvdb_mappings": {
+      "s0": "e1-e3"
+    }
+  },
   "1816": {
     "tvdb_mappings": {
       "s1": "e1-e26",
@@ -1364,6 +1856,44 @@
     "tvdb_id": 85065,
     "tvdb_mappings": {
       "s1": "e3,e5,e8,e13"
+    }
+  },
+  "1888": {
+    "tvdb_mappings": {
+      "s0": "e2-e4"
+    }
+  },
+  "1894": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "1903": {
+    "tvdb_id": 79022,
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
+  "1904": {
+    "tvdb_mappings": {
+      "s0": "e3-e5"
+    }
+  },
+  "1905": {
+    "tvdb_id": 79882,
+    "tvdb_mappings": {
+      "s0": "e11-e18"
+    }
+  },
+  "1906": {
+    "tvdb_mappings": {
+      "s0": "e7"
+    }
+  },
+  "1907": {
+    "tvdb_id": 79882,
+    "tvdb_mappings": {
+      "s0": "e6-e10"
     }
   },
   "1911": {
@@ -1400,15 +1930,36 @@
       "s0": "e16-e24"
     }
   },
+  "2008": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "2009": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
   "2013": {
     "tvdb_mappings": {
       "s0": "e23"
+    }
+  },
+  "2015": {
+    "tvdb_mappings": {
+      "s0": "e8"
     }
   },
   "2020": {
     "tvdb_id": 81797,
     "tvdb_mappings": {
       "s0": "e14"
+    }
+  },
+  "2027": {
+    "tvdb_id": 85064,
+    "tvdb_mappings": {
+      "s0": "e1-e4"
     }
   },
   "2043": {
@@ -1418,7 +1969,17 @@
     "tmdb_show_id": 34114,
     "tvdb_id": 79835,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e36"
+    }
+  },
+  "2045": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "2046": {
+    "tvdb_mappings": {
+      "s0": "e3"
     }
   },
   "2062": {
@@ -1460,9 +2021,19 @@
       "s4": "e1-e32"
     }
   },
+  "2077": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
   "2078": {
     "tvdb_mappings": {
       "s1": "e1-e2"
+    }
+  },
+  "2098": {
+    "tvdb_mappings": {
+      "s0": "e15"
     }
   },
   "2108": {
@@ -1492,6 +2063,48 @@
       "s5": "e1-e24"
     }
   },
+  "2117": {
+    "tvdb_mappings": {
+      "s0": "e1-e13"
+    }
+  },
+  "2119": {
+    "tvdb_mappings": {
+      "s0": "e15"
+    }
+  },
+  "2120": {
+    "tvdb_mappings": {
+      "s0": "e16"
+    }
+  },
+  "2121": {
+    "tvdb_mappings": {
+      "s0": "e17"
+    }
+  },
+  "2122": {
+    "tvdb_mappings": {
+      "s0": "e23"
+    }
+  },
+  "2125": {
+    "tvdb_id": 76665,
+    "tvdb_mappings": {
+      "s0": "e3-e4"
+    }
+  },
+  "2126": {
+    "tvdb_id": 76665,
+    "tvdb_mappings": {
+      "s0": "e6-e9"
+    }
+  },
+  "2143": {
+    "tvdb_mappings": {
+      "s0": "e3-e5"
+    }
+  },
   "2144": {
     "tvdb_mappings": {
       "s0": "e7"
@@ -1503,9 +2116,29 @@
       "s1": "e1-e22"
     }
   },
+  "2170": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "2171": {
+    "tvdb_mappings": {
+      "s0": "e19"
+    }
+  },
   "2174": {
     "tvdb_mappings": {
       "s0": "e7"
+    }
+  },
+  "2175": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
+  "2176": {
+    "tvdb_mappings": {
+      "s0": "e1"
     }
   },
   "2201": {
@@ -1586,6 +2219,22 @@
       "s2": "e1-e26"
     }
   },
+  "2449": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
+  "2454": {
+    "tvdb_mappings": {
+      "s0": "e14"
+    }
+  },
+  "2458": {
+    "tvdb_id": 78923,
+    "tvdb_mappings": {
+      "s0": "e6-e13"
+    }
+  },
   "2461": {
     "tmdb_movie_id": 62961,
     "tvdb_id": null,
@@ -1602,10 +2251,40 @@
       "s0": "e1"
     }
   },
+  "2472": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
   "2490": {
     "tvdb_id": 81797,
     "tvdb_mappings": {
       "s0": "e12"
+    }
+  },
+  "2511": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "2512": {
+    "tvdb_mappings": {
+      "s0": "e7"
+    }
+  },
+  "2513": {
+    "tvdb_mappings": {
+      "s0": "e9"
+    }
+  },
+  "2514": {
+    "tvdb_mappings": {
+      "s0": "e11"
+    }
+  },
+  "2515": {
+    "tvdb_mappings": {
+      "s0": "e13"
     }
   },
   "2520": {
@@ -1628,6 +2307,21 @@
       "s4": "e1-e13"
     }
   },
+  "2583": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "2584": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "2585": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
   "2593": {
     "imdb_id": "tt1155650",
     "mal_id": 2593,
@@ -1635,6 +2329,11 @@
     "tvdb_id": 82099,
     "tvdb_mappings": {
       "s1": "e1"
+    }
+  },
+  "2597": {
+    "tvdb_mappings": {
+      "s0": "e17"
     }
   },
   "2620": {
@@ -1718,9 +2417,30 @@
       "s0": "e13"
     }
   },
+  "2851": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
   "2889": {
     "tvdb_mappings": {
       "s0": "e4"
+    }
+  },
+  "2922": {
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
+  "2937": {
+    "tvdb_id": 78500,
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "2947": {
+    "tvdb_mappings": {
+      "s0": "e1"
     }
   },
   "2951": {
@@ -1756,6 +2476,11 @@
       "s0": "e1-e2"
     }
   },
+  "3005": {
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
   "3019": {
     "tvdb_mappings": {
       "s0": "e29"
@@ -1778,6 +2503,36 @@
     "mal_id": 3038,
     "tmdb_movie_id": 85398
   },
+  "3067": {
+    "tvdb_id": 77773,
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "3069": {
+    "tvdb_id": 77773,
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
+  "3071": {
+    "tvdb_id": 77773,
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
+  "3072": {
+    "tvdb_id": 77773,
+    "tvdb_mappings": {
+      "s0": "e5"
+    }
+  },
+  "3076": {
+    "tvdb_id": 78500,
+    "tvdb_mappings": {
+      "s0": "e5-e7"
+    }
+  },
   "3077": {
     "tvdb_mappings": {
       "s0": "e1",
@@ -1796,11 +2551,48 @@
       "s0": "e2-e4"
     }
   },
+  "3165": {
+    "tvdb_id": 82154,
+    "tvdb_mappings": {
+      "s0": "e1-e2"
+    }
+  },
+  "3190": {
+    "tvdb_mappings": {
+      "s0": "e5"
+    }
+  },
+  "3218": {
+    "tvdb_id": 80587,
+    "tvdb_mappings": {
+      "s0": "e10-e11"
+    }
+  },
   "3220": {
     "anidb_id": 3289,
     "imdb_id": "tt0071203",
     "mal_id": 3220,
     "tmdb_movie_id": 64847
+  },
+  "3222": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "3223": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
+  "3227": {
+    "tvdb_mappings": {
+      "s0": "e8"
+    }
+  },
+  "3245": {
+    "tvdb_mappings": {
+      "s0": "e4-e5"
+    }
   },
   "3270": {
     "imdb_id": "tt0487183",
@@ -1808,7 +2600,7 @@
     "tmdb_show_id": 23475,
     "tvdb_id": 73011,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e13"
     }
   },
   "3318": {
@@ -1816,8 +2608,40 @@
       "s0": "e11-e14"
     }
   },
+  "3328": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
   "3391": {
     "tvdb_id": 356233
+  },
+  "3394": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "3466": {
+    "tvdb_id": 79179,
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "3484": {
+    "tvdb_id": 71776,
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
+  "3509": {
+    "tvdb_mappings": {
+      "s1": "e1"
+    }
+  },
+  "3511": {
+    "tvdb_mappings": {
+      "s1": "e2"
+    }
   },
   "3571": {
     "tvdb_id": 316634,
@@ -1825,13 +2649,35 @@
       "s1": "e1-e34"
     }
   },
+  "3620": {
+    "tvdb_id": 76695,
+    "tvdb_mappings": {
+      "s0": "e4-e17"
+    }
+  },
+  "3659": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
   "3673": {
     "tvdb_id": 82084
+  },
+  "3674": {
+    "tvdb_id": 79360,
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
   },
   "3724": {
     "tvdb_mappings": {
       "s1": "e1-e13",
       "s2": "e1-e13"
+    }
+  },
+  "3759": {
+    "tvdb_mappings": {
+      "s0": "e2"
     }
   },
   "3772": {
@@ -1892,6 +2738,11 @@
       "s0": "e1-e3"
     }
   },
+  "3952": {
+    "tvdb_mappings": {
+      "s0": "e18-e19"
+    }
+  },
   "3972": {
     "tvdb_mappings": {
       "s1": "e1-e26",
@@ -1930,10 +2781,27 @@
       "s2": "e1-e23"
     }
   },
+  "4078": {
+    "tvdb_id": 82311,
+    "tvdb_mappings": {
+      "s0": "e5"
+    }
+  },
+  "4107": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
   "4134": {
     "tvdb_id": 79824,
     "tvdb_mappings": {
       "s0": "e5"
+    }
+  },
+  "4156": {
+    "tvdb_id": 81007,
+    "tvdb_mappings": {
+      "s0": "e1"
     }
   },
   "4182": {
@@ -1945,15 +2813,31 @@
       "s0": "e1"
     }
   },
+  "4188": {
+    "tvdb_mappings": {
+      "s0": "e3-e5"
+    }
+  },
   "4189": {
     "tvdb_mappings": {
       "s0": "e1",
       "s1": "e1-e26"
     }
   },
+  "4190": {
+    "tvdb_id": 79882,
+    "tvdb_mappings": {
+      "s0": "e19"
+    }
+  },
   "4197": {
     "tvdb_mappings": {
-      "s2": ""
+      "s2": "e1-e51"
+    }
+  },
+  "4246": {
+    "tvdb_mappings": {
+      "s0": "e1"
     }
   },
   "4280": {
@@ -2004,10 +2888,40 @@
   "4382": {
     "tvdb_mappings": null
   },
+  "4437": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "4447": {
+    "tvdb_mappings": {
+      "s0": "e22"
+    }
+  },
+  "4476": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "4565": {
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
   "4664": {
     "tvdb_id": 70863,
     "tvdb_mappings": {
       "s0": "e13"
+    }
+  },
+  "4672": {
+    "tvdb_mappings": {
+      "s0": "e6"
+    }
+  },
+  "4705": {
+    "tvdb_mappings": {
+      "s0": "e6-e13"
     }
   },
   "4792": {
@@ -2030,6 +2944,11 @@
       "s0": "e26"
     }
   },
+  "4811": {
+    "tvdb_mappings": {
+      "s0": "e5-e6"
+    }
+  },
   "4823": {
     "tvdb_id": 275293,
     "tvdb_mappings": {
@@ -2041,9 +2960,22 @@
       "s0": "e5"
     }
   },
+  "4849": {
+    "anidb_id": 2701,
+    "mal_id": 4849,
+    "tvdb_id": 81115,
+    "tvdb_mappings": {
+      "s0": "e1-e5"
+    }
+  },
   "4851": {
     "tvdb_mappings": {
       "s0": "e28"
+    }
+  },
+  "4872": {
+    "tvdb_mappings": {
+      "s0": "e3-e5"
     }
   },
   "4874": {
@@ -2056,9 +2988,24 @@
       "s0": "e28"
     }
   },
+  "4918": {
+    "tvdb_mappings": {
+      "s0": "e2-e3"
+    }
+  },
+  "4970": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
   "5019": {
     "tvdb_mappings": {
       "s0": "e31"
+    }
+  },
+  "5029": {
+    "tvdb_mappings": {
+      "s0": "e1"
     }
   },
   "5031": {
@@ -2110,6 +3057,38 @@
       "s0": "e9"
     }
   },
+  "5348": {
+    "tvdb_mappings": {
+      "s0": "e21"
+    }
+  },
+  "5369": {
+    "tvdb_mappings": {
+      "s0": "e5"
+    }
+  },
+  "5458": {
+    "tvdb_id": 76894,
+    "tvdb_mappings": {
+      "s0": "e15"
+    }
+  },
+  "5460": {
+    "tvdb_mappings": {
+      "s0": "e25"
+    }
+  },
+  "5466": {
+    "tvdb_id": 79078,
+    "tvdb_mappings": {
+      "s0": "e7"
+    }
+  },
+  "5521": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
   "5526": {
     "tvdb_mappings": {
       "s0": "e19"
@@ -2120,8 +3099,17 @@
       "s0": "e27"
     }
   },
+  "5583": {
+    "tvdb_id": null,
+    "tvdb_mappings": null
+  },
   "5684": {
     "tvdb_id": 85220
+  },
+  "5713": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
   },
   "5844": {
     "tvdb_mappings": {
@@ -2133,9 +3121,52 @@
       "s0": "e34"
     }
   },
+  "5859": {
+    "tvdb_id": 121381,
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "5947": {
+    "tvdb_id": 80096,
+    "tvdb_mappings": {
+      "s0": "e21"
+    }
+  },
+  "5996": {
+    "tvdb_id": 73532,
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "6028": {
+    "tvdb_mappings": {
+      "s0": "e7"
+    }
+  },
+  "6032": {
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
   "6038": {
     "tmdb_movie_id": 436056,
     "tvdb_id": 71551,
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "6050": {
+    "tvdb_mappings": {
+      "s0": "e6-e9"
+    }
+  },
+  "6115": {
+    "tvdb_mappings": {
+      "s0": "e23"
+    }
+  },
+  "6148": {
     "tvdb_mappings": {
       "s0": "e1"
     }
@@ -2145,9 +3176,35 @@
       "s1": "e14-e26"
     }
   },
+  "6169": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
+  "6171": {
+    "tvdb_id": 72775,
+    "tvdb_mappings": {
+      "s7": "e1-e13"
+    }
+  },
   "6178": {
     "tvdb_mappings": {
       "s0": "e17"
+    }
+  },
+  "6198": {
+    "tvdb_mappings": {
+      "s0": "e20"
+    }
+  },
+  "6231": {
+    "tvdb_mappings": {
+      "s0": "e24"
+    }
+  },
+  "6325": {
+    "tvdb_mappings": {
+      "s0": "e3"
     }
   },
   "6351": {
@@ -2158,11 +3215,41 @@
       "s0": "e3"
     }
   },
+  "6372": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "6379": {
+    "tvdb_mappings": {
+      "s0": "e6"
+    }
+  },
+  "6408": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "6438": {
+    "tvdb_mappings": {
+      "s0": "e26"
+    }
+  },
+  "6467": {
+    "tvdb_mappings": {
+      "s0": "e28"
+    }
+  },
   "6527": {
     "tmdb_movie_id": 120434,
     "tvdb_id": 85220,
     "tvdb_mappings": {
       "s0": "e1"
+    }
+  },
+  "6548": {
+    "tvdb_mappings": {
+      "s0": "e5"
     }
   },
   "6555": {
@@ -2191,6 +3278,11 @@
       "s0": "e2"
     }
   },
+  "6637": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
   "6702": {
     "tvdb_mappings": {
       "s1": "e1-e48",
@@ -2199,9 +3291,21 @@
       "s4": "e1-e25"
     }
   },
+  "6704": {
+    "tvdb_id": 87491,
+    "tvdb_mappings": {
+      "s0": "e1-e6"
+    }
+  },
   "6714": {
     "tvdb_mappings": {
       "s0": "e19"
+    }
+  },
+  "6718": {
+    "tvdb_id": 77773,
+    "tvdb_mappings": {
+      "s0": "e7-e9"
     }
   },
   "6772": {
@@ -2223,7 +3327,7 @@
   },
   "6811": {
     "tvdb_mappings": {
-      "s7": ""
+      "s7": "e1-e26"
     }
   },
   "6862": {
@@ -2232,6 +3336,11 @@
     "tvdb_id": 87501,
     "tvdb_mappings": {
       "s0": "e19"
+    }
+  },
+  "6864": {
+    "tvdb_mappings": {
+      "s0": "e4-e5"
     }
   },
   "6867": {
@@ -2248,10 +3357,25 @@
     "tvdb_id": null,
     "tvdb_mappings": null
   },
+  "6927": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "6941": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
   "6945": {
     "tvdb_id": 79895,
     "tvdb_mappings": {
       "s0": "e2"
+    }
+  },
+  "6951": {
+    "tvdb_mappings": {
+      "s0": "e14"
     }
   },
   "6954": {
@@ -2262,15 +3386,63 @@
       "s0": "e1"
     }
   },
+  "6964": {
+    "tvdb_id": 76665,
+    "tvdb_mappings": {
+      "s0": "e16"
+    }
+  },
+  "6965": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "6984": {
+    "tvdb_id": 82154,
+    "tvdb_mappings": {
+      "s0": "e3-e5"
+    }
+  },
   "7014": {
     "imdb_id": "tt1686865",
     "mal_id": 7014,
     "tmdb_movie_id": 115969
   },
+  "7044": {
+    "tvdb_mappings": {
+      "s0": "e6-e8"
+    }
+  },
   "7122": {
     "tvdb_id": 421601,
     "tvdb_mappings": {
       "s1": "e1-e5"
+    }
+  },
+  "7135": {
+    "tvdb_mappings": {
+      "s0": "e11"
+    }
+  },
+  "7144": {
+    "tvdb_id": 77773,
+    "tvdb_mappings": {
+      "s0": "e6"
+    }
+  },
+  "7157": {
+    "tvdb_mappings": {
+      "s0": "e10"
+    }
+  },
+  "7158": {
+    "tvdb_mappings": {
+      "s0": "e12"
+    }
+  },
+  "7254": {
+    "tvdb_mappings": {
+      "s0": "e9"
     }
   },
   "7311": {
@@ -2296,8 +3468,24 @@
       "s0": "e9"
     }
   },
+  "7430": {
+    "tvdb_id": 83421,
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
+  "7435": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
   "7472": {
     "tvdb_id": 79895,
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
+  "7491": {
     "tvdb_mappings": {
       "s0": "e4"
     }
@@ -2308,9 +3496,39 @@
       "s2": "e1-e13"
     }
   },
+  "7536": {
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
   "7550": {
     "tvdb_mappings": {
       "s0": "e32"
+    }
+  },
+  "7591": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "7601": {
+    "tvdb_mappings": {
+      "s0": "e4-e6"
+    }
+  },
+  "7666": {
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
+  "7667": {
+    "tvdb_mappings": {
+      "s0": "e6"
+    }
+  },
+  "7669": {
+    "tvdb_mappings": {
+      "s0": "e1"
     }
   },
   "7695": {
@@ -2318,9 +3536,52 @@
       "s0": "e21"
     }
   },
+  "7740": {
+    "tvdb_id": 87491,
+    "tvdb_mappings": {
+      "s0": "e7-e12"
+    }
+  },
+  "7816": {
+    "tvdb_mappings": {
+      "s0": "e9"
+    }
+  },
+  "7858": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "7882": {
+    "tvdb_id": 78919,
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
   "7897": {
     "tvdb_mappings": {
       "s1": "e2-e5"
+    }
+  },
+  "8026": {
+    "tvdb_mappings": {
+      "s0": "e6"
+    }
+  },
+  "8063": {
+    "tvdb_mappings": {
+      "s0": "e1-e2"
+    }
+  },
+  "8097": {
+    "tvdb_id": 71863,
+    "tvdb_mappings": {
+      "s0": "e33"
+    }
+  },
+  "8098": {
+    "tvdb_mappings": {
+      "s0": "e4"
     }
   },
   "8100": {
@@ -2328,9 +3589,30 @@
     "mal_id": 8100,
     "tmdb_movie_id": 73529
   },
+  "8246": {
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
   "8247": {
     "tvdb_mappings": {
       "s0": "e6"
+    }
+  },
+  "8317": {
+    "tvdb_id": 79360,
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "8331": {
+    "tvdb_mappings": {
+      "s0": "e27"
+    }
+  },
+  "8348": {
+    "tvdb_mappings": {
+      "s0": "e14-e20"
     }
   },
   "8408": {
@@ -2347,6 +3629,17 @@
       "s0": "e40,e81"
     }
   },
+  "8440": {
+    "tvdb_id": 79604,
+    "tvdb_mappings": {
+      "s0": "e1-e7"
+    }
+  },
+  "8457": {
+    "tvdb_mappings": {
+      "s0": "e1-e3"
+    }
+  },
   "8479": {
     "tvdb_mappings": {
       "s2": "e1-e48"
@@ -2357,6 +3650,48 @@
     "mal_id": 8514,
     "tmdb_movie_id": 55430,
     "tvdb_id": 179791,
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "8546": {
+    "tvdb_mappings": {
+      "s0": "e5"
+    }
+  },
+  "8547": {
+    "tvdb_mappings": {
+      "s0": "e8"
+    }
+  },
+  "8548": {
+    "tvdb_mappings": {
+      "s0": "e11"
+    }
+  },
+  "8550": {
+    "tvdb_id": 74600,
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
+  "8551": {
+    "tvdb_id": 74600,
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
+  "8609": {
+    "tvdb_mappings": {
+      "s0": "e30"
+    }
+  },
+  "8677": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "8678": {
     "tvdb_mappings": {
       "s0": "e2"
     }
@@ -2384,7 +3719,7 @@
     "tmdb_show_id": 68005,
     "tvdb_id": 195231,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e12"
     }
   },
   "8888": {
@@ -2396,12 +3731,48 @@
       "s0": "e7"
     }
   },
+  "9032": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
   "9062": {
     "mal_id": 9062,
     "tmdb_show_id": 42942,
     "tvdb_id": 150471,
     "tvdb_mappings": {
       "s0": "e1,e3"
+    }
+  },
+  "9130": {
+    "tvdb_id": 72775,
+    "tvdb_mappings": {
+      "s8": "e1-e13"
+    }
+  },
+  "9154": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
+  "9163": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "9164": {
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
+  "9165": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "9166": {
+    "tvdb_mappings": {
+      "s0": "e3"
     }
   },
   "9252": {
@@ -2430,6 +3801,11 @@
       "s0": "e2"
     }
   },
+  "9403": {
+    "tvdb_mappings": {
+      "s0": "e1-e2"
+    }
+  },
   "9465": {
     "imdb_id": "tt1753855",
     "mal_id": 9465,
@@ -2439,10 +3815,22 @@
       "s0": "e4"
     }
   },
+  "9563": {
+    "tvdb_id": 82154,
+    "tvdb_mappings": {
+      "s0": "e6-e7"
+    }
+  },
   "9656": {
     "tvdb_mappings": {
       "s0": "e1",
       "s2": "e1-e12"
+    }
+  },
+  "9675": {
+    "tvdb_id": 195711,
+    "tvdb_mappings": {
+      "s0": "e1"
     }
   },
   "9724": {
@@ -2478,10 +3866,47 @@
       "s0": "e7"
     }
   },
+  "9759": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "9785": {
+    "tvdb_mappings": null
+  },
+  "9786": {
+    "tvdb_mappings": null
+  },
+  "9790": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "9794": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
   "9863": {
     "tvdb_mappings": {
       "s1": "e1-e51",
       "s2": "e1-e26"
+    }
+  },
+  "9888": {
+    "tvdb_id": 195721,
+    "tvdb_mappings": {
+      "s0": "e1-e2"
+    }
+  },
+  "9890": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "9907": {
+    "tvdb_mappings": {
+      "s0": "e1"
     }
   },
   "9911": {
@@ -2497,6 +3922,16 @@
   "9931": {
     "imdb_id": "tt0829187",
     "tmdb_movie_id": 379152
+  },
+  "9958": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "9963": {
+    "tvdb_mappings": {
+      "s0": "e40"
+    }
   },
   "9982": {
     "tvdb_mappings": {
@@ -2678,6 +4113,16 @@
       "s4": "e1-e24"
     }
   },
+  "10531": {
+    "tvdb_mappings": {
+      "s0": "e33"
+    }
+  },
+  "10589": {
+    "tvdb_mappings": {
+      "s0": "e7"
+    }
+  },
   "10592": {
     "imdb_id": "tt6423446",
     "mal_id": 10592,
@@ -2688,15 +4133,53 @@
       "s0": "e1"
     }
   },
+  "10622": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
   "10624": {
     "imdb_id": "tt2048804",
     "mal_id": 10624,
     "tmdb_movie_id": 73530
   },
+  "10628": {
+    "tvdb_id": 305488,
+    "tvdb_mappings": {
+      "s0": "e10"
+    }
+  },
   "10643": {
     "tvdb_id": 79895,
     "tvdb_mappings": {
       "s0": "e21"
+    }
+  },
+  "10659": {
+    "tvdb_mappings": {
+      "s0": "e8"
+    }
+  },
+  "10686": {
+    "tvdb_mappings": {
+      "s0": "e9"
+    }
+  },
+  "10689": {
+    "tvdb_id": 245451,
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
+  "10693": {
+    "tvdb_id": 245451,
+    "tvdb_mappings": {
+      "s0": "e5"
+    }
+  },
+  "10703": {
+    "tvdb_mappings": {
+      "s0": "e35"
     }
   },
   "10713": {
@@ -2744,6 +4227,23 @@
       "s1": "e6"
     }
   },
+  "10731": {
+    "tvdb_mappings": {
+      "s0": "e6"
+    }
+  },
+  "10732": {
+    "tvdb_id": 83421,
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
+  "10735": {
+    "tvdb_id": 75796,
+    "tvdb_mappings": {
+      "s0": "e1-e9"
+    }
+  },
   "10739": {
     "imdb_id": "tt10145102",
     "mal_id": 10739,
@@ -2758,12 +4258,54 @@
       "s0": "e22"
     }
   },
+  "10766": {
+    "tvdb_mappings": {
+      "s0": "e34,e36"
+    }
+  },
+  "10794": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "10805": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "10820": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "10824": {
+    "tvdb_id": 76932,
+    "tvdb_mappings": {
+      "s0": "e23"
+    }
+  },
+  "10825": {
+    "tvdb_id": 76932,
+    "tvdb_mappings": {
+      "s0": "e20"
+    }
+  },
+  "10849": {
+    "tvdb_mappings": {
+      "s0": "e8"
+    }
+  },
   "10863": {
     "mal_id": 10863,
     "tmdb_show_id": 42509,
     "tvdb_id": 244061,
     "tvdb_mappings": {
       "s0": "e1"
+    }
+  },
+  "10886": {
+    "tvdb_mappings": {
+      "s0": "e2"
     }
   },
   "10893": {
@@ -2787,6 +4329,16 @@
     "tvdb_id": 153881,
     "tvdb_mappings": {
       "s1": "e1"
+    }
+  },
+  "10924": {
+    "tvdb_mappings": {
+      "s0": "e19,e21"
+    }
+  },
+  "10999": {
+    "tvdb_mappings": {
+      "s0": "e2"
     }
   },
   "11009": {
@@ -2818,6 +4370,17 @@
     "tvdb_id": 263688,
     "tvdb_mappings": {
       "s0": "e1-e3"
+    }
+  },
+  "11237": {
+    "tvdb_mappings": {
+      "s0": "e8-e9"
+    }
+  },
+  "11299": {
+    "tvdb_id": 75414,
+    "tvdb_mappings": {
+      "s0": "e8"
     }
   },
   "11313": {
@@ -2874,6 +4437,11 @@
     "imdb_id": "tt8339440",
     "tmdb_movie_id": 390539
   },
+  "11917": {
+    "tvdb_mappings": {
+      "s0": "e3-e4"
+    }
+  },
   "11977": {
     "imdb_id": "tt2205948",
     "mal_id": 11977,
@@ -2924,6 +4492,12 @@
     "mal_id": 12053,
     "tmdb_movie_id": 122662
   },
+  "12065": {
+    "tvdb_id": 87491,
+    "tvdb_mappings": {
+      "s0": "e20,e22"
+    }
+  },
   "12067": {
     "mal_id": 12067,
     "tvdb_id": 70863,
@@ -2955,6 +4529,17 @@
       "s0": "e3"
     }
   },
+  "12117": {
+    "tvdb_mappings": {
+      "s0": "e51"
+    }
+  },
+  "12185": {
+    "anidb_id": 7496,
+    "mal_id": 12185,
+    "tvdb_id": null,
+    "tvdb_mappings": null
+  },
   "12231": {
     "tvdb_mappings": {
       "s0": "e25"
@@ -2981,6 +4566,22 @@
   "12437": {
     "tvdb_mappings": {
       "s1": "e2"
+    }
+  },
+  "12439": {
+    "tvdb_mappings": {
+      "s0": "e12"
+    }
+  },
+  "12441": {
+    "tvdb_mappings": {
+      "s0": "e13"
+    }
+  },
+  "12455": {
+    "tvdb_id": 76665,
+    "tvdb_mappings": {
+      "s0": "e10-e13"
     }
   },
   "12565": {
@@ -3011,6 +4612,11 @@
       "s0": "e11"
     }
   },
+  "12783": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
   "12859": {
     "tvdb_mappings": {
       "s0": "e26"
@@ -3031,14 +4637,14 @@
   "12907": {
     "tvdb_id": 269157,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e3"
     }
   },
   "12929": {
     "tvdb_id": 72775,
     "tvdb_mappings": {
-      "s9": "",
-      "s10": ""
+      "s9": "e1-e51",
+      "s10": "e1-e46"
     }
   },
   "13117": {
@@ -3136,9 +4742,36 @@
       "s0": "e1"
     }
   },
+  "13667": {
+    "tvdb_mappings": {
+      "s0": "e10"
+    }
+  },
+  "13709": {
+    "tvdb_id": 79755,
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "13731": {
+    "tvdb_id": 79360,
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
   "13799": {
     "tvdb_mappings": {
       "s0": "e66"
+    }
+  },
+  "13837": {
+    "tvdb_mappings": {
+      "s0": "e52"
+    }
+  },
+  "13839": {
+    "tvdb_mappings": {
+      "s0": "e53"
     }
   },
   "13851": {
@@ -3147,6 +4780,12 @@
     "tvdb_id": 81831,
     "tvdb_mappings": {
       "s0": "e7-e13"
+    }
+  },
+  "13855": {
+    "tvdb_id": 87491,
+    "tvdb_mappings": {
+      "s0": "e23-e28"
     }
   },
   "13863": {
@@ -3166,7 +4805,17 @@
   },
   "14519": {
     "tvdb_mappings": {
-      "s2": ""
+      "s2": "e1-e13"
+    }
+  },
+  "14575": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "14735": {
+    "tvdb_mappings": {
+      "s0": "e58"
     }
   },
   "14751": {
@@ -3180,9 +4829,19 @@
       "s0": "e14"
     }
   },
+  "14875": {
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
   "14935": {
     "tvdb_mappings": {
       "s0": "e57"
+    }
+  },
+  "14949": {
+    "tvdb_mappings": {
+      "s0": "e3-e4"
     }
   },
   "15061": {
@@ -3191,7 +4850,17 @@
     "tmdb_show_id": 65503,
     "tvdb_id": 263310,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e50"
+    }
+  },
+  "15067": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
+  "15117": {
+    "tvdb_mappings": {
+      "s0": "e3-e4"
     }
   },
   "15197": {
@@ -3237,6 +4906,11 @@
       "s0": "e2-e6"
     }
   },
+  "15453": {
+    "tvdb_mappings": {
+      "s0": "e9"
+    }
+  },
   "15487": {
     "tvdb_id": 257765,
     "tvdb_mappings": {
@@ -3276,16 +4950,37 @@
       "s0": "e38"
     }
   },
+  "15785": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
   "15811": {
     "tvdb_id": 262098,
     "tvdb_mappings": {
       "s0": "e2,e10,e15,e20,e24,e28"
     }
   },
+  "15819": {
+    "tvdb_mappings": {
+      "s0": "e6-e7"
+    }
+  },
   "15879": {
     "tvdb_id": 261862,
     "tvdb_mappings": {
       "s0": "e21-e27"
+    }
+  },
+  "15927": {
+    "tvdb_id": 251047,
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
+  "15959": {
+    "tvdb_mappings": {
+      "s0": "e6-e7"
     }
   },
   "16001": {
@@ -3314,10 +5009,26 @@
       "s0": "e24"
     }
   },
+  "16345": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "16363": {
+    "tvdb_mappings": {
+      "s0": "e29-e32"
+    }
+  },
   "16468": {
     "tvdb_id": 81797,
     "tvdb_mappings": {
       "s0": "e25|-2"
+    }
+  },
+  "16574": {
+    "tvdb_id": 248049,
+    "tvdb_mappings": {
+      "s0": "e1"
     }
   },
   "16678": {
@@ -3336,7 +5047,7 @@
     "tmdb_show_id": 46798,
     "tvdb_id": 265113,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e13"
     }
   },
   "16916": {
@@ -3389,10 +5100,31 @@
       "s0": "e13"
     }
   },
+  "17341": {
+    "tvdb_id": 264523,
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "17379": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
   "17535": {
     "tvdb_id": 114801,
     "tvdb_mappings": {
       "s0": "e6"
+    }
+  },
+  "17573": {
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "17699": {
+    "tvdb_mappings": {
+      "s0": "e4"
     }
   },
   "17705": {
@@ -3400,9 +5132,19 @@
       "s1": "e1-e13"
     }
   },
+  "17725": {
+    "tvdb_mappings": {
+      "s0": "e5"
+    }
+  },
   "17727": {
     "tvdb_mappings": {
-      "s2": ""
+      "s2": "e1-e13"
+    }
+  },
+  "17739": {
+    "tvdb_mappings": {
+      "s0": "e10-e11"
     }
   },
   "17787": {
@@ -3420,7 +5162,19 @@
     "tmdb_show_id": 53020,
     "tvdb_id": 262856,
     "tvdb_mappings": {
-      "s2": ""
+      "s2": "e1-e12"
+    }
+  },
+  "18231": {
+    "tvdb_id": 87491,
+    "tvdb_mappings": {
+      "s0": "e33-e36"
+    }
+  },
+  "18391": {
+    "tvdb_id": 245821,
+    "tvdb_mappings": {
+      "s0": "e2-e38"
     }
   },
   "18397": {
@@ -3429,6 +5183,16 @@
     "tvdb_id": 267440,
     "tvdb_mappings": {
       "s0": "e7,e12-e13"
+    }
+  },
+  "18429": {
+    "tvdb_mappings": {
+      "s0": "e61"
+    }
+  },
+  "18499": {
+    "tvdb_mappings": {
+      "s0": "e4-e6"
     }
   },
   "18617": {
@@ -3462,6 +5226,12 @@
       "s0": "e46"
     }
   },
+  "18989": {
+    "tvdb_id": 293491,
+    "tvdb_mappings": {
+      "s0": "e11"
+    }
+  },
   "19021": {
     "tvdb_mappings": {
       "s0": "e3"
@@ -3483,6 +5253,11 @@
       "s1": "e1-e76",
       "s2": "e1-e74",
       "s3": "e1-e64"
+    }
+  },
+  "19159": {
+    "tvdb_mappings": {
+      "s0": "e5"
     }
   },
   "19191": {
@@ -3529,6 +5304,11 @@
       "s0": "e11"
     }
   },
+  "19587": {
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
   "19603": {
     "tvdb_mappings": {
       "s0": "e1",
@@ -3550,10 +5330,28 @@
       "s1": "e1-e9|3"
     }
   },
+  "19889": {
+    "tvdb_id": 78919,
+    "tvdb_mappings": {
+      "s0": "e6-e9"
+    }
+  },
   "19945": {
     "tvdb_id": 82788,
     "tvdb_mappings": {
       "s0": "e7-e11"
+    }
+  },
+  "19973": {
+    "tvdb_id": 81232,
+    "tvdb_mappings": {
+      "s0": "e2-e3"
+    }
+  },
+  "20045": {
+    "tvdb_id": 219131,
+    "tvdb_mappings": {
+      "s0": "e3"
     }
   },
   "20141": {
@@ -3567,12 +5365,28 @@
     "tmdb_show_id": 65503,
     "tvdb_id": 263310,
     "tvdb_mappings": {
-      "s2": ""
+      "s2": "e1-e51"
+    }
+  },
+  "20221": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
+  "20371": {
+    "tvdb_mappings": {
+      "s0": "e3"
     }
   },
   "20381": {
     "tvdb_mappings": {
       "s0": "e1"
+    }
+  },
+  "20391": {
+    "tvdb_id": 82154,
+    "tvdb_mappings": {
+      "s0": "e12"
     }
   },
   "20442": {
@@ -3584,7 +5398,7 @@
     "tmdb_show_id": 53020,
     "tvdb_id": 262856,
     "tvdb_mappings": {
-      "s3": ""
+      "s3": "e1-e12"
     }
   },
   "20450": {
@@ -3637,6 +5451,23 @@
     "mal_id": 29855,
     "tmdb_movie_id": 347182
   },
+  "20523": {
+    "tvdb_id": 273009,
+    "tvdb_mappings": {
+      "s0": "e6-e12"
+    }
+  },
+  "20543": {
+    "tvdb_id": 268196,
+    "tvdb_mappings": {
+      "s1": "e1-e23"
+    }
+  },
+  "20546": {
+    "tvdb_mappings": {
+      "s0": "e62"
+    }
+  },
   "20552": {
     "tvdb_mappings": {
       "s1": "e1-e49",
@@ -3644,9 +5475,24 @@
       "s3": "e1-e49"
     }
   },
+  "20559": {
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
+  "20561": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
   "20567": {
     "tvdb_mappings": {
       "s0": "e2"
+    }
+  },
+  "20571": {
+    "tvdb_mappings": {
+      "s0": "e4"
     }
   },
   "20572": {
@@ -3691,6 +5537,11 @@
     "tvdb_mappings": {
       "s0": "e1-e8",
       "s2": "e1-e61"
+    }
+  },
+  "20642": {
+    "tvdb_mappings": {
+      "s5": "e1-e25"
     }
   },
   "20644": {
@@ -3813,12 +5664,18 @@
     "tmdb_show_id": 67627,
     "tvdb_id": 282059,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e38"
     }
   },
   "20747": {
     "tvdb_mappings": {
       "s0": "e1"
+    }
+  },
+  "20752": {
+    "tvdb_id": 79214,
+    "tvdb_mappings": {
+      "s0": "e2"
     }
   },
   "20760": {
@@ -3861,6 +5718,12 @@
       "s0": "e1-e6"
     }
   },
+  "20776": {
+    "tvdb_id": 293491,
+    "tvdb_mappings": {
+      "s0": "e7-e10"
+    }
+  },
   "20777": {
     "tvdb_id": 261862,
     "tvdb_mappings": {
@@ -3896,7 +5759,7 @@
     "tmdb_show_id": 65503,
     "tvdb_id": 263310,
     "tvdb_mappings": {
-      "s3": ""
+      "s3": "e1-e51"
     }
   },
   "20802": {
@@ -3952,7 +5815,7 @@
     "tmdb_show_id": 53020,
     "tvdb_id": 262856,
     "tvdb_mappings": {
-      "s4": ""
+      "s4": "e1-e12"
     }
   },
   "20834": {
@@ -3991,6 +5854,12 @@
   "20856": {
     "tvdb_mappings": {
       "s0": "e1"
+    }
+  },
+  "20859": {
+    "tvdb_id": 72454,
+    "tvdb_mappings": {
+      "s0": "e82"
     }
   },
   "20861": {
@@ -4042,6 +5911,12 @@
       "s0": "e2"
     }
   },
+  "20893": {
+    "tvdb_id": 272849,
+    "tvdb_mappings": {
+      "s0": "e1-e3"
+    }
+  },
   "20895": {
     "tvdb_id": 259640,
     "tvdb_mappings": {
@@ -4077,6 +5952,17 @@
   "20918": {
     "tvdb_mappings": {
       "s0": "e15-e18"
+    }
+  },
+  "20921": {
+    "tvdb_id": 245821,
+    "tvdb_mappings": {
+      "s5": "e1-e48"
+    }
+  },
+  "20928": {
+    "tvdb_mappings": {
+      "s11": "e1-e13"
     }
   },
   "20936": {
@@ -4130,13 +6016,19 @@
     "tmdb_show_id": 67627,
     "tvdb_id": 282059,
     "tvdb_mappings": {
-      "s2": ""
+      "s2": "e1-e51"
     }
   },
   "20990": {
     "tvdb_id": 70900,
     "tvdb_mappings": {
       "s0": "e7"
+    }
+  },
+  "21003": {
+    "tvdb_id": 264523,
+    "tvdb_mappings": {
+      "s0": "e2-e3"
     }
   },
   "21005": {
@@ -4147,6 +6039,12 @@
   "21007": {
     "tvdb_mappings": {
       "s0": "e2"
+    }
+  },
+  "21013": {
+    "tvdb_id": 264533,
+    "tvdb_mappings": {
+      "s0": "e9-e11"
     }
   },
   "21039": {
@@ -4180,6 +6078,12 @@
     "tvdb_id": 280330,
     "tvdb_mappings": {
       "s0": "e8"
+    }
+  },
+  "21095": {
+    "tvdb_id": 128411,
+    "tvdb_mappings": {
+      "s0": "e5"
     }
   },
   "21098": {
@@ -4233,7 +6137,7 @@
     "tmdb_show_id": 53020,
     "tvdb_id": 262856,
     "tvdb_mappings": {
-      "s5": ""
+      "s5": "e1-e12"
     }
   },
   "21137": {
@@ -4359,6 +6263,11 @@
       "s2": "e1-e3"
     }
   },
+  "21286": {
+    "tvdb_mappings": {
+      "s6": "e1-e22"
+    }
+  },
   "21287": {
     "tvdb_mappings": {
       "s2": "e13-e26"
@@ -4381,7 +6290,7 @@
     "tmdb_show_id": 53020,
     "tvdb_id": 262856,
     "tvdb_mappings": {
-      "s6": ""
+      "s6": "e1-e12"
     }
   },
   "21303": {
@@ -4398,7 +6307,7 @@
     "tmdb_show_id": 65503,
     "tvdb_id": 263310,
     "tvdb_mappings": {
-      "s4": ""
+      "s4": "e1-e26"
     }
   },
   "21313": {
@@ -4508,6 +6417,12 @@
       "s0": "e1"
     }
   },
+  "21436": {
+    "tvdb_id": 292829,
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
   "21437": {
     "imdb_id": "tt2390066",
     "mal_id": 31668,
@@ -4605,7 +6520,7 @@
     "tmdb_show_id": 53020,
     "tvdb_id": 262856,
     "tvdb_mappings": {
-      "s7": ""
+      "s7": "e1-e12"
     }
   },
   "21534": {
@@ -4624,13 +6539,13 @@
     "tmdb_show_id": 67627,
     "tvdb_id": 282059,
     "tvdb_mappings": {
-      "s3": ""
+      "s3": "e1-e51"
     }
   },
   "21560": {
     "imdb_id": "tt5847454",
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e12"
     }
   },
   "21565": {
@@ -4654,6 +6569,18 @@
     }
   },
   "21587": {
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "21589": {
+    "tvdb_id": 79460,
+    "tvdb_mappings": {
+      "s0": "e8"
+    }
+  },
+  "21590": {
+    "tvdb_id": 84911,
     "tvdb_mappings": {
       "s0": "e1"
     }
@@ -4682,7 +6609,7 @@
     "tmdb_show_id": 65929,
     "tvdb_id": 309143,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e50"
     }
   },
   "21649": {
@@ -4863,6 +6790,12 @@
       "s0": "e1"
     }
   },
+  "87487": {
+    "tvdb_id": 80789,
+    "tvdb_mappings": {
+      "s0": "e15"
+    }
+  },
   "87499": {
     "tvdb_mappings": {
       "s0": "e4"
@@ -4920,7 +6853,7 @@
     "tmdb_show_id": 50071,
     "tvdb_id": 264522,
     "tvdb_mappings": {
-      "s3": ""
+      "s3": "e1-e12"
     }
   },
   "97880": {
@@ -4941,6 +6874,11 @@
   "97918": {
     "tvdb_mappings": {
       "s0": "e3-e5|3"
+    }
+  },
+  "97919": {
+    "tvdb_mappings": {
+      "s12": "e1-e10"
     }
   },
   "97996": {
@@ -4970,12 +6908,32 @@
     "tmdb_show_id": 70998,
     "tvdb_id": 325375,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e12"
+    }
+  },
+  "98220": {
+    "tvdb_id": 81115,
+    "tvdb_mappings": {
+      "s0": "e15-e17"
     }
   },
   "98222": {
     "tvdb_mappings": {
       "s0": "e68"
+    }
+  },
+  "98225": {
+    "tvdb_id": 146401,
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
+  "98231": {
+    "tvdb_id": 327245,
+    "tvdb_mappings": {
+      "s1": "e1-e46",
+      "s2": "e1-e56",
+      "s3": "e1-e18"
     }
   },
   "98240": {
@@ -4998,6 +6956,24 @@
     "tvdb_id": 289884,
     "tvdb_mappings": {
       "s0": "e10-e16"
+    }
+  },
+  "98469": {
+    "tvdb_id": 79360,
+    "tvdb_mappings": {
+      "s0": "e21"
+    }
+  },
+  "98470": {
+    "tvdb_id": 79360,
+    "tvdb_mappings": {
+      "s0": "e23"
+    }
+  },
+  "98471": {
+    "tvdb_id": 79360,
+    "tvdb_mappings": {
+      "s0": "e24"
     }
   },
   "98502": {
@@ -5028,7 +7004,7 @@
     "tmdb_show_id": 65929,
     "tvdb_id": 309143,
     "tvdb_mappings": {
-      "s2": ""
+      "s2": "e1-e50"
     }
   },
   "98554": {
@@ -5054,6 +7030,12 @@
       "s0": "e1"
     }
   },
+  "98604": {
+    "tvdb_id": 72454,
+    "tvdb_mappings": {
+      "s0": "e67"
+    }
+  },
   "98635": {
     "tvdb_mappings": {
       "s0": "e1-e4"
@@ -5062,6 +7044,12 @@
   "98642": {
     "tvdb_mappings": {
       "s0": "e1-e2"
+    }
+  },
+  "98697": {
+    "tvdb_id": 319997,
+    "tvdb_mappings": {
+      "s0": "e1"
     }
   },
   "98702": {
@@ -5121,6 +7109,12 @@
       "s0": "e1"
     }
   },
+  "98860": {
+    "tvdb_id": 219131,
+    "tvdb_mappings": {
+      "s0": "e5"
+    }
+  },
   "98873": {
     "imdb_id": "tt6634906",
     "mal_id": 34161,
@@ -5155,6 +7149,11 @@
   "98999": {
     "tvdb_mappings": {
       "s0": "e1-e3"
+    }
+  },
+  "99164": {
+    "tvdb_mappings": {
+      "s0": "e1"
     }
   },
   "99302": {
@@ -5193,7 +7192,7 @@
     "tmdb_show_id": 57041,
     "tvdb_id": 79895,
     "tvdb_mappings": {
-      "s9": ""
+      "s9": "e1-e13"
     }
   },
   "99732": {
@@ -5212,7 +7211,7 @@
     "tmdb_show_id": 74180,
     "tvdb_id": 334707,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e12"
     }
   },
   "99938": {
@@ -5231,6 +7230,12 @@
       "s0": "e26,e28"
     }
   },
+  "100176": {
+    "tvdb_id": 307333,
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
   "100178": {
     "tvdb_mappings": {
       "s0": "e18"
@@ -5239,6 +7244,12 @@
   "100184": {
     "tvdb_mappings": {
       "s0": "e1"
+    }
+  },
+  "100256": {
+    "tvdb_id": 316842,
+    "tvdb_mappings": {
+      "s0": "e4-e28"
     }
   },
   "100262": {
@@ -5278,7 +7289,7 @@
     "tmdb_show_id": 75778,
     "tvdb_id": 339331,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e12"
     }
   },
   "100643": {
@@ -5353,7 +7364,7 @@
     "tmdb_show_id": 78482,
     "tvdb_id": 345381,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e51"
     }
   },
   "101101": {
@@ -5424,7 +7435,7 @@
     "tmdb_show_id": 99466,
     "tvdb_id": 349733,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e2"
     }
   },
   "101410": {
@@ -5435,6 +7446,12 @@
   "101426": {
     "tvdb_mappings": {
       "s0": "e1"
+    }
+  },
+  "101431": {
+    "tvdb_id": 245821,
+    "tvdb_mappings": {
+      "s0": "e49"
     }
   },
   "101432": {
@@ -5514,7 +7531,7 @@
     "mal_id": 37281,
     "tvdb_id": 349640,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e9"
     }
   },
   "101999": {
@@ -5527,6 +7544,12 @@
     "tvdb_id": 257765,
     "tvdb_mappings": {
       "s0": "e34"
+    }
+  },
+  "102309": {
+    "tvdb_id": 341437,
+    "tvdb_mappings": {
+      "s0": "e1-e3"
     }
   },
   "102346": {
@@ -5568,6 +7591,25 @@
       "s4": "e1-e8",
       "s5": "e1-e10",
       "s6": "e1-e6"
+    }
+  },
+  "102427": {
+    "mal_id": 36040,
+    "tvdb_id": 351487,
+    "tvdb_mappings": {
+      "s1": "e1-e6"
+    }
+  },
+  "102428": {
+    "tvdb_id": 79460,
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
+  "102505": {
+    "tvdb_id": 76894,
+    "tvdb_mappings": {
+      "s0": "e17"
     }
   },
   "102631": {
@@ -5636,12 +7678,24 @@
       "s6": "e1-e13"
     }
   },
+  "103712": {
+    "tvdb_id": 275039,
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
+  },
+  "103713": {
+    "tvdb_id": 275039,
+    "tvdb_mappings": {
+      "s0": "e2"
+    }
+  },
   "103870": {
     "mal_id": 39699,
     "tmdb_show_id": 88490,
     "tvdb_id": 422824,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e12"
     }
   },
   "104170": {
@@ -5660,6 +7714,12 @@
   "104175": {
     "tvdb_mappings": {
       "s0": "e8"
+    }
+  },
+  "104187": {
+    "tvdb_id": 353624,
+    "tvdb_mappings": {
+      "s0": "e1-e24"
     }
   },
   "104188": {
@@ -5759,7 +7819,7 @@
     "imdb_id": "tt18500586",
     "tmdb_movie_id": 570575,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1"
     }
   },
   "106206": {
@@ -5778,6 +7838,12 @@
       "s0": "e1"
     }
   },
+  "106495": {
+    "tvdb_id": 275670,
+    "tvdb_mappings": {
+      "s0": "e8"
+    }
+  },
   "106506": {
     "mal_id": 37755,
     "tmdb_show_id": 76757,
@@ -5786,9 +7852,19 @@
       "s0": "e5-"
     }
   },
+  "106542": {
+    "tvdb_mappings": {
+      "s0": "e12"
+    }
+  },
   "106862": {
     "tvdb_mappings": {
       "s0": "e1"
+    }
+  },
+  "106915": {
+    "tvdb_mappings": {
+      "s0": "e4|-1"
     }
   },
   "107189": {
@@ -5808,6 +7884,12 @@
       "s0": "e11-e13"
     }
   },
+  "107905": {
+    "tvdb_id": 157001,
+    "tvdb_mappings": {
+      "s0": "e6"
+    }
+  },
   "108267": {
     "tvdb_mappings": {
       "s0": "e1"
@@ -5824,7 +7906,13 @@
     "tmdb_show_id": 78482,
     "tvdb_id": 345381,
     "tvdb_mappings": {
-      "s2": ""
+      "s2": "e1-e51"
+    }
+  },
+  "108630": {
+    "tvdb_id": 82378,
+    "tvdb_mappings": {
+      "s0": "e3"
     }
   },
   "108942": {
@@ -5841,6 +7929,12 @@
     "tvdb_id": 293088,
     "tvdb_mappings": {
       "s0": "e9-e14"
+    }
+  },
+  "108972": {
+    "tvdb_id": 272849,
+    "tvdb_mappings": {
+      "s0": "e4-e6"
     }
   },
   "109002": {
@@ -5873,7 +7967,7 @@
     "tmdb_show_id": 107974,
     "tvdb_id": 245821,
     "tvdb_mappings": {
-      "s11": ""
+      "s11": "e1-e14"
     }
   },
   "109562": {
@@ -5910,7 +8004,7 @@
     "tmdb_show_id": 96444,
     "tvdb_id": 371662,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e12"
     }
   },
   "110318": {
@@ -5959,7 +8053,13 @@
     "tmdb_show_id": 107974,
     "tvdb_id": 245821,
     "tvdb_mappings": {
-      "s12": ""
+      "s12": "e1-e31"
+    }
+  },
+  "111305": {
+    "tvdb_id": 247788,
+    "tvdb_mappings": {
+      "s0": "e4"
     }
   },
   "111789": {
@@ -5977,6 +8077,12 @@
       "s0": "e4"
     }
   },
+  "112019": {
+    "tvdb_id": 259675,
+    "tvdb_mappings": {
+      "s3": "e1-e8"
+    }
+  },
   "112035": {
     "tvdb_mappings": {
       "s0": "e1-e4"
@@ -5988,6 +8094,12 @@
     "tvdb_id": 289882,
     "tvdb_mappings": {
       "s0": "e4"
+    }
+  },
+  "112534": {
+    "tvdb_id": 227501,
+    "tvdb_mappings": {
+      "s4": "e1-e9"
     }
   },
   "112658": {
@@ -6018,7 +8130,7 @@
     "tmdb_show_id": 95897,
     "tvdb_id": 373728,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e8"
     }
   },
   "113425": {
@@ -6028,7 +8140,13 @@
     "tmdb_show_id": 99071,
     "tvdb_id": 388575,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e12"
+    }
+  },
+  "113653": {
+    "tvdb_id": 72454,
+    "tvdb_mappings": {
+      "s0": "e72"
     }
   },
   "113811": {
@@ -6047,13 +8165,19 @@
     "tmdb_show_id": 78482,
     "tvdb_id": 345381,
     "tvdb_mappings": {
-      "s3": ""
+      "s3": "e1-e51"
     }
   },
   "114052": {
     "tvdb_id": 262098,
     "tvdb_mappings": {
       "s0": "e46"
+    }
+  },
+  "114072": {
+    "tvdb_id": 378520,
+    "tvdb_mappings": {
+      "s1": "e1-e92"
     }
   },
   "114129": {
@@ -6063,10 +8187,23 @@
       "s0": "e17"
     }
   },
+  "114448": {
+    "mal_id": 36040,
+    "tvdb_id": 351487,
+    "tvdb_mappings": {
+      "s1": "e7-e12"
+    }
+  },
+  "114744": {
+    "tvdb_id": 326109,
+    "tvdb_mappings": {
+      "s0": "e4-e7"
+    }
+  },
   "115656": {
     "tvdb_id": 245821,
     "tvdb_mappings": {
-      "s13": ""
+      "s13": "e1-e25"
     }
   },
   "116053": {
@@ -6079,6 +8216,12 @@
       "s0": "e1-e12"
     }
   },
+  "116793": {
+    "tvdb_id": 128411,
+    "tvdb_mappings": {
+      "s3": "e1-e25"
+    }
+  },
   "117408": {
     "tvdb_id": 79525,
     "tvdb_mappings": {
@@ -6088,6 +8231,12 @@
   "117532": {
     "tvdb_mappings": {
       "s0": "e1|-6"
+    }
+  },
+  "118168": {
+    "tvdb_id": 353624,
+    "tvdb_mappings": {
+      "s0": "e25-e36"
     }
   },
   "118245": {
@@ -6102,7 +8251,7 @@
     "tmdb_show_id": 103409,
     "tvdb_id": 388644,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e11"
     }
   },
   "119113": {
@@ -6133,6 +8282,12 @@
       "s0": "e28-e30"
     }
   },
+  "120896": {
+    "tvdb_id": 293491,
+    "tvdb_mappings": {
+      "s0": "e13"
+    }
+  },
   "121034": {
     "tvdb_id": 264663,
     "tvdb_mappings": {
@@ -6153,7 +8308,7 @@
     "tmdb_show_id": 105903,
     "tvdb_id": 389232,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e12"
     }
   },
   "121797": {
@@ -6162,7 +8317,7 @@
     "tmdb_show_id": 250538,
     "tvdb_id": 388746,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e3"
     }
   },
   "121962": {
@@ -6219,6 +8374,18 @@
       "s0": "e1"
     }
   },
+  "125601": {
+    "tvdb_id": 79022,
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
+  "126275": {
+    "tvdb_id": 259675,
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
   "126318": {
     "tvdb_mappings": {
       "s3": "e10-e13"
@@ -6236,6 +8403,11 @@
       "s1": "e1-e12"
     }
   },
+  "126835": {
+    "tvdb_mappings": {
+      "s4": "e1-e25"
+    }
+  },
   "127090": {
     "anidb_id": 15918,
     "imdb_id": "tt13628870",
@@ -6243,7 +8415,7 @@
     "tmdb_show_id": 114477,
     "tvdb_id": 393301,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e12"
     }
   },
   "127368": {
@@ -6255,7 +8427,7 @@
   "128827": {
     "tvdb_id": 245821,
     "tvdb_mappings": {
-      "s13": "e13-e25"
+      "s14": "e13-e25"
     }
   },
   "129464": {
@@ -6263,7 +8435,7 @@
     "tmdb_show_id": 97915,
     "tvdb_id": 383725,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e4"
     }
   },
   "129591": {
@@ -6282,7 +8454,7 @@
     "tmdb_show_id": 10926,
     "tvdb_id": 72459,
     "tvdb_mappings": {
-      "s3": ""
+      "s3": "e1-e26"
     }
   },
   "130183": {
@@ -6305,7 +8477,7 @@
     "tmdb_show_id": 113780,
     "tvdb_id": 393243,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e12"
     }
   },
   "130777": {
@@ -6327,6 +8499,12 @@
     "tvdb_id": 331753,
     "tvdb_mappings": {
       "s0": "e26"
+    }
+  },
+  "131770": {
+    "tvdb_id": 72454,
+    "tvdb_mappings": {
+      "s0": "e71"
     }
   },
   "131773": {
@@ -6366,6 +8544,12 @@
       "s0": "e9"
     }
   },
+  "132904": {
+    "tvdb_id": 341437,
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
   "133007": {
     "tvdb_mappings": {
       "s0": "e4"
@@ -6383,10 +8567,28 @@
       "s6": "e1-e24"
     }
   },
+  "135515": {
+    "tvdb_id": 423730,
+    "tvdb_mappings": {
+      "s1": "e1-e16"
+    }
+  },
   "136436": {
     "tvdb_id": 318893,
     "tvdb_mappings": {
       "s0": "e30"
+    }
+  },
+  "136517": {
+    "tvdb_id": 245821,
+    "tvdb_mappings": {
+      "s0": "e40-e48,e50-e66"
+    }
+  },
+  "136880": {
+    "tvdb_id": 361013,
+    "tvdb_mappings": {
+      "s3": "e1-e12"
     }
   },
   "137804": {
@@ -6402,10 +8604,40 @@
       "s0": "e1-e2"
     }
   },
+  "139020": {
+    "tvdb_id": 195161,
+    "tvdb_mappings": {
+      "s0": "e7"
+    }
+  },
+  "139062": {
+    "tvdb_id": 75112,
+    "tvdb_mappings": {
+      "s0": "e14"
+    }
+  },
+  "139067": {
+    "tvdb_id": 75112,
+    "tvdb_mappings": {
+      "s0": "e16"
+    }
+  },
+  "139179": {
+    "tvdb_id": 72454,
+    "tvdb_mappings": {
+      "s0": "e64"
+    }
+  },
   "139212": {
     "tvdb_id": 245821,
     "tvdb_mappings": {
       "s15": "e1-e13"
+    }
+  },
+  "139213": {
+    "tvdb_id": 245821,
+    "tvdb_mappings": {
+      "s15": "e13-e25"
     }
   },
   "139409": {
@@ -6416,10 +8648,22 @@
       "s0": "e1-e12"
     }
   },
+  "139588": {
+    "tvdb_id": 271591,
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
   "139754": {
     "tvdb_id": 267440,
     "tvdb_mappings": {
       "s0": "e36-e37"
+    }
+  },
+  "140787": {
+    "tvdb_id": 128411,
+    "tvdb_mappings": {
+      "s5": "e1-e25"
     }
   },
   "141352": {
@@ -6435,6 +8679,12 @@
     "tvdb_id": 371310,
     "tvdb_mappings": {
       "s0": "e1-e12"
+    }
+  },
+  "142219": {
+    "tvdb_id": 72454,
+    "tvdb_mappings": {
+      "s0": "e78"
     }
   },
   "142411": {
@@ -6462,6 +8712,12 @@
   "144676": {
     "tvdb_mappings": {
       "s1": "e1-e12|-5"
+    }
+  },
+  "144779": {
+    "tvdb_id": 259675,
+    "tvdb_mappings": {
+      "s4": "e1-e26"
     }
   },
   "144803": {
@@ -6495,7 +8751,7 @@
     "tmdb_show_id": 34114,
     "tvdb_id": 79835,
     "tvdb_mappings": {
-      "s2": ""
+      "s2": "e1-e37"
     }
   },
   "146922": {
@@ -6516,6 +8772,18 @@
   "147814": {
     "tvdb_mappings": {
       "s0": "e1-e2|2"
+    }
+  },
+  "148149": {
+    "tvdb_id": 275039,
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
+  "148584": {
+    "tvdb_id": 316842,
+    "tvdb_mappings": {
+      "s0": "e29-e34"
     }
   },
   "148970": {
@@ -6540,10 +8808,22 @@
       "s0": "e9-e11"
     }
   },
+  "150970": {
+    "tvdb_id": 245821,
+    "tvdb_mappings": {
+      "s15": "e26-38"
+    }
+  },
   "151040": {
     "tvdb_mappings": {
       "s0": "e1",
       "s1": "e1-e11"
+    }
+  },
+  "151117": {
+    "tvdb_id": 80470,
+    "tvdb_mappings": {
+      "s0": "e4"
     }
   },
   "152633": {
@@ -6552,6 +8832,12 @@
     "tvdb_id": 400512,
     "tvdb_mappings": {
       "s0": "e13-"
+    }
+  },
+  "153791": {
+    "tvdb_id": 326109,
+    "tvdb_mappings": {
+      "s0": "e14"
     }
   },
   "154037": {
@@ -6595,7 +8881,7 @@
     "tmdb_show_id": 211057,
     "tvdb_id": 425148,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e13"
     }
   },
   "155017": {
@@ -6604,10 +8890,34 @@
       "s0": "e11-e25"
     }
   },
+  "155739": {
+    "tvdb_id": 71634,
+    "tvdb_mappings": {
+      "s0": "e4"
+    }
+  },
+  "156841": {
+    "tvdb_id": 72454,
+    "tvdb_mappings": {
+      "s0": "e79"
+    }
+  },
   "157693": {
     "tvdb_mappings": {
       "s0": "e1",
       "s1": "e1-e7"
+    }
+  },
+  "158997": {
+    "tvdb_id": 72454,
+    "tvdb_mappings": {
+      "s0": "e76"
+    }
+  },
+  "160850": {
+    "tvdb_id": 275039,
+    "tvdb_mappings": {
+      "s0": "e5"
     }
   },
   "162291": {
@@ -6641,6 +8951,24 @@
       "s0": "e1"
     }
   },
+  "165681": {
+    "tvdb_id": 245821,
+    "tvdb_mappings": {
+      "s16": "e14-e26"
+    }
+  },
+  "166060": {
+    "tvdb_id": 72454,
+    "tvdb_mappings": {
+      "s0": "e73"
+    }
+  },
+  "166381": {
+    "tvdb_id": 421776,
+    "tvdb_mappings": {
+      "s0": "e1-e2"
+    }
+  },
   "167486": {
     "tvdb_mappings": {
       "s0": "e1"
@@ -6668,6 +8996,12 @@
     "tvdb_id": 354179,
     "tvdb_mappings": {
       "s2": "e13-e28"
+    }
+  },
+  "169754": {
+    "tvdb_id": 72454,
+    "tvdb_mappings": {
+      "s0": "e77"
     }
   },
   "169929": {
@@ -6725,6 +9059,12 @@
       "s1": "e1-"
     }
   },
+  "173824": {
+    "tvdb_id": 128411,
+    "tvdb_mappings": {
+      "s2": "e51-e97"
+    }
+  },
   "175573": {
     "tvdb_id": 79895,
     "tvdb_mappings": {
@@ -6740,6 +9080,12 @@
     "tvdb_id": 262098,
     "tvdb_mappings": {
       "s0": "e64"
+    }
+  },
+  "176862": {
+    "tvdb_id": 76665,
+    "tvdb_mappings": {
+      "s0": "e5"
     }
   },
   "177008": {
@@ -6765,6 +9111,12 @@
       "s1": "e14-e26"
     }
   },
+  "179852": {
+    "tvdb_id": 80470,
+    "tvdb_mappings": {
+      "s0": "e5"
+    }
+  },
   "179930": {
     "tvdb_mappings": {
       "s0": "e1"
@@ -6785,6 +9137,12 @@
       "s0": "e57"
     }
   },
+  "182546": {
+    "tvdb_id": 74600,
+    "tvdb_mappings": {
+      "s0": "e1"
+    }
+  },
   "182548": {
     "tvdb_mappings": {
       "s0": "e7"
@@ -6793,6 +9151,12 @@
   "182920": {
     "tvdb_mappings": {
       "s16": "e27-"
+    }
+  },
+  "184369": {
+    "tvdb_id": 72454,
+    "tvdb_mappings": {
+      "s0": "e80"
     }
   },
   "185736": {
