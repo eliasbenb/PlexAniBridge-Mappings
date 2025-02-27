@@ -494,8 +494,6 @@ class AnimeIDCollector:
             if anilist_id in self.anilist_entries:
                 existing_entry = self.anilist_entries[anilist_id]
                 for key, value in fields.items():
-                    if key == "tvdb_mappings" and value:
-                        value = {**(existing_entry.tvdb_mappings or {}), **value}
                     setattr(existing_entry, key, value)
             else:
                 entry = AniMap(anilist_id=anilist_id, **fields)
