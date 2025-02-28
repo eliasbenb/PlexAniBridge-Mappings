@@ -599,8 +599,8 @@ class AnimeIDCollector:
             self.save_results()
             self.update_readme()
 
-        except Exception as e:
-            self.logger.error(f"Error during execution: {str(e)}", exc_info=True)
+        except Exception:
+            self.logger.error("Error during execution: ", exc_info=True)
             sys.exit(1)
 
         self.logger.info("Anime IDs Collection Finished")
