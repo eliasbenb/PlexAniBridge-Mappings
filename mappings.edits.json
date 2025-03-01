@@ -4415,7 +4415,7 @@
     "tmdb_show_id": 31718,
     "tvdb_id": 80042,
     "tvdb_mappings": {
-      "s0": "e2-"
+      "s0": "e2-e5"
     }
   },
   "7363": {
@@ -11727,14 +11727,6 @@
     "tvdb_id": 294002,
     "tvdb_mappings": {
       "s0": "e45-e57"
-    }
-  },
-  "152633": {
-    "mal_id": 52745,
-    "tmdb_show_id": 106055,
-    "tvdb_id": 400512,
-    "tvdb_mappings": {
-      "s0": "e13-"
     }
   },
   "153412": {
