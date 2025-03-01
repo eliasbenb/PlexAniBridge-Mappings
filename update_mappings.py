@@ -378,7 +378,9 @@ class AnimeIDCollector:
             entry: AniMap, tvdb_season: str, episode_offset: int
         ) -> None:
             if tvdb_season == "a":
-                f"TVDB entry {entry.tvdb_id} has no default season. Manual mapping may be required."
+                logging.debug(
+                    f"TVDB entry {entry.tvdb_id} has no default season. Manual mapping may be required."
+                )
                 return
             if episode_offset < 0:
                 logging.debug(
