@@ -389,17 +389,14 @@ class AnimeIDCollector:
                 )
                 return
 
-            if not (
-                entry.anilist_id
-                and self.anilist_ep_counts.get(entry.anilist_id) is not None
-            ):
+            anilist_ep_count = self.anilist_ep_counts.get(entry.anilist_id)
+            tvdb_ep_count = self.tvdb_ep_counts.get(entry.tvdb_id, {}).get(tvdb_season)
+
+            if not entry.anilist_id or not anilist_ep_count:
                 entry.tvdb_mappings[f"s{tvdb_season}"] = f"e{episode_offset + 1}-"
                 return
 
-            anilist_ep_count = self.anilist_ep_counts[entry.anilist_id]
-            tvdb_ep_count = self.tvdb_ep_counts.get(entry.tvdb_id, {}).get(tvdb_season)
-
-            if tvdb_ep_count is None:
+            if not tvdb_ep_count:
                 logging.debug(
                     f"TVDB entry {entry.tvdb_id} has no episode count for season {tvdb_season}. "
                     f"Manual mapping may be required."
