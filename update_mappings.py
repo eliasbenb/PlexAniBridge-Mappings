@@ -123,6 +123,35 @@ class TVDBMapping(BaseModel, validate_assignment=True):
 
         return episode_ranges
 
+    @staticmethod
+    def to_string(mappings: list["TVDBMapping"]) -> str:
+        """
+        Convert a list of TVDBMapping objects to their string representation.
+        Simplifies the output when possible.
+
+        Args:
+            mappings (list[TVDBMapping]): List of mapping objects
+
+        Returns:
+            str: Simplified string representation
+        """
+        parts: list[str] = []
+        for mapping in mappings:
+            if mapping.start == 1 and mapping.end is None and mapping.ratio == 1:
+                return ""
+
+            if mapping.start == 1 and mapping.end is None:
+                parts.append(f"e{mapping.start}-|{mapping.ratio}")
+            elif mapping.start == mapping.end:
+                parts.append(
+                    f"e{mapping.start}{'' if mapping.ratio == 1 else f'|{mapping.ratio}'}"
+                )
+            else:
+                parts.append(
+                    f"e{mapping.start}-{f'e{mapping.end}' if mapping.end else ''}{'' if mapping.ratio == 1 else f'|{mapping.ratio}'}"
+                )
+        return ",".join(parts)
+
     @model_validator(mode="after")
     def validate_range(self) -> Self:
         if self.ratio == 0:
@@ -183,7 +212,8 @@ class AniMap(BaseModel, validate_assignment=True):
 
     def model_dump(self, **kwargs) -> dict[str, Any]:
         """
-        Dumps the model to a dictionary, flattening single-item lists to scalar values.
+        Dumps the model to a dictionary, flattening single-item lists to scalar values
+        and simplifying TVDB mappings.
         """
         data = super().model_dump(**kwargs)
 
@@ -192,6 +222,18 @@ class AniMap(BaseModel, validate_assignment=True):
                 continue
             if value is not None and isinstance(value, list) and len(value) == 1:
                 data[key] = value[0]
+
+        if data.get("tvdb_mappings"):
+            simplified_mappings = {}
+            for season_str, mapping_str in data["tvdb_mappings"].items():
+                season = int(season_str.lstrip("s"))
+
+                mappings = TVDBMapping.from_string(season, mapping_str)
+                simplified_str = TVDBMapping.to_string(mappings)
+
+                simplified_mappings[season_str] = simplified_str
+
+            data["tvdb_mappings"] = simplified_mappings
 
         return data
 
