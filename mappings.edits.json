@@ -6197,6 +6197,11 @@
       "s0": "e2-e7"
     }
   },
+  "13047": {
+    "tmdb_movie_id": 1129779,
+    "tvdb_id": null,
+    "tvdb_mappings": null
+  },
   "13411": {
     "tvdb_mappings": {
       "s0": "e2"
@@ -10844,6 +10849,10 @@
     "tvdb_mappings": {
       "s0": "e2"
     }
+  },
+  "120122": {
+    "tvdb_id": null,
+    "tvdb_mappings": null
   },
   "120257": {
     "mal_id": 39477,
