@@ -106344,7 +106344,11 @@
   "182445": {
     "anidb_id": 18904,
     "mal_id": 59150,
-    "tmdb_show_id": 79141
+    "tmdb_show_id": 79141,
+    "tvdb_id": 358612,
+    "tvdb_mappings": {
+      "s5": "e1-e10"
+    }
   },
   "182466": {
     "mal_id": 60021
