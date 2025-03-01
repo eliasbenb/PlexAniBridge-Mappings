@@ -360,6 +360,12 @@ class AnimeIDCollector:
 
             if episode_offset == 0 and anilist_ep_count == tvdb_ep_count:
                 entry.tvdb_mappings[f"s{tvdb_season}"] = ""
+            elif episode_offset < 0:
+                logging.debug(
+                    f"AniList entry {entry.anilist_id} has a negative episode offset ({episode_offset}). "
+                    f"Manual mapping may be required."
+                )
+                return
             elif anilist_ep_count == 1:
                 entry.tvdb_mappings[f"s{tvdb_season}"] = f"e{episode_offset + 1}"
             else:
