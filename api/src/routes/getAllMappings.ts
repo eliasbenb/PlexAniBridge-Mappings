@@ -7,6 +7,12 @@ import { AniMapSchema, ErrorSchemas } from '../types';
 
 export class GetAllMappings extends OpenAPIRoute {
     schema = {
+        request: {
+            query: z.object({
+                page: z.number().int().min(1).optional().default(1),
+                limit: z.number().int().min(-1).optional().default(500),
+            }),
+        },
         responses: {
             '200': {
                 description: 'List of all mappings',
@@ -14,7 +20,13 @@ export class GetAllMappings extends OpenAPIRoute {
                     "application/json": {
                         schema: z.object({
                             count: z.number(),
-                            mappings: AniMapSchema,
+                            results: AniMapSchema,
+                            pageInfo: z.object({
+                                totalPages: z.number(),
+                                currentPage: z.number(),
+                                pageSize: z.number(),
+                                hasNextPage: z.boolean(),
+                            }),
                         })
                     }
                 }
@@ -35,9 +47,20 @@ export class GetAllMappings extends OpenAPIRoute {
             const url = c.env.CDN_URL || DEFAULT_CDN_URL;
             const { mappings } = await getMappings(url);
 
+            const { page, limit } = (await this.getValidatedData<typeof this.schema>()).query;
+            const start = (page - 1) * limit;
+            const end = limit === -1 ? Object.keys(mappings).length : start + limit;
+
+            const results = Object.values(mappings).slice(start, end);
             return c.json({
-                count: Object.keys(mappings).length,
-                mappings: Object.values(mappings),
+                count: results.length,
+                results,
+                pageInfo: {
+                    totalPages: Math.ceil(Object.keys(mappings).length / limit),
+                    currentPage: page,
+                    pageSize: limit,
+                    hasNextPage: end < Object.keys(mappings).length,
+                },
             });
         } catch (error) {
             return c.json({
