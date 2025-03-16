@@ -9,13 +9,13 @@ export class SearchMappings extends OpenAPIRoute {
     schema = {
         request: {
             query: z.object({
-                anidb_id: z.string().optional(),
-                anilist_id: z.string().optional(),
+                anidb_id: z.number().int().optional(),
+                anilist_id: z.number().int().optional(),
                 imdb_id: z.string().optional(),
-                mal_id: z.string().optional(),
-                tmdb_movie_id: z.string().optional(),
-                tmdb_show_id: z.string().optional(),
-                tvdb_id: z.string().optional(),
+                mal_id: z.number().int().optional(),
+                tmdb_movie_id: z.number().int().optional(),
+                tmdb_show_id: z.number().int().optional(),
+                tvdb_id: z.number().int().optional(),
             }),
         },
         responses: {

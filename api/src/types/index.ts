@@ -39,79 +39,22 @@ export interface CacheEntry {
     timestamp: number;
 }
 
-export type Condition = {
-    field: "anidb_id" | "anilist_id" | "imdb_id" | "mal_id" | "tmdb_movie_id" | "tmdb_show_id" | "tvdb_id";
-    op: "eq" | "neq" | "in" | "nin" | "gt" | "gte" | "lt" | "lte";
-    value: string | number | (string | number)[];
-};
-
-export type LogicalFilter = { and: Filter[] } | { or: Filter[] };
-export type Filter = Condition | LogicalFilter;
-
 export const AniMapSchema = z.object({
     anidb_id: z.number().nullable().openapi({
         type: 'integer',
         description: 'The matching AniDB ID for the entry',
         example: 12820
     }),
-    anilist_id: z.number().nullable().openapi({
-        type: 'integer',
-        description: 'The AniList ID of the anime',
-        example: 98310
-    }),
-    imdb_id: z.union([z.string(), z.array(z.string()), z.null()]).openapi({
-        oneOf: [
-            { type: 'string' },
-            { type: 'array', items: { type: 'string' } },
-            { type: 'null' }
-        ],
-        description: 'The matching IMDb ID(s) for the entry. Can be a single ID or an array of IDs',
-        example: 'tt9288776'
-    }),
-    mal_id: z.union([z.number(), z.array(z.number()), z.null()]).openapi({
-        oneOf: [
-            { type: 'integer' },
-            { type: 'array', items: { type: 'integer' } },
-            { type: 'null' }
-        ],
-        description: 'The matching MyAnimeList ID(s) for the entry. Can be a single ID or an array of IDs',
-        example: [34915, 36186, 36529]
-    }),
-    tmdb_movie_id: z.union([z.number(), z.array(z.number()), z.null()]).openapi({
-        oneOf: [
-            { type: 'integer' },
-            { type: 'array', items: { type: 'integer' } },
-            { type: 'null' }
-        ],
-        description: 'The matching TMDB ID(s) for the movie entry. Can be a single ID or an array of IDs',
-        example: 532067
-    }),
-    tmdb_show_id: z.union([z.number(), z.array(z.number()), z.null()]).openapi({
-        oneOf: [
-            { type: 'integer' },
-            { type: 'array', items: { type: 'integer' } },
-            { type: 'null' }
-        ],
-        description: 'The matching TMDB ID(s) for the show entry. Can be a single ID or an array of IDs',
-        example: 83095
-    }),
-    tvdb_id: z.number().nullable().openapi({
-        type: 'integer',
-        description: 'The matching TVDB ID for the show entry',
-        example: 333234
-    }),
+    anilist_id: z.number().int().nullable(),
+    imdb_id: z.union([z.string(), z.array(z.string()), z.null()]),
+    mal_id: z.union([z.number().int(), z.array(z.number().int()), z.null()]),
+    tmdb_movie_id: z.union([z.number().int(), z.array(z.number().int()), z.null()]),
+    tmdb_show_id: z.union([z.number().int(), z.array(z.number().int()), z.null()]),
+    tvdb_id: z.number().int().nullable(),
     tvdb_mappings: z.record(
         z.string(),
         z.string()
-    ).nullable().openapi({
-        type: 'object',
-        description: 'A dictionary mapping TVDB seasons to episode patterns. Keys are season identifiers in format "s0", "s1", etc. Values are episode patterns.',
-        example: {
-            's0': 'e1',
-            's1': 'e1-e13'
-        }
-    })
-
+    ).nullable()
 }).openapi({
     title: 'Anime Mapping',
     description: 'Anime mapping data that connects IDs across different anime databases',
