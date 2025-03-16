@@ -1,12 +1,14 @@
 import { OpenAPIRoute } from 'chanfana';
 import { z } from 'zod';
-import { AppContext } from '../types';
-import { getMappings } from '../utils/cache';
-import { DEFAULT_CDN_URL } from '../config/constants';
-import { AniMapSchema, ErrorSchemas } from '../types';
+import { AppContext } from '../../types';
+import { getMappings } from '../../utils/cache';
+import { DEFAULT_CDN_URL } from '../../config/constants';
+import { AniMapSchema, ErrorSchemas } from '../../types';
 
 export class GetAllMappings extends OpenAPIRoute {
     schema = {
+        tags: ['Mappings'],
+        operationId: 'All Mappings',
         request: {
             query: z.object({
                 page: z.number().int().min(1).optional().default(1),

@@ -1,12 +1,14 @@
 import { OpenAPIRoute } from 'chanfana';
 import { z } from 'zod';
-import { AppContext } from '../types';
-import { getMappings } from '../utils/cache';
-import { DEFAULT_CDN_URL } from '../config/constants';
-import { AniMapSchema, ErrorSchemas } from '../types';
+import { AppContext } from '../../types';
+import { getMappings } from '../../utils/cache';
+import { DEFAULT_CDN_URL } from '../../config/constants';
+import { AniMapSchema, ErrorSchemas } from '../../types';
 
 export class SearchMappings extends OpenAPIRoute {
     schema = {
+        tags: ['Mappings'],
+        operationId: 'Search Mappings',
         request: {
             query: z.object({
                 anidb_id: z.number().int().optional(),
@@ -25,10 +27,7 @@ export class SearchMappings extends OpenAPIRoute {
                     "application/json": {
                         schema: z.object({
                             count: z.number().openapi({ description: 'Number of results' }),
-                            results: z.array(z.object({
-                                id: z.string(),
-                                mapping: AniMapSchema,
-                            })),
+                            results: z.array(AniMapSchema),
                         })
                     }
                 }
