@@ -15,8 +15,14 @@
             ]
         }
     },
-    // Features to add to the dev container. More info: https://containers.dev/features.
-    // "features": {},
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts"
+        },
+        "ghcr.io/joedmck/devcontainer-features/wrangler:1": {
+            "version": "latest"
+        }
+    },
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [],
     // Use 'postCreateCommand' to run commands after the container is created.
