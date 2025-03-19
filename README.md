@@ -28,21 +28,42 @@ You can view the schema for the mappings in [mappings.schema.json](./mappings.sc
 }
 ```
 
-- **Key**: The primary key is the AniList ID of the show/movie. The key should be a string representation of the integer ID.
-- `anidb_id`: The matching AniDB ID for the entry. Currently, unused by PlexAniBridge, but may be used in the future.
-- `imdb_id`: The matching IMDb ID(s) for the entry. Can be a single ID or an array of IDs. Currently only used by PlexAniBridge for movies, but may be used for shows in the future.
-- `mal_id`: The matching MyAnimeList ID for the entry. Currently only used by PlexAniBridge for shows, but may be used for movies in the future.
-- `tmdb_movie_id`: The matching TMDB ID(s) for the movie entry. Can be a single ID or an array of IDs.
-- `tmdb_show_id`: The matching TMDB ID(s) for the show entry. Can be a single ID or an array of IDs.
-- `tvdb_id`: The matching TVDB ID for the show entry.
-- `tvdb_mappings`: A dictionary mapping TVDB seasons to episode patterns. Keys are in the format "sX" where X is the season number (e.g., "s1" for season 1). Values are strings that define episode mappings in the following formats:
-  - All episodes: `""` maps all episodes in the season with a 1:1 mapping
-  - Single episode: `"e5"` maps to just episode 5
-  - Episode range: `"e1-e13"` maps episodes 1 through 13
-  - Open-ended range: `"e3-"` maps all episodes starting from episode 3
-  - Episode ratio (+): `"e1-e12|2"` maps episodes with a 2:1 ratio (two TVDB eisodes to one AniList episode)
-  - Episode ratio (-): `"e1-e12|-2"` maps episodes with a 1:2 ratio (one TVDB episode to two AniList episodes)
-  - Multiple ranges: `"e1-e12,e14-e24"` maps multiple, non-contiguous episode ranges
+- Key: The primary key is the AniList ID of the show/movie. The key should be a string representation of the integer ID.
+- `anidb_id`: The AniDB ID.
+- `anilist_id`: The AniList ID.
+- `imdb_id`: The IMDB ID(s) (format: 'tt0123456'). Can be a single ID or an array of IDs.
+- `mal_id`: The MyAnimeList ID(s). Can be a single ID or an array of IDs.
+- `tmdb_movie_id`: The TMDB movie ID(s). Can be a single ID or an array of IDs.
+- `tmdb_show_id`: The TMDB show ID(s). Can be a single ID or an array of IDs.
+- `tvdb_id`: The TVDB ID.
+- `tvdb_mappings`: Mapping of TVDB seasons to episode patterns.
+
+  Pattern Format: 'e{start}-e{end}|{ratio},e{start2}-e{end2}|{ratio2},...,e{startN}-e{endN}|{ratioN}'
+
+  Attributes:
+
+  - {start}: Start of the episode range
+  - {end}: End of the episode range. None indicates an open-ended range.
+  - {ratio}: The 'worth' of each episode in the range. Positive values indicate that 1 TVDB episode corresponds to N AniList episodes, while negative values indicate that N TVDB episodes correspond to 1 AniList episode.
+
+  Examples:
+
+  ```json
+  {
+    "s1": "e1-e12|2", // Every 2 TVDB episodes in the range S01E01-S01E12 correspond to 1 AniList episode
+    "s2": "e13-" // Every TVDB episode in S01 from E13 onwards
+  }
+  ```
+  ```json
+  {
+    "s1": "" // Every TVDB episode in the S01
+  }
+  ```
+  ```json
+  {
+    "s1": "e4-e6|-2" // Every TVDB episode in the range S01E04-S01E06 corresponds to 2 AniList episodes
+  }
+  ```
 
 ## Sources
 
