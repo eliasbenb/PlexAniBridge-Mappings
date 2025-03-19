@@ -571,6 +571,7 @@ class AnimeIDCollector:
             "title": "Anime ID Mappings",
             "type": "object",
             "patternProperties": {"^[0-9]+$": AniMap.model_json_schema()},
+            "properties": {"$includes": {"type": "array", "items": {"type": "string"}}},
         }
         json.dump(
             schema,
