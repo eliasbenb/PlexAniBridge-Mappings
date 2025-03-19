@@ -3,7 +3,7 @@
   "type": "object",
   "patternProperties": {
     "^[0-9]+$": {
-      "description": "Model representing an anime mapping.\n\nAttributes:\n    anidb_id: Optional AniDB ID\n    anilist_id: Optional AniList ID\n    imdb_id: Optional IMDB ID(s)\n    mal_id: Optional MyAnimeList ID(s)\n    tmdb_movie_id: Optional TMDB movie ID\n    tmdb_show_id: Optional TMDB show ID\n    tvdb_id: Optional TVDB ID\n    tvdb_mappings: Optional list of TVDB mapping patterns",
+      "description": "Model for storing anime ID mappings and related information.",
       "properties": {
         "anidb_id": {
           "anyOf": [
@@ -15,7 +15,8 @@
             }
           ],
           "default": null,
-          "title": "Anidb Id"
+          "description": "The AniDB ID",
+          "title": "AniDB ID"
         },
         "anilist_id": {
           "anyOf": [
@@ -27,7 +28,8 @@
             }
           ],
           "default": null,
-          "title": "Anilist Id"
+          "description": "The AniList ID",
+          "title": "AniList ID"
         },
         "imdb_id": {
           "anyOf": [
@@ -45,7 +47,8 @@
             }
           ],
           "default": null,
-          "title": "Imdb Id"
+          "description": "The IMDB ID(s) (format: 'tt0123456')",
+          "title": "IMDB ID"
         },
         "mal_id": {
           "anyOf": [
@@ -63,7 +66,8 @@
             }
           ],
           "default": null,
-          "title": "Mal Id"
+          "description": "The MyAnimeList ID(s)",
+          "title": "MAL ID"
         },
         "tmdb_movie_id": {
           "anyOf": [
@@ -81,7 +85,8 @@
             }
           ],
           "default": null,
-          "title": "Tmdb Movie Id"
+          "description": "The TMDB movie ID(s)",
+          "title": "TMDB Movie ID"
         },
         "tmdb_show_id": {
           "anyOf": [
@@ -99,7 +104,8 @@
             }
           ],
           "default": null,
-          "title": "Tmdb Show Id"
+          "description": "The TMDB show ID(s)",
+          "title": "TMDB Show ID"
         },
         "tvdb_id": {
           "anyOf": [
@@ -111,7 +117,8 @@
             }
           ],
           "default": null,
-          "title": "Tvdb Id"
+          "description": "The TVDB ID",
+          "title": "TVDB ID"
         },
         "tvdb_mappings": {
           "anyOf": [
@@ -126,11 +133,32 @@
             }
           ],
           "default": null,
-          "title": "Tvdb Mappings"
+          "description": "Mapping of TVDB seasons to episode patterns.\n\nPattern Format: 'e{start}-e{end}|{ratio},e{start2}-e{end2}|{ratio2},...,e{startN}-e{endN}|{ratioN}'\n\nAttributes:\n\t- {start}: Start of the episode range\n\t- {end}: End of the episode range. None indicates an open-ended range.\n\t- {ratio}: The 'worth' of each episode in the range. Positive values indicate that 1 TVDB episode corresponds to N AniList episodes, while negative values indicate that N TVDB episodes correspond to 1 AniList episode.",
+          "examples": [
+            {
+              "s1": "e1-e12|2",
+              "s2": "e13-"
+            },
+            {
+              "s1": ""
+            },
+            {
+              "s1": "e4-e6|-2"
+            }
+          ],
+          "title": "TVDB Mappings"
         }
       },
       "title": "AniMap",
       "type": "object"
+    }
+  },
+  "properties": {
+    "$includes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   }
 }
