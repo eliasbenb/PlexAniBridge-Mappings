@@ -27,15 +27,24 @@ except ImportError:
 
 
 class TVDBMapping(BaseModel, validate_assignment=True):
-    """Model for parsing and validating TVDB episode mapping patterns.
+    """Model for storing TVDB episode mappings to AniList episodes.
 
-    Handles conversion between string patterns and episode mapping objects.
+    The model is used to validate and parse episode mappings from a string pattern.
     """
 
-    season: int = Field(ge=0)
-    start: int = Field(default=1, gt=0)
-    end: int | None = Field(default=None, gt=0)
-    ratio: int = Field(default=1)
+    season: int = Field(ge=0, description="The TVDB season number")
+    start: int = Field(
+        default=1, gt=0, description="Start of the episode range in the mapping"
+    )
+    end: int | None = Field(
+        default=None,
+        gt=0,
+        description="End of the episode range in the mapping. None indicates an open-ended range.",
+    )
+    ratio: int = Field(
+        default=1,
+        description="The 'worth' of each episode in the range. Positive values indicate that 1 TVDB episode corresponds to N AniList episodes, while negative values indicate that N TVDB episodes correspond to 1 AniList episode.",
+    )
 
     @staticmethod
     def check_overlap(ranges: list["TVDBMapping"]) -> bool:
@@ -169,28 +178,43 @@ class TVDBMapping(BaseModel, validate_assignment=True):
 
 
 class AniMap(BaseModel, validate_assignment=True):
-    """
-    Model representing an anime mapping.
+    """Model for storing anime ID mappings and related information."""
 
-    Attributes:
-        anidb_id: Optional AniDB ID
-        anilist_id: Optional AniList ID
-        imdb_id: Optional IMDB ID(s)
-        mal_id: Optional MyAnimeList ID(s)
-        tmdb_movie_id: Optional TMDB movie ID
-        tmdb_show_id: Optional TMDB show ID
-        tvdb_id: Optional TVDB ID
-        tvdb_mappings: Optional list of TVDB mapping patterns
-    """
-
-    anidb_id: int | None = None
-    anilist_id: int | None = None
-    imdb_id: str | list[str] | None = None
-    mal_id: int | list[int] | None = None
-    tmdb_movie_id: int | list[int] | None = None
-    tmdb_show_id: int | list[int] | None = None
-    tvdb_id: int | None = None
-    tvdb_mappings: dict[str, str] | None = None
+    anidb_id: int | None = Field(
+        default=None, title="AniDB ID", description="The AniDB ID"
+    )
+    anilist_id: int | None = Field(
+        default=None, title="AniList ID", description="The AniList ID"
+    )
+    imdb_id: str | list[str] | None = Field(
+        default=None,
+        title="IMDB ID",
+        description="The IMDB ID(s) (format: 'tt0123456')",
+    )
+    mal_id: int | list[int] | None = Field(
+        default=None, title="MAL ID", description="The MyAnimeList ID(s)"
+    )
+    tmdb_movie_id: int | list[int] | None = Field(
+        default=None, title="TMDB Movie ID", description="The TMDB movie ID(s)"
+    )
+    tmdb_show_id: int | list[int] | None = Field(
+        default=None, title="TMDB Show ID", description="The TMDB show ID(s)"
+    )
+    tvdb_id: int | None = Field(
+        default=None, title="TVDB ID", description="The TVDB ID"
+    )
+    tvdb_mappings: dict[str, str] | None = Field(
+        default=None,
+        title="TVDB Mappings",
+        description=(
+            "Mapping of TVDB seasons to episode patterns.\n\nPattern Format: 'e{start}-e{end}|{ratio},e{start2}-e{end2}|{ratio2},...,e{startN}-e{endN}|{ratioN}'\n\n"
+            "Attributes:\n"
+            "\t- {start}: Start of the episode range\n"
+            "\t- {end}: End of the episode range. None indicates an open-ended range.\n"
+            "\t- {ratio}: The 'worth' of each episode in the range. Positive values indicate that 1 TVDB episode corresponds to N AniList episodes, while negative values indicate that N TVDB episodes correspond to 1 AniList episode."
+        ),
+        examples=[{"s1": "e1-e12|2", "s2": "e13-"}, {"s1": ""}, {"s1": "e4-e6|-2"}],
+    )
 
     @field_validator("tvdb_mappings")
     @classmethod
