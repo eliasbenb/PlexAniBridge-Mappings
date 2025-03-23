@@ -65,12 +65,16 @@ You can view the schema for the mappings in [mappings.schema.json](./mappings.sc
   }
   ```
 
-## Sources
+## Acknowledgements
 
 The mappings are generated using data from the following sources:
 
-1. [Anime-Lists/anime-lists](https://github.com/Anime-Lists/anime-lists/) maps AniDB IDs to TVDD series IDs and IMDb IDs. ([Raw List](https://raw.githubusercontent.com/Anime-Lists/anime-lists/master/anime-list-master.xml))
-2. [manami-project/anime-offline-database](https://github.com/manami-project/anime-offline-database/) maps AniDB IDs to MyAnimeList IDs and AniList IDs. ([Raw List](https://raw.githubusercontent.com/manami-project/anime-offline-database/master/anime-offline-database.json))
-3. [notseteve/AnimeAggregations](https://github.com/notseteve/AnimeAggregations) parses data from the AniDB site and maps the links there to TMDB IDs, IMDb IDs, and MyAnimeList IDs.
+| Source | Description |
+|--------|-------------|
+| [Anime-Lists/anime-lists](https://github.com/Anime-Lists/anime-lists/) | Maps AniDB IDs to TVDB series IDs and IMDb IDs |
+| [manami-project/anime-offline-database](https://github.com/manami-project/anime-offline-database/) | Maps AniDB IDs to MyAnimeList IDs and AniList IDs |
+| [notseteve/AnimeAggregations](https://github.com/notseteve/AnimeAggregations) | Parses data from the AniDB site and maps the links to TMDB IDs, IMDb IDs, and MyAnimeList IDs |
 
-Much of the code in this repo was copied from or inspired by [Kometa-Team/Anime-IDs](https://github.com/Kometa-Team/Anime-IDs).
+### Credits
+- Much of the code in this repository was copied from or inspired by [Kometa-Team/Anime-IDs](https://github.com/Kometa-Team/Anime-IDs)
+- Special thanks to <a href="https://github.com/LuceoEtzio"><img src="https://avatars.githubusercontent.com/u/40282884?s=16&v=4" alt="LuceoEtzio" style="margin-right: 4px; border-radius: 50%; vertical-align: middle;"><span>LuceoEtzio</span></a> for contributing the overwhelming majority of the mapping edits
