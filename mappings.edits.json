@@ -8803,6 +8803,13 @@
       "s0": "e1-e2"
     }
   },
+  "21765": {
+    "tmdb_show_id": 62255,
+    "tvdb_id": 289906,
+    "tvdb_mappings": {
+      "s0": "e12-e15"
+    }
+  },
   "21771": {
     "tvdb_mappings": {
       "s0": "e1"
