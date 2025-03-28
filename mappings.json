@@ -97821,7 +97821,11 @@
     "anidb_id": 18000,
     "imdb_id": "tt28216375",
     "mal_id": 54846,
-    "tmdb_show_id": 223515
+    "tmdb_show_id": 223515,
+    "tvdb_id": 433634,
+    "tvdb_mappings": {
+      "s1": ""
+    }
   },
   "156112": {
     "anidb_id": 18483,
@@ -103455,7 +103459,11 @@
   "175052": {
     "anidb_id": 18663,
     "mal_id": 58143,
-    "tmdb_show_id": 223515
+    "tmdb_show_id": 223515,
+    "tvdb_id": 433634,
+    "tvdb_mappings": {
+      "s0": ""
+    }
   },
   "175054": {
     "mal_id": 58079
