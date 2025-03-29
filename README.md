@@ -51,7 +51,7 @@ You can view the schema for the mappings in [mappings.schema.json](./mappings.sc
   ```js
   {
     "s1": "e1-e12|2", // Every 2 TVDB episodes in the range S01E01-S01E12 correspond to 1 AniList episode
-    "s2": "e13-" // Every TVDB episode in S01 from E13 onwards
+    "s2": "e13-" // Every TVDB episode in S02 from E13 onwards
   }
   ```
   ```js
