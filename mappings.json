@@ -16574,6 +16574,9 @@
     }
   },
   "2268": {
+    "imdb_id": "tt0086817",
+    "tmdb_show_id": 4269,
+    "tvdb_id": 72499,
     "tvdb_mappings": {
       "s1": "e1-e16",
       "s2": "e1-e49",
@@ -42962,7 +42965,11 @@
     "mal_id": 13179
   },
   "13185": {
+    "anidb_id": 9022,
+    "imdb_id": "tt1579911",
     "mal_id": 13185,
+    "tmdb_show_id": 56402,
+    "tvdb_id": 260070,
     "tvdb_mappings": {
       "s1": "e1-e26",
       "s2": "e1-e26"
