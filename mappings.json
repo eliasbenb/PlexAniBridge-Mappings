@@ -2797,9 +2797,9 @@
   "312": {
     "anidb_id": 1389,
     "mal_id": 312,
-    "tvdb_id": 85301,
+    "tvdb_id": 338806,
     "tvdb_mappings": {
-      "s4": "e1-e12"
+      "s1": "e14-e25"
     }
   },
   "313": {
@@ -2813,8 +2813,10 @@
   "314": {
     "anidb_id": 1390,
     "mal_id": 314,
-    "tvdb_id": 85301,
-    "tvdb_mappings": {}
+    "tvdb_id": 338806,
+    "tvdb_mappings": {
+      "s0": "e1-e13"
+    }
   },
   "315": {
     "anidb_id": 1424,
@@ -34699,8 +34701,10 @@
   "8542": {
     "anidb_id": 1073,
     "mal_id": 8542,
-    "tvdb_id": 85301,
-    "tvdb_mappings": {}
+    "tvdb_id": 338806,
+    "tvdb_mappings": {
+      "s1": "e1-e25"
+    }
   },
   "8546": {
     "anidb_id": 2273,
