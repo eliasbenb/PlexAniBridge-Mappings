@@ -616,7 +616,7 @@ class AnimeIDCollector:
                 links = f"<a href='https://anilist.co/anime/{anilist_id}'><img src='https://anilist.co/favicon.ico' alt='AniList' width='20' height='20'></a>"
 
                 if tvdb_id:
-                    links += f" <a href='https://www.themoviedb.org/tv/{tvdb_id}'><img src='https://thetvdb.com/images/icon.png' alt='TVDB' width='20' height='20'></a>"
+                    links += f" <a href='https://www.thetvdb.com/?tab=series&id={tvdb_id}'><img src='https://thetvdb.com/images/icon.png' alt='TVDB' width='20' height='20'></a>"
 
                 markdown_content += f"| {anilist_id} | {links} |\n"
 
