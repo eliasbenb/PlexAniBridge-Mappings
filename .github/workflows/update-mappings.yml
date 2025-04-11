@@ -59,7 +59,7 @@ jobs:
           cat problems.md >> combined_report.md
         
       - name: Upload Combined Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: mapping-reports
           path: |
