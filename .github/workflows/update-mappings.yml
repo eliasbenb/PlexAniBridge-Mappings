@@ -41,6 +41,31 @@ jobs:
 
       - name: Run Update Anime IDs
         run: python update_mappings.py
+        
+      - name: Generate Git Diff
+        run: |
+          git diff . > git_diff.txt
+          
+      - name: Display Problems Report
+        run: cat problems.md
+        
+      - name: Combine Reports
+        run: |
+          echo "# Git Diff" >> combined_report.md
+          echo "" >> combined_report.md
+          cat git_diff.txt >> combined_report.md
+          echo "" >> combined_report.md
+          echo "" >> combined_report.md
+          cat problems.md >> combined_report.md
+        
+      - name: Upload Combined Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: mapping-reports
+          path: |
+            problems.md
+            git_diff.txt
+            combined_report.md
 
       - name: Check Diff
         id: verify_diff

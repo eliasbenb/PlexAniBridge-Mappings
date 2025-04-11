@@ -3,6 +3,7 @@ import logging
 import re
 import sys
 from datetime import UTC, datetime
+from enum import StrEnum
 from pathlib import Path
 from typing import Any, Self
 
@@ -262,6 +263,16 @@ class AniMap(BaseModel, validate_assignment=True):
         return data
 
 
+class ProblemEnum(StrEnum):
+    """Enum for categorizing problems with anime entries."""
+
+    EP_OVERFLOW = "AniList Episode Count Overflow (AniList > TVDB)"
+    NEGATIVE_EP_OFFSET = "Negative Episode Offset"
+    UNKNOWN_TVDB_EP_COUNT = "Unknown TVDB Episode Count"
+    UNKNOWN_TVDB_SEASON = "Unknown TVDB Season"
+    UNKNOWN_ANILIST_EP_COUNT = "Unknown AniList Episode Count"
+
+
 class AnimeIDCollector:
     """
     A class to collect and aggregate anime IDs from various sources.
@@ -279,12 +290,15 @@ class AnimeIDCollector:
         self.base_dir: Path = Path(__file__).parent.resolve()
         self.logger: logging.Logger = self._setup_logger()
         self.session: requests.Session = requests.Session()
+        self.generated_on: str = datetime.now(UTC).strftime("%B %d, %Y %I:%M %p")
 
         self.anilist_ep_counts: dict[int, int] = {}
         self.tvdb_ep_counts: dict[int, dict[str, int]] = {}
 
         self.anilist_entries: dict[int, AniMap] = {}
         self.anidb_entries: dict[int, AniMap] = {}
+
+        self.problematic: dict[int, set[ProblemEnum]] = {}
 
     def _setup_logger(self) -> logging.Logger:
         """
@@ -373,6 +387,7 @@ class AnimeIDCollector:
 
             if "anilist_id" in ids:
                 self.anilist_entries[ids["anilist_id"]] = entry
+                self.problematic[ids["anilist_id"]] = set()
                 if "anidb_id" in ids:
                     self.anidb_entries[ids["anidb_id"]] = entry
 
@@ -402,34 +417,28 @@ class AnimeIDCollector:
             entry: AniMap, tvdb_season: str, episode_offset: int
         ) -> None:
             if tvdb_season == "a":
-                logging.debug(
-                    f"TVDB entry {entry.tvdb_id} has no default season. Manual mapping may be required."
-                )
+                self.problematic[entry.anilist_id].add(ProblemEnum.UNKNOWN_TVDB_SEASON)
                 return
             if episode_offset < 0:
-                logging.debug(
-                    f"AniList entry {entry.anilist_id} has a negative episode offset ({episode_offset}). "
-                    f"Manual mapping may be required."
-                )
+                self.problematic[entry.anilist_id].add(ProblemEnum.NEGATIVE_EP_OFFSET)
                 return
 
             anilist_ep_count = self.anilist_ep_counts.get(entry.anilist_id)
             tvdb_ep_count = self.tvdb_ep_counts.get(entry.tvdb_id, {}).get(tvdb_season)
 
-            if not entry.anilist_id or not anilist_ep_count:
+            if not anilist_ep_count:
                 entry.tvdb_mappings[f"s{tvdb_season}"] = f"e{episode_offset + 1}-"
+                self.problematic[entry.anilist_id].add(
+                    ProblemEnum.UNKNOWN_ANILIST_EP_COUNT
+                )
                 return
 
             if not tvdb_ep_count:
-                logging.debug(
-                    f"TVDB entry {entry.tvdb_id} has no episode count for season {tvdb_season}. "
-                    f"Manual mapping may be required."
+                self.problematic[entry.anilist_id].add(
+                    ProblemEnum.UNKNOWN_TVDB_EP_COUNT
                 )
             elif anilist_ep_count > tvdb_ep_count - episode_offset:
-                logging.debug(
-                    f"AniList entry {entry.anilist_id} needs more episodes than TVDB entry {entry.tvdb_id} has available "
-                    f"({anilist_ep_count} > {tvdb_ep_count - episode_offset}). Manual mapping may be required."
-                )
+                self.problematic[entry.anilist_id].add(ProblemEnum.EP_OVERFLOW)
                 return
 
             if episode_offset == 0 and anilist_ep_count == tvdb_ep_count:
@@ -571,6 +580,51 @@ class AnimeIDCollector:
                 entry = AniMap(anilist_id=anilist_id, **fields)
                 self.anilist_entries[anilist_id] = entry
 
+            if anilist_id in self.problematic:
+                del self.problematic[anilist_id]
+
+    def dump_problems(self) -> None:
+        """Dump problematic entries to markdown file."""
+        self.logger.info("Dumping Problems")
+
+        problem_groups = {
+            problem: sorted(
+                anilist_id
+                for anilist_id, problems in self.problematic.items()
+                if problem in problems
+            )
+            for problem in ProblemEnum
+        }
+
+        markdown_content = "# PlexAniBridge Mapping Problems\n\n"
+        markdown_content += f"Generated on: {self.generated_on} UTC\n\n"
+
+        for problem_type, anilist_ids in problem_groups.items():
+            if not anilist_ids:
+                continue
+
+            markdown_content += f"## {problem_type}\n\n"
+            markdown_content += f"Total: {len(anilist_ids)} entries\n\n"
+
+            markdown_content += "| AniList ID | Links |\n"
+            markdown_content += "|-----------|------|\n"
+
+            for anilist_id in anilist_ids:
+                entry = self.anilist_entries.get(anilist_id)
+                tvdb_id = entry.tvdb_id if entry else None
+
+                links = f"<a href='https://anilist.co/anime/{anilist_id}'><img src='https://anilist.co/favicon.ico' alt='AniList' width='20' height='20'></a>"
+
+                if tvdb_id:
+                    links += f" <a href='https://www.themoviedb.org/tv/{tvdb_id}'><img src='https://thetvdb.com/images/icon.png' alt='TVDB' width='20' height='20'></a>"
+
+                markdown_content += f"| {anilist_id} | {links} |\n"
+
+            markdown_content += "\n"
+
+        with (self.base_dir / "problems.md").open("w", newline="\n") as f:
+            f.write(markdown_content)
+
     def save_results(self) -> None:
         """Save processed anime entries to JSON file, organized by AniList ID."""
 
@@ -644,9 +698,7 @@ class AnimeIDCollector:
             with readme_path.open("r") as f:
                 data = f.readlines()
 
-            data[2] = (
-                f"Last generated at: {datetime.now(UTC).strftime('%B %d, %Y %I:%M %p')} UTC\n"
-            )
+            data[2] = f"Last generated at: {self.generated_on} UTC\n"
 
             with readme_path.open("w", newline="\n") as f:
                 f.writelines(data)
@@ -669,6 +721,7 @@ class AnimeIDCollector:
             self.process_aggregations()
             self.process_edits()
 
+            self.dump_problems()
             self.save_results()
             self.update_readme()
 
