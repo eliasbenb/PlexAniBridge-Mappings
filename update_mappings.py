@@ -268,8 +268,8 @@ class ProblemEnum(StrEnum):
 
     EP_OVERFLOW = "AniList Episode Count Overflow (AniList > TVDB)"
     NEGATIVE_EP_OFFSET = "Negative Episode Offset"
-    UNKNOWN_TVDB_EP_COUNT = "Unknown TVDB Episode Count"
     UNKNOWN_TVDB_SEASON = "Unknown TVDB Season"
+    UNKNOWN_TVDB_EP_COUNT = "Unknown TVDB Episode Count"
     UNKNOWN_ANILIST_EP_COUNT = "Unknown AniList Episode Count"
 
 
