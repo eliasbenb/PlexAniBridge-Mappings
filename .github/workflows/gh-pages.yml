@@ -3,6 +3,11 @@ name: Deploy static content to Pages
 on:
   push:
     branches: ["v2"]
+    paths:
+      - "favicon.ico"
+      - "index.html"
+      - "mappings.json"
+      - "mappings.schema.json"
   workflow_dispatch:
 
 permissions:
