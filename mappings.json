@@ -107169,7 +107169,9 @@
     "mal_id": 60146,
     "tmdb_show_id": 274671,
     "tvdb_id": 455684,
-    "tvdb_mappings": {}
+    "tvdb_mappings": {
+      "s1": ""
+    }
   },
   "183162": {
     "mal_id": 60127
