@@ -268,6 +268,7 @@ class ProblemEnum(StrEnum):
 
     EP_OVERFLOW = "AniList Episode Count Overflow (AniList > TVDB)"
     NEGATIVE_EP_OFFSET = "Negative Episode Offset"
+    REDUNDANT_EDIT = "Redundant Edit in mappings.edits.json"
     UNKNOWN_TVDB_SEASON = "Unknown TVDB Season"
     UNKNOWN_TVDB_EP_COUNT = "Unknown TVDB Episode Count"
     UNKNOWN_ANILIST_EP_COUNT = "Unknown AniList Episode Count"
@@ -669,7 +670,11 @@ class AnimeIDCollector:
             if anilist_id in self.anilist_entries:
                 existing_entry = self.anilist_entries[anilist_id]
                 for key, value in fields.items():
-                    setattr(existing_entry, key, value)
+                    curr_value = getattr(existing_entry, key)
+                    if curr_value == value:
+                        self.problematic[anilist_id].add(ProblemEnum.REDUNDANT_EDIT)
+                    else:
+                        setattr(existing_entry, key, value)
             else:
                 entry = AniMap(anilist_id=anilist_id, **fields)
                 self.anilist_entries[anilist_id] = entry
