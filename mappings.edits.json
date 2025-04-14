@@ -1326,6 +1326,16 @@
       "s0": "e1"
     }
   },
+  "1185": {
+    "tvdb_mappings": {
+      "s0": "e1-e6"
+    }
+  },
+  "1186": {
+    "tvdb_mappings": {
+      "s1": "e1-e26"
+    }
+  },
   "1190": {
     "tvdb_id": 73532,
     "tvdb_mappings": {
