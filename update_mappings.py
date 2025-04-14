@@ -274,6 +274,19 @@ class ProblemEnum(StrEnum):
     UNKNOWN_ANILIST_EP_COUNT = "Unknown AniList Episode Count"
 
 
+class Problem(BaseModel):
+    """Model for storing problems associated with anime entries."""
+
+    problem: ProblemEnum
+    details: str
+
+    def __eq__(self, other: "Problem") -> bool:
+        return self.problem == other.problem
+
+    def __hash__(self) -> int:
+        return hash(self.problem) + hash(self.details)
+
+
 class AnimeIDCollector:
     """
     A class to collect and aggregate anime IDs from various sources.
@@ -299,7 +312,8 @@ class AnimeIDCollector:
         self.anilist_entries: dict[int, AniMap] = {}
         self.anidb_entries: dict[int, AniMap] = {}
 
-        self.problematic: dict[int, set[ProblemEnum]] = {}
+        # Change from set to list to preserve order and allow duplicates with different details
+        self.problematic: dict[int, set[Problem]] = {}
 
     def _setup_logger(self) -> logging.Logger:
         """
@@ -417,11 +431,23 @@ class AnimeIDCollector:
         def process_tvdb_mapping(
             entry: AniMap, tvdb_season: str, episode_offset: int
         ) -> None:
-            if tvdb_season == "a":
-                self.problematic[entry.anilist_id].add(ProblemEnum.UNKNOWN_TVDB_SEASON)
+            if not tvdb_season.isdigit():
+                self.problematic.setdefault(entry.anilist_id, []).add(
+                    Problem(
+                        problem=ProblemEnum.UNKNOWN_TVDB_SEASON,
+                        details=f"Ignored ambiguous TVDB season from Anime-Lists '{tvdb_season}' "
+                        f"{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}}}",
+                    )
+                )
                 return
             if episode_offset < 0:
-                self.problematic[entry.anilist_id].add(ProblemEnum.NEGATIVE_EP_OFFSET)
+                self.problematic[entry.anilist_id].add(
+                    Problem(
+                        problem=ProblemEnum.NEGATIVE_EP_OFFSET,
+                        details=f"Ignored ambiguous negative episode offset from Anime-Lists "
+                        f"{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}, offset: {episode_offset}}}",
+                    )
+                )
                 return
 
             anilist_ep_count = self.anilist_ep_counts.get(entry.anilist_id)
@@ -430,16 +456,30 @@ class AnimeIDCollector:
             if not anilist_ep_count:
                 entry.tvdb_mappings[f"s{tvdb_season}"] = f"e{episode_offset + 1}-"
                 self.problematic[entry.anilist_id].add(
-                    ProblemEnum.UNKNOWN_ANILIST_EP_COUNT
+                    Problem(
+                        problem=ProblemEnum.UNKNOWN_ANILIST_EP_COUNT,
+                        details=f"AniList episode count is currently unknown (non-issue) "
+                        f"{{anilist_id: {entry.anilist_id}}}",
+                    )
                 )
                 return
 
             if not tvdb_ep_count:
                 self.problematic[entry.anilist_id].add(
-                    ProblemEnum.UNKNOWN_TVDB_EP_COUNT
+                    Problem(
+                        problem=ProblemEnum.UNKNOWN_TVDB_EP_COUNT,
+                        details=f"TVDB episode count is currently unknown (non-issue) "
+                        f"{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}}}",
+                    )
                 )
             elif anilist_ep_count > tvdb_ep_count - episode_offset:
-                self.problematic[entry.anilist_id].add(ProblemEnum.EP_OVERFLOW)
+                self.problematic[entry.anilist_id].add(
+                    Problem(
+                        problem=ProblemEnum.EP_OVERFLOW,
+                        details=f"AniList episode count is larger than TVDB episode count ({anilist_ep_count} > {tvdb_ep_count - episode_offset}) "
+                        f"{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}, offset: {episode_offset}}}",
+                    )
+                )
                 return
 
             if episode_offset == 0 and anilist_ep_count == tvdb_ep_count:
@@ -672,7 +712,13 @@ class AnimeIDCollector:
                 for key, value in fields.items():
                     curr_value = getattr(existing_entry, key)
                     if curr_value == value:
-                        self.problematic[anilist_id].add(ProblemEnum.REDUNDANT_EDIT)
+                        self.problematic[anilist_id].add(
+                            Problem(
+                                problem=ProblemEnum.REDUNDANT_EDIT,
+                                details=f"The value for '{key}' is already '{value}' and is redundant in mappings.edits.json"
+                                f"{{anilist_id: {anilist_id_str}}}",
+                            )
+                        )
                     else:
                         setattr(existing_entry, key, value)
             else:
@@ -690,32 +736,29 @@ class AnimeIDCollector:
                     }
 
     def dump_problems(self) -> None:
-        """Dump problematic entries to markdown file."""
+        """Dump problematic entries to markdown file with detailed information."""
         self.logger.info("Dumping Problems")
 
-        problem_groups = {
-            problem: sorted(
-                anilist_id
-                for anilist_id, problems in self.problematic.items()
-                if problem in problems
-            )
-            for problem in ProblemEnum
-        }
+        # Group problems by type
+        problem_groups = {p: [] for p in ProblemEnum}
+        for anilist_id, problems in self.problematic.items():
+            for problem in problems:
+                problem_groups[problem.problem].append((anilist_id, problem))
 
         markdown_content = "# PlexAniBridge Mapping Problems\n\n"
         markdown_content += f"Generated on: {self.generated_on} UTC\n\n"
 
-        for problem_type, anilist_ids in problem_groups.items():
-            if not anilist_ids:
+        for problem_type, entries in problem_groups.items():
+            if not entries:
                 continue
 
             markdown_content += f"## {problem_type}\n\n"
-            markdown_content += f"Total: {len(anilist_ids)} entries\n\n"
+            markdown_content += f"Total: {len(entries)} entries\n\n"
 
-            markdown_content += "| AniList ID | Links |\n"
-            markdown_content += "|-----------|------|\n"
+            markdown_content += "| AniList ID | Details | Links |\n"
+            markdown_content += "|-----------|---------|-------|\n"
 
-            for anilist_id in anilist_ids:
+            for anilist_id, problem in entries:
                 entry = self.anilist_entries.get(anilist_id)
 
                 links = f"<a href='https://anilist.co/anime/{anilist_id}'><img src='https://anilist.co/favicon.ico' alt='AniList' width='20' height='20'></a>"
@@ -762,7 +805,7 @@ class AnimeIDCollector:
                     for tmdb_id in tmdb_ids:
                         links += f" <a href='https://www.themoviedb.org/tv/{tmdb_id}'><img src='https://www.themoviedb.org/favicon.ico' alt='TMDB Show' width='20' height='20'></a>"
 
-                markdown_content += f"| {anilist_id} | {links} |\n"
+                markdown_content += f"| {anilist_id} | {problem.details} | {links} |\n"
 
             markdown_content += "\n"
 
