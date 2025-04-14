@@ -171,3 +171,4 @@ cython_debug/
 .pypirc
 
 problems.md
+git_diff.txt
