@@ -540,6 +540,100 @@ class AnimeIDCollector:
                         movie_ids[0] if len(movie_ids) == 1 else movie_ids
                     )
 
+    def process_wikidata(self) -> None:
+        """
+        Process anime data from Wikidata SPARQL query.
+
+        Extracts anime IDs from Wikidata using SPARQL query and updates existing entries
+        with AniList, MAL, IMDB, TMDB, TVDB and other IDs.
+        """
+        self.logger.info("Scanning Wikidata")
+
+        query = """
+        SELECT DISTINCT ?item ?itemLabel ?anidbId ?anilistId ?malId ?imdbId ?plexId ?tmdbMovieId ?tmdbSeriesId ?tvdbMovieId ?tvdbSeriesId WHERE {
+          ?item (p:P31/ps:P31/(wdt:P279*)) wd:Q1107.
+          OPTIONAL { ?item wdt:P5646 ?anidbId. }
+          ?item wdt:P8729 ?anilistId.
+          OPTIONAL { ?item wdt:P4086 ?malId. }
+          OPTIONAL { ?item wdt:P345 ?imdbId. }
+          # OPTIONAL { ?item wdt:P11460 ?plexId. }
+          OPTIONAL { ?item wdt:P4947 ?tmdbMovieId. }
+          OPTIONAL { ?item wdt:P4983 ?tmdbSeriesId. }
+          # OPTIONAL { ?item wdt:P12196 ?tvdbMovieId. }
+          OPTIONAL { ?item wdt:P4835 ?tvdbSeriesId. }
+          # SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en". }
+        }
+        LIMIT 10000
+        """
+
+        endpoint_url = "https://query.wikidata.org/sparql"
+        params = {"query": query, "format": "json"}
+        headers = {"Accept": "application/sparql-results+json"}
+
+        try:
+            response = self.session.get(endpoint_url, params=params, headers=headers)
+            response.raise_for_status()
+            results = response.json()
+
+            for item in results.get("results", {}).get("bindings", []):
+                try:
+                    anilist_id = int(item["anilistId"]["value"])
+                except (KeyError, TypeError, ValueError):
+                    continue
+
+                ids = {"anilist_id": anilist_id}
+
+                try:
+                    ids["anidb_id"] = int(item["anidbId"]["value"])
+                except (KeyError, TypeError, ValueError):
+                    pass
+                try:
+                    ids["mal_id"] = int(item["malId"]["value"])
+                except (KeyError, TypeError, ValueError):
+                    pass
+                try:
+                    ids["imdb_id"] = item["imdbId"]["value"]
+                except (KeyError, TypeError, ValueError):
+                    pass
+                try:
+                    ids["tmdb_movie_id"] = int(item["tmdbMovieId"]["value"])
+                except (KeyError, TypeError, ValueError):
+                    pass
+                try:
+                    ids["tmdb_show_id"] = int(item["tmdbSeriesId"]["value"])
+                except (KeyError, TypeError, ValueError):
+                    pass
+                try:
+                    ids["tvdb_id"] = int(item["tvdbSeriesId"]["value"])
+                except (KeyError, TypeError, ValueError):
+                    pass
+
+                entry = AniMap(**ids)
+
+                if anilist_id in self.anilist_entries:
+                    existing_entry = self.anilist_entries[anilist_id]
+                    for key, value in ids.items():
+                        if not value:
+                            continue
+                        curr_value = getattr(existing_entry, key)
+                        if curr_value is None:
+                            setattr(existing_entry, key, value)
+                        elif isinstance(curr_value, list):
+                            if value not in curr_value:
+                                self.logger.debug(
+                                    f"Conflicting '{key}' for ID {anilist_id}, {value} not in {curr_value}"
+                                )
+                        elif curr_value != value:
+                            self.logger.debug(
+                                f"Conflicting '{key}' for ID {anilist_id}, {value} != {curr_value}"
+                            )
+                else:
+                    self.anilist_entries[anilist_id] = entry
+                    self.problematic[anilist_id] = set()
+
+        except requests.RequestException as e:
+            self.logger.error(f"Error fetching data from Wikidata: {e}")
+
     def process_edits(self) -> None:
         """
         Process manual edits from mappings.edits.json.
@@ -719,6 +813,7 @@ class AnimeIDCollector:
             self.process_manami_project()
             self.process_anime_lists()
             self.process_aggregations()
+            self.process_wikidata()
             self.process_edits()
 
             self.dump_problems()
