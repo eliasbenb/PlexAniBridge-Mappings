@@ -280,11 +280,13 @@ class Problem(BaseModel):
     problem: ProblemEnum
     details: str
 
-    def __eq__(self, other: "Problem") -> bool:
+    def __eq__(self, other: "Problem | ProblemEnum") -> bool:
+        if isinstance(other, ProblemEnum):
+            return self.problem == other
         return self.problem == other.problem
 
     def __hash__(self) -> int:
-        return hash(self.problem) + hash(self.details)
+        return hash(self.problem)
 
 
 class AnimeIDCollector:
