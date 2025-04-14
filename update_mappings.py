@@ -680,7 +680,14 @@ class AnimeIDCollector:
                 self.anilist_entries[anilist_id] = entry
 
             if anilist_id in self.problematic:
-                del self.problematic[anilist_id]
+                if self.anilist_entries[anilist_id].tvdb_mappings:
+                    self.problematic[anilist_id] -= {
+                        ProblemEnum.EP_OVERFLOW,
+                        ProblemEnum.NEGATIVE_EP_OFFSET,
+                        ProblemEnum.UNKNOWN_TVDB_SEASON,
+                        ProblemEnum.UNKNOWN_TVDB_EP_COUNT,
+                        ProblemEnum.UNKNOWN_ANILIST_EP_COUNT,
+                    }
 
     def dump_problems(self) -> None:
         """Dump problematic entries to markdown file."""
