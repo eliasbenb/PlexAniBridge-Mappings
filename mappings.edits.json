@@ -1489,102 +1489,140 @@
       "s2": "e1-e13"
     }
   },
+  "1412": {
+    "tmdb_show_id": 31572
+  },
+  "1413": {
+    "tmdb_movie_id": 78139
+  },
   "1414": {
+    "tmdb_movie_id": 39954,
     "tvdb_mappings": {
       "s0": "e27"
     }
   },
   "1415": {
+    "tmdb_movie_id": 31051,
     "tvdb_mappings": {
       "s0": "e8"
     }
   },
   "1416": {
+    "tmdb_movie_id": 31050,
     "tvdb_mappings": {
       "s0": "e16"
     }
   },
   "1417": {
+    "tmdb_movie_id": 51943,
     "tvdb_mappings": {
       "s0": "e13"
     }
   },
+  "1418": {
+    "tmdb_movie_id": 109572
+  },
   "1419": {
+    "tmdb_movie_id": 31049,
     "tvdb_mappings": {
       "s0": "e14"
     }
   },
   "1420": {
+    "tmdb_movie_id": 80857,
     "tvdb_mappings": {
       "s0": "e11"
     }
   },
   "1421": {
+    "tmdb_movie_id": 80861,
     "tvdb_mappings": {
       "s0": "e9"
     }
   },
   "1422": {
+    "tmdb_movie_id": 31053,
     "tvdb_mappings": {
       "s0": "e21"
     }
   },
   "1423": {
+    "tmdb_movie_id": 80865,
     "tvdb_mappings": {
       "s0": "e10"
     }
   },
   "1424": {
+    "tmdb_movie_id": 80868,
     "tvdb_mappings": {
       "s0": "e25"
     }
   },
+  "1425": {
+    "tmdb_show_id": 31572
+  },
+  "1426": {
+    "tmdb_show_id": 31572
+  },
+  "1427": {
+    "tmdb_movie_id": 33176
+  },
   "1429": {
+    "tmdb_movie_id": 80866,
     "tvdb_mappings": {
       "s0": "e26"
     }
   },
   "1430": {
+    "tmdb_movie_id": 15371,
     "tvdb_mappings": {
       "s0": "e4"
     }
   },
   "1432": {
+    "tmdb_movie_id": 50482,
     "tvdb_mappings": {
       "s0": "e6"
     }
   },
   "1433": {
+    "tmdb_movie_id": 32873,
     "tvdb_mappings": {
       "s0": "e5"
     }
   },
   "1434": {
+    "tmdb_movie_id": 45378,
     "tvdb_mappings": {
       "s0": "e15"
     }
   },
   "1435": {
+    "tmdb_movie_id": 30143,
     "tvdb_mappings": {
       "s0": "e3"
     }
   },
   "1436": {
+    "tmdb_movie_id": 53894,
     "tvdb_mappings": {
       "s0": "e17"
     }
   },
   "1437": {
+    "tmdb_movie_id": 31595,
     "tvdb_mappings": {
       "s0": "e19"
     }
   },
   "1438": {
+    "tmdb_movie_id": 76190,
     "tvdb_mappings": {
       "s0": "e12"
     }
   },
   "1439": {
+    "tmdb_movie_id": 31599,
     "tvdb_mappings": {
       "s0": "e18"
     }
@@ -2938,6 +2976,7 @@
     }
   },
   "3019": {
+    "tmdb_movie_id": 80863,
     "tvdb_mappings": {
       "s0": "e29"
     }
@@ -3460,6 +3499,7 @@
     }
   },
   "4320": {
+    "tmdb_movie_id": 26546,
     "tvdb_mappings": {
       "s0": "e30"
     }
@@ -3580,6 +3620,7 @@
     }
   },
   "4851": {
+    "tmdb_movie_id": 80860,
     "tvdb_mappings": {
       "s0": "e28"
     }
@@ -3631,6 +3672,7 @@
     }
   },
   "5019": {
+    "tmdb_movie_id": 59719,
     "tvdb_mappings": {
       "s0": "e31"
     }
@@ -3707,6 +3749,7 @@
     }
   },
   "5225": {
+    "tmdb_movie_id": 172591,
     "tvdb_mappings": {
       "s0": "e1"
     }
@@ -4592,6 +4635,7 @@
     }
   },
   "8097": {
+    "tmdb_movie_id": 39952,
     "tvdb_id": 71863,
     "tvdb_mappings": {
       "s0": "e33"
@@ -5849,7 +5893,11 @@
       "s0": "e12"
     }
   },
+  "11757": {
+    "tmdb_show_id": 45782
+  },
   "11777": {
+    "tmdb_movie_id": 80405,
     "tvdb_mappings": {
       "s0": "e34"
     }
@@ -6149,11 +6197,13 @@
     }
   },
   "13247": {
+    "tmdb_movie_id": 491667,
     "tvdb_mappings": {
       "s0": "e35"
     }
   },
   "13249": {
+    "tmdb_movie_id": 694805,
     "tvdb_id": 71863,
     "tvdb_mappings": {
       "s0": "e37"
@@ -6443,6 +6493,7 @@
     }
   },
   "15783": {
+    "tmdb_movie_id": 251432,
     "tvdb_mappings": {
       "s0": "e38"
     }
@@ -6511,6 +6562,7 @@
     }
   },
   "16099": {
+    "tmdb_show_id": 45782,
     "tvdb_id": 259640,
     "tvdb_mappings": {
       "s0": "e1-e9"
@@ -7027,6 +7079,9 @@
       "s0": "e6"
     }
   },
+  "20021": {
+    "tmdb_show_id": 45782
+  },
   "20035": {
     "tvdb_id": 83322,
     "tvdb_mappings": {
@@ -7045,6 +7100,7 @@
     }
   },
   "20141": {
+    "tmdb_movie_id": 245928,
     "tvdb_mappings": {
       "s0": "e39"
     }
@@ -7233,6 +7289,9 @@
     "tvdb_mappings": {
       "s0": "e10-e14"
     }
+  },
+  "20594": {
+    "tmdb_show_id": 45782
   },
   "20603": {
     "tvdb_id": 257765,
@@ -7509,6 +7568,9 @@
       "s0": "e9-e18"
     }
   },
+  "20832": {
+    "tmdb_show_id": 64196
+  },
   "20833": {
     "imdb_id": "tt2390066",
     "tmdb_show_id": 53020,
@@ -7605,6 +7667,7 @@
     }
   },
   "20895": {
+    "tmdb_show_id": 45782,
     "tvdb_id": 259640,
     "tvdb_mappings": {
       "s0": "e11"
@@ -7617,6 +7680,7 @@
     }
   },
   "20906": {
+    "tmdb_show_id": 31572,
     "tvdb_mappings": {
       "s4": "e1-e5,e7-e22,e24-e26"
     }
@@ -7632,6 +7696,7 @@
     }
   },
   "20914": {
+    "tmdb_movie_id": 31594,
     "tvdb_mappings": {
       "s0": "e20"
     }
@@ -7717,6 +7782,7 @@
     }
   },
   "20978": {
+    "tmdb_movie_id": 260516,
     "tvdb_mappings": {
       "s0": "e41"
     }
@@ -7902,6 +7968,7 @@
     }
   },
   "21155": {
+    "tmdb_show_id": 45782,
     "tvdb_id": 259640,
     "tvdb_mappings": {
       "s0": "e13-e21"
@@ -8090,6 +8157,7 @@
     }
   },
   "21305": {
+    "tmdb_show_id": 64196,
     "tvdb_id": 294002,
     "tvdb_mappings": {
       "s0": "e1-e8"
@@ -8213,6 +8281,9 @@
     "tvdb_mappings": {
       "s0": "e20"
     }
+  },
+  "21403": {
+    "tmdb_movie_id": 413594
   },
   "21415": {
     "tvdb_id": 281949,
@@ -8575,6 +8646,7 @@
     }
   },
   "21821": {
+    "tmdb_movie_id": 404532,
     "tvdb_mappings": {
       "s0": "e43"
     }
@@ -8684,6 +8756,9 @@
       "s0": "e18-e23"
     }
   },
+  "87489": {
+    "tmdb_show_id": 64196
+  },
   "87499": {
     "tvdb_mappings": {
       "s0": "e4"
@@ -8704,6 +8779,9 @@
     "tvdb_mappings": {
       "s0": "e1"
     }
+  },
+  "97619": {
+    "tmdb_movie_id": 456611
   },
   "97637": {
     "tvdb_id": 309532,
@@ -8899,6 +8977,9 @@
       "s0": "e11"
     }
   },
+  "98437": {
+    "tmdb_show_id": 64196
+  },
   "98469": {
     "tvdb_id": 79360,
     "tvdb_mappings": {
@@ -9076,13 +9157,14 @@
   },
   "98873": {
     "imdb_id": "tt6634906",
-    "tmdb_show_id": 64196,
+    "tmdb_movie_id": 477447,
     "tvdb_id": 294002,
     "tvdb_mappings": {
       "s0": "e10"
     }
   },
   "98874": {
+    "tmdb_movie_id": 477449,
     "tvdb_id": 294002,
     "tvdb_mappings": {
       "s0": "e11"
@@ -9268,6 +9350,9 @@
       "s0": "e12"
     }
   },
+  "100182": {
+    "tmdb_show_id": 45782
+  },
   "100184": {
     "tvdb_mappings": {
       "s0": "e1"
@@ -9416,6 +9501,9 @@
       "s0": "e1-e2"
     }
   },
+  "100957": {
+    "tmdb_show_id": 31572
+  },
   "100979": {
     "tvdb_id": 319983,
     "tvdb_mappings": {
@@ -9429,6 +9517,7 @@
     }
   },
   "101083": {
+    "tmdb_show_id": 64196,
     "tvdb_id": 294002,
     "tvdb_mappings": {
       "s0": "e16-e28"
@@ -9443,6 +9532,7 @@
     }
   },
   "101098": {
+    "tmdb_show_id": 64196,
     "tvdb_id": 294002,
     "tvdb_mappings": {
       "s0": "e12-e13"
@@ -9551,6 +9641,9 @@
       "s0": "e1"
     }
   },
+  "101474": {
+    "tmdb_show_id": 64196
+  },
   "101497": {
     "tvdb_id": 71863,
     "tvdb_mappings": {
@@ -9644,6 +9737,7 @@
     }
   },
   "101965": {
+    "tmdb_show_id": 45782,
     "tvdb_id": 259640,
     "tvdb_mappings": {
       "s0": "e23"
@@ -9838,6 +9932,7 @@
     }
   },
   "103209": {
+    "tmdb_show_id": 64196,
     "tvdb_id": 294002,
     "tvdb_mappings": {
       "s0": "e29-e41"
@@ -9963,6 +10058,7 @@
     }
   },
   "104257": {
+    "tmdb_movie_id": 567767,
     "tvdb_id": 71863,
     "tvdb_mappings": {
       "s0": "e45"
@@ -10050,6 +10146,9 @@
     "tvdb_mappings": {
       "s0": "e11"
     }
+  },
+  "105655": {
+    "tmdb_movie_id": 572616
   },
   "105662": {
     "tvdb_id": 346931,
@@ -10172,11 +10271,17 @@
       "s0": "e11-e13"
     }
   },
+  "107264": {
+    "tmdb_show_id": 64196
+  },
   "107298": {
     "tvdb_id": 319995,
     "tvdb_mappings": {
       "s0": "e3"
     }
+  },
+  "107313": {
+    "tmdb_movie_id": 587870
   },
   "107342": {
     "tvdb_id": 247958,
@@ -10254,6 +10359,9 @@
     "tvdb_mappings": {
       "s0": "e2"
     }
+  },
+  "108759": {
+    "tmdb_show_id": 45782
   },
   "108937": {
     "tvdb_id": 354199,
@@ -10396,6 +10504,7 @@
     }
   },
   "110413": {
+    "tmdb_movie_id": 614587,
     "tvdb_id": 71863,
     "tvdb_mappings": {
       "s0": "e49"
@@ -10522,6 +10631,7 @@
     }
   },
   "112658": {
+    "tmdb_movie_id": 641909,
     "tvdb_mappings": {
       "s0": "e48"
     }
@@ -10632,6 +10742,9 @@
     "tvdb_mappings": {
       "s0": "e17"
     }
+  },
+  "114308": {
+    "tmdb_show_id": 45782
   },
   "114334": {
     "tvdb_id": 283929,
@@ -10880,6 +10993,7 @@
     }
   },
   "121822": {
+    "tmdb_show_id": 31572,
     "tvdb_mappings": {
       "s0": "e22"
     }
@@ -10986,6 +11100,9 @@
     "tvdb_mappings": {
       "s0": "e51"
     }
+  },
+  "124140": {
+    "tmdb_movie_id": 761898
   },
   "124396": {
     "tvdb_id": 292662,
@@ -11266,6 +11383,9 @@
       "s0": "e4"
     }
   },
+  "133844": {
+    "tmdb_show_id": 64196
+  },
   "133845": {
     "tvdb_id": 294002,
     "tvdb_mappings": {
@@ -11285,6 +11405,7 @@
     }
   },
   "134623": {
+    "tmdb_show_id": 31572,
     "tvdb_mappings": {
       "s0": "e50",
       "s6": "e1-e24"
@@ -11483,6 +11604,9 @@
     "tvdb_mappings": {
       "s5": "e1-e25"
     }
+  },
+  "140999": {
+    "tmdb_movie_id": 893712
   },
   "141057": {
     "tvdb_mappings": {
@@ -11888,6 +12012,7 @@
     }
   },
   "151898": {
+    "tmdb_show_id": 64196,
     "tvdb_id": 294002,
     "tvdb_mappings": {
       "s0": "e45-e57"
@@ -11940,6 +12065,9 @@
     "tvdb_mappings": {
       "s0": "e2"
     }
+  },
+  "154924": {
+    "tmdb_movie_id": 1027159
   },
   "154966": {
     "tvdb_mappings": {
@@ -12234,6 +12362,9 @@
     "tvdb_mappings": {
       "s0": "e1-e24"
     }
+  },
+  "170620": {
+    "tmdb_show_id": 64196
   },
   "170893": {
     "tvdb_id": 368364,
