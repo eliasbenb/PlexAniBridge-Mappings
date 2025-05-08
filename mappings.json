@@ -2922,9 +2922,7 @@
   },
   "287": {
     "anidb_id": 453,
-    "imdb_id": "tt0981456",
     "mal_id": 287,
-    "tmdb_show_id": 56425,
     "tvdb_id": 79237,
     "tvdb_mappings": {
       "s1": ""
@@ -109346,7 +109344,10 @@
   },
   "173692": {
     "anidb_id": 18437,
-    "mal_id": 57888
+    "imdb_id": "tt32777700",
+    "mal_id": 57888,
+    "tmdb_show_id": 280048,
+    "tvdb_id": 444999
   },
   "173693": {
     "anidb_id": 18432,
