@@ -10949,7 +10949,9 @@
   },
   "1261": {
     "anidb_id": 2382,
+    "imdb_id": "tt0122834",
     "mal_id": 1261,
+    "tmdb_show_id": 10797,
     "tvdb_id": 77089,
     "tvdb_mappings": {
       "s1": ""
@@ -97307,15 +97309,8 @@
     }
   },
   "141352": {
-    "anidb_id": 16963,
-    "imdb_id": [
-      "tt17677744",
-      "tt25010142"
-    ],
-    "mal_id": [
-      50315,
-      53911
-    ],
+    "imdb_id": "tt17677744",
+    "mal_id": 50315,
     "tmdb_movie_id": 989937,
     "tvdb_id": 284131,
     "tvdb_mappings": {
