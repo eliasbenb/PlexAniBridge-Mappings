@@ -90363,6 +90363,7 @@
   "127412": {
     "anidb_id": 15938,
     "mal_id": 45055,
+    "tmdb_show_id": 114937,
     "tvdb_id": 401899,
     "tvdb_mappings": {
       "s1": ""
@@ -106746,6 +106747,7 @@
   },
   "167143": {
     "anidb_id": 18118,
+    "imdb_id": "tt33059860",
     "mal_id": 55997,
     "tvdb_id": 437234,
     "tvdb_mappings": {
