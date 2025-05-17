@@ -46165,7 +46165,9 @@
   },
   "12929": {
     "anidb_id": 8963,
+    "imdb_id": "tt2230515",
     "mal_id": 12929,
+    "tmdb_show_id": 44317,
     "tvdb_id": 72775,
     "tvdb_mappings": {
       "s9": "e1-e51",
@@ -69358,6 +69360,7 @@
       36847,
       37172
     ],
+    "tmdb_show_id": 76138,
     "tvdb_id": 339277,
     "tvdb_mappings": {
       "s1": ""
