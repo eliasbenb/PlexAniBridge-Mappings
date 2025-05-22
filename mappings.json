@@ -2622,6 +2622,7 @@
       260,
       7579
     ],
+    "tmdb_show_id": 12427,
     "tvdb_id": 74544,
     "tvdb_mappings": {
       "s1": ""
@@ -4394,7 +4395,9 @@
   },
   "447": {
     "anidb_id": 583,
+    "imdb_id": "tt0192943",
     "mal_id": 447,
+    "tmdb_show_id": 34165,
     "tvdb_id": 72922,
     "tvdb_mappings": {
       "s1": ""
@@ -92129,6 +92132,7 @@
     "anidb_id": 16100,
     "imdb_id": "tt15447890",
     "mal_id": 48415,
+    "tmdb_show_id": 120155,
     "tvdb_id": 402652,
     "tvdb_mappings": {
       "s1": ""
