@@ -487,7 +487,6 @@
       53,
       6709
     ],
-    "tmdb_show_id": 42567,
     "tvdb_id": 79267,
     "tvdb_mappings": {
       "s1": ""
@@ -11232,7 +11231,9 @@
   },
   "1299": {
     "anidb_id": 4476,
+    "imdb_id": "tt0874001",
     "mal_id": 1299,
+    "tmdb_show_id": 45047,
     "tvdb_id": 79474,
     "tvdb_mappings": {
       "s1": ""
@@ -82508,6 +82509,7 @@
     "anidb_id": 15254,
     "imdb_id": "tt12699782",
     "mal_id": 40665,
+    "tmdb_movie_id": 645439,
     "tvdb_id": 346988,
     "tvdb_mappings": {
       "s0": "e4"
