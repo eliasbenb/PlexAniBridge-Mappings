@@ -8834,7 +8834,6 @@
     "anidb_id": 385,
     "imdb_id": "tt0889170",
     "mal_id": 999,
-    "tmdb_movie_id": 825305,
     "tvdb_id": 76695,
     "tvdb_mappings": {
       "s0": "e1-e3"
@@ -54414,6 +54413,7 @@
       20973,
       23459
     ],
+    "tmdb_show_id": 70545,
     "tvdb_id": 275628,
     "tvdb_mappings": {
       "s1": ""
