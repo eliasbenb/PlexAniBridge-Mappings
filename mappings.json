@@ -7835,8 +7835,7 @@
     "anidb_id": 2190,
     "imdb_id": "tt1467299",
     "mal_id": 884,
-    "tmdb_movie_id": 36345,
-    "tvdb_id": 265756
+    "tmdb_movie_id": 36345
   },
   "885": {
     "anidb_id": 318,
@@ -84653,7 +84652,9 @@
   "115998": {},
   "116005": {
     "anidb_id": 15409,
+    "imdb_id": "tt12885610",
     "mal_id": 41345,
+    "tmdb_show_id": 99779,
     "tvdb_id": 386818,
     "tvdb_mappings": {
       "s1": ""
