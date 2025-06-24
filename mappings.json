@@ -27741,6 +27741,13 @@
   "4353": {
     "mal_id": 4353
   },
+  "4358": {
+    "anidb_id": 5912,
+    "imdb_id": "tt4301484",
+    "mal_id": 4358,
+    "tmdb_show_id": 90420,
+    "tvdb_id": 369125
+  },
   "4361": {
     "mal_id": 4361
   },
@@ -70786,6 +70793,7 @@
     "anidb_id": 13947,
     "imdb_id": "tt10496580",
     "mal_id": 37522,
+    "tmdb_show_id": 93593,
     "tvdb_id": 369140,
     "tvdb_mappings": {
       "s1": ""
