@@ -437,8 +437,8 @@ class AnimeIDCollector:
                 self.problematic.setdefault(entry.anilist_id, []).add(
                     Problem(
                         problem=ProblemEnum.UNKNOWN_TVDB_SEASON,
-                        details=f"Ignored ambiguous TVDB season from Anime-Lists '{tvdb_season}' "
-                        f"{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}}}",
+                        details=f"Ignored ambiguous TVDB season from Anime-Lists `{tvdb_season}` "
+                        f"`{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}}}`",
                     )
                 )
                 return
@@ -447,7 +447,7 @@ class AnimeIDCollector:
                     Problem(
                         problem=ProblemEnum.NEGATIVE_EP_OFFSET,
                         details=f"Ignored ambiguous negative episode offset from Anime-Lists "
-                        f"{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}, offset: {episode_offset}}}",
+                        f"`{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}, offset: {episode_offset}}}`",
                     )
                 )
                 return
@@ -461,7 +461,7 @@ class AnimeIDCollector:
                     Problem(
                         problem=ProblemEnum.UNKNOWN_ANILIST_EP_COUNT,
                         details=f"AniList episode count is currently unknown (non-issue) "
-                        f"{{anilist_id: {entry.anilist_id}}}",
+                        f"`{{anilist_id: {entry.anilist_id}}}`",
                     )
                 )
                 return
@@ -471,15 +471,15 @@ class AnimeIDCollector:
                     Problem(
                         problem=ProblemEnum.UNKNOWN_TVDB_EP_COUNT,
                         details=f"TVDB episode count is currently unknown (non-issue) "
-                        f"{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}}}",
+                        f"`{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}}}`",
                     )
                 )
             elif anilist_ep_count > tvdb_ep_count - episode_offset:
                 self.problematic[entry.anilist_id].add(
                     Problem(
                         problem=ProblemEnum.EP_OVERFLOW,
-                        details=f"AniList episode count is larger than TVDB episode count ({anilist_ep_count} > {tvdb_ep_count - episode_offset}) "
-                        f"{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}, offset: {episode_offset}}}",
+                        details=f"AniList episode count is larger than TVDB episode count (`{anilist_ep_count} > {tvdb_ep_count - episode_offset}`) "
+                        f"`{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}, offset: {episode_offset}}}`",
                     )
                 )
                 return
@@ -664,11 +664,11 @@ class AnimeIDCollector:
                         elif isinstance(curr_value, list):
                             if value not in curr_value:
                                 self.logger.debug(
-                                    f"Conflicting '{key}' for ID {anilist_id}, {value} not in {curr_value}"
+                                    f"Conflicting `{key}` for ID `{anilist_id}`, `{value} not in `{curr_value}`"
                                 )
                         elif curr_value != value:
                             self.logger.debug(
-                                f"Conflicting '{key}' for ID {anilist_id}, {value} != {curr_value}"
+                                f"Conflicting `{key}` for ID `{anilist_id}`, `{value} != {curr_value}`"
                             )
                 else:
                     self.anilist_entries[anilist_id] = entry
@@ -703,7 +703,7 @@ class AnimeIDCollector:
             for key in fields.keys():
                 if key not in AniMap.model_fields:
                     self.logger.warning(
-                        f"Unknown field '{key}' in edit for ID {anilist_id}"
+                        f"Unknown field `{key}` in edit for ID `{anilist_id}`"
                     )
                     skip_entry = True
             if skip_entry:
@@ -717,8 +717,8 @@ class AnimeIDCollector:
                         self.problematic[anilist_id].add(
                             Problem(
                                 problem=ProblemEnum.REDUNDANT_EDIT,
-                                details=f"The value for '{key}' is already '{value}' and is redundant in mappings.edits.json"
-                                f"{{anilist_id: {anilist_id_str}}}",
+                                details=f"The value for `{key}` is already `{value}` and is redundant in 'mappings.edits.json' "
+                                f"`{{anilist_id: {anilist_id_str}}}`",
                             )
                         )
                     else:
