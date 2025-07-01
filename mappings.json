@@ -3097,6 +3097,7 @@
   },
   "303": {
     "anidb_id": 186,
+    "imdb_id": "tt1862157",
     "mal_id": 303,
     "tvdb_id": 79411,
     "tvdb_mappings": {
@@ -17807,6 +17808,8 @@
     "mal_id": 2196
   },
   "2198": {
+    "anidb_id": 4153,
+    "imdb_id": "tt0872300",
     "mal_id": 2198
   },
   "2199": {
@@ -23153,6 +23156,7 @@
   },
   "3090": {
     "anidb_id": 5426,
+    "imdb_id": "tt1158219",
     "mal_id": 3090,
     "tvdb_id": 78920,
     "tvdb_mappings": {
@@ -27665,7 +27669,8 @@
   "4306": {
     "anidb_id": 4105,
     "imdb_id": "tt0768132",
-    "mal_id": 4306
+    "mal_id": 4306,
+    "tmdb_movie_id": 222664
   },
   "4312": {
     "anidb_id": 3041,
@@ -53549,6 +53554,7 @@
   },
   "19919": {
     "anidb_id": 10010,
+    "imdb_id": "tt5870832",
     "mal_id": 19919,
     "tvdb_id": 272310,
     "tvdb_mappings": {
@@ -58906,9 +58912,7 @@
   },
   "21058": {
     "anidb_id": 11082,
-    "imdb_id": "tt4542568",
     "mal_id": 30123,
-    "tmdb_show_id": 63087,
     "tvdb_id": 295205,
     "tvdb_mappings": {
       "s1": "e1-e12"
@@ -60043,9 +60047,7 @@
   },
   "21258": {
     "anidb_id": 11348,
-    "imdb_id": "tt4542568",
     "mal_id": 31173,
-    "tmdb_show_id": 63087,
     "tvdb_id": 295205,
     "tvdb_mappings": {
       "s1": "e13-e24"
@@ -101776,7 +101778,9 @@
   "151144": {},
   "151189": {
     "anidb_id": 17471,
+    "imdb_id": "tt22410622",
     "mal_id": 52092,
+    "tmdb_show_id": 204412,
     "tvdb_id": 421452,
     "tvdb_mappings": {
       "s1": ""
@@ -103732,9 +103736,7 @@
   },
   "156040": {
     "anidb_id": 17688,
-    "imdb_id": "tt23132598",
     "mal_id": 53438,
-    "tmdb_show_id": 213326,
     "tvdb_id": 426528,
     "tvdb_mappings": {
       "s1": ""
@@ -109002,6 +109004,7 @@
   },
   "171046": {
     "anidb_id": 18300,
+    "imdb_id": "tt33060122",
     "mal_id": 57433
   },
   "171050": {
@@ -111283,6 +111286,7 @@
     "anidb_id": 18686,
     "imdb_id": "tt32612521",
     "mal_id": 59062,
+    "tmdb_show_id": 256721,
     "tvdb_id": 450537,
     "tvdb_mappings": {
       "s1": ""
@@ -116162,7 +116166,10 @@
     "anidb_id": 19400
   },
   "195153": {
-    "mal_id": 61917
+    "anidb_id": 19415,
+    "mal_id": 61917,
+    "tmdb_show_id": 294867,
+    "tvdb_id": 465214
   },
   "195210": {},
   "195240": {
