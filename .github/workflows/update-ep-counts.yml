@@ -2,7 +2,7 @@ name: Episode Count Update
 
 on:
   schedule:
-    - cron: '0 0 1 * *'
+    - cron: '0 0 * * 0'
   workflow_dispatch:
     inputs:
       source:
@@ -57,5 +57,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git commit -m "Update at ${{ steps.date.outputs.date }} UTC" -a
+          git commit -m "Episode counts update ${{ steps.date.outputs.date }} UTC" -a
           git push
