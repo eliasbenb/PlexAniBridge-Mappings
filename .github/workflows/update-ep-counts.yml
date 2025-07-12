@@ -57,5 +57,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git commit -m "Episode counts update ${{ steps.date.outputs.date }} UTC" -a
+          git commit -m "Episode counts updated at ${{ steps.date.outputs.date }} UTC" -a
           git push
