@@ -380,7 +380,7 @@ class AnimeIDCollector:
         self.logger.info("Scanning Manami-Project")
         content = json.loads(
             self._fetch_url(
-                "https://raw.githubusercontent.com/manami-project/anime-offline-database/master/anime-offline-database.json"
+                "https://github.com/manami-project/anime-offline-database/releases/download/latest/anime-offline-database-minified.json"
             )
         )
 
