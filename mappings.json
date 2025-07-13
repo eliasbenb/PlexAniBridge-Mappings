@@ -60970,12 +60970,10 @@
   },
   "21366": {
     "anidb_id": 11606,
-    "imdb_id": "tt6074794",
     "mal_id": [
       31646,
       34647
     ],
-    "tmdb_show_id": 65336,
     "tvdb_id": 306269,
     "tvdb_mappings": {
       "s1": ""
@@ -66495,9 +66493,7 @@
   },
   "98478": {
     "anidb_id": 12994,
-    "imdb_id": "tt6074794",
     "mal_id": 35180,
-    "tmdb_show_id": 65336,
     "tvdb_id": 306269,
     "tvdb_mappings": {
       "s2": ""
