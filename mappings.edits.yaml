@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/eliasbenb/PlexAniBridge-Mappings/v2/mappings.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/eliasbenb/PlexAniBridge-Mappings/v3/mappings.schema.json
 
 5:
   tvdb_mappings:
