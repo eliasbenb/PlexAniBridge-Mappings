@@ -393,7 +393,7 @@ class AnimeIDCollector:
             if "sources" not in anime:
                 continue
 
-            ids: dict[str, int] = {}
+            ids: dict = {}
 
             for source in anime["sources"]:
                 if "anidb.net" in source:
@@ -645,7 +645,7 @@ class AnimeIDCollector:
                 except (KeyError, TypeError, ValueError):
                     continue
 
-                ids = {"anilist_id": anilist_id}
+                ids: dict = {"anilist_id": anilist_id}
 
                 try:
                     ids["anidb_id"] = int(item["anidbId"]["value"])
