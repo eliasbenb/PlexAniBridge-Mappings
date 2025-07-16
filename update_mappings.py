@@ -63,6 +63,7 @@ class TVDBMapping(BaseModel, validate_assignment=True):
     @classmethod
     def from_string(cls, season: int, s: str) -> list[Self]:
         """Parse a string pattern into a TVDBMapping instance.
+
         Args:
             season (int): Season number
             s (str): Pattern string in format 'e{start}-e{end}|{ratio},e{start2}-e{end2}|{ratio2}'
@@ -135,8 +136,7 @@ class TVDBMapping(BaseModel, validate_assignment=True):
 
     @staticmethod
     def to_string(mappings: list["TVDBMapping"]) -> str:
-        """
-        Convert a list of TVDBMapping objects to their string representation.
+        """Convert a list of TVDBMapping objects to their string representation.
         Simplifies the output when possible.
 
         Args:
@@ -236,8 +236,7 @@ class AniMap(BaseModel, validate_assignment=True):
         return v
 
     def model_dump(self, **kwargs) -> dict[str, Any]:
-        """
-        Dumps the model to a dictionary, flattening single-item lists to scalar values
+        """Dumps the model to a dictionary, flattening single-item lists to scalar values
         and simplifying TVDB mappings.
         """
         data = super().model_dump(**kwargs)
@@ -280,18 +279,19 @@ class Problem(BaseModel):
     problem: ProblemEnum
     details: str
 
-    def __eq__(self, other: "Problem | ProblemEnum") -> bool:
+    def __eq__(self, other: Any) -> bool:
         if isinstance(other, ProblemEnum):
             return self.problem == other
-        return self.problem == other.problem
+        elif isinstance(other, Problem):
+            return self.problem == other.problem
+        return NotImplemented
 
     def __hash__(self) -> int:
         return hash(self.problem)
 
 
 class AnimeIDCollector:
-    """
-    A class to collect and aggregate anime IDs from various sources.
+    """A class to collect and aggregate anime IDs from various sources.
 
     This class handles the collection and processing of anime IDs from multiple sources
     including Anime-Lists, Manami-Project, and AnimeAggregations. It consolidates the data
@@ -318,8 +318,7 @@ class AnimeIDCollector:
         self.problematic: dict[int, set[Problem]] = {}
 
     def _setup_logger(self) -> logging.Logger:
-        """
-        Set up and configure the logger.
+        """Set up and configure the logger.
 
         Returns:
             logging.Logger: Configured logger instance
@@ -338,8 +337,7 @@ class AnimeIDCollector:
         return logger
 
     def _fetch_url(self, url: str, as_bytes: bool = False) -> str | bytes:
-        """
-        Fetch URL content with caching for frequently accessed URLs.
+        """Fetch URL content with caching for frequently accessed URLs.
 
         Args:
             url: URL to fetch
@@ -371,8 +369,7 @@ class AnimeIDCollector:
                 self.tvdb_ep_counts = {int(k): v for k, v in json.load(f).items()}
 
     def process_manami_project(self) -> None:
-        """
-        Process anime data from the Manami Project.
+        """Process anime data from the Manami Project.
 
         Extracts anime IDs from the Manami Project database and updates existing entries
         with AniList and MAL IDs.
@@ -409,8 +406,7 @@ class AnimeIDCollector:
                     self.anidb_entries[ids["anidb_id"]] = entry
 
     def process_anime_lists(self) -> None:
-        """
-        Process anime data from Anime-Lists XML source.
+        """Process anime data from Anime-Lists XML source.
         Extracts anime IDs and related information from the Anime-Lists XML file
         and updates entries with TVDB mappings.
         """
@@ -584,8 +580,7 @@ class AnimeIDCollector:
                     )
 
     def process_wikidata(self) -> None:
-        """
-        Process anime data from Wikidata SPARQL query.
+        """Process anime data from Wikidata SPARQL query.
 
         Extracts anime IDs from Wikidata using SPARQL query and updates existing entries
         with AniList, MAL, IMDB, TMDB, TVDB and other IDs.
@@ -678,8 +673,7 @@ class AnimeIDCollector:
             self.logger.error(f"Error fetching data from Wikidata: {e}")
 
     def process_edits(self) -> None:
-        """
-        Process manual edits from mappings.edits.json.
+        """Process manual edits from mappings.edits.yaml.
 
         Applies manual corrections and additions to the collected anime entries
         from a local edits file.
@@ -880,7 +874,10 @@ class AnimeIDCollector:
         self.logger.info("Checking for changes")
         repo = Repo(path=self.base_dir)
 
-        if any(item.a_path.endswith(".json") for item in repo.index.diff(None)):
+        if any(
+            item.a_path and item.a_path.endswith(".json")
+            for item in repo.index.diff(None)
+        ):
             self.logger.info("Saving Anime ID Changes")
             readme_path = self.base_dir / "README.md"
 
