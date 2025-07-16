@@ -11388,6 +11388,12 @@
       "s1": "e1-e12"
     }
   },
+  "127149": {
+    "tvdb_id": 394346,
+    "tvdb_mappings": {
+      "s1": "e1-e4"
+    }
+  },
   "127368": {
     "tvdb_id": 289882,
     "tvdb_mappings": {
@@ -12302,7 +12308,6 @@
     }
   },
   "155735": {
-    "tvdb_id": null,
     "tvdb_mappings": {
       "s0": "e6-e7"
     }
@@ -12764,8 +12769,7 @@
   },
   "181970": {
     "tmdb_movie_id": 1189199,
-    "tvdb_id": 102261,
-    "tvdb_mappings": null
+    "tvdb_id": 102261
   },
   "182445": {
     "tvdb_id": 358612,
