@@ -106,6 +106,18 @@ This object defines the episode and season mappings between AniList and TVDB. Th
 "s1": "e4-e6|-2"
 ```
 
+## The API
+
+While using the [`mappings.json`](./mappings.json) file directly is encouraged, there is also a simple API available at [`https://plexanibridge-api.elias.eu.org/`](https://plexanibridge-api.elias.eu.org/).
+
+The API is self documented with both [OpenAPI](https://plexanibridge-api.elias.eu.org/openapi.json) and [Swagger UI](https://plexanibridge-api.elias.eu.org/). Below is a brief overview of the available endpoints:
+
+| Endpoint         | Method | Description                                           |
+| ---------------- | ------ | ----------------------------------------------------- |
+| `/api/v3/all`    | `GET`  | Returns all mappings in the `mappings.json` file.     |
+| `/api/v3/search` | `GET`  | Searches for all mappings that match any given ID(s). |
+
+
 ## Contributing
 
 The best way to contribute is to fix incorrect or missing mappings. The automated script isn't perfect, and manual corrections are sometimes necessary.
