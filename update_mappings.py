@@ -430,55 +430,72 @@ class AnimeIDCollector:
             entry: AniMap, tvdb_season: str, episode_offset: int
         ) -> None:
             if not tvdb_season.isdigit():
-                self.problematic.setdefault(entry.anilist_id, []).add(
-                    Problem(
-                        problem=ProblemEnum.UNKNOWN_TVDB_SEASON,
-                        details=f"Ignored ambiguous TVDB season from Anime-Lists `{tvdb_season}` "
-                        f"`{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}}}`",
+                if entry.anilist_id is not None:
+                    self.problematic.setdefault(entry.anilist_id, set()).add(
+                        Problem(
+                            problem=ProblemEnum.UNKNOWN_TVDB_SEASON,
+                            details=f"Ignored ambiguous TVDB season from Anime-Lists `{tvdb_season}` "
+                            f"`{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}}}`",
+                        )
                     )
-                )
                 return
             if episode_offset < 0:
-                self.problematic[entry.anilist_id].add(
-                    Problem(
-                        problem=ProblemEnum.NEGATIVE_EP_OFFSET,
-                        details=f"Ignored ambiguous negative episode offset from Anime-Lists "
-                        f"`{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}, offset: {episode_offset}}}`",
+                if entry.anilist_id is not None:
+                    self.problematic[entry.anilist_id].add(
+                        Problem(
+                            problem=ProblemEnum.NEGATIVE_EP_OFFSET,
+                            details=f"Ignored ambiguous negative episode offset from Anime-Lists "
+                            f"`{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}, offset: {episode_offset}}}`",
+                        )
                     )
-                )
                 return
 
-            anilist_ep_count = self.anilist_ep_counts.get(entry.anilist_id)
-            tvdb_ep_count = self.tvdb_ep_counts.get(entry.tvdb_id, {}).get(tvdb_season)
+            anilist_ep_count = None
+            if entry.anilist_id is not None:
+                anilist_ep_count = self.anilist_ep_counts.get(entry.anilist_id)
+
+            tvdb_ep_count = None
+            if entry.tvdb_id is not None:
+                tvdb_season_counts = self.tvdb_ep_counts.get(entry.tvdb_id)
+                if tvdb_season_counts is not None:
+                    tvdb_ep_count = tvdb_season_counts.get(tvdb_season)
 
             if not anilist_ep_count:
+                if entry.tvdb_mappings is None:
+                    entry.tvdb_mappings = {}
                 entry.tvdb_mappings[f"s{tvdb_season}"] = f"e{episode_offset + 1}-"
-                self.problematic[entry.anilist_id].add(
-                    Problem(
-                        problem=ProblemEnum.UNKNOWN_ANILIST_EP_COUNT,
-                        details=f"AniList episode count is currently unknown (non-issue) "
-                        f"`{{anilist_id: {entry.anilist_id}}}`",
+                if entry.anilist_id is not None:
+                    self.problematic[entry.anilist_id].add(
+                        Problem(
+                            problem=ProblemEnum.UNKNOWN_ANILIST_EP_COUNT,
+                            details=f"AniList episode count is currently unknown (non-issue) "
+                            f"`{{anilist_id: {entry.anilist_id}}}`",
+                        )
                     )
-                )
                 return
 
             if not tvdb_ep_count:
-                self.problematic[entry.anilist_id].add(
-                    Problem(
-                        problem=ProblemEnum.UNKNOWN_TVDB_EP_COUNT,
-                        details=f"TVDB episode count is currently unknown (non-issue) "
-                        f"`{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}}}`",
+                if entry.anilist_id is not None:
+                    self.problematic[entry.anilist_id].add(
+                        Problem(
+                            problem=ProblemEnum.UNKNOWN_TVDB_EP_COUNT,
+                            details=f"TVDB episode count is currently unknown (non-issue) "
+                            f"`{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}}}`",
+                        )
                     )
-                )
             elif anilist_ep_count > tvdb_ep_count - episode_offset:
-                self.problematic[entry.anilist_id].add(
-                    Problem(
-                        problem=ProblemEnum.EP_OVERFLOW,
-                        details=f"AniList episode count is larger than TVDB episode count (`{anilist_ep_count} > {tvdb_ep_count - episode_offset}`) "
-                        f"`{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}, offset: {episode_offset}}}`",
+                if entry.anilist_id is not None:
+                    self.problematic[entry.anilist_id].add(
+                        Problem(
+                            problem=ProblemEnum.EP_OVERFLOW,
+                            details=f"AniList episode count is larger than TVDB episode count (`{anilist_ep_count} > {tvdb_ep_count - episode_offset}`) "
+                            f"`{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}, offset: {episode_offset}}}`",
+                        )
                     )
-                )
                 return
+
+            if entry.tvdb_mappings is None:
+                entry.tvdb_mappings = {}
 
             if episode_offset == 0 and anilist_ep_count == tvdb_ep_count:
                 entry.tvdb_mappings[f"s{tvdb_season}"] = ""
@@ -487,7 +504,7 @@ class AnimeIDCollector:
                     f"e{episode_offset + 1}-e{anilist_ep_count + episode_offset}"
                 )
 
-        def process_imdb_id(entry, imdb_id: str) -> None:
+        def process_imdb_id(entry: AniMap, imdb_id: str) -> None:
             """Process IMDB ID for an entry."""
             if imdb_id and imdb_id.startswith("tt"):
                 imdb_ids = imdb_id.split(",")
@@ -518,14 +535,15 @@ class AnimeIDCollector:
                 episode_offset = get_xpath_int(anime, "@episodeoffset", 0)
 
                 entry.tvdb_mappings = {}
-                process_tvdb_mapping(entry, tvdb_season, episode_offset)
+                if tvdb_season is not None and episode_offset is not None:
+                    process_tvdb_mapping(entry, tvdb_season, episode_offset)
 
             imdb_id = get_xpath_str(anime, "@imdbid")
-            process_imdb_id(entry, imdb_id)
+            if imdb_id is not None:
+                process_imdb_id(entry, imdb_id)
 
     def process_aggregations(self) -> None:
-        """
-        Process anime data from AnimeAggregations.
+        """Process anime data from AnimeAggregations.
 
         Updates existing entries with additional IDs from the AnimeAggregations database,
         including IMDB, MAL, and TMDB IDs.
@@ -705,6 +723,9 @@ class AnimeIDCollector:
 
             if anilist_id in self.anilist_entries:
                 existing_entry = self.anilist_entries[anilist_id]
+                if anilist_id not in self.problematic:
+                    self.problematic[anilist_id] = set()
+
                 for key, value in fields.items():
                     curr_value = getattr(existing_entry, key)
                     if curr_value == value:
@@ -720,6 +741,7 @@ class AnimeIDCollector:
             else:
                 entry = AniMap(anilist_id=anilist_id, **fields)
                 self.anilist_entries[anilist_id] = entry
+                self.problematic[anilist_id] = set()
 
             if anilist_id in self.problematic:
                 if self.anilist_entries[anilist_id].tvdb_mappings:
