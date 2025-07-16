@@ -29,3 +29,8 @@ Issues = "https://github.com/eliasbenb/PlexAniBridge-Mappings/issues"
 
 [tool.pyright]
 include = ["update_mappings.py"]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.12.3",
+]
