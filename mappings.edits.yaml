@@ -1,0 +1,8561 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/eliasbenb/PlexAniBridge-Mappings/v2/mappings.schema.json
+
+5:
+  tvdb_mappings:
+    s0: e3
+18:
+  tmdb_show_id: 40424
+20:
+  tvdb_mappings:
+    s1: e1-e35
+    s2: e1-e48
+    s3: e1-e48
+    s4: e1-e48
+    s5: e1-e41
+21:
+  tvdb_mappings:
+    s0: e39
+    s1: e1-e8
+    s2: e1-e22
+    s3: e1-e17
+    s4: e1-e13
+    s5: e1-e9
+    s6: e1-e22
+    s7: e1-e39
+    s8: e1-e13
+    s9: e1-e52
+    s10: e1-e31
+    s11: e1-e99
+    s12: e1-e56
+    s13: e1-e100
+    s14: e1-e35
+    s15: e1-e62
+    s16: e1-e49
+    s17: e1-e118
+    s18: e1-e33
+    s19: e1-e98
+    s20: e1-e14
+    s21: e1-e194
+    s22: e1-
+22:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e27
+    s3: e1-e22
+    s4: e1-e26
+    s5: e1-e27
+    s6: e1-e37
+    s7: e1-e13
+28:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+    s3: e1-e17
+31:
+  tvdb_mappings:
+    s0: e1
+43:
+  tvdb_mappings:
+    s0: e1
+45:
+  tvdb_mappings:
+    s1: e1-e27
+    s2: e1-e35
+    s3: e1-e32
+46:
+  tvdb_mappings:
+    s0: e1
+54:
+  tvdb_mappings:
+    s0: e2
+59:
+  tvdb_mappings:
+    s0: e1-e2
+    s1: e1-e24
+72:
+  tvdb_mappings:
+    s2: e1-e12
+83:
+  tvdb_mappings:
+    s0: e1
+87:
+  tvdb_mappings:
+    s0: e4
+88:
+  tvdb_mappings:
+    s0: e5
+103:
+  tvdb_mappings:
+    s1: e1-e30
+    s2: e1-e26
+    s3: e1-e18
+108:
+  tvdb_mappings:
+    s0: e1-e3
+112:
+  tvdb_mappings:
+    s1: e1-e16|2
+123:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+132:
+  tvdb_mappings:
+    s1: e1-e25
+    s2: e1-e24
+135:
+  tvdb_mappings:
+    s1: e1-e30
+    s2: e1-e30
+    s3: e1-e15
+150:
+  tvdb_mappings:
+    s1: e1-e13
+    s2: e1-e12
+    s3: e1-e13
+    s4: e1-e12
+155:
+  tvdb_mappings:
+    s0: e1
+163:
+  tvdb_mappings:
+    s1: e1-e13
+    s2: e1-e13
+170:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+    s3: e1-e26
+    s4: e1-e23
+179:
+  tvdb_mappings:
+    s0: e1
+186:
+  tmdb_show_id: 40424
+191:
+  tvdb_mappings:
+    s0: e1
+197:
+  tvdb_mappings:
+    s1: e1-e12
+    s2: e1-e12
+205:
+  tvdb_mappings:
+    s1: e1-e26
+208:
+  tvdb_mappings:
+    s0: e1-e3
+219:
+  tvdb_mappings:
+    s0: e2
+223:
+  tvdb_mappings:
+    s1: e1-e13
+    s2: e1-e15
+    s3: e1-e40
+    s4: e1-e33
+    s5: e1-e31
+    s6: e1-e21
+225:
+  tvdb_mappings:
+    s1: e1-e16
+    s2: e1-e24
+    s3: e1-e24
+232:
+  tvdb_mappings:
+    s1: e1-e35
+    s2: e1-e11
+    s3: e1-e24
+235:
+  tvdb_mappings:
+    s1: e1-e28
+    s2: e1-e26
+    s3: e1-e28
+    s4: e1-e24
+    s5: e1-e28
+    s6: e1-e28
+    s7: e1-e31
+    s8: e1-e26
+    s9: e1-e35
+    s10: e1-e31
+    s11: e1-e30
+    s12: e1-e38
+    s13: e1-e36
+    s14: e1-e37
+    s15: e1-e39
+    s16: e1-e25
+    s17: e1-e33
+    s18: e1-e42
+    s19: e1-e40
+    s20: e1-e40
+    s21: e1-e35
+    s22: e1-e43
+    s23: e1-e39
+    s24: e1-e41
+    s25: e1-e83
+    s26: e1-e40
+    s27: e1-e38
+    s28: e1-e28
+    s29: e1-e40
+    s30: e1-e35
+    s31: e1-e41
+    s32: e1-e39
+    s33: e1-
+249:
+  tvdb_mappings:
+    s1: e1-e27
+    s2: e1-e27
+    s3: e1-e28
+    s4: e1-e28
+    s5: e1-e28
+    s6: e1-e29
+250:
+  tvdb_mappings:
+    s1: e1-e50
+    s2: e1-e50
+    s3: e1-e50
+251:
+  tvdb_mappings:
+    s1: e1-e39
+    s2: e1-e39
+256:
+  tvdb_id:
+  tvdb_mappings:
+259:
+  tvdb_mappings:
+    s0: e8-e12
+262:
+  tvdb_mappings:
+    s0: e13-e15
+269:
+  tvdb_mappings:
+    s1: e1-e20
+    s2: e1-e21
+    s3: e1-e22
+    s4: e1-e28
+    s5: e1-e18
+    s6: e1-e22
+    s7: e1-e20
+    s8: e1-e16
+    s9: e1-e22
+    s10: e1-e16
+    s11: e1-e7
+    s12: e1-e17
+    s13: e1-e36
+    s14: e1-e51
+    s15: e1-e26
+    s16: e1-e24
+271:
+  tvdb_mappings:
+    s1: e1-e26
+275:
+  tvdb_mappings:
+    s1: e1-e2,e4,e6-e7,e9-e12
+278:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e25
+280:
+  tvdb_mappings:
+    s1: e1-e102|2
+304:
+  tvdb_mappings:
+    s0: e6
+312:
+  tvdb_id: 338806
+  tvdb_mappings:
+    s1: e14-e25
+313:
+  tvdb_mappings:
+    s0: e1
+314:
+  tvdb_id: 338806
+  tvdb_mappings:
+    s0: e1-e13
+355:
+  tmdb_show_id: 22634
+367:
+  tvdb_mappings:
+    s0: e1-e3
+371:
+  tvdb_mappings:
+    s0: e1
+372:
+  tvdb_mappings:
+    s0: e2
+376:
+  imdb_id: tt0480489
+  tmdb_show_id: 42671
+  tvdb_id: 75941
+  tvdb_mappings:
+    s0: e1
+378:
+  tvdb_mappings:
+    s0: e1
+384:
+  tvdb_mappings:
+    s1: e1-e13
+392:
+  tvdb_mappings:
+    s1: e1-e25
+    s2: e1-e41
+    s3: e1-e28
+    s4: e1-e18
+395:
+  imdb_id: tt0434685
+  tmdb_show_id: 11279
+  tvdb_id: 78916
+  tvdb_mappings:
+    s2: e1-e13
+401:
+  tvdb_mappings:
+    s0: e6-e7
+418:
+  tvdb_mappings:
+    s0: e1
+422:
+  tvdb_mappings:
+    s0: e2-e3
+427:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e25
+428:
+  tvdb_mappings:
+    s0: e1
+429:
+  tvdb_mappings:
+    s0: e2
+435:
+  tvdb_mappings:
+    s1: e1-e20
+440:
+  tvdb_mappings:
+    s1: e1-e13
+    s2: e1-e11
+    s3: e1-e9
+    s4: e1-e6
+442:
+  tvdb_mappings:
+    s0: e4
+446:
+  tvdb_mappings:
+    s2: e1-e13
+449:
+  tvdb_mappings:
+    s0: e4
+450:
+  tvdb_mappings:
+    s0: e2
+451:
+  tvdb_mappings:
+    s0: e3
+452:
+  tvdb_mappings:
+    s0: e1
+460:
+  tvdb_mappings:
+    s0: e4
+461:
+  tvdb_mappings:
+    s0: e6
+462:
+  tvdb_mappings:
+    s0: e8
+463:
+  tvdb_mappings:
+    s0: e11
+466:
+  tvdb_mappings:
+    s0: e1
+468:
+  tvdb_mappings:
+    s0: e2
+481:
+  tvdb_mappings:
+    s1: e1-e49
+    s2: e1-e48
+    s3: e1-e47
+    s4: e1-e40
+    s5: e1-e40
+482:
+  tvdb_mappings:
+    s1: e1-e52
+    s2: e1-e52
+    s3: e1-e52
+    s4: e1-e24
+484:
+  tvdb_mappings:
+    s0: e1
+491:
+  tvdb_id: 120351
+  tvdb_mappings:
+    s1: e1-e13
+492:
+  tvdb_mappings:
+    s0: e2
+493:
+  tvdb_mappings:
+    s0: e1
+495:
+  tvdb_mappings:
+    s1: e1-e26
+508:
+  tvdb_mappings:
+    s1: e1-e52
+    s2: e1-e141
+516:
+  tvdb_mappings:
+    s1: e1-e51
+    s2: e1-e52
+    s3: e1-e51
+    s4: e1-e51
+    s5: e1-e51
+    s6: e1-e51
+    s7: e1-e51
+525:
+  tvdb_mappings:
+    s1: e1-e13
+    s2: e1-e13
+527:
+  tvdb_mappings:
+    s1: e1-e82
+    s2: e1-e36
+    s3: e1-e41
+    s4: e1-e52
+    s5: e1-e65
+528:
+  tvdb_mappings:
+    s0: e1
+531:
+  tvdb_mappings:
+    s0: e2
+536:
+  tvdb_mappings:
+    s0: e1
+543:
+  tvdb_id:
+  tvdb_mappings:
+547:
+  tvdb_mappings:
+    s0: e5-e7
+553:
+  tvdb_id: 82830
+556:
+  tvdb_mappings:
+    s0: e1-e3
+557:
+  tvdb_mappings:
+    s1: e25-e28
+560:
+  tvdb_mappings:
+    s0: e1
+567:
+  tvdb_mappings:
+    s1: e1-e13
+594:
+  tvdb_id: 78857
+  tvdb_mappings:
+    s0: e2
+596:
+  tvdb_id: 72070
+  tvdb_mappings:
+    s0: e4
+607:
+  tvdb_mappings:
+    s1: e1-e24
+    s2: e1-e15
+608:
+  tvdb_mappings:
+    s0: e11
+613:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+619:
+  tmdb_movie_id: 146006
+  tvdb_id:
+  tvdb_mappings:
+631:
+  tvdb_id: 79035
+  tvdb_mappings:
+    s0: e3
+641:
+  tvdb_id: 80759
+  tvdb_mappings:
+    s0: e6
+642:
+  tvdb_id: 80759
+  tvdb_mappings:
+    s0: e1
+644:
+  tvdb_id: 79044
+  tvdb_mappings:
+    s0: e1-e2
+651:
+  tvdb_id: 80608
+  tvdb_mappings:
+    s0: e2
+652:
+  tvdb_mappings:
+    s2: e1-e18|2
+653:
+  tvdb_mappings:
+    s3: e1-e52|2
+655:
+  tvdb_mappings:
+    s4: e1-e26|2
+656:
+  tvdb_id: 79101
+  tvdb_mappings:
+    s0: e2-e3
+659:
+  tvdb_mappings:
+    s0: e1
+664:
+  tvdb_mappings:
+    s0: e1
+673:
+  tvdb_id: 83020
+  tvdb_mappings:
+    s0: e1-e26,e28
+687:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+690:
+  tvdb_mappings:
+    s1: e1-e26
+711:
+  tvdb_id: 77773
+721:
+  tvdb_mappings:
+    s1: e1-e13
+    s2: e1-e25
+732:
+  tvdb_id:
+  tvdb_mappings:
+738:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+    s3: e1-e26
+    s4: e1-e24
+751:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+756:
+  tvdb_id: 80478
+  tvdb_mappings:
+    s0: e1
+760:
+  tvdb_mappings:
+    s0: e3
+761:
+  tvdb_id: 78857
+  tvdb_mappings:
+    s0: e1
+763:
+  tvdb_mappings:
+    s1: e1-e34
+    s2: e1-e33
+779:
+  tvdb_mappings:
+    s0: e1
+780:
+  tvdb_mappings:
+    s0: e2
+781:
+  tvdb_mappings:
+    s0: e3
+793:
+  tvdb_mappings:
+    s0: e1
+813:
+  tvdb_mappings:
+    s1: e1-e39
+    s2: e1-e35
+    s3: e1-e33
+    s4: e1-e32
+    s5: e1-e26
+    s6: e1-e29
+    s7: e1-e25
+    s8: e1-e34
+    s9: e1-e38
+814:
+  tvdb_mappings:
+    s0: e5
+815:
+  tvdb_mappings:
+    s0: e3
+818:
+  tvdb_id: 84141
+820:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e28
+    s3: e1-e32
+    s4: e1-e24
+822:
+  tmdb_show_id: 40424
+834:
+  tvdb_id: 74796
+  tvdb_mappings:
+    s0: e2
+845:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e25
+849:
+  tvdb_mappings:
+864:
+  tvdb_mappings:
+    s0: e5-e6
+866:
+  tvdb_mappings:
+    s0: e12
+867:
+  tvdb_mappings:
+    s0: e10
+868:
+  tvdb_mappings:
+    s0: e6
+869:
+  tvdb_mappings:
+    s0: e2
+882:
+  tvdb_mappings:
+    s0: e1
+883:
+  tvdb_mappings:
+    s0: e2
+887:
+  tvdb_mappings:
+    s0: e1
+893:
+  tvdb_mappings:
+    s0: e4
+894:
+  tvdb_mappings:
+    s0: e1
+897:
+  tvdb_mappings:
+    s0: e4
+898:
+  tvdb_mappings:
+    s0: e5
+899:
+  tvdb_mappings:
+    s0: e6
+900:
+  tvdb_mappings:
+    s0: e7
+901:
+  tvdb_mappings:
+    s0: e8
+902:
+  tvdb_mappings:
+    s0: e9
+903:
+  tvdb_mappings:
+    s0: e10
+904:
+  tvdb_mappings:
+    s0: e11
+905:
+  tvdb_mappings:
+    s0: e12
+906:
+  tvdb_mappings:
+    s0: e13
+918:
+  tvdb_mappings:
+    s1: e1-e49
+    s2: e1-e50
+    s3: e1-e51
+    s4: e1-e51
+936:
+  tvdb_mappings:
+    s0: e5
+950:
+  tvdb_mappings:
+    s0: e4
+961:
+  tvdb_mappings:
+    s1: e1-e35
+967:
+  tvdb_mappings:
+    s1: e1-e22
+    s2: e1-e35
+    s3: e1-e25
+    s4: e1-e27
+979:
+  tvdb_mappings:
+    s0: e3
+981:
+  tvdb_mappings:
+    s0: e2-e5
+984:
+  tvdb_mappings:
+    s0: e20-e21
+985:
+  tvdb_mappings:
+    s0: e18
+986:
+  tvdb_mappings:
+    s0: e16
+987:
+  tvdb_id: 79275
+  tvdb_mappings:
+    s0: e1
+993:
+  tvdb_id: 79996
+  tvdb_mappings:
+    s1: e14
+997:
+  tvdb_mappings:
+    s0: e4
+1000:
+  tvdb_id: 80886
+1004:
+  tvdb_mappings:
+    s0: e1
+1006:
+  tvdb_mappings:
+    s0: e2
+1007:
+  tmdb_show_id: 57706
+1008:
+  tmdb_show_id: 57706
+  tvdb_mappings:
+    s0: e9-e10
+1010:
+  tvdb_mappings:
+    s0: e11
+1011:
+  tmdb_show_id: 57706
+  tvdb_mappings:
+    s0: e12-e14
+1059:
+  tvdb_mappings:
+    s0: e19-e20
+1060:
+  tvdb_id: 73492
+  tvdb_mappings:
+    s1: e1-e24
+1065:
+  tvdb_mappings:
+    s1: e1-e27
+    s2: e1-e29
+    s3: e1-e23
+    s4: e1-e22
+1066:
+  tmdb_show_id: 22634
+  tvdb_id: 78962
+  tvdb_mappings:
+    s0: e1-e3,e5
+1074:
+  tvdb_mappings:
+    s0: e6
+1078:
+  tvdb_id: 70668
+  tvdb_mappings:
+    s0: e6
+1084:
+  tvdb_mappings:
+    s0: e1
+1089:
+  tvdb_mappings:
+    s0: e1
+1090:
+  tvdb_mappings:
+    s0: e1
+1091:
+  tvdb_mappings:
+    s0: e2
+1092:
+  tvdb_mappings:
+    s0: e3
+1094:
+  tmdb_show_id: 37854
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e3
+1095:
+  tvdb_mappings:
+    s0: e8
+1096:
+  tvdb_mappings:
+    s0: e9
+1099:
+  tvdb_mappings:
+    s0: e5
+1117:
+  tvdb_mappings:
+    s0: e2
+1118:
+  tvdb_mappings:
+    s0: e3
+1119:
+  tvdb_mappings:
+    s0: e5
+1120:
+  tvdb_mappings:
+    s0: e6
+1121:
+  tvdb_mappings:
+    s0: e7
+1122:
+  tvdb_mappings:
+    s0: e8
+1135:
+  tvdb_mappings:
+    s0: e2
+1137:
+  tvdb_id: 72350
+  tvdb_mappings:
+    s1: e1-e32
+1138:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+1144:
+  tvdb_mappings:
+    s0: e4
+1146:
+  tvdb_mappings:
+    s1: e7
+1147:
+  tvdb_id: 80009
+  tvdb_mappings:
+    s3: e7
+1163:
+  tvdb_mappings:
+    s1: e1-e24
+    s2: e1-e24
+1167:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e12
+1174:
+  tvdb_mappings:
+    s0: e1
+1185:
+  tvdb_mappings:
+    s0: e1-e6
+1186:
+  tvdb_mappings:
+    s1: e1-e26
+1190:
+  tvdb_id: 73532
+  tvdb_mappings:
+    s0: e2
+1192:
+  tmdb_movie_id: 27812
+  tvdb_id:
+  tvdb_mappings:
+1215:
+  tvdb_mappings:
+    s0: e24-e26
+1228:
+  tvdb_mappings:
+    s0: e4-e5
+1235:
+  tvdb_id: 84049
+  tvdb_mappings:
+    s0: e3-e7
+1237:
+  tmdb_show_id: 37854
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e9
+1238:
+  tmdb_show_id: 37854
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e10
+1240:
+  tvdb_mappings:
+    s0: e8
+1241:
+  tvdb_id: 74890
+  tvdb_mappings:
+    s0: e2
+1254:
+  tvdb_mappings:
+    s1: e1-e73
+    s2: e1-e26
+    s3: e1-e15
+1255:
+  tvdb_mappings:
+    s0: e3
+1256:
+  tvdb_mappings:
+    s0: e1
+1259:
+  tvdb_mappings:
+    s0: e5
+1266:
+  tvdb_mappings:
+    s0: e3-e6
+1267:
+  tvdb_mappings:
+    s0: e7-e11
+1268:
+  tvdb_mappings:
+    s0: e1
+1278:
+  tvdb_id: 78500
+  tvdb_mappings:
+    s0: e9
+1290:
+  tvdb_mappings:
+    s0: e10
+1293:
+  tvdb_mappings:
+    s1: e1-e54
+    s2: e1-e52
+    s3: e1-e43
+    s4: e1-e46
+1295:
+  tvdb_mappings:
+    s1: e5-e6
+1296:
+  tvdb_mappings:
+    s1: e2
+1297:
+  tvdb_mappings:
+    s1: e3
+1298:
+  tvdb_mappings:
+    s1: e4
+1301:
+  tvdb_mappings:
+    s0: e1
+1302:
+  tvdb_mappings:
+    s0: e6
+1336:
+  tvdb_mappings:
+    s1: e7-e12
+1337:
+  tvdb_id: 403064
+  tvdb_mappings:
+    s1: e1-e25
+1356:
+  tvdb_mappings:
+    s5: e1-e13
+    s6: e1-e30
+1362:
+  tvdb_mappings:
+    s0: e1
+1363:
+  tvdb_mappings:
+    s0: e5
+1364:
+  tvdb_mappings:
+    s0: e6
+1365:
+  tvdb_mappings:
+    s0: e8
+1366:
+  tvdb_mappings:
+    s0: e10
+1367:
+  tvdb_mappings:
+    s0: e12
+1368:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+    s0: e15
+1369:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+    s0: e4
+1372:
+  tvdb_mappings:
+    s1: e5-e51
+1373:
+  tvdb_id: 81092
+1379:
+  tvdb_mappings:
+    s0: e2
+1396:
+  tvdb_mappings:
+    s0: e2-e3
+1398:
+  tvdb_mappings:
+    s0: e17-e20
+1399:
+  tvdb_mappings:
+    s0: e14-e16
+1409:
+  tvdb_mappings:
+    s0: e1-e5
+1410:
+  imdb_id: tt0487183
+  tmdb_show_id: 23475
+  tvdb_id: 73011
+  tvdb_mappings:
+    s2: e1-e13
+1414:
+  tmdb_movie_id: 39954
+  tvdb_mappings:
+    s0: e27
+1415:
+  tvdb_mappings:
+    s0: e8
+1416:
+  tmdb_movie_id: 31050
+  tvdb_mappings:
+    s0: e16
+1417:
+  tvdb_mappings:
+    s0: e13
+1418:
+  tmdb_movie_id: 109572
+1419:
+  tvdb_mappings:
+    s0: e14
+1420:
+  tvdb_mappings:
+    s0: e11
+1421:
+  tmdb_movie_id: 80861
+  tvdb_mappings:
+    s0: e9
+1422:
+  tmdb_movie_id: 31053
+  tvdb_mappings:
+    s0: e21
+1423:
+  tvdb_mappings:
+    s0: e10
+1424:
+  tmdb_movie_id: 80868
+  tvdb_mappings:
+    s0: e25
+1425:
+  tmdb_show_id: 31572
+1426:
+  tmdb_show_id: 31572
+1429:
+  tmdb_movie_id: 80866
+  tvdb_mappings:
+    s0: e26
+1430:
+  tvdb_mappings:
+    s0: e4
+1432:
+  tmdb_movie_id: 50482
+  tvdb_mappings:
+    s0: e6
+1433:
+  tmdb_movie_id: 32873
+  tvdb_mappings:
+    s0: e5
+1434:
+  tvdb_mappings:
+    s0: e15
+1435:
+  tmdb_movie_id: 30143
+  tvdb_mappings:
+    s0: e3
+1436:
+  tvdb_mappings:
+    s0: e17
+1437:
+  tvdb_mappings:
+    s0: e19
+1438:
+  tmdb_movie_id: 76190
+  tvdb_mappings:
+    s0: e12
+1439:
+  tmdb_movie_id: 31599
+  tvdb_mappings:
+    s0: e18
+1453:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+    s3: e1-e24
+    s4: e1-e20
+1456:
+  tvdb_mappings:
+    s1: e1-e13
+1469:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e22
+1474:
+  tvdb_mappings:
+    s0: e1
+1477:
+  tvdb_mappings:
+    s0: e4
+1478:
+  tvdb_mappings:
+    s0: e5
+1481:
+  tvdb_id: 75113
+  tvdb_mappings:
+    s0: e1-e2|2
+1482:
+  tvdb_mappings:
+    s1: e1-e51
+    s2: e1-e52
+1486:
+  tvdb_mappings:
+    s1: e1-e51
+    s2: e1-e51
+1501:
+  tvdb_mappings:
+    s0: e3
+1502:
+  tvdb_mappings:
+    s1: e1-e26
+1503:
+  tvdb_id: 71283
+  tvdb_mappings:
+    s0: e4-e8,e9|-2
+1505:
+  tvdb_mappings:
+    s0: e14
+1506:
+  tvdb_mappings:
+    s0: e16
+1516:
+  tvdb_mappings:
+    s1: e1-e51
+    s2: e1-e51
+    s3: e1-e51
+1525:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e42
+1526:
+  tvdb_mappings:
+    s0: e9
+1527:
+  tmdb_show_id: 60572
+  tvdb_id: 76703
+  tvdb_mappings:
+    s0: e11
+1531:
+  tmdb_show_id: 22634
+  tvdb_id: 78962
+  tvdb_mappings:
+    s0: e9
+1563:
+  imdb_id: tt0112057
+  tmdb_show_id: 34158
+  tvdb_id: 71634
+  tvdb_mappings:
+    s2: e1-e29
+1564:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e74
+    s6: e1-e40
+    s7: e1-e52
+    s8: e1-e52
+    s9: e1-e47
+1565:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e73
+    s10: e1-e34,e35|-2,e36-e51
+    s11: e1-e52
+    s12: e1-e52
+    s13: e1-e34
+1566:
+  tvdb_mappings:
+    s0: e5
+1573:
+  tvdb_mappings:
+    s1: e1-e25
+    s2: e1-e26
+1584:
+  tvdb_mappings:
+    s0: e5-e6
+1587:
+  tvdb_id: 79543
+1593:
+  tvdb_mappings:
+    s0: e9
+1604:
+  tvdb_mappings:
+    s1: e1-e33
+    s2: e1-e32
+    s3: e1-e8
+    s4: e1-e28
+    s5: e1-e39
+    s6: e1-e13
+    s7: e1-e24
+    s8: e1-e12
+    s9: e1-e14
+1614:
+  tvdb_mappings:
+    s7: e1-e26
+    s8: e1-e26
+1619:
+  tvdb_mappings:
+    s0: e1
+1650:
+  tvdb_id: 77773
+1651:
+  tvdb_id: 77773
+1652:
+  tvdb_id: 77773
+1659:
+  tvdb_id: 78986
+  tvdb_mappings:
+    s0: e1-e9
+1676:
+  tvdb_id: 299019
+1677:
+  tvdb_id: 299019
+  tvdb_mappings:
+    s0: e12-e13
+1678:
+  tvdb_mappings:
+    s0: e6-e8
+    s1: e1-e48
+1679:
+  tvdb_id: 80608
+  tvdb_mappings:
+    s0: e3-e5
+1689:
+  tvdb_id:
+  tvdb_mappings:
+1707:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e25
+1709:
+  tvdb_mappings:
+    s0: e4
+1710:
+  tvdb_id: 72172
+1732:
+  tvdb_mappings:
+    s0: e2
+1735:
+  tvdb_mappings:
+    s1: e1-e32
+    s2: e1-e21
+    s3: e1-e18
+    s4: e1-e17
+    s5: e1-e24
+    s6: e1-e31
+    s7: e1-e8
+    s8: e1-e24
+    s9: e1-e21
+    s10: e1-e26
+    s11: e1-e20
+    s12: e1-e18
+    s13: e1-e35
+    s14: e1-e25
+    s15: e1-e28
+    s16: e1-e13
+    s17: e1-e32
+    s18: e1-e20
+    s19: e1-e18
+    s20: e1-e19
+    s21: e1-e8
+    s22: e1-e42
+1748:
+  tvdb_mappings:
+    s0: e1-e2
+    s1: e1-e6
+1752:
+  tvdb_mappings:
+    s0: e14
+1753:
+  tvdb_id: 73501
+  tvdb_mappings:
+    s0: e15
+1755:
+  tvdb_id: 73501
+  tvdb_mappings:
+    s0: e6-e9
+1756:
+  tvdb_id: 73501
+  tvdb_mappings:
+    s0: e10-e13
+1757:
+  tvdb_id: 73501
+  tvdb_mappings:
+    s0: e5
+1758:
+  tvdb_id: 73501
+  tvdb_mappings:
+    s0: e16-e17
+1772:
+  tvdb_mappings:
+    s1: e1-e3
+1773:
+  tvdb_mappings:
+    s0: e5
+1789:
+  tvdb_id: 78910
+  tvdb_mappings:
+    s0: e1
+1795:
+  tvdb_mappings:
+    s0: e13
+1796:
+  tvdb_mappings:
+    s0: e12
+1802:
+  tvdb_id: 73312
+  tvdb_mappings:
+    s1: e1-e6
+1803:
+  tvdb_mappings:
+    s1: e25-e26
+1811:
+  tvdb_id:
+  tvdb_mappings:
+1816:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+1830:
+  tvdb_id: 79880
+  tvdb_mappings:
+    s0: e7-e10
+1841:
+  mal_id: 933
+  tmdb_show_id: 45286
+  tvdb_id: 80082
+  tvdb_mappings:
+    s0: e1-e4
+1856:
+  tvdb_mappings:
+    s0: e5|-2,e6-e10
+1862:
+  tvdb_mappings:
+    s0: e8
+1874:
+  tvdb_id: 85065
+  tvdb_mappings:
+    s1: e3,e5,e8,e13
+1888:
+  tvdb_mappings:
+    s0: e2-e4
+1894:
+  tvdb_mappings:
+    s0: e1
+1903:
+  tvdb_id: 79022
+  tvdb_mappings:
+    s0: e4
+1904:
+  tvdb_mappings:
+    s0: e3-e5
+1905:
+  tvdb_id: 79882
+  tvdb_mappings:
+    s0: e11-e18
+1906:
+  tvdb_mappings:
+    s0: e7
+1907:
+  tvdb_id: 79882
+  tvdb_mappings:
+    s0: e6,e20
+1911:
+  tvdb_mappings:
+    s0: e10-e11
+1918:
+  tvdb_mappings:
+    s0: e1-e3
+1919:
+  tvdb_mappings:
+    s0: e6,e8-e9,e11-e18
+1920:
+  tvdb_mappings:
+    s0: e3
+1921:
+  tvdb_mappings:
+    s0: e4
+1928:
+  imdb_id: tt3168966
+  tmdb_movie_id: 131597
+1935:
+  anidb_id: 1729
+  tvdb_id: 113671
+  tvdb_mappings:
+    s1: e1
+1953:
+  tmdb_show_id: 31724
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e16-e24
+1967:
+  tvdb_mappings:
+    s0: e1
+1968:
+  tvdb_mappings:
+    s0: e2
+1969:
+  tvdb_mappings:
+    s0: e3
+1983:
+  tvdb_mappings:
+    s0: e5
+2008:
+  tvdb_mappings:
+    s0: e2
+2009:
+  tvdb_mappings:
+    s0: e1
+2013:
+  tvdb_mappings:
+    s0: e23
+2015:
+  tvdb_mappings:
+    s0: e8
+2020:
+  tmdb_show_id: 37854
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e14
+2027:
+  tvdb_id: 85064
+  tvdb_mappings:
+    s0: e1-e4
+2043:
+  imdb_id: tt0131160
+  tmdb_show_id: 34114
+  tvdb_mappings:
+    s1: e1-e36
+2045:
+  tvdb_mappings:
+    s0: e1
+2046:
+  tvdb_mappings:
+    s0: e3
+2056:
+  imdb_id: tt6869202
+  tmdb_movie_id: 166791
+2062:
+  tvdb_mappings:
+    s1: e3
+2063:
+  tvdb_mappings:
+    s1: e4
+2064:
+  tvdb_mappings:
+    s1: e5-e7
+2065:
+  tvdb_mappings:
+    s1: e8-e9
+2066:
+  tvdb_mappings:
+    s1: e10-e13
+2074:
+  tvdb_mappings:
+    s1: e1-e18
+    s2: e1-e12
+2076:
+  tvdb_mappings:
+    s1: e1-e32
+    s2: e1-e41
+    s3: e1-e43
+    s4: e1-e32
+2077:
+  tvdb_mappings:
+    s0: e1
+2078:
+  tvdb_mappings:
+    s1: e1-e2
+2098:
+  tvdb_mappings:
+    s0: e15
+2099:
+  tvdb_mappings:
+    s0: e1
+2100:
+  tvdb_mappings:
+    s0: e2
+2108:
+  tvdb_id: 72172
+  tvdb_mappings:
+    s2: e1-e51
+2109:
+  tvdb_id: 72172
+  tvdb_mappings:
+    s3: e1-e51
+2110:
+  tvdb_id: 72172
+  tvdb_mappings:
+    s4: e1-e25
+2111:
+  tvdb_id: 72172
+  tvdb_mappings:
+    s0: e1
+2116:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+    s3: e1-e26
+    s4: e1-e26
+    s5: e1-e24
+2119:
+  tvdb_mappings:
+    s0: e15
+2120:
+  tvdb_mappings:
+    s0: e16
+2121:
+  tvdb_mappings:
+    s0: e17
+2122:
+  tvdb_mappings:
+    s0: e23
+2125:
+  tvdb_id: 76665
+  tvdb_mappings:
+    s0: e3-e4
+2126:
+  tvdb_id: 76665
+  tvdb_mappings:
+    s0: e6-e9
+2143:
+  tvdb_mappings:
+    s0: e3-e5
+2144:
+  tvdb_mappings:
+    s0: e7
+2167:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e22
+2170:
+  tvdb_mappings:
+    s0: e2-e3
+2171:
+  tvdb_mappings:
+    s0: e19
+2174:
+  tvdb_mappings:
+    s0: e7
+2175:
+  tvdb_mappings:
+    s0: e3
+2176:
+  tvdb_mappings:
+    s0: e1
+2201:
+  tvdb_mappings:
+    s0: e12
+2205:
+  tvdb_mappings:
+    s0: e1
+2212:
+  tvdb_id: 74908
+  tvdb_mappings:
+    s0: e3-e5
+2222:
+  tvdb_mappings:
+    s1: e1-e50
+    s2: e1-e50
+    s3: e1-e50
+    s4: e1-e49
+    s5: e1-e44
+2244:
+  tvdb_id: 311739
+2248:
+  tvdb_id: 78857
+  tvdb_mappings:
+    s0: e3
+2265:
+  imdb_id: tt0092106
+  tmdb_movie_id: 1857
+  tmdb_show_id: 4269
+  tvdb_id: 72499
+  tvdb_mappings:
+    s0: e2
+2268:
+  imdb_id: tt0086817
+  tmdb_show_id: 4269
+  tvdb_id: 72499
+  tvdb_mappings:
+    s1: e1-e16
+    s2: e1-e49
+    s3: e1-e30
+    s4: e1-e3
+2269:
+  tvdb_id: 254931
+  tvdb_mappings:
+    s0: e2-e4
+2272:
+  tvdb_mappings:
+    s0: e1
+2294:
+  tvdb_id: 74890
+  tvdb_mappings:
+    s0: e3-e6
+2298:
+  tvdb_id: 254931
+  tvdb_mappings:
+    s0: e1
+2354:
+  tvdb_mappings:
+    s0: e1
+2355:
+  tvdb_mappings:
+    s0: e2
+2356:
+  tvdb_mappings:
+    s0: e3
+2359:
+  anidb_id: 3194
+  imdb_id: tt0108461
+  mal_id: 2359
+  tmdb_movie_id: 48624
+2361:
+  tvdb_mappings:
+    s1: e1-e40
+    s2: e1-e12
+2385:
+  tmdb_show_id: 37854
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e5
+2386:
+  tmdb_show_id: 37854
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e7
+2390:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e25
+    s3: e1-e25
+    s4: e1-e24
+2391:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+2392:
+  tvdb_id: 281405
+  tvdb_mappings:
+    s0: e26
+2393:
+  tvdb_mappings:
+    s0: e24
+2399:
+  tvdb_mappings:
+    s0: e5
+2407:
+  tvdb_mappings:
+    s0: e1
+2408:
+  tvdb_mappings:
+    s0: e2
+2424:
+  tvdb_id: 70668
+  tvdb_mappings:
+    s0: e3-e5
+2449:
+  tvdb_mappings:
+    s0: e3
+2454:
+  tvdb_mappings:
+    s0: e14
+2458:
+  tvdb_id: 78923
+  tvdb_mappings:
+    s0: e6-e13
+2461:
+  tvdb_id:
+  tvdb_mappings:
+2466:
+  tvdb_mappings:
+    s0: e2
+2470:
+  tvdb_id: 80886
+  tvdb_mappings:
+    s0: e1
+2471:
+  tvdb_mappings:
+    s1: e1-e235
+    s2: e1-e256
+    s3: e1-e152
+    s4: e1-e49
+    s5: e1-e52
+    s6: e1-e51
+    s7: e1-e52
+    s8: e1-e50
+    s9: e1-e60
+    s10: e1-e49
+    s11: e1-e54
+    s12: e1-e50
+    s13: e1-e50
+    s14: e1-e51
+    s15: e1-e70
+    s16: e1-e51
+    s17: e1-e48
+    s18: e1-e48
+    s19: e1-e51
+    s20: e1-e44
+    s21: e1-e45
+    s22: e1-e40
+    s23: e1-e41
+    s24: e1-e45
+    s25: e1-e45
+    s26: e1-e38
+    s27: e1-e10
+2472:
+  tvdb_mappings:
+    s0: e1
+2490:
+  tmdb_show_id: 37854
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e12
+2511:
+  tvdb_mappings:
+    s0: e2
+2512:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+    s0: e7
+2513:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+    s0: e9
+2514:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+    s0: e11
+2515:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+    s0: e13
+2520:
+  tmdb_show_id: 12609
+  tvdb_id: 76666
+  tvdb_mappings:
+    s0: e5-e6
+2569:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+2572:
+  tvdb_mappings:
+    s1: e1-e13
+    s2: e1-e13
+    s3: e1-e13
+    s4: e1-e13
+2583:
+  tvdb_mappings:
+    s0: e1
+2584:
+  tvdb_mappings:
+    s0: e2
+2585:
+  tvdb_mappings:
+    s0: e3
+2593:
+  imdb_id: tt1155650
+  tmdb_movie_id: 23150
+  tvdb_id: 82099
+  tvdb_mappings:
+    s1: e1
+2597:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+    s0: e17
+2599:
+  tvdb_mappings:
+    s0: e1
+2600:
+  tvdb_mappings:
+    s0: e2
+2601:
+  tvdb_mappings:
+    s0: e3
+2606:
+  tvdb_mappings:
+    s0: e2
+2620:
+  tvdb_mappings:
+    s1: e27-e52
+2645:
+  tvdb_mappings:
+    s0: e47
+2646:
+  tvdb_mappings:
+    s0: e46
+2648:
+  tvdb_mappings:
+    s0: e29
+2649:
+  tvdb_mappings:
+    s0: e32
+2650:
+  tvdb_mappings:
+    s0: e26
+2651:
+  tvdb_mappings:
+    s0: e30
+2654:
+  tvdb_mappings:
+    s0: e22
+2655:
+  tvdb_mappings:
+    s0: e23
+2656:
+  tvdb_mappings:
+    s0: e25
+2657:
+  tvdb_mappings:
+    s0: e8
+2658:
+  tvdb_mappings:
+    s0: e9
+2659:
+  tvdb_mappings:
+    s0: e14
+2660:
+  tvdb_mappings:
+    s0: e31
+2661:
+  tvdb_mappings:
+    s0: e13
+2662:
+  tvdb_mappings:
+    s0: e2
+2664:
+  tvdb_mappings:
+    s0: e19
+2665:
+  tvdb_mappings:
+    s0: e7
+2666:
+  tvdb_mappings:
+    s0: e10
+2667:
+  tvdb_mappings:
+    s0: e4
+2668:
+  tvdb_mappings:
+    s0: e20
+2669:
+  tvdb_mappings:
+    s0: e6
+2670:
+  tvdb_mappings:
+    s0: e12
+2671:
+  tvdb_mappings:
+    s0: e3
+2672:
+  tvdb_mappings:
+    s0: e5
+2673:
+  tvdb_id: 281405
+  tvdb_mappings:
+    s0: e27
+2674:
+  tvdb_mappings:
+    s0: e16
+2675:
+  tvdb_mappings:
+    s0: e17
+2676:
+  tvdb_mappings:
+    s0: e15
+2677:
+  tvdb_mappings:
+    s0: e11
+2678:
+  tvdb_mappings:
+    s0: e18
+2684:
+  tvdb_id: 156221
+2686:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+    s3: e1-e31
+2713:
+  tvdb_id: 72172
+  tvdb_mappings:
+    s5: e1-e26
+2716:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e32
+2743:
+  tvdb_id: 254931
+  tvdb_mappings:
+    s0: e11-e14
+2787:
+  tmdb_show_id: 22634
+2803:
+  tvdb_id: 264657
+  tvdb_mappings:
+    s1: e1-e46
+2808:
+  imdb_id: tt4774186
+  tmdb_movie_id: 143830
+  tvdb_id: 279516
+  tvdb_mappings:
+    s1: e1
+2813:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+2819:
+  tvdb_mappings:
+    s1: e1-e32
+    s2: e1-e11
+2826:
+  tvdb_mappings:
+    s1: e1-e52
+2829:
+  tvdb_id: 261387
+2832:
+  tvdb_mappings:
+    s1: e1-e5
+    s2: e1-e5
+    s3: e1-e5
+2836:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+    s3: e1-e26
+2842:
+  tmdb_show_id: 60572
+  tvdb_id: 76703
+  tvdb_mappings:
+    s0: e10
+2847:
+  tvdb_mappings:
+    s0: e13
+2851:
+  tvdb_mappings:
+    s0: e1
+2889:
+  tvdb_mappings:
+    s0: e4
+2899:
+  tvdb_id: 79682
+  tvdb_mappings:
+    s0: e1
+2922:
+  tvdb_mappings:
+    s0: e4
+2937:
+  tvdb_id: 78500
+  tvdb_mappings:
+    s0: e1
+2947:
+  tvdb_mappings:
+    s0: e1
+2951:
+  tmdb_show_id: 57041
+  tvdb_id: 79895
+  tvdb_mappings:
+    s0: e1
+2966:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e12
+2981:
+  anidb_id: 3619
+  imdb_id: tt0930902
+  mal_id: 2981
+  tmdb_movie_id: 53064
+2994:
+  imdb_id:
+  -   tt3355694
+  -   tt3355698
+  tmdb_movie_id:
+  -   51482
+  -   68555
+  tvdb_id: 79481
+  tvdb_mappings:
+    s0: e1-e2
+3005:
+  tvdb_mappings:
+    s0: e4
+3019:
+  tmdb_movie_id: 80863
+  tvdb_mappings:
+    s0: e29
+3021:
+  tvdb_id: 82981
+  tvdb_mappings:
+    s1: e1-e47
+3027:
+  tvdb_mappings:
+    s0: e6
+3038:
+  anidb_id: 3683
+  imdb_id: tt0064961
+  mal_id: 3038
+  tmdb_movie_id: 85398
+3065:
+  imdb_id: tt8922630
+  tmdb_show_id: 97455
+  tvdb_id: 272305
+  tvdb_mappings:
+    s1: e1-e3
+3067:
+  tvdb_id: 77773
+  tvdb_mappings:
+    s0: e2
+3069:
+  tvdb_id: 77773
+  tvdb_mappings:
+    s0: e4
+3071:
+  tvdb_id: 77773
+  tvdb_mappings:
+    s0: e3
+3072:
+  tvdb_id: 77773
+  tvdb_mappings:
+    s0: e5
+3076:
+  tvdb_id: 78500
+  tvdb_mappings:
+    s0: e5-e7
+3077:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e44
+    s2: e1-e47
+    s3: e1-e12
+3121:
+  tvdb_mappings:
+    s0: e1,e3-e4
+3130:
+  tvdb_mappings:
+    s1: e1-e188|2
+3153:
+  tvdb_mappings:
+    s0: e1
+3154:
+  tvdb_mappings:
+    s0: e2-e4
+3165:
+  tvdb_id: 82154
+  tvdb_mappings:
+    s0: e1-e2
+3190:
+  tvdb_mappings:
+    s0: e5
+3218:
+  tvdb_id: 80587
+  tvdb_mappings:
+    s0: e10-e11
+3221:
+  tmdb_show_id: 22634
+  tvdb_id: 78962
+  tvdb_mappings:
+    s0: e6
+3222:
+  tvdb_mappings:
+    s0: e2
+3223:
+  tvdb_mappings:
+    s0: e3
+3227:
+  tvdb_mappings:
+    s0: e8
+3239:
+  tmdb_show_id: 115290
+  tvdb_mappings:
+    s1: e1-e39
+3245:
+  tvdb_mappings:
+    s0: e4-e5
+3268:
+  tvdb_mappings:
+    s3: e1-e3
+3270:
+  tmdb_show_id: 23475
+  tvdb_id: 73011
+  tvdb_mappings:
+    s1: e1-e13
+3287:
+  imdb_id: tt4085894
+  tmdb_movie_id: 351512
+3318:
+  tvdb_mappings:
+    s0: e11-e14
+3328:
+  tvdb_mappings:
+    s0: e3
+3391:
+  tvdb_id: 356233
+3394:
+  tvdb_mappings:
+    s0: e1
+3410:
+  tvdb_id: 81428
+  tvdb_mappings:
+    s0: e2-e10
+3466:
+  tvdb_id: 79179
+  tvdb_mappings:
+    s0: e1
+3484:
+  tvdb_id: 71776
+  tvdb_mappings:
+    s0: e4
+3509:
+  tvdb_mappings:
+    s1: e1
+3511:
+  tvdb_mappings:
+    s1: e2
+3546:
+  tvdb_mappings:
+3571:
+  tvdb_id: 316634
+  tvdb_mappings:
+    s1: e1-e34
+3620:
+  tvdb_id: 76695
+  tvdb_mappings:
+    s0: e4-e17
+3659:
+  tvdb_mappings:
+    s0: e2
+3673:
+  tvdb_id: 82084
+3674:
+  tvdb_id: 80327
+  tvdb_mappings:
+    s0: e1
+3686:
+  mal_id: 3686
+  tvdb_id: 81367
+  tvdb_mappings:
+    s0: e1
+3692:
+  tmdb_show_id: 34075
+  tvdb_id: 250317
+  tvdb_mappings:
+    s2: e1-e48
+3724:
+  tvdb_mappings:
+    s1: e1-e13
+    s2: e1-e13
+3727:
+  tvdb_mappings:
+    s0: e1
+3759:
+  tvdb_mappings:
+    s0: e2
+3772:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+3782:
+  imdb_id: tt1155651
+  tmdb_movie_id: 23151
+  tvdb_id: 82099
+  tvdb_mappings:
+    s1: e2
+3783:
+  imdb_id: tt1155652
+  tmdb_movie_id: 23153
+  tvdb_id: 82099
+  tvdb_mappings:
+    s1: e3
+3811:
+  tvdb_mappings:
+    s1: e1-e13
+    s2: e1-e13
+    s3: e1-e9
+3827:
+  tvdb_id: 255612
+3835:
+  tvdb_id: 378467
+3864:
+  tvdb_id: 85192
+  tvdb_mappings:
+    s1: e23-e26
+3868:
+  tvdb_mappings:
+3882:
+  tvdb_id:
+  tvdb_mappings:
+3884:
+  tvdb_id: 81432
+  tvdb_mappings:
+    s0: e4
+3898:
+  tvdb_id: 94701
+  tvdb_mappings:
+    s0: e4
+3901:
+  imdb_id: tt1334722
+  tmdb_show_id: 34121
+  tvdb_id: 80421
+  tvdb_mappings:
+    s0: e1-e3
+3931:
+  tmdb_show_id: 40424
+3952:
+  tvdb_mappings:
+    s0: e18-e19
+3956:
+  tmdb_show_id: 22634
+  tvdb_id: 78962
+  tvdb_mappings:
+    s0: e7-e8,e10
+3963:
+  tvdb_mappings:
+    s0: e1
+3964:
+  tvdb_mappings:
+    s0: e2
+3965:
+  tvdb_id: 80005
+  tvdb_mappings:
+    s0: e2
+3972:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e38
+    s3: e1-e28
+    s4: e1-e42
+    s5: e1-e20
+4003:
+  imdb_id: tt2455528
+  tmdb_show_id: 44893
+  tvdb_id: 292662
+  tvdb_mappings:
+    s1: e1-e3
+4024:
+  imdb_id: tt32812183
+  tmdb_show_id: 126551
+  tvdb_id: 267123
+  tvdb_mappings:
+    s1: e1-e26
+4026:
+  tvdb_mappings:
+    s0: e15
+4037:
+  tvdb_id: 76885
+  tvdb_mappings:
+    s0: e1
+4038:
+  tvdb_mappings:
+    s1: e1-e51
+4052:
+  tvdb_mappings:
+    s3: e1-e39
+4053:
+  tvdb_mappings:
+    s0: e29-e35
+4059:
+  tmdb_show_id: 24835
+  tvdb_id: 80644
+  tvdb_mappings:
+    s0: e2
+4062:
+  tvdb_mappings:
+    s1: e1-e49
+    s2: e1-e23
+4078:
+  tvdb_id: 82311
+  tvdb_mappings:
+    s0: e5
+4081:
+  tmdb_show_id: 69500
+4107:
+  tvdb_mappings:
+    s0: e3
+4134:
+  tmdb_show_id: 31910
+  tvdb_id: 79824
+  tvdb_mappings:
+    s0: e5
+4156:
+  tvdb_id: 81007
+  tvdb_mappings:
+    s0: e1
+4162:
+  tvdb_id: 80054
+  tvdb_mappings:
+    s0: e21
+4182:
+  imdb_id: tt0995941
+  tmdb_show_id: 31718
+  tvdb_id: 80042
+  tvdb_mappings:
+    s0: e1
+4188:
+  tvdb_mappings:
+    s0: e3-e5
+4189:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e26
+4190:
+  tvdb_id: 79882
+  tvdb_mappings:
+    s0: e19
+4197:
+  tvdb_mappings:
+    s2: e1-e51
+4202:
+  tvdb_id: 81631
+  tvdb_mappings:
+    s0: e1-e2
+4246:
+  tvdb_mappings:
+    s0: e1
+4280:
+  imdb_id: tt1233474
+  tmdb_movie_id: 23154
+  tvdb_id: 82099
+  tvdb_mappings:
+    s1: e4
+4282:
+  tvdb_id: 82099
+  tvdb_mappings:
+    s1: e5
+4312:
+  tvdb_mappings:
+    s0: e8
+4314:
+  tvdb_mappings:
+    s1: e13-e28
+4316:
+  tvdb_mappings:
+    s1: e29-e44
+4320:
+  tvdb_mappings:
+    s0: e30
+4332:
+  tvdb_mappings:
+    s1: e1-e13
+    s2: e1-e13
+    s3: e1-e13
+4382:
+  tvdb_mappings:
+4437:
+  tvdb_mappings:
+    s0: e2
+4447:
+  tvdb_mappings:
+    s0: e22
+4454:
+  tvdb_id: 81086
+  tvdb_mappings:
+    s0: e1
+4476:
+  tvdb_mappings:
+    s0: e2
+4509:
+  tvdb_mappings:
+    s0: e2
+4540:
+  tvdb_id:
+  tvdb_mappings:
+4565:
+  tvdb_mappings:
+    s0: e4
+4664:
+  tvdb_id: 70863
+  tvdb_mappings:
+    s0: e13
+4672:
+  tvdb_mappings:
+    s0: e6
+4705:
+  tvdb_mappings:
+    s0: e6-e13
+4712:
+  tvdb_id: 339733
+  tvdb_mappings:
+    s0: e3
+4772:
+  tvdb_id: 79839
+  tvdb_mappings:
+    s0: e3
+4792:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e18
+4793:
+  tvdb_mappings:
+    s0: e24
+4794:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e25
+4795:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e26
+4811:
+  tvdb_mappings:
+    s0: e5-e6
+4823:
+  tvdb_id: 275293
+  tvdb_mappings:
+    s1: e1-e26
+4835:
+  tvdb_mappings:
+    s0: e5
+4849:
+  tvdb_id: 81115
+  tvdb_mappings:
+    s0: e1-e5
+4851:
+  tmdb_movie_id: 80860
+  tvdb_mappings:
+    s0: e28
+4872:
+  tvdb_mappings:
+    s0: e3-e5
+4874:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e36|-2
+4876:
+  imdb_id: tt2572196
+  tmdb_movie_id: 123950
+4910:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e28
+4918:
+  tvdb_mappings:
+    s0: e2-e3
+4936:
+  tvdb_mappings:
+    s1: e1-e81
+    s2: e1-e270
+    s3: e1-e129
+    s4: e1-e32
+    s5: e1-e51
+    s6: e1-e52
+    s7: e1-e79
+4939:
+  tvdb_id: 81086
+  tvdb_mappings:
+    s0: e9-e28
+4970:
+  tvdb_mappings:
+    s0: e2
+5019:
+  tmdb_movie_id: 59719
+  tvdb_mappings:
+    s0: e31
+5029:
+  tvdb_mappings:
+    s0: e1
+5031:
+  tvdb_mappings:
+    s0: e5-e6
+5051:
+  tvdb_mappings:
+    s0: e3
+5065:
+  tvdb_id: 82855
+  tvdb_mappings:
+    s0: e1
+5096:
+  tvdb_id: 281405
+  tvdb_mappings:
+    s0: e28
+5147:
+  tvdb_mappings:
+    s0: e5-e8
+5152:
+  tvdb_mappings:
+    s0: e23
+5163:
+  tmdb_show_id: 31724
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e25-e28,e30-e34
+5164:
+  tvdb_id: 79034
+  tvdb_mappings:
+    s0: e1
+5196:
+  tvdb_id: 79839
+  tvdb_mappings:
+    s0: e4-e10
+5204:
+  imdb_id: tt1343089
+  tmdb_movie_id: 23166
+  tvdb_id: 82099
+  tvdb_mappings:
+    s1: e6
+5205:
+  imdb_id: tt1345776
+  tmdb_movie_id: 23167
+  tvdb_id: 82099
+  tvdb_mappings:
+    s1: e7
+5225:
+  tmdb_movie_id: 172591
+  tvdb_mappings:
+    s0: e1
+5228:
+  tmdb_show_id: 40424
+5244:
+  tvdb_id: 79839
+  tvdb_mappings:
+    s0: e1
+5256:
+  tmdb_show_id: 60572
+  tvdb_id: 76703
+  tvdb_mappings:
+    s0: e14
+5270:
+  tvdb_id: 76547
+  tvdb_mappings:
+    s0: e13
+5290:
+  tvdb_mappings:
+    s0: e3
+5291:
+  tvdb_mappings:
+    s0: e9
+5292:
+  tvdb_id: 112641
+  tvdb_mappings:
+    s3: e1-e50
+5300:
+  tmdb_show_id: 69500
+5305:
+  tvdb_id: 83314
+  tvdb_mappings:
+    s0: e1
+5310:
+  tvdb_mappings:
+    s0: e4
+5332:
+  tvdb_id: 81999
+  tvdb_mappings:
+    s0: e1
+5348:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+    s0: e21
+5351:
+  tvdb_id: 80675
+  tvdb_mappings:
+    s0: e7
+5369:
+  tvdb_mappings:
+    s0: e5
+5440:
+  tvdb_id: 272339
+  tvdb_mappings:
+    s1: e1-e48
+5449:
+  tvdb_mappings:
+    s0: e6
+5458:
+  tvdb_id: 76894
+  tvdb_mappings:
+    s0: e15
+5460:
+  tvdb_mappings:
+    s0: e25
+5462:
+  tvdb_id: 81073
+  tvdb_mappings:
+    s0: e1-e4
+5466:
+  tvdb_id: 79078
+  tvdb_mappings:
+    s0: e7
+5493:
+  tmdb_show_id: 57706
+  tvdb_mappings:
+    s0: e15
+5521:
+  tvdb_mappings:
+    s0: e1
+5526:
+  tvdb_mappings:
+    s0: e19
+5529:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e27
+5583:
+  tvdb_id:
+  tvdb_mappings:
+5584:
+  tvdb_id: 292662
+  tvdb_mappings:
+    s2: e2
+5585:
+  tvdb_id: 292662
+  tvdb_mappings:
+    s2: e1
+5640:
+  tvdb_mappings:
+    s0: e2
+5656:
+  tvdb_id: 80005
+  tvdb_mappings:
+    s0: e1
+5684:
+  tvdb_id: 85220
+5710:
+  tvdb_mappings:
+    s0: e4
+5713:
+  tvdb_mappings:
+    s0: e1
+5717:
+  tvdb_mappings:
+    s2: e1-e2
+5723:
+  tvdb_id: 80784
+  tvdb_mappings:
+    s0: e3-e12
+5742:
+  tvdb_id: 82971
+  tvdb_mappings:
+    s0: e2
+5776:
+  mal_id: 52383
+  tvdb_id: 93721
+  tvdb_mappings:
+    s0: e1-e2
+5844:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e33
+5845:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e34
+5859:
+  tvdb_id: 121381
+  tvdb_mappings:
+    s0: e1
+5900:
+  imdb_id: tt4089456
+  tmdb_movie_id: 546201
+5934:
+  tvdb_mappings:
+    s0: e2
+5947:
+  tvdb_id: 80096
+  tvdb_mappings:
+    s0: e21
+5955:
+  tvdb_id: 83322
+  tvdb_mappings:
+    s0: e1-e2
+5996:
+  tvdb_id: 73532
+  tvdb_mappings:
+    s0: e1
+6007:
+  tvdb_mappings:
+    s0: e4
+6028:
+  tvdb_mappings:
+    s0: e7
+6032:
+  tvdb_mappings:
+    s0: e4
+6038:
+  tvdb_id: 71551
+  tvdb_mappings:
+    s0: e1
+6050:
+  tvdb_mappings:
+    s0: e6-e9
+6064:
+  tvdb_id: 79682
+  tvdb_mappings:
+    s0: e7-e30
+6115:
+  tvdb_mappings:
+    s0: e23
+6127:
+  tvdb_id: 83277
+  tvdb_mappings:
+    s0: e1-e4
+6148:
+  tvdb_mappings:
+    s0: e1
+6165:
+  tvdb_mappings:
+    s1: e14-e26
+6169:
+  tvdb_mappings:
+    s0: e3
+6171:
+  tvdb_id: 72775
+  tvdb_mappings:
+    s7: e1-e13
+6178:
+  tvdb_mappings:
+    s0: e17
+6187:
+  tvdb_id: 80005
+  tvdb_mappings:
+    s0: e3
+6198:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+    s0: e20
+6209:
+  tvdb_id: 72347
+  tvdb_mappings:
+    s0: e1-e12
+6231:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+    s0: e24
+6275:
+  tmdb_show_id: 60572
+  tvdb_id: 76703
+  tvdb_mappings:
+    s0: e20
+6288:
+  tvdb_mappings:
+    s0: e4
+6312:
+  tvdb_id: 80054
+  tvdb_mappings:
+    s0: e24
+6325:
+  tmdb_movie_id: 36728
+  tvdb_mappings:
+    s0: e3
+6330:
+  tmdb_show_id: 22634
+  tvdb_id: 78962
+  tvdb_mappings:
+    s0: e21-e28
+6351:
+  tmdb_show_id: 24835
+  tvdb_id: 80644
+  tvdb_mappings:
+    s0: e3
+6372:
+  tvdb_mappings:
+    s0: e2
+6379:
+  tvdb_mappings:
+    s0: e6
+6383:
+  tvdb_id: 295741
+  tvdb_mappings:
+    s1: e1-e65
+6385:
+  tmdb_show_id: 60572
+  tvdb_id: 76703
+  tvdb_mappings:
+    s0: e23
+6408:
+  tvdb_mappings:
+    s0: e2
+6421:
+  tvdb_id: 85249
+  tvdb_mappings:
+    s0: e1-e4
+6438:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+    s0: e26
+6467:
+  tvdb_mappings:
+    s0: e28
+6527:
+  tmdb_movie_id: 120434
+  tvdb_id: 85220
+  tvdb_mappings:
+    s0: e1
+6548:
+  tvdb_mappings:
+    s0: e5
+6555:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e35
+6560:
+  tvdb_mappings:
+    s1: e1-e13
+    s2: e1-e13
+    s3: e1-e13
+6567:
+  tvdb_mappings:
+    s0: e24
+6572:
+  tmdb_show_id: 22634
+  tvdb_mappings:
+    s0: e11,e13,e15,e17
+6581:
+  tvdb_id: 87881
+  tvdb_mappings:
+    s0: e1
+6624:
+  imdb_id: tt9277666
+  tmdb_movie_id: 61666
+  tvdb_id: 82099
+  tvdb_mappings:
+    s0: e2
+6637:
+  tvdb_mappings:
+    s0: e3
+6702:
+  tvdb_mappings:
+    s1: e1-e48
+    s2: e1-e48
+    s3: e1-e54
+    s4: e1-e25
+6704:
+  tvdb_id: 87491
+  tvdb_mappings:
+    s0: e1-e6
+6713:
+  tmdb_show_id: 57706
+6714:
+  tvdb_mappings:
+    s0: e19
+6718:
+  tvdb_id: 77773
+  tvdb_mappings:
+    s0: e7-e9
+6743:
+  tvdb_id: 79880
+  tvdb_mappings:
+    s0: e4-e6
+6772:
+  imdb_id: tt1663145
+  tmdb_movie_id: 55426
+  tvdb_id: 179791
+  tvdb_mappings:
+    s0: e1
+6773:
+  tmdb_show_id: 22634
+6793:
+  tmdb_show_id: 50712
+  tvdb_id: 83996
+  tvdb_mappings:
+    s0: e2
+6811:
+  tvdb_mappings:
+    s7: e1-e26
+6862:
+  tmdb_show_id: 42253
+  tvdb_id: 87501
+  tvdb_mappings:
+    s0: e19
+6864:
+  tvdb_mappings:
+    s0: e4-e5
+6867:
+  tvdb_mappings:
+    s1: e1-e7,e8|-2
+6877:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e16
+6884:
+  tvdb_id: 81178
+  tvdb_mappings:
+    s0: e2-e3
+6922:
+  tvdb_id:
+  tvdb_mappings:
+6927:
+  tvdb_mappings:
+    s0: e1
+6930:
+  tvdb_id: 281405
+  tvdb_mappings:
+    s0: e29
+6941:
+  tvdb_mappings:
+    s0: e1
+6945:
+  tmdb_show_id: 57041
+  tvdb_id: 79895
+  tvdb_mappings:
+    s0: e2
+6951:
+  tvdb_mappings:
+    s0: e14
+6954:
+  imdb_id: tt3868344
+  tvdb_id: 82099
+  tvdb_mappings:
+    s0: e1
+6964:
+  tvdb_id: 76665
+  tvdb_mappings:
+    s0: e15
+6965:
+  tvdb_mappings:
+    s0: e1
+6984:
+  tvdb_id: 82154
+  tvdb_mappings:
+    s0: e3-e5
+6988:
+  tvdb_id: 281405
+  tvdb_mappings:
+    s0: e30
+7014:
+  imdb_id: tt1686865
+  tmdb_movie_id: 115969
+7017:
+  tvdb_id: 87501
+  tvdb_mappings:
+    s0: e1-e7
+7044:
+  tvdb_mappings:
+    s0: e6-e8
+7045:
+  tvdb_mappings:
+    s0: e21
+7060:
+  tvdb_mappings:
+    s0: e10
+7066:
+  tvdb_mappings:
+    s0: e4-e5
+7113:
+  tvdb_id: 76547
+  tvdb_mappings:
+    s0: e9
+7122:
+  tvdb_id: 421601
+  tvdb_mappings:
+    s1: e1-e5
+7135:
+  tvdb_mappings:
+    s0: e11
+7144:
+  tvdb_id: 77773
+  tvdb_mappings:
+    s0: e6
+7157:
+  tvdb_mappings:
+    s0: e10
+7158:
+  tvdb_mappings:
+    s0: e12
+7222:
+  tvdb_mappings:
+    s0: e5
+7248:
+  tvdb_id: 81073
+  tvdb_mappings:
+    s0: e7-e9
+7254:
+  tvdb_mappings:
+    s0: e9
+7270:
+  tvdb_id: 80675
+  tvdb_mappings:
+    s0: e1-e3
+7285:
+  tvdb_id:
+  tvdb_mappings:
+7311:
+  tvdb_mappings:
+7329:
+  tvdb_mappings:
+    s0: e1
+7330:
+  tvdb_mappings:
+    s0: e2
+7337:
+  tvdb_mappings:
+    s0: e4
+7338:
+  imdb_id: tt0995941
+  tmdb_show_id: 31718
+  tvdb_id: 80042
+  tvdb_mappings:
+    s0: e2-e5
+7363:
+  tvdb_id: 79156
+  tvdb_mappings:
+    s0: e10
+7367:
+  tvdb_mappings:
+    s0: e9
+7375:
+  tmdb_show_id: 22634
+  tvdb_id: 78962
+  tvdb_mappings:
+    s0: e12,e14,e16,e18
+7430:
+  tvdb_id: 83421
+  tvdb_mappings:
+    s0: e3
+7435:
+  tvdb_mappings:
+    s0: e1
+7472:
+  tmdb_movie_id: 71172
+  tvdb_mappings:
+    s0: e4
+7491:
+  tvdb_mappings:
+    s0: e4
+7522:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e13
+7536:
+  tvdb_mappings:
+    s0: e4
+7550:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e32
+7568:
+  tvdb_id: 101981
+  tvdb_mappings:
+    s0: e1-e26
+7591:
+  tvdb_mappings:
+    s0: e1
+7601:
+  tvdb_mappings:
+    s0: e4-e6
+7666:
+  tvdb_mappings:
+    s0: e4
+7667:
+  tvdb_mappings:
+    s0: e6
+7669:
+  tvdb_mappings:
+    s0: e1
+7695:
+  tvdb_mappings:
+    s0: e21
+7739:
+  tvdb_id: 117851
+  tvdb_mappings:
+    s0: e1
+7740:
+  tvdb_id: 87491
+  tvdb_mappings:
+    s0: e7-e12
+7745:
+  tvdb_mappings:
+    s0: e3
+7774:
+  tvdb_id: 83314
+  tvdb_mappings:
+    s0: e2
+7816:
+  tvdb_mappings:
+    s0: e9
+7857:
+  tvdb_id: 87881
+  tvdb_mappings:
+    s0: e4-e10
+7858:
+  tvdb_mappings:
+    s0: e1
+7882:
+  tvdb_id: 78919
+  tvdb_mappings:
+    s0: e4
+7897:
+  tvdb_mappings:
+    s1: e2
+7902:
+  tvdb_id: 85249
+  tvdb_mappings:
+    s0: e5-e20
+8023:
+  tvdb_id: 114921
+  tvdb_mappings:
+    s0: e1-e2
+8026:
+  tvdb_mappings:
+    s0: e6
+8038:
+  tvdb_id: 80005
+  tvdb_mappings:
+    s0: e4
+8062:
+  tvdb_id: 83020
+  tvdb_mappings:
+    s0: e27
+8097:
+  tmdb_movie_id: 39952
+  tvdb_id: 71863
+  tvdb_mappings:
+    s0: e33
+8098:
+  tvdb_mappings:
+    s0: e4
+8100:
+  imdb_id: tt1754177
+  tmdb_movie_id: 73529
+8108:
+  tvdb_mappings:
+    s0: e3
+8109:
+  tvdb_mappings:
+    s0: e4
+8134:
+  tvdb_mappings:
+    s0: e5
+8190:
+  tvdb_id: 80005
+  tvdb_mappings:
+    s0: e5
+8197:
+  tvdb_id: 132771
+  tvdb_mappings:
+    s0: e1-e2
+8245:
+  tvdb_id: 387655
+8246:
+  tvdb_mappings:
+    s0: e4
+8247:
+  tvdb_mappings:
+    s0: e6
+8252:
+  tmdb_movie_id: 456478
+  tvdb_id: 112641
+  tvdb_mappings:
+    s0: e1
+8314:
+  tvdb_id: 93281
+  tvdb_mappings:
+    s0: e1-e4
+8317:
+  tvdb_id: 79360
+  tvdb_mappings:
+    s0: e2
+8331:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+    s0: e27
+8348:
+  tvdb_mappings:
+    s0: e14-e20
+8408:
+  imdb_id: tt1584000
+  tmdb_show_id: 42410
+  tvdb_id: 133341
+  tvdb_mappings:
+    s0: e1-e2
+8438:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e40,e81
+8440:
+  tvdb_id: 79604
+  tvdb_mappings:
+    s0: e1-e7
+8479:
+  tvdb_mappings:
+    s2: e1-e48
+8514:
+  imdb_id: tt1679583
+  tmdb_movie_id: 55430
+  tvdb_id: 179791
+  tvdb_mappings:
+    s0: e2
+8518:
+  tvdb_id: 78986
+  tvdb_mappings:
+    s0: e10
+8532:
+  tvdb_id: 80975
+  tvdb_mappings:
+    s0: e1
+8542:
+  tvdb_id: 338806
+  tvdb_mappings:
+    s1: e1-e25
+8546:
+  tvdb_mappings:
+    s0: e5
+8547:
+  tvdb_mappings:
+    s0: e8
+8548:
+  tvdb_mappings:
+    s0: e11
+8550:
+  tvdb_id: 74600
+  tvdb_mappings:
+    s0: e3
+8551:
+  tvdb_id: 74600
+  tvdb_mappings:
+    s0: e4
+8554:
+  imdb_id: tt3916656
+  tmdb_movie_id: 344982
+8609:
+  tvdb_mappings:
+    s0: e30
+8635:
+  tvdb_mappings:
+    s0: e3
+8677:
+  tvdb_mappings:
+    s0: e1
+8678:
+  tvdb_mappings:
+    s0: e2
+8687:
+  tvdb_mappings:
+    s1: e1-e32
+    s2: e1-e42
+    s3: e1-e36
+    s4: e1-e44
+    s5: e1-e42
+    s6: e1-e38
+    s7: e1-e43
+    s8: e1-e40
+    s9: e1-e34
+    s10: e1-e35
+    s11: e1-e39
+    s12: e1-e41
+    s13: e1-e38
+    s14: e1-e42
+    s15: e1-e37
+    s16: e1-e52
+    s17: e1-e51
+    s18: e1-e53
+    s19: e1-e52
+    s20: e1-e52
+    s21: e1-
+8709:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e31
+8728:
+  tmdb_show_id: 31724
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e36
+8740:
+  tmdb_show_id: 37854
+8767:
+  tvdb_id: 80583
+  tvdb_mappings:
+    s0: e1-e6
+8795:
+  tvdb_mappings:
+    s1: e1-e26|2
+8839:
+  tvdb_mappings:
+    s0: e4
+8861:
+  tvdb_id: 195231
+  tvdb_mappings:
+    s1: e1-e12
+8888:
+  imdb_id: tt3354096
+  tmdb_movie_id: 185526
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e7
+8949:
+  tvdb_mappings:
+    s0: e6
+8965:
+  tvdb_mappings:
+    s0: e7
+8966:
+  tvdb_mappings:
+    s0: e8
+8985:
+  tvdb_id: 140751
+  tvdb_mappings:
+    s0: e1-e3
+9007:
+  tvdb_mappings:
+    s0: e47
+9032:
+  tvdb_mappings:
+    s0: e1
+9047:
+  tvdb_mappings:
+    s0: e4
+9062:
+  tmdb_show_id: 42942
+  tvdb_id: 150471
+  tvdb_mappings:
+    s0: e1,e3
+9107:
+  tmdb_show_id: 60572
+9117:
+  tvdb_id: 172921
+  tvdb_mappings:
+    s0: e1-e6
+9127:
+  tvdb_id: 84139
+  tvdb_mappings:
+    s0: e2
+9130:
+  tvdb_id: 72775
+  tvdb_mappings:
+    s8: e1-e13
+9135:
+  tvdb_mappings:
+    s0: e21
+9136:
+  tvdb_id: 83996
+  tvdb_mappings:
+    s0: e3-e8
+9154:
+  tvdb_mappings:
+    s0: e3
+9163:
+  tvdb_mappings:
+    s0: e1
+9164:
+  tvdb_mappings:
+    s0: e4
+9165:
+  tvdb_mappings:
+    s0: e2
+9166:
+  tvdb_mappings:
+    s0: e3
+9170:
+  tvdb_id: 79108
+  tvdb_mappings:
+    s0: e15
+9203:
+  tvdb_id: 87501
+  tvdb_mappings:
+    s0: e8-e16
+9205:
+  tvdb_mappings:
+    s1: e1-e4
+9252:
+  imdb_id: tt1726641
+  tmdb_movie_id: 55431
+  tvdb_id: 179791
+  tvdb_mappings:
+    s0: e3
+9260:
+  tvdb_id: 102261
+  tvdb_mappings:
+    s0: e2
+9325:
+  mal_id: 9325
+  tmdb_show_id: 115290
+  tvdb_mappings:
+    s1: e1-e2
+9366:
+  tmdb_show_id: 65648
+  tvdb_id: 148151
+  tvdb_mappings:
+    s0: e2
+9446:
+  tvdb_mappings:
+    s0: e21
+9451:
+  tvdb_mappings:
+    s0: e27
+9465:
+  imdb_id: tt1753855
+  tmdb_movie_id: 55435
+  tvdb_id: 179791
+  tvdb_mappings:
+    s0: e4
+9509:
+  imdb_id: tt8911474
+  tmdb_movie_id: 400788
+9547:
+  tvdb_mappings:
+    s0: e3
+9548:
+  tvdb_mappings:
+    s0: e2
+9549:
+  tvdb_mappings:
+    s0: e1
+9563:
+  tvdb_id: 82154
+  tvdb_mappings:
+    s0: e6-e7
+9591:
+  tmdb_show_id: 31724
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e37-e45
+9617:
+  tvdb_mappings:
+    s0: e18
+9630:
+  tvdb_id: 87881
+  tvdb_mappings:
+    s0: e11-e17
+9656:
+  tvdb_mappings:
+    s0: e1
+    s2: e1-e12
+9675:
+  tvdb_id: 195711
+  tvdb_mappings:
+    s0: e1
+9708:
+  tvdb_id: 72352
+  tvdb_mappings:
+    s0: e1-e2
+9724:
+  imdb_id: tt1809274
+  tmdb_movie_id: 55437
+  tvdb_id: 179791
+  tvdb_mappings:
+    s0: e5
+9734:
+  tmdb_show_id: 42253
+  tvdb_id: 87501
+  tvdb_mappings:
+    s0: e17
+9735:
+  tmdb_show_id: 57041
+  tvdb_id: 79895
+  tvdb_mappings:
+    s0: e5
+9744:
+  tvdb_mappings:
+    s1: e3
+9745:
+  tvdb_mappings:
+    s0: e3
+9751:
+  tvdb_mappings:
+    s0: e7
+9754:
+  tvdb_id: 197731
+  tvdb_mappings:
+    s0: e7-e10
+9759:
+  tvdb_mappings:
+    s0: e1
+9785:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+9786:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+9790:
+  tvdb_mappings:
+    s0: e2
+9794:
+  tvdb_mappings:
+    s0: e2
+9863:
+  tvdb_mappings:
+    s1: e1-e51
+    s2: e1-e26
+9888:
+  tvdb_id: 195721
+  tvdb_mappings:
+    s0: e1-e2
+9890:
+  tvdb_mappings:
+    s0: e2
+9907:
+  tvdb_mappings:
+    s0: e1
+9911:
+  tvdb_mappings:
+    s0: e1-e4
+9917:
+  tvdb_mappings:
+    s0: e29
+9925:
+  tvdb_id: 172921
+  tvdb_mappings:
+    s0: e18
+9931:
+  imdb_id: tt0829187
+  tmdb_movie_id: 379152
+9958:
+  tvdb_mappings:
+    s0: e2
+9963:
+  tvdb_mappings:
+    s0: e40
+9969:
+  tmdb_show_id: 57041
+9972:
+  tvdb_mappings:
+    s0: e3
+9982:
+  tvdb_mappings:
+    s0: e1-e3,e5,e7
+9999:
+  tmdb_show_id: 37854
+10005:
+  tvdb_id: 182391
+  tvdb_mappings:
+    s0: e1
+10013:
+  tvdb_mappings:
+    s0: e1
+10015:
+  tvdb_mappings:
+    s1: e1-e25
+    s2: e1-e24
+    s3: e1-e24
+10016:
+  tvdb_mappings:
+    s1: e3
+10017:
+  tvdb_id: 81472
+  tvdb_mappings:
+    s0: e24
+10020:
+  imdb_id: tt1751305
+  tmdb_show_id: 56353
+  tvdb_id: 194961
+  tvdb_mappings:
+    s0: e1-e4
+10033:
+  tvdb_mappings:
+    s1: e1-e49
+    s2: e1-e49
+    s3: e1-e49
+10050:
+  tvdb_mappings:
+    s0: e3
+10056:
+  tvdb_mappings:
+    s0: e14
+10057:
+  tvdb_mappings:
+    s0: e10
+10058:
+  tvdb_mappings:
+    s0: e66
+10059:
+  tvdb_mappings:
+    s0: e12
+10060:
+  tvdb_mappings:
+    s0: e19
+10061:
+  tvdb_mappings:
+    s0: e8
+10067:
+  tmdb_show_id: 42942
+  tvdb_id: 150471
+  tvdb_mappings:
+    s0: e2
+10074:
+  tvdb_mappings:
+    s0: e3
+10075:
+  tvdb_mappings:
+    s0: e6
+10076:
+  tvdb_mappings:
+    s0: e9-e10
+10092:
+  imdb_id: tt1865375
+  tmdb_movie_id: 55438
+  tvdb_id: 179791
+  tvdb_mappings:
+    s0: e6
+10119:
+  imdb_id: tt1694038
+  tmdb_show_id: 36697
+  tvdb_id: 173271
+  tvdb_mappings:
+    s0: e1-e8
+10177:
+  tvdb_mappings:
+    s0: e1-e12
+10189:
+  tvdb_mappings:
+    s0: e1
+10203:
+  tvdb_mappings:
+    s0: e1
+10218:
+  imdb_id: tt2210479
+  tmdb_movie_id: 113082
+  tvdb_id: 425148
+  tvdb_mappings:
+    s0: e1
+10249:
+  tvdb_id: 83322
+  tvdb_mappings:
+    s0: e3-e4
+10262:
+  tvdb_mappings:
+    s0: e1
+10294:
+  imdb_id: tt3565112
+  tmdb_movie_id: 179923
+  tvdb_id: 251622
+  tvdb_mappings:
+    s1: e1
+10297:
+  tvdb_id: 83314
+  tvdb_mappings:
+    s0: e4
+10302:
+  tmdb_show_id: 60572
+  tvdb_id: 76703
+  tvdb_mappings:
+    s0: e51-e52
+10313:
+  tvdb_mappings:
+    s0: e1
+10319:
+  tvdb_id: 377020
+  tvdb_mappings:
+    s1: e1-e47
+10350:
+  tvdb_mappings:
+    s0: e6-e11
+10351:
+  tvdb_id: 80009
+  tvdb_mappings:
+    s0: e5
+10379:
+  tmdb_show_id: 69500
+10391:
+  tvdb_id: 197731
+  tvdb_mappings:
+    s0: e1-e6
+10418:
+  tvdb_mappings:
+    s0: e1
+10464:
+  tvdb_mappings:
+    s0: e1
+    s2: e1-e9
+10471:
+  tmdb_show_id: 44742
+  tvdb_id: 261387
+  tvdb_mappings:
+    s1: e24-e26
+10483:
+  tvdb_id: 87881
+  tvdb_mappings:
+    s0: e2
+10491:
+  tvdb_mappings:
+    s0: e2-e5
+10497:
+  tvdb_id: 88161
+  tvdb_mappings:
+    s0: e5-e8
+10500:
+  tvdb_mappings:
+    s1: e2
+10502:
+  tvdb_mappings:
+    s1: e4
+10519:
+  tvdb_id: 275667
+  tvdb_mappings:
+    s0: e1
+10526:
+  tvdb_mappings:
+    s0: e56
+    s4: e1-e24
+10531:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+    s0: e33
+10534:
+  tvdb_id: 281405
+  tvdb_mappings:
+    s0: e31
+10536:
+  tvdb_id: 117801
+  tvdb_mappings:
+    s0: e2-e4
+10549:
+  tvdb_id: 250317
+  tvdb_mappings:
+    s0: e3
+10581:
+  tvdb_id: 80783
+  tvdb_mappings:
+    s0: e2
+10589:
+  tmdb_movie_id: 75624
+  tvdb_mappings:
+    s0: e7
+10592:
+  imdb_id: tt6423446
+  tmdb_movie_id: 314102
+  tmdb_show_id: 42676
+  tvdb_id: 78953
+  tvdb_mappings:
+    s0: e1
+10622:
+  tvdb_mappings:
+    s0: e1
+10624:
+  imdb_id: tt2048804
+  tmdb_movie_id: 73530
+10628:
+  tvdb_id: 305488
+  tvdb_mappings:
+    s0: e10
+10638:
+  tvdb_id: 247934
+  tvdb_mappings:
+    s0: e1
+10643:
+  tmdb_show_id: 57041
+  tvdb_id: 79895
+  tvdb_mappings:
+    s0: e21
+10647:
+  tvdb_id: 248035
+  tvdb_mappings:
+    s0: e1-e10
+10659:
+  tmdb_show_id: 31910
+  tvdb_mappings:
+    s0: e8
+10684:
+  tvdb_mappings:
+    s0: e49
+10685:
+  tvdb_mappings:
+    s0: e50
+10686:
+  tmdb_show_id: 31910
+  tvdb_mappings:
+    s0: e9
+10689:
+  tvdb_id: 245451
+  tvdb_mappings:
+    s0: e4
+10693:
+  tvdb_id: 245451
+  tvdb_mappings:
+    s0: e5
+10703:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+    s0: e35
+10713:
+  imdb_id: tt3565136
+  tmdb_movie_id: 179930
+  tvdb_id: 251622
+  tvdb_mappings:
+    s1: e2
+10714:
+  imdb_id: tt3565148
+  tmdb_movie_id: 179931
+  tvdb_id: 251622
+  tvdb_mappings:
+    s1: e3
+10715:
+  imdb_id: tt3565158
+  tmdb_movie_id: 179932
+  tvdb_id: 251622
+  tvdb_mappings:
+    s1: e4
+10716:
+  imdb_id: tt3565160
+  tmdb_movie_id: 179933
+  tvdb_id: 251622
+  tvdb_mappings:
+    s1: e5
+10717:
+  imdb_id: tt3565164
+  tmdb_movie_id: 179934
+  tvdb_id: 251622
+  tvdb_mappings:
+    s1: e6
+10731:
+  tvdb_mappings:
+    s0: e6
+10732:
+  tvdb_id: 83421
+  tvdb_mappings:
+    s0: e4
+10735:
+  tvdb_id: 75796
+  tvdb_mappings:
+    s0: e1-e9
+10739:
+  imdb_id: tt10145102
+  tmdb_show_id: 42421
+  tvdb_id: 188551
+  tvdb_mappings:
+    s0: e1
+10740:
+  tvdb_mappings:
+    s0: e22
+10766:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+    s0: e34,e36
+10794:
+  tvdb_mappings:
+    s0: e1
+10805:
+  tvdb_mappings:
+    s0: e2
+10819:
+  tmdb_show_id: 57706
+  tvdb_id: 76932
+  tvdb_mappings:
+    s0: e19
+10820:
+  tvdb_mappings:
+    s0: e1
+10824:
+  tmdb_show_id: 57706
+  tvdb_id: 76932
+  tvdb_mappings:
+    s0: e23
+10825:
+  tmdb_show_id: 57706
+  tvdb_id: 76932
+  tvdb_mappings:
+    s0: e20
+10845:
+  mal_id: 10845
+  tvdb_id: 250363
+  tvdb_mappings:
+    s0: e2,e4,e6,e8
+10849:
+  tvdb_mappings:
+    s0: e8
+10863:
+  tmdb_show_id: 42509
+  tvdb_id: 244061
+  tvdb_mappings:
+    s0: e1
+10886:
+  tvdb_mappings:
+    s0: e2
+10893:
+  tvdb_mappings:
+    s0: e1
+10916:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e37|-2
+10917:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e38|-3
+10918:
+  tmdb_movie_id: 387508
+  tvdb_id: 153881
+  tvdb_mappings:
+    s1: e1
+10924:
+  tvdb_mappings:
+    s0: e19,e21
+10935:
+  tvdb_id: 221281
+  tvdb_mappings:
+    s0: e1-e2
+10999:
+  tvdb_mappings:
+    s0: e2
+11001:
+  tvdb_mappings:
+    s0: e2
+11009:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e45
+11019:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e44
+11053:
+  tvdb_id: 281405
+  tvdb_mappings:
+    s0: e32
+11061:
+  tvdb_mappings:
+    s1: e1-e58
+    s2: e1-e78
+    s3: e1-e12
+11069:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e39
+11077:
+  imdb_id: tt2878716
+  tmdb_show_id: 115176
+  tvdb_id: 263688
+  tvdb_mappings:
+    s0: e1-e3
+11113:
+  tvdb_mappings:
+    s0: e1-e4
+11237:
+  tvdb_mappings:
+    s0: e8-e9
+11266:
+  tvdb_id: 248035
+  tvdb_mappings:
+    s0: e11
+11268:
+  imdb_id: tt0305030
+  tmdb_show_id: 132921
+  tvdb_id: 276077
+  tvdb_mappings:
+    s1: e1-e103
+11299:
+  tvdb_id: 75414
+  tvdb_mappings:
+    s0: e8
+11313:
+  tvdb_mappings:
+    s0: e1-e2
+11359:
+  tmdb_show_id: 61709
+  tvdb_id: 88031
+  tvdb_mappings:
+    s1: e98
+11553:
+  tmdb_show_id: 42916
+  tvdb_id: 83277
+  tvdb_mappings:
+    s0: e5
+11577:
+  tvdb_mappings:
+    s0: e2
+11597:
+  tmdb_show_id: 46195
+11665:
+  tmdb_show_id: 69500
+11699:
+  tvdb_mappings:
+    s0: e2
+11701:
+  tvdb_mappings:
+    s0: e1
+11717:
+  tvdb_mappings:
+    s0: e5
+11737:
+  tvdb_mappings:
+    s0: e12
+11757:
+  tmdb_show_id: 45782
+11777:
+  tmdb_movie_id: 80405
+  tvdb_mappings:
+    s0: e34
+11787:
+  tvdb_mappings:
+    s0: e2
+11791:
+  tvdb_mappings:
+    s0: e33
+11793:
+  tvdb_id: 195571
+  tvdb_mappings:
+    s0: e5
+11853:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e43
+11867:
+  imdb_id: tt8339440
+  tmdb_movie_id: 390539
+11917:
+  tvdb_mappings:
+    s0: e3-e4
+11977:
+  tvdb_id: 219181
+  tvdb_mappings:
+    s0: e1
+11979:
+  tvdb_id: 219181
+  tvdb_mappings:
+    s0: e2
+11981:
+  tvdb_id: 219181
+  tvdb_mappings:
+    s0: e3
+12001:
+  tmdb_show_id: 37854
+12015:
+  imdb_id: tt2507174
+  tmdb_movie_id: 178592
+  tvdb_id: 246381
+  tvdb_mappings:
+    s0: e2
+12017:
+  imdb_id: tt3204012
+  tmdb_movie_id: 258807
+  tvdb_id: 246381
+  tvdb_mappings:
+    s0: e5
+12065:
+  tvdb_id: 87491
+  tvdb_mappings:
+    s0: e20,e22
+12067:
+  tvdb_id: 70863
+  tvdb_mappings:
+    s3: e33
+12069:
+  tvdb_id: 79685
+  tvdb_mappings:
+    s0: e1
+12113:
+  imdb_id: tt2358911
+  tmdb_movie_id: 118412
+  tvdb_id: 425148
+  tvdb_mappings:
+    s0: e2
+12115:
+  imdb_id: tt2358913
+  tmdb_movie_id: 144288
+  tvdb_id: 425148
+  tvdb_mappings:
+    s0: e3
+12117:
+  tvdb_mappings:
+    s0: e51
+12185:
+  tvdb_id:
+  tvdb_mappings:
+12231:
+  tvdb_mappings:
+    s0: e25
+12239:
+  mal_id: 10845
+  tvdb_id: 250363
+  tvdb_mappings:
+    s0: e1,e3,e5,e7
+12343:
+  tvdb_id: 73312
+  tvdb_mappings:
+    s2: e1-e5
+12347:
+  tvdb_id: 73312
+  tvdb_mappings:
+    s3: e1-e5
+12431:
+  tvdb_mappings:
+    s1: e1-e51
+    s2: e1-e48
+12437:
+  tvdb_mappings:
+    s1: e2
+12439:
+  tvdb_mappings:
+    s0: e12
+12441:
+  tvdb_mappings:
+    s0: e13
+12455:
+  tvdb_id: 76665
+  tvdb_mappings:
+    s0: e10-e13
+12565:
+  tmdb_show_id: 43295
+  tvdb_id: 251047
+  tvdb_mappings:
+    s0: e3
+12669:
+  tvdb_id: 172921
+  tvdb_mappings:
+    s0: e8-e13
+12671:
+  tvdb_mappings:
+    s0: e30
+12685:
+  tmdb_show_id: 31724
+  tvdb_mappings:
+    s0: e12
+12699:
+  tvdb_id: 424166
+12725:
+  tmdb_show_id: 40424
+  tvdb_id: 70900
+  tvdb_mappings:
+    s0: e11
+12727:
+  tvdb_id: 255382
+  tvdb_mappings:
+    s0: e3-e4
+12783:
+  tvdb_mappings:
+    s0: e3
+12823:
+  tmdb_show_id: 22634
+  tvdb_id: 78962
+  tvdb_mappings:
+    s0: e19-e20
+12859:
+  tvdb_mappings:
+    s0: e26
+12867:
+  tmdb_movie_id: 1220676
+12893:
+  tmdb_show_id: 45859
+  tvdb_id: 254661
+  tvdb_mappings:
+    s0: e9-e12,e14-e15
+12907:
+  tvdb_id: 269157
+12929:
+  tvdb_id: 72775
+  tvdb_mappings:
+    s9: e1-e51
+    s10: e1-e46
+13047:
+  tmdb_movie_id: 1129779
+  tvdb_id:
+  tvdb_mappings:
+13117:
+  imdb_id: tt3856638
+  tmdb_movie_id: 297676
+  tmdb_show_id: 44318
+  tvdb_id: 151281
+  tvdb_mappings:
+    s0: e3
+13119:
+  imdb_id: tt5825186
+  tmdb_movie_id: 380770
+  tmdb_show_id: 44318
+  tvdb_id: 151281
+  tvdb_mappings:
+    s0: e4
+13159:
+  tvdb_mappings:
+    s1: e1-e32
+    s2: e1-e28
+13163:
+  tvdb_mappings:
+    s1: e1-e52
+    s2: e1-e52
+    s3: e1-e51
+    s4: e1-e52
+    s5: e1-e51
+13171:
+  tvdb_mappings:
+    s2: e2
+13173:
+  tvdb_mappings:
+    s2: e3
+13175:
+  tvdb_mappings:
+    s2: e4
+13185:
+  anidb_id: 9022
+  tvdb_id: 260070
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+13247:
+  tmdb_movie_id: 491667
+  tvdb_mappings:
+    s0: e35
+13249:
+  tmdb_movie_id: 694805
+  tvdb_id: 71863
+  tvdb_mappings:
+    s0: e37
+13263:
+  tvdb_id: 275798
+  tvdb_mappings:
+    s0: e3-e8
+13267:
+  tvdb_mappings:
+    s0: e3-e5
+13271:
+  tvdb_mappings:
+    s0: e1
+13357:
+  tmdb_show_id: 45950
+  tvdb_id: 254653
+  tvdb_mappings:
+    s0: e2-e7
+13411:
+  tvdb_mappings:
+    s0: e2
+13469:
+  tvdb_mappings:
+    s0: e1
+13667:
+  tmdb_movie_id: 118406
+  tvdb_mappings:
+    s0: e10
+13709:
+  tvdb_id: 79755
+  tvdb_mappings:
+    s0: e1
+13731:
+  tvdb_id: 79360
+  tvdb_mappings:
+    s0: e3
+13767:
+  tvdb_mappings:
+    s0: e3-e4
+13799:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e66
+13837:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+    s0: e52
+13839:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+    s0: e53
+13851:
+  tmdb_show_id: 34742
+  tvdb_id: 81831
+  tvdb_mappings:
+    s0: e7-e12
+13855:
+  tvdb_id: 87491
+  tvdb_mappings:
+    s0: e23-e28
+13863:
+  tvdb_mappings:
+    s3: e4
+14093:
+  tmdb_show_id: 60572
+14347:
+  tvdb_mappings:
+    s3: e2
+14381:
+  tvdb_mappings:
+    s0: e51
+14407:
+  imdb_id: tt3198652
+  tmdb_movie_id: 212153
+14519:
+  tvdb_mappings:
+    s2: e1-e13
+14575:
+  tvdb_mappings:
+    s0: e2
+14617:
+  tmdb_movie_id: 991364
+14735:
+  tvdb_mappings:
+    s0: e58
+14751:
+  tvdb_mappings:
+    s1: e1-e14
+    s2: e1-e12
+14807:
+  tvdb_mappings:
+    s0: e3
+14837:
+  tvdb_mappings:
+    s0: e14
+14875:
+  tvdb_mappings:
+    s0: e4
+14935:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e57
+14949:
+  tvdb_mappings:
+    s0: e3-e4
+14957:
+  tmdb_show_id: 22634
+  tvdb_id: 78962
+  tvdb_mappings:
+    s0: e29-e36
+15015:
+  tvdb_id: 83314
+  tvdb_mappings:
+    s0: e7
+15059:
+  tmdb_show_id: 40424
+15061:
+  tvdb_id: 263310
+  tvdb_mappings:
+    s1: e1-e50
+15067:
+  tvdb_mappings:
+    s0: e3
+15093:
+  tvdb_id: 83314
+  tvdb_mappings:
+    s0: e5
+15095:
+  tvdb_id: 83314
+  tvdb_mappings:
+    s0: e6
+15117:
+  tvdb_mappings:
+    s0: e3-e4
+15125:
+  tmdb_show_id: 53020
+15177:
+  tvdb_id: 72347
+  tvdb_mappings:
+    s0: e21
+15195:
+  tvdb_mappings:
+    s3: e1-e20
+15197:
+  imdb_id: tt3354254
+  tmdb_movie_id: 212161
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e8
+15199:
+  imdb_id: tt3354302
+  tmdb_movie_id: 347200
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e9
+15201:
+  imdb_id: tt3354306
+  tmdb_movie_id: 347187
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e10
+15323:
+  tmdb_show_id: 37854
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e23
+15335:
+  tvdb_mappings:
+    s0: e7
+15359:
+  tvdb_mappings:
+    s0: e2-e6
+15417:
+  tmdb_show_id: 57041
+15453:
+  tvdb_mappings:
+    s0: e9
+15487:
+  tmdb_show_id: 45783
+  tvdb_id: 257765
+  tvdb_mappings:
+    s0: e1-e6,e8-e9,e11
+15489:
+  tvdb_mappings:
+    s4: e1-e25
+    s5: e1-e25
+    s6: e1-e23
+15617:
+  tmdb_show_id: 53356
+  tvdb_id: 259653
+  tvdb_mappings:
+    s0: e2-e7
+15687:
+  tmdb_show_id: 45501
+  tvdb_id: 261862
+  tvdb_mappings:
+    s0: e5-e10
+15689:
+  tmdb_show_id: 46195
+  tvdb_mappings:
+    s0: e3-e6
+15783:
+  tmdb_movie_id: 251432
+  tvdb_mappings:
+    s0: e38
+15785:
+  tvdb_mappings:
+    s0: e3
+15811:
+  tvdb_id: 262098
+  tvdb_mappings:
+    s0: e2,e10,e15,e20,e24,e28
+15819:
+  tvdb_mappings:
+    s0: e6-e7
+15879:
+  tvdb_id: 261862
+  tvdb_mappings:
+    s0: e21-e27
+15925:
+  tvdb_id: 281405
+  tvdb_mappings:
+    s0: e33
+15927:
+  tvdb_id: 251047
+  tvdb_mappings:
+    s0: e4
+15951:
+  tvdb_id: 172921
+  tvdb_mappings:
+    s0: e14-e15
+15959:
+  tvdb_mappings:
+    s0: e6-e7
+15963:
+  tvdb_mappings:
+    s0: e2
+16001:
+  imdb_id: tt2250034
+  tmdb_show_id: 45807
+  tvdb_id: 259647
+  tvdb_mappings:
+    s0: e1-e4
+16033:
+  tvdb_mappings:
+    s0: e1
+16099:
+  tmdb_show_id: 45782
+  tvdb_id: 259640
+  tvdb_mappings:
+    s0: e1-e9
+16163:
+  tvdb_mappings:
+    s0: e7
+16239:
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e24
+16345:
+  tvdb_mappings:
+    s0: e2
+16363:
+  tvdb_mappings:
+    s0: e29-e32
+16468:
+  tmdb_show_id: 37854
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e25|-2
+16498:
+  tmdb_show_id: 1429
+16574:
+  tvdb_id: 248049
+  tvdb_mappings:
+    s0: e1
+16678:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e67
+16680:
+  tvdb_mappings:
+    s0: e48
+16702:
+  tvdb_mappings:
+    s0: e40
+16774:
+  tvdb_id: 265113
+  tvdb_mappings:
+    s1: e1-e13
+16870:
+  tmdb_movie_id: 317442
+16894:
+  tmdb_show_id: 45783
+16916:
+  tmdb_show_id: 45783
+  tvdb_id: 257765
+  tvdb_mappings:
+    s0: e10
+16934:
+  imdb_id: tt2321542
+  tmdb_show_id: 45501
+  tvdb_id: 261862
+  tvdb_mappings:
+    s0: e1
+16988:
+  tvdb_id: 167921
+  tvdb_mappings:
+    s0: e57
+17004:
+  tvdb_id: 167921
+  tvdb_mappings:
+    s0: e56
+17006:
+  tvdb_id: 167921
+  tvdb_mappings:
+    s0: e54
+17074:
+  tmdb_show_id: 46195
+  tvdb_mappings:
+    s0: e7-e9
+    s3: e1-e23
+17115:
+  tmdb_show_id: 60572
+17131:
+  tvdb_mappings:
+    s0: e3
+17165:
+  tvdb_mappings:
+    s0: e4
+17187:
+  imdb_id: tt2636124
+  tmdb_movie_id: 196750
+  tmdb_show_id: 62070
+  tvdb_id: 293491
+  tvdb_mappings:
+    s0: e2
+17205:
+  tvdb_id: 76885
+  tvdb_mappings:
+    s0: e4
+17213:
+  tvdb_mappings:
+    s0: e45
+17215:
+  tvdb_mappings:
+    s0: e37
+17219:
+  tvdb_mappings:
+    s0: e31
+17259:
+  tmdb_show_id: 45783
+  tvdb_id: 257765
+  tvdb_mappings:
+    s0: e7
+17269:
+  tvdb_id: 80886
+  tvdb_mappings:
+    s0: e5
+17273:
+  tvdb_id: 88161
+  tvdb_mappings:
+    s3: e21-e24
+17277:
+  tmdb_show_id: 31724
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e13
+17341:
+  tvdb_id: 264523
+  tvdb_mappings:
+    s0: e1
+17379:
+  tvdb_mappings:
+    s0: e2
+17437:
+  tvdb_mappings:
+    s0: e6
+17535:
+  tvdb_id: 114801
+  tvdb_mappings:
+    s0: e6
+17551:
+  tmdb_show_id: 22634
+  tvdb_id: 78962
+  tvdb_mappings:
+    s0: e37
+17573:
+  tvdb_mappings:
+    s0: e2
+17699:
+  tvdb_mappings:
+    s0: e4
+17705:
+  tvdb_mappings:
+    s1: e1-e13
+17717:
+  tvdb_id: 80784
+  tvdb_mappings:
+    s0: e2
+17725:
+  tvdb_mappings:
+    s0: e5
+17727:
+  tvdb_mappings:
+    s2: e1-e13
+17739:
+  tvdb_mappings:
+    s0: e10-e11
+17787:
+  tmdb_movie_id: 828883
+17843:
+  tvdb_id: 265113
+  tvdb_mappings:
+    s0: e1-e12
+17873:
+  tmdb_show_id: 60572
+17879:
+  tvdb_id: 264534
+  tvdb_mappings:
+    s0: e1-e6
+17919:
+  tvdb_mappings:
+    s1: e1-e12
+18121:
+  imdb_id: tt2390066
+  tmdb_show_id: 53020
+  tvdb_id: 262856
+  tvdb_mappings:
+    s2: e1-e12
+18231:
+  tvdb_id: 87491
+  tvdb_mappings:
+    s0: e33-e36
+18357:
+  tvdb_mappings:
+    s0: e64
+18391:
+  tvdb_id: 245821
+  tvdb_mappings:
+    s0: e2-e38
+18393:
+  tvdb_id: 114801
+  tvdb_mappings:
+    s0: e8
+18397:
+  tmdb_show_id: 1429
+  tvdb_id: 267440
+  tvdb_mappings:
+    s0: e7,e12-e13
+18429:
+  tvdb_mappings:
+    s0: e61
+18449:
+  tvdb_id: 76547
+  tvdb_mappings:
+    s0: e11
+18499:
+  tvdb_mappings:
+    s0: e4-e6
+18549:
+  tvdb_id: 87881
+  tvdb_mappings:
+    s0: e18-e22
+18591:
+  tvdb_mappings:
+    s0: e67
+18617:
+  tvdb_mappings:
+    s0: e36
+18619:
+  tvdb_mappings:
+    s0: e34
+18661:
+  tvdb_id: 262106
+  tvdb_mappings:
+    s0: e1-e2
+18795:
+  tvdb_id: 171771
+  tvdb_mappings:
+    s0: e2
+18845:
+  tvdb_id: 389937
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+18849:
+  tmdb_show_id: 69500
+  tvdb_mappings:
+    s0: e1
+18857:
+  tmdb_show_id: 56353
+  tvdb_id: 194961
+  tvdb_mappings:
+    s0: e21-e23
+18881:
+  tmdb_show_id: 31724
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e46
+18989:
+  tvdb_id: 293491
+  tvdb_mappings:
+    s0: e11
+19021:
+  tvdb_mappings:
+    s0: e3
+19099:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e46
+19109:
+  tvdb_id: 269319
+  tvdb_mappings:
+    s0: e1-e5
+19123:
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e28
+19157:
+  tvdb_mappings:
+    s1: e1-e76
+    s2: e1-e74
+    s3: e1-e64
+19159:
+  tvdb_mappings:
+    s0: e5
+19191:
+  imdb_id: tt3017864
+  tmdb_movie_id: 212168
+  tmdb_show_id: 62070
+  tvdb_id: 293491
+  tvdb_mappings:
+    s0: e3
+19193:
+  imdb_id: tt3579524
+  tmdb_movie_id: 240341
+  tmdb_show_id: 62070
+  tvdb_id: 293491
+  tvdb_mappings:
+    s0: e4
+19195:
+  imdb_id: tt4016942
+  tmdb_movie_id: 279254
+  tmdb_show_id: 62070
+  tvdb_id: 293491
+  tvdb_mappings:
+    s0: e5
+19291:
+  tmdb_show_id: 60572
+19391:
+  tmdb_show_id: 1429
+  tvdb_id: 267440
+  tvdb_mappings:
+    s0: e2-e6,e8-e11
+19433:
+  tvdb_mappings:
+    s0: e9
+19511:
+  tmdb_show_id: 31910
+  tvdb_id: 79824
+  tvdb_mappings:
+    s0: e11
+19581:
+  imdb_id: tt8671984
+19587:
+  tvdb_mappings:
+    s0: e4
+19603:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e12
+19613:
+  tmdb_show_id: 40424
+19645:
+  tvdb_id: 281405
+  tvdb_mappings:
+    s0: e34
+19669:
+  tmdb_show_id: 45783
+  tvdb_mappings:
+    s0: e12
+19697:
+  tvdb_id: 114921
+  tvdb_mappings:
+    s0: e7-e8
+19703:
+  tvdb_mappings:
+    s1: e1-e10
+19799:
+  tvdb_mappings:
+    s1: e1-e9|3
+19889:
+  tvdb_id: 78919
+  tvdb_mappings:
+    s0: e6-e9
+19945:
+  tmdb_show_id: 69500
+  tvdb_id: 82788
+  tvdb_mappings:
+    s0: e7-e11
+19973:
+  tvdb_id: 81232
+  tvdb_mappings:
+    s0: e2-e3
+19977:
+  tvdb_id: 76547
+  tvdb_mappings:
+    s0: e6
+20021:
+  tmdb_show_id: 45782
+20035:
+  tvdb_id: 83322
+  tvdb_mappings:
+    s0: e6
+20045:
+  tvdb_id: 219131
+  tvdb_mappings:
+    s0: e3
+20113:
+  tvdb_mappings:
+    s0: e32
+20141:
+  tmdb_movie_id: 245928
+  tvdb_mappings:
+    s0: e39
+20181:
+  imdb_id: tt2398674
+  mal_id: 15061
+  tmdb_show_id: 65503
+  tvdb_id: 263310
+  tvdb_mappings:
+    s2: e1-e51
+20221:
+  tvdb_mappings:
+    s0: e3
+20371:
+  tvdb_mappings:
+    s0: e3
+20381:
+  tvdb_mappings:
+    s0: e1
+20391:
+  tvdb_id: 82154
+  tvdb_mappings:
+    s0: e12
+20442:
+  tvdb_id:
+  tvdb_mappings:
+20444:
+  tmdb_show_id: 53020
+  tvdb_id: 262856
+  tvdb_mappings:
+    s3: e1-e12
+20450:
+  imdb_id: tt2390066
+  tmdb_show_id: 53020
+  tvdb_id: 262856
+  tvdb_mappings:
+    s0: e1-e2
+20452:
+  tvdb_id: 254667
+  tvdb_mappings:
+    s0: e1-e2
+20464:
+  tmdb_show_id: 60863
+20465:
+  tvdb_id: 81073
+  tvdb_mappings:
+    s0: e19-e21
+20478:
+  tmdb_show_id: 69500
+  tvdb_mappings:
+    s0: e2
+20492:
+  tvdb_mappings:
+    s3: e1-e12
+20500:
+  imdb_id: tt2936864
+  tmdb_movie_id: 239526
+20502:
+  tvdb_mappings:
+    s4: e3
+20504:
+  tvdb_mappings:
+    s4: e4
+20505:
+  tvdb_mappings:
+    s4: e2
+20511:
+  imdb_id: tt7230298
+  tmdb_movie_id: 347182
+20515:
+  tvdb_id:
+  tvdb_mappings:
+20519:
+  tvdb_mappings:
+    s0: e7
+20523:
+  tvdb_id: 273009
+  tvdb_mappings:
+    s0: e7-e12
+20543:
+  tvdb_id: 268196
+  tvdb_mappings:
+    s1: e1-e23
+20546:
+  tvdb_mappings:
+    s0: e62
+20552:
+  tvdb_mappings:
+    s1: e1-e49
+    s2: e1-e50
+    s3: e1-e49
+20559:
+  tvdb_mappings:
+    s0: e3
+20561:
+  tvdb_mappings:
+    s0: e1
+20567:
+  tvdb_mappings:
+    s0: e2
+20570:
+  tmdb_show_id: 60572
+  tvdb_id: 76703
+  tvdb_mappings:
+    s0: e47,e64
+20571:
+  tvdb_mappings:
+    s0: e4
+20572:
+  imdb_id: tt3114390
+  tmdb_show_id: 60728
+  tvdb_id: 272074
+  tvdb_mappings:
+    s0: e1
+20576:
+  imdb_id: tt8438570
+  tvdb_id:
+  tvdb_mappings:
+20579:
+  tvdb_id: 195571
+  tvdb_mappings:
+    s0: e6
+20582:
+  tvdb_id: 261862
+  tvdb_mappings:
+    s0: e11-e16
+20593:
+  tmdb_show_id: 46195
+  tvdb_mappings:
+    s0: e10-e14
+20594:
+  tmdb_show_id: 45782
+20603:
+  tmdb_show_id: 45783
+  tvdb_id: 257765
+  tvdb_mappings:
+    s0: e19
+20608:
+  tvdb_id: 264047
+  tvdb_mappings:
+    s0: e1-e13
+20626:
+  tvdb_mappings:
+    s5: e1-e51
+    s6: e1-e39
+    s7: e1-e12
+20635:
+  tmdb_show_id: 61709
+  tvdb_mappings:
+    s0: e1-e8
+    s2: e1-e61
+20642:
+  tvdb_mappings:
+    s5: e1-e25
+20644:
+  tvdb_mappings:
+    s0: e54
+20650:
+  tvdb_mappings:
+    s0: e9-e11
+20651:
+  tvdb_mappings:
+    s0: e3-e5
+20657:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e12
+20660:
+  tvdb_id: 261862
+  tvdb_mappings:
+    s0: e17
+20670:
+  tvdb_mappings:
+    s0: e9-e10
+20683:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e50,e55-e56,e59
+20686:
+  tvdb_mappings:
+    s0: e9
+20691:
+  imdb_id: tt3646944
+  tmdb_movie_id: 379088
+  tvdb_id: 267440
+  tvdb_mappings:
+    s0: e14
+20692:
+  imdb_id: tt3646946
+  tmdb_movie_id: 330081
+  tvdb_id: 267440
+  tvdb_mappings:
+    s0: e18
+20697:
+  tvdb_mappings:
+    s0: e4
+20707:
+  tvdb_id: 403849
+  tvdb_mappings:
+    s0: e1
+20715:
+  tvdb_mappings:
+    s0: e3-e4
+20724:
+  tvdb_mappings:
+    s0: e1
+20725:
+  tmdb_show_id: 45783
+20730:
+  tvdb_mappings:
+    s0: e1
+20731:
+  tvdb_mappings:
+    s0: e1
+20732:
+  tvdb_id: 275613
+  tvdb_mappings:
+    s0: e1-e4
+20736:
+  imdb_id: tt3898504
+  tmdb_movie_id: 297189
+20737:
+  imdb_id: tt4331400
+  tmdb_movie_id: 332169
+20741:
+  tvdb_mappings:
+    s0: e3
+20742:
+  tmdb_show_id: 67627
+  tvdb_id: 282059
+  tvdb_mappings:
+    s1: e1-e38
+20747:
+  tvdb_mappings:
+    s0: e1
+20752:
+  tvdb_id: 79214
+  tvdb_mappings:
+    s0: e2
+20759:
+  tvdb_id: 269873
+  tvdb_mappings:
+    s0: e1
+20760:
+  tmdb_movie_id: 526574
+  tvdb_mappings:
+    s0: e10-e11
+20763:
+  tvdb_id: 272317
+  tvdb_mappings:
+    s0: e25
+20764:
+  imdb_id: tt5332274
+  tmdb_movie_id: 357397
+  tvdb_id: 272317
+  tvdb_mappings:
+    s0: e26
+20768:
+  tvdb_id: 272697
+  tvdb_mappings:
+    s0: e14
+20769:
+  tmdb_show_id: 60808
+  tvdb_id: 278155
+  tvdb_mappings:
+    s0: e1-e6
+20776:
+  tvdb_id: 293491
+  tvdb_mappings:
+    s0: e7-e10
+20777:
+  tvdb_id: 261862
+  tvdb_mappings:
+    s0: e28-e34
+20778:
+  tvdb_mappings:
+    s0: e15
+20779:
+  tmdb_show_id: 61695
+  tvdb_id: 272697
+  tvdb_mappings:
+    s0: e6
+20794:
+  imdb_id: tt2398674
+  mal_id: 15061
+  tmdb_show_id: 65503
+  tvdb_id: 263310
+  tvdb_mappings:
+    s3: e1-e51
+20802:
+  tvdb_id: 72241
+  tvdb_mappings:
+    s0: e7
+20805:
+  tvdb_id: 195571
+  tvdb_mappings:
+    s3: e1
+20808:
+  tvdb_mappings:
+    s0: e2
+20810:
+  tvdb_mappings:
+    s0: e39
+20811:
+  tmdb_show_id: 1429
+  tvdb_id: 267440
+  tvdb_mappings:
+    s0: e15,e17
+20823:
+  tvdb_mappings:
+    s0: e20-e21
+20824:
+  tvdb_mappings:
+    s0: e3
+20826:
+  tvdb_mappings:
+    s0: e9-e18
+20832:
+  tmdb_show_id: 64196
+20833:
+  imdb_id: tt2390066
+  tmdb_show_id: 53020
+  tvdb_id: 262856
+  tvdb_mappings:
+    s4: e1-e12
+20834:
+  imdb_id: tt2390066
+  tmdb_show_id: 53020
+  tvdb_id: 262856
+  tvdb_mappings:
+    s0: e3-e4
+20835:
+  tmdb_show_id: 37854
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e29
+20837:
+  tmdb_show_id: 62602
+  tvdb_id: 279554
+  tvdb_mappings:
+    s0: e1
+20842:
+  tmdb_movie_id: 271709
+  tvdb_id: 70900
+  tvdb_mappings:
+    s0: e6
+20856:
+  tvdb_mappings:
+    s0: e1
+20859:
+  tmdb_show_id: 30983
+  tvdb_id: 72454
+  tvdb_mappings:
+    s0: e82
+20862:
+  tvdb_mappings:
+    s0: e12
+20869:
+  tmdb_show_id: 61379
+  tvdb_id: 279804
+  tvdb_mappings:
+    s0: e1-e6
+20878:
+  tmdb_show_id: 30983
+  tvdb_mappings:
+    s0: e63
+20882:
+  tmdb_show_id: 57041
+  tvdb_mappings:
+    s0: e9
+20884:
+  tmdb_show_id: 60863
+  tvdb_id: 278157
+  tvdb_mappings:
+    s0: e1
+20887:
+  tvdb_mappings:
+    s0: e4
+20889:
+  tmdb_show_id: 45501
+  tvdb_id: 261862
+  tvdb_mappings:
+    s0: e2
+20893:
+  tvdb_id: 272849
+  tvdb_mappings:
+    s0: e1-e3
+20895:
+  tmdb_show_id: 45782
+  tvdb_id: 259640
+  tvdb_mappings:
+    s0: e11
+20897:
+  tvdb_id: 81073
+  tvdb_mappings:
+    s0: e12-e13
+20906:
+  tmdb_show_id: 31572
+  tvdb_mappings:
+    s4: e1-e5,e7-e22,e24-e26
+20907:
+  tvdb_mappings:
+    s0: e3-e6
+20909:
+  tvdb_mappings:
+    s0: e1-e3
+20914:
+  tmdb_movie_id: 31594
+  tvdb_mappings:
+    s0: e20
+20918:
+  tmdb_show_id: 46195
+  tvdb_mappings:
+    s0: e15-e18
+20921:
+  tvdb_id: 245821
+  tvdb_mappings:
+    s5: e1-e48
+20925:
+  tvdb_id: 273004
+  tvdb_mappings:
+    s0: e1-e3
+20928:
+  tvdb_mappings:
+    s11: e1-e13
+20936:
+  tvdb_mappings:
+    s0: e1
+20938:
+  tvdb_id: 284564
+  tvdb_mappings:
+    s0: e1-e2
+20945:
+  tvdb_id: 269319
+  tvdb_mappings:
+    s0: e7-e11
+20947:
+  tvdb_mappings:
+    s0: e9
+    s1: e1-e12
+    s2: e1-e12
+    s3: e1-e11
+20948:
+  tmdb_show_id: 60572
+20958:
+  tmdb_show_id: 1429
+20959:
+  imdb_id: tt3399758
+  tmdb_show_id: 73394
+  tvdb_id: 275669
+  tvdb_mappings:
+    s0: e1
+20960:
+  tvdb_mappings:
+    s0: e1
+20962:
+  tvdb_mappings:
+    s4: e1-e15
+20963:
+  tvdb_id: 272697
+  tvdb_mappings:
+    s0: e15
+20970:
+  tvdb_mappings:
+    s0: e1-e2
+20978:
+  tvdb_mappings:
+    s0: e41
+20985:
+  mal_id: 23135
+  tmdb_show_id: 67627
+  tvdb_id: 282059
+  tvdb_mappings:
+    s2: e1-e51
+20989:
+  tvdb_id: 275609
+  tvdb_mappings:
+    s0: e3
+20990:
+  tmdb_movie_id: 321487
+  tvdb_id: 70900
+  tvdb_mappings:
+    s0: e7
+20992:
+  tmdb_show_id: 60863
+20996:
+  tmdb_show_id: 57041
+21003:
+  tvdb_id: 264523
+  tvdb_mappings:
+    s0: e2-e3
+21005:
+  tvdb_mappings:
+    s0: e7
+21007:
+  tvdb_mappings:
+    s0: e2
+21010:
+  tvdb_id: 281949
+  tvdb_mappings:
+    s0: e1-e6
+21013:
+  tvdb_id: 264533
+  tvdb_mappings:
+    s0: e9-e11
+21014:
+  tvdb_id: 264534
+  tvdb_mappings:
+    s0: e8
+21039:
+  tvdb_mappings:
+    s0: e1
+21050:
+  tvdb_mappings:
+    s1: e1-e13|-2
+21053:
+  tvdb_id: 280330
+  tvdb_mappings:
+    s0: e1-e7
+21057:
+  tvdb_mappings:
+    s0: e12
+21064:
+  tvdb_mappings:
+    s0: e1
+21068:
+  tvdb_id: 133341
+  tvdb_mappings:
+    s0: e3
+21075:
+  tvdb_mappings:
+    s0: e1
+21077:
+  tmdb_show_id: 65332
+  tvdb_id: 280330
+  tvdb_mappings:
+    s0: e8
+21095:
+  tvdb_id: 128411
+  tvdb_mappings:
+    s0: e5
+21107:
+  tvdb_id: 275609
+  tvdb_mappings:
+    s0: e4
+21114:
+  tvdb_mappings:
+    s0: e4
+21119:
+  tvdb_mappings:
+    s0: e1
+21120:
+  tmdb_movie_id: 347183
+  tvdb_id: 278157
+  tvdb_mappings:
+    s0: e2
+21122:
+  tvdb_mappings:
+    s0: e1
+21125:
+  tvdb_id: 264522
+  tvdb_mappings:
+    s0: e1
+21126:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e12
+21129:
+  tvdb_mappings:
+    s0: e7
+21132:
+  tmdb_show_id: 61374
+  tvdb_id: 281249
+  tvdb_mappings:
+    s0: e1
+21135:
+  tvdb_id: 195571
+  tvdb_mappings:
+    s3: e2
+21136:
+  imdb_id: tt2390066
+  tmdb_show_id: 53020
+  tvdb_id: 262856
+  tvdb_mappings:
+    s5: e1-e12
+21137:
+  tvdb_mappings:
+    s0: e1
+21154:
+  tvdb_mappings:
+    s0: e1
+21155:
+  tmdb_show_id: 45782
+  tvdb_id: 259640
+  tvdb_mappings:
+    s0: e13-e21
+21175:
+  tvdb_mappings:
+    s1: e1-e13
+    s2: e1-e14
+    s3: e1-e19
+    s4: e1-e30
+    s5: e1-e55
+21178:
+  tmdb_movie_id: 372751
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e11
+21180:
+  tvdb_mappings:
+    s0: e2
+    s2: e1-e11
+21186:
+  imdb_id: tt2320220
+  tmdb_show_id: 62741
+  tvdb_id: 262106
+  tvdb_mappings:
+    s0: e3-e6
+21203:
+  tvdb_mappings:
+    s0: e8
+21220:
+  tvdb_mappings:
+    s0: e13
+21221:
+  tvdb_mappings:
+    s0: e2
+    s1: e1-e12
+21230:
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e30
+21231:
+  tvdb_id: 94701
+  tvdb_mappings:
+    s0: e7
+21235:
+  tmdb_show_id: 45783
+  tvdb_id: 257765
+  tvdb_mappings:
+    s0: e40
+21237:
+  tvdb_mappings:
+    s1: e1-e76
+    s2: e1-e50
+    s3: e1-e13
+21244:
+  tmdb_movie_id: 347186
+  tvdb_id: 278157
+  tvdb_mappings:
+    s0: e4
+21247:
+  tvdb_mappings:
+    s0: e1
+21252:
+  tvdb_id: 269873
+  tvdb_mappings:
+    s0: e2
+21253:
+  tvdb_mappings:
+    s0: e1
+21255:
+  tvdb_id: 289884
+  tvdb_mappings:
+    s0: e1-e7
+21262:
+  tmdb_show_id: 46195
+21265:
+  tvdb_mappings:
+    s0: e18
+21266:
+  tvdb_id: 76703
+  tvdb_mappings:
+    s0: e60
+21270:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e69
+21271:
+  tmdb_show_id: 60572
+  tvdb_mappings:
+    s0: e68
+21279:
+  tvdb_id: 254653
+  tvdb_mappings:
+    s0: e11-e14,e16-e17
+21280:
+  tvdb_mappings:
+    s2: e1-e3
+21286:
+  tvdb_mappings:
+    s6: e1-e22
+21287:
+  tvdb_mappings:
+    s2: e14-e26
+21289:
+  tmdb_movie_id: 372758
+  tvdb_id: 70900
+  tvdb_mappings:
+    s0: e8
+21295:
+  tvdb_mappings:
+    s0: e1
+21296:
+  tvdb_id: 336385
+  tvdb_mappings:
+    s0: e1
+21301:
+  imdb_id: tt2390066
+  tmdb_show_id: 53020
+  tvdb_id: 262856
+  tvdb_mappings:
+    s6: e1-e12
+21303:
+  tmdb_show_id: 62110
+  tvdb_id: 283947
+  tvdb_mappings:
+    s0: e2
+21304:
+  tmdb_show_id: 60572
+  tvdb_id: 76703
+  tvdb_mappings:
+    s0: e58
+21305:
+  tmdb_show_id: 64196
+  tvdb_id: 294002
+  tvdb_mappings:
+    s0: e1-e8
+21307:
+  imdb_id: tt2398674
+  mal_id: 15061
+  tmdb_show_id: 65503
+  tvdb_id: 263310
+  tvdb_mappings:
+    s4: e1-e26
+21312:
+  tvdb_id: 281949
+  tvdb_mappings:
+    s0: e8
+21313:
+  tvdb_mappings:
+    s0: e1
+21318:
+  imdb_id: tt3621796
+  tmdb_show_id: 61415
+  tvdb_id: 278626
+  tvdb_mappings:
+    s0: e2
+21324:
+  tvdb_id: 195571
+  tvdb_mappings:
+    s3: e3
+21325:
+  tvdb_id: 269319
+  tvdb_mappings:
+    s0: e13-e17
+21326:
+  tmdb_show_id: 61374
+  tvdb_id: 281249
+  tvdb_mappings:
+    s0: e2
+21328:
+  tvdb_id: 293121
+  tvdb_mappings:
+    s0: e1-e12
+21331:
+  tvdb_id: 133341
+  tvdb_mappings:
+    s0: e4
+21335:
+  tvdb_mappings:
+    s0: e33
+21338:
+  tvdb_mappings:
+    s0: e1
+21339:
+  imdb_id: tt4574736
+  tmdb_show_id: 63145
+  tvdb_id: 289679
+  tvdb_mappings:
+    s0: e2
+21348:
+  tmdb_show_id: 60863
+  tvdb_id: 278157
+  tvdb_mappings:
+    s0: e3
+21356:
+  tmdb_show_id: 60572
+21361:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e12
+21376:
+  tvdb_id: 289884
+  tvdb_mappings:
+    s0: e8
+21386:
+  tvdb_mappings:
+    s0: e1
+21389:
+  tvdb_id: 293119
+  tvdb_mappings:
+    s0: 
+      e1-e4,e6-e10,e12-e16,e18-e22,e24-e28,e30-e34,e36-e40,e42-e46,e48-e52,e54-e58,e60-e64,e66-e70,e72
+21399:
+  tvdb_id: 102261
+  tvdb_mappings:
+    s0: e19
+21400:
+  tvdb_id: 102261
+  tvdb_mappings:
+    s0: e20
+21415:
+  tvdb_id: 281949
+  tvdb_mappings:
+    s0: e9-e13
+21416:
+  tmdb_show_id: 63926
+  tvdb_id: 293088
+  tvdb_mappings:
+    s0: e2-e7
+21425:
+  tvdb_mappings:
+    s0: e11
+21431:
+  tvdb_mappings:
+    s0: e1
+21432:
+  tvdb_mappings:
+    s0: e1
+21436:
+  tvdb_id: 292829
+  tvdb_mappings:
+    s0: e1
+21437:
+  imdb_id: tt2390066
+  tmdb_show_id: 53020
+  tvdb_id: 262856
+  tvdb_mappings:
+    s0: e7-e8
+21438:
+  imdb_id: tt2390066
+  tmdb_show_id: 53020
+  tvdb_id: 262856
+  tvdb_mappings:
+    s0: e5-e6
+21441:
+  tvdb_mappings:
+    s0: e1,e6
+21452:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e12
+21470:
+  tmdb_movie_id: 374856
+  tvdb_mappings:
+    s0: e66
+21474:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e12
+21477:
+  tvdb_mappings:
+    s0: e1-e12
+21483:
+  tmdb_show_id: 62255
+  tvdb_id: 289906
+  tvdb_mappings:
+    s0: e1-e9
+21485:
+  tmdb_show_id: 37854
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e32
+21489:
+  tvdb_mappings:
+    s0: e2
+21490:
+  tvdb_mappings:
+    s0: e1
+21493:
+  tvdb_mappings:
+    s0: e1
+21498:
+  tvdb_id:
+  tvdb_mappings:
+21500:
+  tvdb_id: 72241
+  tvdb_mappings:
+    s0: e8
+21501:
+  tmdb_show_id: 57041
+  tvdb_id: 79895
+  tvdb_mappings:
+    s0: e12
+21504:
+  tvdb_mappings:
+    s0: e1
+21508:
+  tvdb_id: 254667
+  tvdb_mappings:
+    s0: e3-e6
+21513:
+  imdb_id: tt2390066
+  tmdb_show_id: 53020
+  tvdb_id: 262856
+  tvdb_mappings:
+    s7: e1-e12
+21520:
+  tmdb_show_id: 46195
+21534:
+  tvdb_mappings:
+    s2: e1-e12
+21554:
+  tvdb_id: 195571
+  tvdb_mappings:
+    s3: e4
+21555:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e11
+21559:
+  mal_id: 23135
+  tmdb_show_id: 67627
+  tvdb_id: 282059
+  tvdb_mappings:
+    s3: e1-e51
+21560:
+  imdb_id: tt5847454
+  tvdb_mappings:
+    s1: e1-e12
+21565:
+  tvdb_mappings:
+    s0: e1
+21572:
+  tvdb_mappings:
+    s0: e1
+21579:
+  anidb_id: 10961
+  imdb_id: tt4618398
+  mal_id: 28755
+  tmdb_movie_id: 347201
+  tvdb_id: 79824
+  tvdb_mappings:
+    s0: e14
+21587:
+  tvdb_mappings:
+    s0: e1
+21588:
+  tmdb_show_id: 57041
+21589:
+  tvdb_id: 79460
+  tvdb_mappings:
+    s0: e8
+21590:
+  tvdb_id: 84911
+  tvdb_mappings:
+    s0: e1
+21593:
+  imdb_id: tt7088646
+21596:
+  tvdb_id: 72241
+  tvdb_mappings:
+    s0: e9
+21624:
+  tmdb_show_id: 42509
+  tvdb_id: 339268
+  tvdb_mappings:
+    s0: e1
+21640:
+  tvdb_mappings:
+    s0: e3
+21646:
+  tvdb_mappings:
+    s0: e65
+21648:
+  imdb_id: tt9864008
+  tvdb_id: 309143
+  tvdb_mappings:
+    s1: e1-e50
+21649:
+  tvdb_id: 262098
+  tvdb_mappings:
+    s0: e38
+21651:
+  tvdb_id: 76703
+  tvdb_mappings:
+    s0: e63
+21660:
+  tvdb_mappings:
+    s0: e1
+21678:
+  tvdb_mappings:
+    s0: e6-e13
+21695:
+  tvdb_id: 133341
+  tvdb_mappings:
+    s0: e5
+21698:
+  tmdb_show_id: 60863
+21710:
+  tmdb_show_id: 69500
+21717:
+  tvdb_mappings:
+    s1: e1-e10
+    s2: e1-e3
+21745:
+  tmdb_show_id: 46195
+21753:
+  tvdb_mappings:
+    s0: e1
+21757:
+  tvdb_id: 336385
+  tvdb_mappings:
+    s0: e2
+21765:
+  tmdb_show_id: 62255
+  tvdb_id: 289906
+  tvdb_mappings:
+    s0: e12-e15
+21771:
+  tvdb_mappings:
+    s0: e1
+21775:
+  tvdb_mappings:
+    s0: e2
+21778:
+  tvdb_mappings:
+    s0: e1-e2,e6-e7
+21780:
+  tmdb_show_id: 65942
+  tvdb_id: 305089
+  tvdb_mappings:
+    s0: e1-e11
+21791:
+  tvdb_mappings:
+    s0: e1
+21796:
+  tvdb_id: 332463
+  tvdb_mappings:
+    s1: e1-e51
+21798:
+  tvdb_id: 261249
+  tvdb_mappings:
+    s0: e5
+21804:
+  tvdb_mappings:
+    s1: e1-e24|-5
+21813:
+  tvdb_mappings:
+    s0: e2
+21814:
+  tvdb_mappings:
+    s0: e4
+21821:
+  tmdb_movie_id: 404532
+  tvdb_mappings:
+    s0: e43
+21822:
+  tmdb_show_id: 31572
+  tvdb_id: 71863
+  tvdb_mappings:
+    s4: e6,e23
+21831:
+  tmdb_show_id: 37854
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e34
+21834:
+  tvdb_mappings:
+    s0: e3-e4
+21839:
+  tvdb_mappings:
+    s2: e1-e12
+21847:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e29
+21852:
+  tvdb_id: 81831
+  tvdb_mappings:
+    s4: e13-e14
+21853:
+  tvdb_id: 81831
+  tvdb_mappings:
+    s0: e13-e15
+21862:
+  tmdb_show_id: 65944
+  tvdb_id: 306153
+  tvdb_mappings:
+    s0: e1
+21864:
+  tvdb_mappings:
+    s0: e1
+21875:
+  tvdb_mappings:
+    s0: e8
+21880:
+  tmdb_show_id: 37854
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e35
+21891:
+  tmdb_show_id: 65942
+  tvdb_id: 305089
+  tvdb_mappings:
+    s0: e12-e25
+21893:
+  tvdb_mappings:
+    s0: e1
+21896:
+  tmdb_show_id: 53020
+21898:
+  tvdb_mappings:
+    s0: e1
+87438:
+  tvdb_id: 281405
+  tvdb_mappings:
+    s0: e36
+87486:
+  tmdb_show_id: 65930
+  tvdb_id: 305074
+  tvdb_mappings:
+    s0: e1
+87487:
+  tvdb_id: 80789
+  tvdb_mappings:
+    s0: e15
+87488:
+  tvdb_id: 269319
+  tvdb_mappings:
+    s0: e18-e23
+87489:
+  tmdb_show_id: 64196
+87499:
+  tvdb_mappings:
+    s0: e4
+87501:
+  tvdb_id: 348742
+  tvdb_mappings:
+    s0: e1
+87526:
+  tvdb_mappings:
+    s0: e1
+87528:
+  tvdb_mappings:
+    s0: e1
+97634:
+  tmdb_show_id: 60572
+97637:
+  tvdb_id: 309532
+  tvdb_mappings:
+    s0: e1
+97669:
+  tvdb_mappings:
+    s0: e1
+97672:
+  tvdb_mappings:
+    s0: e1
+97734:
+  tvdb_id: 72241
+  tvdb_mappings:
+    s0: e10
+97767:
+  tvdb_mappings:
+    s0: e18
+    s4: e1-e12
+97815:
+  tvdb_mappings:
+    s0: e1
+97818:
+  imdb_id: tt2575728
+  tmdb_show_id: 50071
+  tvdb_id: 264522
+  tvdb_mappings:
+    s3: e1-e12
+97880:
+  tvdb_mappings:
+    s0: e4
+97889:
+  tmdb_show_id: 57041
+97891:
+  tvdb_mappings:
+    s0: e13-e14
+97915:
+  tvdb_mappings:
+    s0: e10
+97918:
+  tvdb_mappings:
+    s0: e3-e5|3
+97919:
+  tvdb_mappings:
+    s12: e1-e10
+97933:
+  tvdb_mappings:
+    s0: e6
+    s2: e1-e12
+97952:
+  tvdb_id: 304475
+  tvdb_mappings:
+    s0: e3-e11
+97983:
+  tmdb_show_id: 69500
+97996:
+  tvdb_mappings:
+    s0: e4
+98031:
+  tvdb_mappings:
+    s1: e1-e10|-2
+98033:
+  tvdb_id: 262106
+  tvdb_mappings:
+    s0: e7
+98060:
+  tvdb_id: 318271
+  tvdb_mappings:
+    s0: e1-e2
+98069:
+  tvdb_mappings:
+    s0: e3
+    s2: e1-e23
+98085:
+  tvdb_mappings:
+    s0: e1
+98186:
+  tvdb_id: 315500
+  tvdb_mappings:
+    s0: e1-e7,e9-e14
+98203:
+  anidb_id: 12760
+  mal_id: 34823
+  tmdb_show_id: 70998
+  tvdb_id: 325375
+  tvdb_mappings:
+    s1: e1-e12
+98209:
+  tvdb_id: 314267
+  tvdb_mappings:
+    s0: e1
+98220:
+  tvdb_id: 81115
+  tvdb_mappings:
+    s0: e15-e17
+98222:
+  tmdb_movie_id: 438058
+  tvdb_mappings:
+    s0: e68
+98225:
+  tvdb_id: 146401
+  tvdb_mappings:
+    s0: e4
+98231:
+  tvdb_id: 327245
+  tvdb_mappings:
+    s1: e1-e46
+    s2: e1-e56
+    s3: e1-e18
+98240:
+  tvdb_mappings:
+    s0: e19
+98298:
+  tvdb_mappings:
+    s0: e65
+98310:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e13
+98338:
+  tvdb_id: 289884
+  tvdb_mappings:
+    s0: e10-e16
+98378:
+  tvdb_id: 261667
+  tvdb_mappings:
+    s13: e1-e51
+98402:
+  tvdb_id: 72241
+  tvdb_mappings:
+    s0: e11
+98437:
+  tmdb_show_id: 64196
+98469:
+  tvdb_id: 79360
+  tvdb_mappings:
+    s0: e21
+98470:
+  tvdb_id: 79360
+  tvdb_mappings:
+    s0: e23
+98471:
+  tvdb_id: 79360
+  tvdb_mappings:
+    s0: e24
+98502:
+  tmdb_show_id: 69291
+  tvdb_id: 318893
+  tvdb_mappings:
+    s0: e2-e8
+98524:
+  tmdb_show_id: 69285
+  tvdb_id: 318984
+  tvdb_mappings:
+    s0: e1-e2
+98525:
+  tmdb_show_id: 45783
+  tvdb_id: 257765
+  tvdb_mappings:
+    s0: e39
+98542:
+  imdb_id: tt9864008
+  mal_id: 32717
+  tmdb_show_id: 65929
+  tvdb_id: 309143
+  tvdb_mappings:
+    s2: e1-e50
+98547:
+  tvdb_id: 79880
+  tvdb_mappings:
+    s0: e32-e33
+98554:
+  tvdb_mappings:
+    s0: e7
+98566:
+  tmdb_show_id: 53020
+98576:
+  tvdb_mappings:
+    s0: e2-e3|2
+98580:
+  tmdb_show_id: 69291
+  tvdb_id: 318893
+  tvdb_mappings:
+    s0: e1
+98582:
+  tvdb_id: 273005
+  tvdb_mappings:
+    s0: e4-e5
+98599:
+  tvdb_mappings:
+    s0: e1
+98604:
+  tvdb_id: 72454
+  tvdb_mappings:
+    s0: e67
+98629:
+  tvdb_id: 284133
+  tvdb_mappings:
+    s0: e2-e3
+98642:
+  tvdb_mappings:
+    s0: e1-e2
+98697:
+  tvdb_id: 319997
+  tvdb_mappings:
+    s0: e1
+98702:
+  tmdb_show_id: 62273
+  tvdb_id: 289909
+  tvdb_mappings:
+    s0: e4-e5
+98703:
+  tmdb_show_id: 45783
+  tvdb_id: 257765
+  tvdb_mappings:
+    s0: e13-e18,e20-e22
+98704:
+  tmdb_show_id: 45783
+  tvdb_id: 257765
+  tvdb_mappings:
+    s0: e24-e32
+98759:
+  imdb_id: tt2390066
+  tmdb_show_id: 53020
+  tvdb_id: 262856
+  tvdb_mappings:
+    s0: e9-e10
+98760:
+  imdb_id: tt2390066
+  tmdb_show_id: 53020
+  tvdb_id: 262856
+  tvdb_mappings:
+    s0: e11-e12
+98761:
+  imdb_id: tt2390066
+  tmdb_show_id: 53020
+  tvdb_id: 262856
+  tvdb_mappings:
+    s0: e13-e14
+98762:
+  tvdb_mappings:
+    s0: e4
+98778:
+  tvdb_id: 309530
+  tvdb_mappings:
+    s0: e2
+98847:
+  tvdb_id: 320002
+  tvdb_mappings:
+    s0: e1
+98856:
+  tvdb_mappings:
+    s0: e1
+98860:
+  tvdb_id: 219131
+  tvdb_mappings:
+    s0: e5
+98873:
+  imdb_id: tt6634906
+  tmdb_movie_id: 477447
+  tvdb_id: 294002
+  tvdb_mappings:
+    s0: e10
+98874:
+  tmdb_movie_id: 477449
+  tvdb_id: 294002
+  tvdb_mappings:
+    s0: e11
+98876:
+  tvdb_mappings:
+    s0: e17
+98878:
+  tvdb_mappings:
+    s0: e1
+98884:
+  tmdb_movie_id: 461762
+  tvdb_id: 278157
+  tvdb_mappings:
+    s0: e6
+98885:
+  tmdb_movie_id: 461763
+  tvdb_id: 278157
+  tvdb_mappings:
+    s0: e7
+98999:
+  tvdb_mappings:
+    s0: e1-e3
+99002:
+  tmdb_movie_id: 691603
+  tvdb_id: 307323
+  tvdb_mappings:
+    s0: e1
+99054:
+  tvdb_id: 319995
+  tvdb_mappings:
+    s0: e1
+99084:
+  tvdb_id: 281405
+  tvdb_mappings:
+    s0: e38
+99085:
+  tvdb_id: 281405
+  tvdb_mappings:
+    s0: e37
+99147:
+  tmdb_show_id: 1429
+99164:
+  tvdb_mappings:
+    s0: e1
+99302:
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e36
+99363:
+  tmdb_show_id: 69500
+  tvdb_id: 82788
+  tvdb_mappings:
+    s0: e3-e4
+99394:
+  tvdb_id: 316931
+  tvdb_mappings:
+    s0: e1
+99470:
+  tvdb_id: 281949
+  tvdb_mappings:
+    s0: e14-e15
+99478:
+  tvdb_id: 332463
+  tvdb_mappings:
+    s2: e1-e25
+99568:
+  tvdb_mappings:
+    s0: e1
+99634:
+  tmdb_show_id: 1429
+  tvdb_id: 267440
+  tvdb_mappings:
+    s0: e20,e22-e23
+99642:
+  tvdb_mappings:
+    s0: e1
+99714:
+  imdb_id: tt0988818
+  tmdb_show_id: 57041
+  tvdb_id: 79895
+  tvdb_mappings:
+    s9: e1-e13
+99732:
+  tvdb_mappings:
+    s0: e5
+99749:
+  tvdb_mappings:
+    s8: e1-e51
+99883:
+  tvdb_id: 88161
+  tvdb_mappings:
+    s0: e9-e11
+99894:
+  anidb_id: 13402
+  mal_id: 36198
+  tmdb_show_id: 74180
+  tvdb_id: 334707
+  tvdb_mappings:
+    s1: e1-e12
+99938:
+  tvdb_id: 262098
+  tvdb_mappings:
+    s0: e41
+99939:
+  tvdb_mappings:
+    s0: e1
+100049:
+  tvdb_mappings:
+    s0: e26,e28
+100176:
+  tvdb_id: 307333
+  tvdb_mappings:
+    s0: e1
+100178:
+  tvdb_mappings:
+    s0: e18
+100180:
+  tvdb_id: 332983
+  tvdb_mappings:
+    s0: e1-e12
+100181:
+  tvdb_id: 72241
+  tvdb_mappings:
+    s0: e12
+100182:
+  tmdb_show_id: 45782
+100184:
+  tvdb_mappings:
+    s0: e1
+100227:
+  tvdb_id: 315103
+  tvdb_mappings:
+    s0: e1
+100256:
+  tvdb_id: 316842
+  tvdb_mappings:
+    s0: e4-e28
+100262:
+  tvdb_mappings:
+    s3: e1-e13
+100283:
+  tmdb_show_id: 69500
+  tvdb_id: 82788
+  tvdb_mappings:
+    s0: e5-e6
+100291:
+  tvdb_id: 281405
+  tvdb_mappings:
+    s0: e35
+100328:
+  tvdb_id: 319997
+  tvdb_mappings:
+    s0: e4
+100353:
+  tvdb_mappings:
+    s0: e7
+100451:
+  tvdb_mappings:
+    s0: e14
+100465:
+  tvdb_mappings:
+    s0: e21
+100519:
+  tvdb_id: 328827
+  tvdb_mappings:
+    s0: e2-e7
+100523:
+  tvdb_mappings:
+    s0: e1-e2
+100635:
+  anidb_id: 13597
+  mal_id: 36840
+  tmdb_show_id: 75778
+  tvdb_id: 339331
+  tvdb_mappings:
+    s1: e1-e12
+100643:
+  tvdb_mappings:
+    s0: e3
+100653:
+  tvdb_mappings:
+    s0: e69
+100659:
+  tvdb_id: 81831
+  tvdb_mappings:
+    s0: e16
+100684:
+  imdb_id: tt7662364
+  tmdb_show_id: 74163
+  tvdb_id: 332771
+  tvdb_mappings:
+    s0: e1
+100721:
+  tvdb_mappings:
+    s0: e1
+100744:
+  tvdb_mappings:
+    s0: e70
+100780:
+  tvdb_id: 343237
+  tvdb_mappings:
+    s2: e1-e12
+100784:
+  imdb_id: tt0988818
+  tmdb_show_id: 57041
+  tvdb_id: 79895
+  tvdb_mappings:
+    s10: e1-e12
+100790:
+  tvdb_id: 358138
+  tvdb_mappings:
+    s1: e1-e10
+100815:
+  tmdb_show_id: 46195
+  tvdb_id: 102261
+  tvdb_mappings:
+    s0: e33-e38
+100878:
+  tvdb_mappings:
+    s0: e15
+100912:
+  tvdb_id: 332159
+  tvdb_mappings:
+    s0: e1-e2
+100957:
+  tmdb_show_id: 31572
+100979:
+  tvdb_id: 319983
+  tvdb_mappings:
+    s0: e1-e6
+101016:
+  tvdb_id: 335237
+  tvdb_mappings:
+    s0: e1-e2
+101083:
+  tmdb_show_id: 64196
+  tvdb_id: 294002
+  tvdb_mappings:
+    s0: e16-e28
+101097:
+  imdb_id: tt12209234
+  tmdb_show_id: 78482
+  tvdb_id: 345381
+  tvdb_mappings:
+    s1: e1-e51
+101098:
+  tmdb_show_id: 64196
+  tvdb_id: 294002
+  tvdb_mappings:
+    s0: e12-e13
+101100:
+  tvdb_id: 269319
+  tvdb_mappings:
+    s0: e25
+101101:
+  tvdb_mappings:
+    s0: e1
+101102:
+  tvdb_mappings:
+    s0: e14
+101104:
+  tvdb_id: 254667
+  tvdb_mappings:
+    s0: e8-e11
+101126:
+  tvdb_mappings:
+    s0: e12
+101206:
+  tvdb_id: 330692
+  tvdb_mappings:
+    s0: e1-e3
+101213:
+  tvdb_mappings:
+    s0: e1
+101302:
+  tvdb_mappings:
+    s0: e3
+101339:
+  tvdb_id:
+  tvdb_mappings:
+    s0: e22|-5
+101343:
+  tvdb_id: 326109
+  tvdb_mappings:
+    s0: e1
+101344:
+  tvdb_id: 326109
+  tvdb_mappings:
+    s0: e2
+101345:
+  tvdb_id: 72877
+  tvdb_mappings:
+    s0: e7
+101374:
+  imdb_id: tt14605648
+  tmdb_show_id: 99466
+  tvdb_id: 349733
+  tvdb_mappings:
+    s1: e1-e2
+101425:
+  tvdb_id: 261667
+  tvdb_mappings:
+    s14: e1-e51
+101426:
+  tvdb_mappings:
+    s0: e1
+101429:
+  imdb_id: tt1226777
+  tmdb_movie_id: 196462
+101431:
+  tvdb_id: 245821
+  tvdb_mappings:
+    s0: e49
+101432:
+  tmdb_show_id: 75214
+  tvdb_id: 330139
+  tvdb_mappings:
+    s0: e1
+101474:
+  tmdb_show_id: 64196
+101497:
+  tvdb_id: 71863
+  tvdb_mappings:
+    s0: e36
+101501:
+  tvdb_id: 327015
+  tvdb_mappings:
+    s0: e1
+101554:
+  tvdb_id: 403849
+  tvdb_mappings:
+    s0: e3
+101581:
+  tvdb_mappings:
+    s0: e1-e4
+101595:
+  tvdb_id: 328827
+  tvdb_mappings:
+    s0: e8
+101695:
+  tvdb_id: 289886
+  tvdb_mappings:
+    s0: e4
+101811:
+  imdb_id: tt8100900
+  tmdb_movie_id: 477776
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e1
+101812:
+  tmdb_movie_id: 477777
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e2
+101813:
+  tmdb_movie_id: 477779
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e3
+101816:
+  tmdb_show_id: 45783
+  tvdb_id: 257765
+  tvdb_mappings:
+    s0: e23
+101830:
+  imdb_id: tt20519280
+  tmdb_show_id: 76757
+  tvdb_id: 338455
+  tvdb_mappings:
+    s0: e1
+101918:
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e37
+101924:
+  tvdb_id: 289909
+  tvdb_mappings:
+    s0: e6
+101925:
+  tmdb_show_id: 57041
+101926:
+  tvdb_mappings:
+    s0: e8
+101928:
+  tvdb_id: 80000
+  tvdb_mappings:
+    s0: e12-e15
+101965:
+  tmdb_show_id: 45782
+  tvdb_id: 259640
+  tvdb_mappings:
+    s0: e23
+101981:
+  anidb_id: 14112
+  mal_id: 37281
+  tvdb_id: 349640
+  tvdb_mappings:
+    s1: e1-e9
+101999:
+  tmdb_show_id: 45783
+  tvdb_id: 257765
+  tvdb_mappings:
+    s0: e38
+102000:
+  tvdb_id: 82234
+  tvdb_mappings:
+    s0: e1
+102036:
+  tvdb_id: 88161
+  tvdb_mappings:
+    s3: e25
+102093:
+  tvdb_id: 257765
+  tvdb_mappings:
+    s0: e34
+102309:
+  tvdb_id: 341437
+  tvdb_mappings:
+    s0: e1-e3
+102346:
+  tvdb_id: 261249
+  tvdb_mappings:
+    s0: e6
+102347:
+  tvdb_id: 261249
+  tvdb_mappings:
+    s0: e7
+102348:
+  tvdb_id: 261249
+  tvdb_mappings:
+    s0: e8
+102349:
+  tvdb_id: 261249
+  tvdb_mappings:
+    s0: e9
+102350:
+  tvdb_id: 261249
+  tvdb_mappings:
+    s0: e10
+102352:
+  tvdb_mappings:
+    s0: e1-e2
+    s1: e1-e6
+    s2: e1-e13
+    s3: e1-e11
+    s4: e1-e8
+    s5: e1-e10
+    s6: e1-e6
+102427:
+  tvdb_mappings:
+    s1: e1-e6
+102428:
+  tvdb_id: 79460
+  tvdb_mappings:
+    s0: e2
+102449:
+  tvdb_id: 307375
+  tvdb_mappings:
+    s0: e1-e6
+102485:
+  tvdb_id: 275609
+  tvdb_mappings:
+    s0: e2
+102505:
+  tvdb_id: 76894
+  tvdb_mappings:
+    s0: e17
+102525:
+  tvdb_id: 283929
+  tvdb_mappings:
+    s0: e10
+102575:
+  imdb_id: tt16023254
+  tvdb_id: 341733
+  tvdb_mappings:
+    s1: e1-e12
+102576:
+  imdb_id: tt16023254
+  tvdb_id: 341733
+  tvdb_mappings:
+    s2: e1-e12
+102622:
+  tvdb_id: 345055
+  tvdb_mappings:
+    s0: e1
+102631:
+  tvdb_mappings:
+    s0: e17-e18|2
+102649:
+  imdb_id: tt10443844
+  tmdb_movie_id: 510242
+  tvdb_id: 262090
+  tvdb_mappings:
+    s0: e13
+102832:
+  tvdb_mappings:
+    s0: e1
+102836:
+  tvdb_id: 257765
+  tvdb_mappings:
+    s0: e35
+102839:
+  tvdb_id: 257765
+  tvdb_mappings:
+    s0: e36
+102860:
+  tvdb_mappings:
+    s2: e13-e24
+102934:
+  tvdb_mappings:
+    s0: e1-e2
+    s1: e1-e26
+102976:
+  tvdb_mappings:
+    s0: e5
+102979:
+  tvdb_id: 344222
+  tvdb_mappings:
+    s0: e1-e3
+103209:
+  tmdb_show_id: 64196
+  tvdb_id: 294002
+  tvdb_mappings:
+    s0: e29-e41
+103237:
+  tvdb_id: 344220
+  tvdb_mappings:
+    s0: e1-e3
+103254:
+  tvdb_id: 346988
+  tvdb_mappings:
+    s0: e1-e3
+103276:
+  imdb_id: tt9534948
+  tmdb_movie_id: 637202
+  tvdb_id: 353666
+  tvdb_mappings:
+    s0: e6
+103277:
+  imdb_id: tt13997358
+  tmdb_movie_id: 637462
+  tvdb_id: 353666
+  tvdb_mappings:
+    s0: e7
+103376:
+  tvdb_mappings:
+    s1: e1-e13
+    s2: e1-e14
+    s3: e1-e13
+    s4: e1-e12
+    s5: e1-e13
+    s6: e1-e13
+103712:
+  tvdb_id: 275039
+  tvdb_mappings:
+    s0: e3
+103713:
+  tvdb_id: 275039
+  tvdb_mappings:
+    s0: e2
+103870:
+  tmdb_show_id: 88490
+  tvdb_id: 422824
+  tvdb_mappings:
+    s1: e1-e12
+104080:
+  tvdb_mappings:
+    s1: e1-e12
+104156:
+  tvdb_mappings:
+    s0: e1|-2,e2
+104170:
+  tvdb_mappings:
+    s0: e3
+104174:
+  tmdb_show_id: 78102
+  tvdb_id: 339268
+  tvdb_mappings:
+    s0: e2
+104175:
+  tvdb_mappings:
+    s0: e8
+104187:
+  tvdb_mappings:
+    s0: e1-e24
+104188:
+  tvdb_mappings:
+    s0: e7
+    s4: e1-e63
+104199:
+  tvdb_mappings:
+    s0: e1
+104200:
+  tvdb_mappings:
+    s0: e6|-2
+104217:
+  tvdb_mappings:
+    s0: e1-e3
+104243:
+  imdb_id: tt8670784
+  mal_id: 35994
+  tmdb_show_id: 80477
+  tvdb_id: 344844
+  tvdb_mappings:
+    s1: e13-e16
+104257:
+  tvdb_id: 71863
+  tvdb_mappings:
+    s0: e45
+104291:
+  tvdb_mappings:
+    s0: e1-e2
+104307:
+  tvdb_mappings:
+    s0: e1-e3
+104368:
+  tvdb_id: 346798
+  tvdb_mappings:
+    s0: e1-e2
+104382:
+  imdb_id: tt11078434
+  tmdb_movie_id: 559562
+  tvdb_id: 262090
+  tvdb_mappings:
+    s0: e14
+104396:
+  tvdb_id: 309530
+  tvdb_mappings:
+    s0: e3-e9
+104436:
+  tvdb_mappings:
+    s0: e2
+104530:
+  tvdb_id: 333232
+  tvdb_mappings:
+    s0: e1
+104557:
+  tvdb_id: 327718
+  tvdb_mappings:
+    s0: e1
+104578:
+  tmdb_show_id: 1429
+104580:
+  tvdb_mappings:
+    s0: e2
+104623:
+  tmdb_movie_id: 452598
+104990:
+  imdb_id: tt11078522
+  tmdb_movie_id: 559566
+  tvdb_id: 262090
+  tvdb_mappings:
+    s0: e15
+105193:
+  tvdb_mappings:
+    s0: e1
+105595:
+  tvdb_id: 76547
+  tvdb_mappings:
+    s0: e8
+105596:
+  tvdb_id: 283929
+  tvdb_mappings:
+    s0: e11
+105662:
+  tvdb_id: 346931
+  tvdb_mappings:
+    s0: e1
+105663:
+  tvdb_mappings:
+    s0: e7
+105893:
+  tmdb_show_id: 65930
+  tvdb_id: 305074
+  tvdb_mappings:
+    s0: e5-e6
+105907:
+  tvdb_id: 325198
+  tvdb_mappings:
+    s0: e2
+105934:
+  imdb_id: tt18500586
+  tmdb_movie_id: 570575
+  tvdb_mappings:
+    s1: e1
+106206:
+  tmdb_movie_id: 566555
+  tvdb_mappings:
+    s0: e70
+106223:
+  tvdb_id: 331753
+  tvdb_mappings:
+    s0: e2
+106287:
+  tvdb_id: 76703
+  tvdb_mappings:
+    s0: e71
+106493:
+  tvdb_id: 281405
+  tvdb_mappings:
+    s0: e39
+106494:
+  tvdb_mappings:
+    s0: e1
+106495:
+  tvdb_id: 275670
+  tvdb_mappings:
+    s0: e8
+106499:
+  tmdb_show_id: 60572
+  tvdb_id: 76703
+  tvdb_mappings:
+    s0: e61-e62
+106506:
+  tmdb_show_id: 76757
+  tvdb_id: 338455
+  tvdb_mappings:
+    s0: e5-
+106542:
+  tvdb_mappings:
+    s0: e12
+106625:
+  tmdb_show_id: 60863
+106858:
+  tvdb_mappings:
+    s0: e1
+106862:
+  tvdb_mappings:
+    s0: e1
+106915:
+  tvdb_mappings:
+    s0: e4|-1
+107188:
+  tvdb_id: 79327
+  tvdb_mappings:
+    s0: e9
+107189:
+  tvdb_mappings:
+    s0: e1
+107208:
+  tvdb_id: 262098
+  tvdb_mappings:
+    s0: e45
+107263:
+  tmdb_show_id: 60863
+  tvdb_id: 278157
+  tvdb_mappings:
+    s0: e11-e13
+107264:
+  tmdb_show_id: 64196
+107298:
+  tvdb_id: 319995
+  tvdb_mappings:
+    s0: e3
+107313:
+  tmdb_movie_id: 587870
+107342:
+  tvdb_id: 247958
+  tvdb_mappings:
+    s0: e1
+107351:
+  tmdb_show_id: 60863
+107352:
+  tvdb_id: 336385
+  tvdb_mappings:
+    s0: e3
+107622:
+  tvdb_id: 327572
+  tvdb_mappings:
+    s0: e1-e3
+107692:
+  tvdb_id: 83322
+  tvdb_mappings:
+    s0: e7-e8
+107881:
+  tvdb_id: 344222
+  tvdb_mappings:
+    s0: e4-e7
+107905:
+  tvdb_id: 157001
+  tvdb_mappings:
+    s0: e6
+108260:
+  tvdb_id: 72241
+  tvdb_mappings:
+    s0: e13
+108267:
+  tvdb_mappings:
+    s0: e1
+108355:
+  tvdb_mappings:
+    s0: e1-e3
+108625:
+  imdb_id: tt12209234
+  tmdb_show_id: 78482
+  tvdb_id: 345381
+  tvdb_mappings:
+    s2: e1-e51
+108630:
+  tvdb_id: 82378
+  tvdb_mappings:
+    s0: e3
+108714:
+  tvdb_id: 319983
+  tvdb_mappings:
+    s0: e7
+108735:
+  tvdb_mappings:
+    s0: e2
+108759:
+  tmdb_show_id: 45782
+108937:
+  tvdb_id: 354199
+  tvdb_mappings:
+    s0: e4-e10
+108939:
+  tvdb_id: 299508
+  tvdb_mappings:
+    s0: e5-e6
+108941:
+  tvdb_mappings:
+    s1: e1-e12
+108942:
+  tmdb_show_id: 1429
+  tvdb_id: 267440
+  tvdb_mappings:
+    s0: e24-e27
+108945:
+  tmdb_show_id: 63926
+  tvdb_id: 293088
+  tvdb_mappings:
+    s0: e9-e14
+108972:
+  tvdb_id: 272849
+  tvdb_mappings:
+    s0: e4-e6
+109002:
+  tmdb_show_id: 31724
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e47
+109003:
+  tmdb_show_id: 31724
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e48
+109004:
+  tmdb_show_id: 31724
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e49
+109005:
+  tmdb_show_id: 31724
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e50
+109085:
+  tvdb_id: 346931
+  tvdb_mappings:
+    s0: e2-e6
+109260:
+  imdb_id: tt2549176
+  tmdb_show_id: 107974
+  tvdb_id: 245821
+  tvdb_mappings:
+    s11: e1-e14
+109562:
+  tvdb_mappings:
+    s1: e13-e24
+109670:
+  tvdb_id: 261249
+  tvdb_mappings:
+    s0: e11|-6
+109737:
+  tvdb_mappings:
+    s0: e2
+110253:
+  tmdb_show_id: 31724
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e35
+110261:
+  imdb_id: tt11803614
+  tmdb_movie_id: 629014
+110270:
+  tvdb_id: 371662
+  tvdb_mappings:
+    s1: e1-e12
+110277:
+  tmdb_show_id: 1429
+110318:
+  tvdb_id: 378762
+  tvdb_mappings:
+    s1: e1-e8
+110332:
+  tvdb_id: 80783
+  tvdb_mappings:
+    s0: e3
+110349:
+  tvdb_mappings:
+    s1: e1-e14
+    s2: e1-e9
+110359:
+  tvdb_id: 354154
+  tvdb_mappings:
+    s0: e2-e9
+110364:
+  tvdb_mappings:
+    s1: e1-e26
+    s2: e1-e26
+110413:
+  tvdb_id: 71863
+  tvdb_mappings:
+    s0: e49
+110521:
+  tvdb_mappings:
+    s1: e1-e12
+    s2: e1-e12
+110693:
+  tvdb_id: 339278
+  tvdb_mappings:
+    s0: e5
+110732:
+  tvdb_mappings:
+    s0: e1
+110851:
+  tvdb_id: 353666
+  tvdb_mappings:
+    s0: e5
+111048:
+  tvdb_mappings:
+    s1: e13-e24
+111144:
+  imdb_id: tt2549176
+  tmdb_show_id: 107974
+  tvdb_id: 245821
+  tvdb_mappings:
+    s12: e1-e31
+111305:
+  tvdb_id: 247788
+  tvdb_mappings:
+    s0: e4
+111433:
+  tvdb_id: 358890
+  tvdb_mappings:
+    s0: e1|-9
+111734:
+  tvdb_id: 361218
+  tvdb_mappings:
+    s0: e1
+111789:
+  imdb_id: tt11803654
+  tmdb_movie_id: 631193
+111790:
+  tmdb_show_id: 60863
+111852:
+  imdb_id: tt12350118
+  tmdb_movie_id: 685099
+  tmdb_show_id: 46004
+  tvdb_id: 264663
+  tvdb_mappings:
+    s0: e4
+111931:
+  tvdb_id: 275613
+  tvdb_mappings:
+    s0: e5-e7
+112006:
+  tvdb_mappings:
+    s0: e28
+112019:
+  tvdb_id: 259675
+  tvdb_mappings:
+    s3: e1-e8
+112031:
+  tvdb_id: 360438
+  tvdb_mappings:
+    s0: e1
+112035:
+  tvdb_mappings:
+    s0: e1-e4
+112125:
+  tmdb_show_id: 62745
+  tvdb_id: 289882
+  tvdb_mappings:
+    s0: e4
+112449:
+  tvdb_id: 283929
+  tvdb_mappings:
+    s0: e1-e9
+112450:
+  tvdb_id: 403849
+  tvdb_mappings:
+    s0: e2
+112534:
+  tvdb_id: 227501
+  tvdb_mappings:
+    s4: e1-e9
+112658:
+  tmdb_movie_id: 641909
+  tvdb_mappings:
+    s0: e48
+112732:
+  tvdb_mappings:
+    s0: e1
+112900:
+  tmdb_show_id: 31724
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e51
+113051:
+  tvdb_id: 379740
+  tvdb_mappings:
+    s1: e1-e13
+113138:
+  tvdb_id: 76547
+  tvdb_mappings:
+    s0: e7
+113242:
+  tvdb_id: 261667
+  tvdb_mappings:
+    s15: e1-e51
+113302:
+  tvdb_id: 363143
+  tvdb_mappings:
+    s0: e1-e4|-9
+113348:
+  tvdb_id: 254667
+  tvdb_mappings:
+    s0: e13-e16
+113417:
+  tvdb_mappings:
+    s1: e1-e8
+113425:
+  tvdb_mappings:
+    s1: e1-e12
+113538:
+  tmdb_show_id: 60863
+113653:
+  tmdb_movie_id: 662638
+  tvdb_id: 72454
+  tvdb_mappings:
+    s0: e72
+113669:
+  tvdb_id: 281405
+  tvdb_mappings:
+    s0: e40
+113811:
+  tvdb_mappings:
+    s0: e1-e2|2
+113917:
+  tvdb_mappings:
+    s0: e16-e18
+113990:
+  imdb_id: tt12209234
+  tmdb_show_id: 78482
+  tvdb_id: 345381
+  tvdb_mappings:
+    s3: e1-e51
+114052:
+  tvdb_id: 262098
+  tvdb_mappings:
+    s0: e46
+114072:
+  tvdb_id: 378520
+  tvdb_mappings:
+    s1: e1-e92
+114111:
+  imdb_id: tt16023254
+  tvdb_id: 341733
+  tvdb_mappings:
+    s3: e1-e13
+114129:
+  tvdb_id: 79895
+  tvdb_mappings:
+    s0: e17
+114308:
+  tmdb_show_id: 45782
+114334:
+  tvdb_id: 283929
+  tvdb_mappings:
+    s0: e12
+114448:
+  tvdb_mappings:
+    s1: e7-e12
+114564:
+  tvdb_id: 76703
+  tvdb_mappings:
+    s0: e80
+114744:
+  tvdb_id: 326109
+  tvdb_mappings:
+    s0: e4-e7
+114841:
+  tvdb_id: 76547
+  tvdb_mappings:
+    s0: e14
+114981:
+  tvdb_id: 330692
+  tvdb_mappings:
+    s0: e17
+115656:
+  tvdb_id: 245821
+  tvdb_mappings:
+    s13: e1-e25
+116039:
+  tvdb_mappings:
+    s0: e43
+116045:
+  tvdb_mappings:
+    s0: e23
+116053:
+  tvdb_mappings:
+    s2: e1-e13
+116224:
+  tvdb_id: 358138
+  tvdb_mappings:
+    s0: e5
+116225:
+  tvdb_id: 358138
+  tvdb_mappings:
+    s0: e4
+116610:
+  tvdb_id: 320002
+  tvdb_mappings:
+    s0: e5
+116793:
+  tvdb_id: 128411
+  tvdb_mappings:
+    s3: e1-e25
+116965:
+  imdb_id: tt16023254
+  tvdb_id: 341733
+  tvdb_mappings:
+    s4: e1-e12
+117403:
+  tvdb_id: 321820
+  tvdb_mappings:
+    s0: e3
+117408:
+  tmdb_show_id: 31724
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e52-e53
+117532:
+  tvdb_mappings:
+    s0: e1|-6
+117557:
+  tvdb_id: 70817
+  tvdb_mappings:
+    s0: e9|-4
+117763:
+  tvdb_id: 320002
+  tvdb_mappings:
+    s0: e3
+117764:
+  tvdb_id: 320002
+  tvdb_mappings:
+    s0: e4
+117765:
+  tvdb_id: 320002
+  tvdb_mappings:
+    s0: e6
+118126:
+  tvdb_id: 304475
+  tvdb_mappings:
+    s0: e15
+118168:
+  tvdb_id: 353624
+  tvdb_mappings:
+    s0: e25-e36
+118465:
+  tvdb_id: 388644
+  tvdb_mappings:
+    s1: e1-e11
+118630:
+  tvdb_id: 261667
+  tvdb_mappings:
+    s16: e1-e47
+118640:
+  tvdb_id: 81073
+  tvdb_mappings:
+    s0: e5-e6
+119113:
+  tvdb_mappings:
+    s0: e31
+119548:
+  tvdb_id: 321535
+  tvdb_mappings:
+    s0: e3
+119836:
+  tvdb_mappings:
+    s0: e30
+119939:
+  tvdb_mappings:
+    s1: e4-e6
+119946:
+  tvdb_mappings:
+    s0: e2
+120122:
+  tvdb_id:
+  tvdb_mappings:
+120257:
+  mal_id: 39477
+  tmdb_show_id: 1429
+  tvdb_id: 267440
+  tvdb_mappings:
+    s0: e28-e30
+120700:
+  tvdb_id: 305089
+  tvdb_mappings:
+    s0: e30-e42
+120892:
+  tvdb_id: 281949
+  tvdb_mappings:
+    s0: e16
+120896:
+  tvdb_id: 293491
+  tvdb_mappings:
+    s0: e13
+121034:
+  tvdb_id: 264663
+  tvdb_mappings:
+    s0: e5
+121043:
+  tmdb_show_id: 88061
+  tvdb_id: 361749
+  tvdb_mappings:
+    s0: e1-e12
+121645:
+  anidb_id: 15630
+  mal_id: 42414
+  tmdb_show_id: 105903
+  tvdb_id: 389232
+  tvdb_mappings:
+    s1: e1-e12
+121797:
+  anidb_id: 15258
+  mal_id: 42517
+  tmdb_show_id: 250538
+  tvdb_id: 388746
+  tvdb_mappings:
+    s1: e1-e3
+121822:
+  tvdb_mappings:
+    s0: e22
+121825:
+  tvdb_mappings:
+    s0: e18
+121826:
+  tvdb_mappings:
+    s0: e42
+121828:
+  tvdb_mappings:
+    s0: e69-e70
+121830:
+  tvdb_mappings:
+    s0: e26
+121832:
+  tvdb_mappings:
+    s0: e13
+121835:
+  tvdb_id: 167921
+  tvdb_mappings:
+    s0: e48
+121837:
+  tvdb_mappings:
+    s0: e29
+121838:
+  tvdb_mappings:
+    s0: e15
+121840:
+  tvdb_mappings:
+    s0: e44
+121962:
+  tvdb_id: 245821
+  tvdb_mappings:
+    s14: e1-e12
+122041:
+  tvdb_id: 114921
+  tvdb_mappings:
+    s0: e12-e13
+122349:
+  tmdb_show_id: 65930
+122511:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e16
+122675:
+  tvdb_id: 304475
+  tvdb_mappings:
+    s0: e13
+122678:
+  tvdb_id: 304475
+  tvdb_mappings:
+    s0: e14
+122922:
+  tvdb_mappings:
+    s0: e1
+123074:
+  tmdb_show_id: 902
+  tvdb_id: 76894
+  tvdb_mappings:
+    s0: e2-e13
+124032:
+  tvdb_id: 343237
+  tvdb_mappings:
+    s3: e1-e12
+124115:
+  tvdb_id: 262098
+  tvdb_mappings:
+    s0: e51
+124396:
+  tvdb_id: 292662
+  tvdb_mappings:
+    s0: e1
+124756:
+  imdb_id:
+  -   tt20561132
+  -   tt20602938
+  -   tt20609980
+  tmdb_show_id: 76757
+  tvdb_id: 338455
+  tvdb_mappings:
+    s0: e2-e4
+125308:
+  tvdb_id: 373770
+  tvdb_mappings:
+    s0: e1
+125368:
+  tvdb_mappings:
+    s0: e1
+125601:
+  tvdb_id: 79022
+  tvdb_mappings:
+    s0: e1
+126275:
+  tvdb_id: 259675
+  tvdb_mappings:
+    s0: e4
+126318:
+  tvdb_mappings:
+    s3: e10-e13
+126356:
+  tvdb_id: 388672
+  tvdb_mappings:
+    s0: e1
+126661:
+  tmdb_show_id: 65930
+  tvdb_id: 305074
+  tvdb_mappings:
+    s0: e10
+126783:
+  tvdb_id: 281405
+  tvdb_mappings:
+    s0: e100
+126819:
+  tmdb_show_id: 57041
+126830:
+  tvdb_id: 443905
+  tvdb_mappings:
+    s1: e1-e12
+126835:
+  tvdb_mappings:
+    s4: e1-e25
+127090:
+  tvdb_mappings:
+    s1: e1-e12
+127149:
+  tvdb_id: 394346
+  tvdb_mappings:
+    s1: e1-e4
+127368:
+  tvdb_id: 289882
+  tvdb_mappings:
+    s0: e5
+128306:
+  tvdb_id: 305089
+  tvdb_mappings:
+    s0: e43-e54
+128392:
+  tvdb_id: 387840
+  tvdb_mappings:
+    s0: e1-e12
+128827:
+  tvdb_id: 245821
+  tvdb_mappings:
+    s14: e13-e25
+129464:
+  mal_id: 43253
+  tmdb_show_id: 97915
+  tvdb_id: 383725
+  tvdb_mappings:
+    s1: e1-e4
+129549:
+  tvdb_id: 81086
+  tvdb_mappings:
+    s0: e33
+129591:
+  tvdb_mappings:
+    s1: e3-e4
+129595:
+  tvdb_mappings:
+    s1: e2
+129610:
+  imdb_id: tt0367413
+  mal_id: 1816
+  tmdb_show_id: 10926
+  tvdb_id: 72459
+  tvdb_mappings:
+    s3: e1-e26
+129759:
+  tvdb_id: 328827
+  tvdb_mappings:
+    s0: e9
+130183:
+  tmdb_show_id: 65930
+  tvdb_id: 305074
+  tvdb_mappings:
+    s0: e3
+130362:
+  tvdb_id: 262098
+  tvdb_mappings:
+    s0: e8,e11,e16,e21,e25,e29
+130402:
+  tvdb_id: 393243
+  tvdb_mappings:
+    s1: e1-e12
+130584:
+  tvdb_id: 261667
+  tvdb_mappings:
+    s17: e1-e43
+130777:
+  tvdb_mappings:
+    s2: e1-e50
+131045:
+  tvdb_mappings:
+    s0: e1
+131520:
+  tvdb_mappings:
+    s0: e1
+131680:
+  tvdb_id: 331753
+  tvdb_mappings:
+    s0: e26
+131681:
+  tmdb_show_id: 1429
+131770:
+  tvdb_id: 72454
+  tvdb_mappings:
+    s0: e71
+131773:
+  imdb_id: tt13248076
+  tmdb_show_id: 111255
+  tvdb_id: 390028
+  tvdb_mappings:
+    s0: e1
+132096:
+  mal_id:
+  -   48590
+  -   49483
+  tmdb_show_id: 69291
+  tvdb_id: 318893
+  tvdb_mappings:
+    s0: e9-e24
+132317:
+  tmdb_show_id: 31724
+  tvdb_id: 79525
+  tvdb_mappings:
+    s0: e29
+132324:
+  tvdb_id: 283929
+  tvdb_mappings:
+    s0: e13
+132420:
+  tvdb_id: 262098
+  tvdb_mappings:
+    s0: e62
+132467:
+  tmdb_show_id: 105009
+  tvdb_id: 393478
+  tvdb_mappings:
+    s0: e2-e25
+132634:
+  tmdb_show_id: 40424
+  tvdb_mappings:
+    s0: e9
+132694:
+  tvdb_id: 358138
+  tvdb_mappings:
+    s2: e1-e16
+132697:
+  tvdb_mappings:
+    s5: e1-e13
+132698:
+  tvdb_id: 358138
+  tvdb_mappings:
+    s0: e6
+132904:
+  tvdb_id: 341437
+  tvdb_mappings:
+    s0: e4
+133007:
+  tvdb_mappings:
+    s0: e4
+133844:
+  tmdb_show_id: 64196
+133845:
+  tvdb_id: 294002
+  tvdb_mappings:
+    s0: e61
+133898:
+  tmdb_movie_id: 610150
+  tvdb_id: 295068
+  tvdb_mappings:
+    s0: e4
+134413:
+  tvdb_id: 330692
+  tvdb_mappings:
+    s0: e18-e19
+134623:
+  tmdb_show_id: 31572
+  tvdb_mappings:
+    s0: e50
+    s6: e1-e24
+134710:
+  tvdb_id: 361218
+  tvdb_mappings:
+    s0: e4
+135255:
+  tvdb_id: 328827
+  tvdb_mappings:
+    s0: e10
+135515:
+  tvdb_id: 423730
+  tvdb_mappings:
+    s1: e1-e16
+136137:
+  tvdb_id: 400245
+  tvdb_mappings:
+    s0: e1-e3
+136145:
+  tvdb_id: 402033
+  tvdb_mappings:
+    s0: e1
+136192:
+  tvdb_id: 357488
+  tvdb_mappings:
+    s0: e1
+136436:
+  tvdb_id: 318893
+  tvdb_mappings:
+    s0: e30
+136517:
+  tvdb_id: 245821
+  tvdb_mappings:
+    s0: e40-e48,e50-e66
+136880:
+  tvdb_id: 361013
+  tvdb_mappings:
+    s3: e1-e12
+137310:
+  tvdb_id: 72241
+  tvdb_mappings:
+    s0: e23
+137612:
+  tvdb_id: 328827
+  tvdb_mappings:
+    s0: e12
+137734:
+  tvdb_id: 327261
+  tvdb_mappings:
+    s5: e1-e12
+137735:
+  tvdb_id: 326270
+  tvdb_mappings:
+    s3: e1-e17
+137804:
+  mal_id: 49483
+  tmdb_show_id: 69291
+  tvdb_id: 318893
+  tvdb_mappings:
+    s0: e25-e29
+138260:
+  tvdb_id: 402033
+  tvdb_mappings:
+    s0: e2
+138425:
+  tvdb_id: 337936
+  tvdb_mappings:
+    s0: e2
+138675:
+  tvdb_id: 346931
+  tvdb_mappings:
+    s0: e7
+138700:
+  tvdb_mappings:
+    s0: e1-e2
+139020:
+  tvdb_id: 195161
+  tvdb_mappings:
+    s0: e7
+139062:
+  tvdb_id: 75112
+  tvdb_mappings:
+    s0: e14
+139067:
+  tvdb_id: 75112
+  tvdb_mappings:
+    s0: e16
+139179:
+  tmdb_show_id: 30983
+  tvdb_id: 72454
+  tvdb_mappings:
+    s0: e64
+139212:
+  tvdb_id: 245821
+  tvdb_mappings:
+    s15: e1-e13
+139213:
+  tvdb_id: 245821
+  tvdb_mappings:
+    s15: e14-e25
+139273:
+  tvdb_id: 76547
+  tvdb_mappings:
+    s0: e12
+139409:
+  tmdb_show_id: 106055
+  tvdb_id: 400512
+  tvdb_mappings:
+    s0: e1-e12
+139466:
+  tvdb_id: 318271
+  tvdb_mappings:
+    s0: e3
+139588:
+  tvdb_id: 271591
+  tvdb_mappings:
+    s0: e1
+139754:
+  tmdb_show_id: 1429
+  tvdb_id: 267440
+  tvdb_mappings:
+    s0: e36-e37
+140175:
+  tvdb_id: 402033
+  tvdb_mappings:
+    s0: e3-e20
+140307:
+  tvdb_mappings:
+    s0: e38
+140787:
+  tvdb_id: 128411
+  tvdb_mappings:
+    s5: e1-e25
+141057:
+  tvdb_mappings:
+    s0: e11
+141352:
+  tvdb_id: 284131
+  tvdb_mappings:
+    s0: e27
+141534:
+  imdb_id: tt13293588
+  tmdb_show_id: 94664
+  tvdb_id: 371310
+  tvdb_mappings:
+    s0: e1
+142219:
+  tmdb_movie_id: 903939
+  tvdb_id: 72454
+  tvdb_mappings:
+    s0: e78
+142411:
+  tmdb_show_id: 65930
+  tvdb_id: 305074
+  tvdb_mappings:
+    s0: e12
+142806:
+  tvdb_id: 358138
+  tvdb_mappings:
+    s0: e7
+142984:
+  tvdb_mappings:
+    s1: e13-e24
+143082:
+  tvdb_mappings:
+    s0: e1
+143202:
+  tvdb_id: 328827
+  tvdb_mappings:
+    s0: e11
+143455:
+  tvdb_mappings:
+    s0: e2
+    s1: e1-e11
+143548:
+  tvdb_mappings:
+    s0: e16
+144676:
+  tvdb_mappings:
+    s1: e1-e12|-5
+144779:
+  tvdb_id: 259675
+  tvdb_mappings:
+    s4: e1-e26
+144803:
+  tvdb_id: 262098
+  tvdb_mappings:
+    s0: e52
+145405:
+  tmdb_show_id: 40424
+  tvdb_id: 70900
+  tvdb_mappings:
+    s0: e10
+145406:
+  tvdb_id: 70817
+  tvdb_mappings:
+    s3: e1-e51
+    s4: e1-e52
+145475:
+  tvdb_mappings:
+    s0: e39
+145477:
+  tvdb_mappings:
+    s0: e3
+145479:
+  tvdb_mappings:
+    s0: e24
+145480:
+  tvdb_id: 329173
+  tvdb_mappings:
+    s0: e4
+145481:
+  tvdb_mappings:
+    s0: e25
+145563:
+  tvdb_id: 105441
+  tvdb_mappings:
+    s3: e32-e44
+145759:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e3
+145760:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e4
+145761:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e5
+145762:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e6
+145763:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e7
+145764:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e8
+145765:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e9
+145766:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e10
+145767:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e11
+145768:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e12
+145769:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e13
+145770:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e14
+145771:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e15
+145772:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e16
+145773:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e17
+145774:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e18
+145775:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e19
+145776:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e20
+145778:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e22
+145779:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e23
+145780:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e24
+145781:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e25|-2
+145782:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e26|-2
+145783:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e27|-2
+145784:
+  tvdb_id: 111011
+  tvdb_mappings:
+    s0: e28|-2
+146065:
+  tvdb_mappings:
+    s0: e2
+    s2: e1-e12
+146310:
+  imdb_id: tt0131160
+  tmdb_show_id: 34114
+  tvdb_mappings:
+    s2: e1-e37
+146631:
+  tvdb_id: 283929
+  tvdb_mappings:
+    s0: e14
+146632:
+  tvdb_id: 283929
+  tvdb_mappings:
+    s0: e15
+146865:
+  tvdb_id: 261667
+  tvdb_mappings:
+    s18: e1-e17
+146922:
+  imdb_id: tt15433166
+  tmdb_show_id: 196400
+  tvdb_id: 418364
+  tvdb_mappings:
+    s0: e1
+146984:
+  tmdb_show_id: 1429
+147189:
+  tvdb_id: 72877
+  tvdb_mappings:
+    s0: e9
+147810:
+  tvdb_id: 250848
+  tvdb_mappings:
+    s0: e11
+147814:
+  tvdb_mappings:
+    s0: e1-e2|2
+148149:
+  tvdb_id: 275039
+  tvdb_mappings:
+    s0: e4
+148584:
+  tvdb_id: 316842
+  tvdb_mappings:
+    s0: e29-e34
+148664:
+  tvdb_mappings:
+    s0: e41
+148970:
+  tvdb_id: 343237
+  tvdb_mappings:
+    s4: e1-e12
+149073:
+  tmdb_show_id: 65930
+149939:
+  tmdb_show_id: 57706
+  tvdb_mappings:
+    s2: e1-e22
+    s3: e1-e24
+    s4: e1-e24
+    s5: e1-e24
+    s6: e1-e24
+    s7: e1-e25
+150078:
+  tvdb_id: 114801
+  tvdb_mappings:
+    s0: e9-e11
+150970:
+  tvdb_id: 245821
+  tvdb_mappings:
+    s15: e26-e38
+151040:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e11
+151117:
+  tvdb_id: 80470
+  tvdb_mappings:
+    s0: e4
+151896:
+  tvdb_id: 281405
+  tvdb_mappings:
+    s0: e101
+151898:
+  tmdb_show_id: 64196
+  tvdb_id: 294002
+  tvdb_mappings:
+    s0: e45-e57
+153412:
+  tvdb_id: 261667
+  tvdb_mappings:
+    s19: e1-e29
+153791:
+  tvdb_id: 326109
+  tvdb_mappings:
+    s0: e14
+154037:
+  tvdb_id: 74796
+  tvdb_mappings:
+    s0: e1
+154100:
+  tvdb_id: 262098
+  tvdb_mappings:
+    s0: e35
+154146:
+  tvdb_id: 262098
+  tvdb_mappings:
+    s0: e39-e40
+154147:
+  tvdb_id: 262098
+  tvdb_mappings:
+    s0: e56-e57
+154386:
+  tvdb_id: 384778
+  tvdb_mappings:
+    s0: e1-e12
+154678:
+  tvdb_id: 414107
+  tvdb_mappings:
+    s0: e2
+154966:
+  tvdb_mappings:
+    s0: e1
+154978:
+  tmdb_show_id: 69500
+  tvdb_id: 82788
+  tvdb_mappings:
+    s0: e14
+155011:
+  imdb_id: tt22445494
+  tmdb_show_id: 211057
+  tvdb_id: 425148
+  tvdb_mappings:
+    s1: e1-e13
+155014:
+  tvdb_id: 306269
+  tvdb_mappings:
+    s0: e3-e12
+155017:
+  tvdb_id: 331753
+  tvdb_mappings:
+    s0: e11-e25
+155735:
+  tvdb_mappings:
+    s0: e6-e7
+155739:
+  tvdb_id: 71634
+  tvdb_mappings:
+    s0: e4
+156001:
+  tvdb_id: 407520
+  tvdb_mappings:
+    s0: e1-e17
+156841:
+  tvdb_id: 72454
+  tvdb_mappings:
+    s0: e79
+156905:
+  tvdb_id: 446511
+  tvdb_mappings:
+    s0: e1
+157693:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e7
+158676:
+  tvdb_id: 397208
+  tvdb_mappings:
+    s0: e14
+158869:
+  tmdb_show_id: 60572
+  tvdb_id: 76703
+  tvdb_mappings:
+    s0: e82
+158997:
+  tvdb_id: 72454
+  tvdb_mappings:
+    s0: e76
+159074:
+  tvdb_id: 368364
+  tvdb_mappings:
+    s0: e1-e4
+160850:
+  tvdb_id: 275039
+  tvdb_mappings:
+    s0: e5
+162291:
+  tvdb_id: 284131
+  tvdb_mappings:
+    s0: e28
+162314:
+  imdb_id: tt2560140
+  mal_id: 51535
+  tmdb_show_id: 1429
+  tvdb_id: 267440
+  tvdb_mappings:
+    s4: e30
+162796:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e11
+162987:
+  tvdb_id: 361218
+  tvdb_mappings:
+    s0: e2
+162989:
+  imdb_id: tt33035474
+  tvdb_id:
+  tvdb_mappings:
+163139:
+  tmdb_show_id: 65930
+163147:
+  tvdb_mappings:
+    s0: e1
+163256:
+  tvdb_id: 261667
+  tvdb_mappings:
+    s20: e1-e49
+165253:
+  tvdb_id: 413522
+  tvdb_mappings:
+    s0: e2
+165557:
+  tvdb_id: 354198
+  tvdb_mappings:
+    s0: e2
+165681:
+  tvdb_id: 245821
+  tvdb_mappings:
+    s16: e14-e26
+166060:
+  tmdb_show_id: 30983
+  tvdb_id: 72454
+  tvdb_mappings:
+    s0: e73
+166381:
+  tvdb_id: 421776
+  tvdb_mappings:
+    s0: e1-e2
+166611:
+  tmdb_show_id: 69500
+166976:
+  tvdb_id: 281405
+  tvdb_mappings:
+    s0: e102
+166977:
+  tvdb_id: 328827
+  tvdb_mappings:
+    s0: e13
+167486:
+  tvdb_mappings:
+    s0: e1
+168013:
+  tvdb_id: 305074
+  tvdb_mappings:
+    s0: e20
+169000:
+  tmdb_movie_id: 1193662
+  tvdb_id: 79895
+  tvdb_mappings:
+    s0: e22
+169362:
+  tvdb_mappings:
+    s0: e1
+169402:
+  tmdb_show_id: 65930
+169403:
+  imdb_id: tt31806053
+  tmdb_movie_id: 1266540
+  tvdb_id: 442938
+  tvdb_mappings:
+    s0: e3
+169692:
+  tvdb_id: 354179
+  tvdb_mappings:
+    s2: e13-e28
+169754:
+  tvdb_id: 72454
+  tvdb_mappings:
+    s0: e77
+169929:
+  tmdb_show_id: 119495
+  tvdb_id: 407520
+  tvdb_mappings:
+    s0: e18-e21,e23-e30
+169930:
+  tvdb_mappings:
+    s1: e1-e12
+    s2: e1-e12
+169982:
+  tvdb_mappings:
+    s0: e46
+170068:
+  tvdb_id: 424536
+  tvdb_mappings:
+    s0: e1-e12
+170221:
+  tvdb_id: 422981
+  tvdb_mappings:
+    s0: e1
+170426:
+  imdb_id: tt0796127
+  tmdb_show_id: 5719
+  tvdb_id: 275472
+  tvdb_mappings:
+    s1: e79-e102
+170427:
+  imdb_id: tt0796127
+  tmdb_show_id: 5719
+  tvdb_id: 275472
+  tvdb_mappings:
+    s1: e103-e150
+170428:
+  imdb_id: tt0796127
+  tmdb_show_id: 5719
+  tvdb_id: 275472
+  tvdb_mappings:
+    s1: e151-e172
+170508:
+  tvdb_id: 431162
+  tvdb_mappings:
+    s0: e1-e24
+170620:
+  tmdb_show_id: 64196
+170893:
+  tvdb_id: 368364
+  tvdb_mappings:
+    s0: e5-e8
+170935:
+  tvdb_mappings:
+    s0: e1
+171099:
+  tvdb_id: 413522
+  tvdb_mappings:
+    s0: e3
+171630:
+  tvdb_mappings:
+    s1: e1-
+171760:
+  tvdb_mappings:
+    s0: e50
+171762:
+  tvdb_id: 167921
+  tvdb_mappings:
+    s0: e55
+171928:
+  tvdb_mappings:
+    s0: e36
+171929:
+  tvdb_mappings:
+    s0: e34
+172016:
+  tvdb_id: 358138
+  tvdb_mappings:
+    s0: e8
+172420:
+  tvdb_id: 344220
+  tvdb_mappings:
+    s0: e10
+173533:
+  tmdb_show_id: 46195
+173824:
+  tvdb_id: 128411
+  tvdb_mappings:
+    s2: e51-e97
+174124:
+  tvdb_mappings:
+    s0: e35
+174842:
+  tvdb_id: 167921
+  tvdb_mappings:
+    s0: e71
+175120:
+  tvdb_id: 332463
+  tvdb_mappings:
+    s3: e1-e12
+175199:
+  tvdb_id: 361218
+  tvdb_mappings:
+    s0: e3
+175573:
+  tmdb_movie_id: 1266097
+  tvdb_id: 79895
+  tvdb_mappings:
+    s0: e23
+176369:
+  tvdb_mappings:
+    s0: e1
+176577:
+  tvdb_mappings:
+    s1: e1-e13
+176663:
+  tvdb_id: 262098
+  tvdb_mappings:
+    s0: e64
+176862:
+  tvdb_id: 76665
+  tvdb_mappings:
+    s0: e5
+177007:
+  tvdb_id: 330692
+  tvdb_mappings:
+    s0: e20-e22
+177008:
+  tvdb_id: 289884
+  tvdb_mappings:
+    s0: e21-e26
+177697:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e17
+178436:
+  tmdb_movie_id: 1363564
+  tvdb_id: 79895
+  tvdb_mappings:
+    s0: e24
+178729:
+  tvdb_mappings:
+    s1: e14-e26
+179852:
+  tvdb_id: 80470
+  tvdb_mappings:
+    s0: e5
+179870:
+  tvdb_id: 358138
+  tvdb_mappings:
+    s6: e1-e13
+179871:
+  tvdb_id: 358138
+  tvdb_mappings:
+    s7: e1-e8
+179872:
+  tvdb_id: 358138
+  tvdb_mappings:
+    s7: e9-e15
+179930:
+  tvdb_mappings:
+    s0: e1
+180332:
+  tmdb_show_id: 46195
+  tvdb_id: 102261
+  tvdb_mappings:
+    s0: e41
+181244:
+  tvdb_mappings:
+    s0: e6-e7
+181835:
+  tvdb_id: 446097
+  tvdb_mappings:
+    s2: e1-e12
+181970:
+  tmdb_movie_id: 1189199
+  tvdb_id: 102261
+182445:
+  tvdb_id: 358612
+  tvdb_mappings:
+    s5: e1-e10
+182469:
+  tmdb_show_id: 37854
+  tvdb_id: 81797
+  tvdb_mappings:
+    s0: e57
+182546:
+  tvdb_id: 74600
+  tvdb_mappings:
+    s0: e1
+182548:
+  tvdb_mappings:
+    s0: e7
+182920:
+  tvdb_mappings:
+    s16: e27-
+183161:
+  tvdb_mappings:
+    s1: e1-
+184369:
+  tvdb_id: 72454
+  tvdb_mappings:
+    s0: e80
+185643:
+  tvdb_id: 358138
+  tvdb_mappings:
+    s0: e9
+185644:
+  tvdb_id: 358138
+  tvdb_mappings:
+    s8: e1-e15
+186148:
+  tvdb_id: 431162
+  tvdb_mappings:
+    s0: e25-e48
+188037:
+  tvdb_id: 358138
+  tvdb_mappings:
+    s0: e1
+188941:
+  imdb_id: tt0400817
+  tmdb_movie_id: 763108
+189068:
+  tmdb_movie_id: 946967

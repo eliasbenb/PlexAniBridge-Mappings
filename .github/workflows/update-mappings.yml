@@ -8,7 +8,7 @@ on:
     paths:
       - '.github/workflows/**'
       - 'data/**'
-      - 'mappings.edits.json'
+      - 'mappings.edits.yaml'
       - 'requirements.txt'
       - 'update_mappings.py'
   pull_request:

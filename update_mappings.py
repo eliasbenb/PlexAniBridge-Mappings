@@ -9,6 +9,8 @@ from typing import Any, Self
 
 from lxml.html import HtmlElement
 from pydantic import BaseModel, Field, field_validator, model_validator
+from ruamel.yaml import YAML
+from ruamel.yaml.comments import CommentedMap
 
 if sys.version_info < (3, 11):
     print(
@@ -267,7 +269,7 @@ class ProblemEnum(StrEnum):
 
     EP_OVERFLOW = "AniList Episode Count Overflow (AniList > TVDB)"
     NEGATIVE_EP_OFFSET = "Negative Episode Offset"
-    REDUNDANT_EDIT = "Redundant Edit in mappings.edits.json"
+    REDUNDANT_EDIT = "Redundant Edit in mappings.edits.yaml"
     UNKNOWN_TVDB_SEASON = "Unknown TVDB Season"
     UNKNOWN_TVDB_EP_COUNT = "Unknown TVDB Episode Count"
     UNKNOWN_ANILIST_EP_COUNT = "Unknown AniList Episode Count"
@@ -308,14 +310,20 @@ class AnimeIDCollector:
         self.session: requests.Session = requests.Session()
         self.generated_on: str = datetime.now(UTC).strftime("%B %d, %Y %I:%M %p")
 
+        self.yaml = YAML()
+        self.yaml.preserve_quotes = True
+        self.yaml.map_indent = 2
+        self.yaml.sequence_indent = 4
+
         self.anilist_ep_counts: dict[int, int] = {}
         self.tvdb_ep_counts: dict[int, dict[str, int]] = {}
 
         self.anilist_entries: dict[int, AniMap] = {}
         self.anidb_entries: dict[int, AniMap] = {}
 
-        # Change from set to list to preserve order and allow duplicates with different details
         self.problematic: dict[int, set[Problem]] = {}
+
+        self.edits_yaml_content: CommentedMap | None = None
 
     def _setup_logger(self) -> logging.Logger:
         """Set up and configure the logger.
@@ -697,17 +705,27 @@ class AnimeIDCollector:
         from a local edits file.
         """
         self.logger.info("Scanning Anime ID Edits")
-        edits_path = self.base_dir / "mappings.edits.json"
+        edits_path = self.base_dir / "mappings.edits.yaml"
 
         if not edits_path.exists():
-            self.logger.warning("mappings.edits.json not found")
+            self.logger.warning("mappings.edits.yaml not found")
             return
 
         with edits_path.open("r") as f:
-            edits: dict[str, dict[str, Any]] = json.load(f)
+            self.edits_yaml_content = self.yaml.load(f)
+
+        if not isinstance(self.edits_yaml_content, dict):
+            self.logger.warning(
+                "mappings.edits.yaml does not contain a valid dictionary"
+            )
+            return
+
+        edits: dict[str, dict[str, Any]] = self.edits_yaml_content
 
         for anilist_id_str, fields in edits.items():
-            if anilist_id_str.startswith("$"):
+            if anilist_id_str is None or (
+                isinstance(anilist_id_str, str) and anilist_id_str.startswith("$")
+            ):
                 continue
             anilist_id = int(anilist_id_str)
 
@@ -732,7 +750,7 @@ class AnimeIDCollector:
                         self.problematic[anilist_id].add(
                             Problem(
                                 problem=ProblemEnum.REDUNDANT_EDIT,
-                                details=f"The value for `{key}` is already `{value}` and is redundant in 'mappings.edits.json' "
+                                details=f"The value for `{key}` is already `{value}` and is redundant in 'mappings.edits.yaml' "
                                 f"`{{anilist_id: {anilist_id_str}}}`",
                             )
                         )
@@ -879,13 +897,11 @@ class AnimeIDCollector:
             indent=2,
         )
 
-        edits_path = self.base_dir / "mappings.edits.json"
-        if edits_path.exists():
-            with edits_path.open("r") as f:
-                edits: dict[str, dict[str, Any]] = json.load(f)
-            edits.pop("$schema", None)
-            edits = {"$schema": self.SCHEMA_URL, **sort_value(edits)}
-            json.dump(edits, edits_path.open("w", newline="\n"), indent=2)
+        edits_path = self.base_dir / "mappings.edits.yaml"
+        if edits_path.exists() and self.edits_yaml_content is not None:
+            # Save the original structure with comments preserved
+            with edits_path.open("w", newline="\n") as f:
+                self.yaml.dump(self.edits_yaml_content, f)
 
     def update_readme(self) -> None:
         """
