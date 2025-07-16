@@ -1,0 +1,31 @@
+[project]
+name = "plexanibridge-mappings"
+version = "3.0.0"
+description = "PlexAniBridge Mappings Aggregator"
+readme = "README.md"
+requires-python = ">=3.13"
+
+authors = [
+    { name = "Elias Benbourenane", email = "eliasbenbourenane@gmail.com" }
+]
+maintainers = [
+    { name = "Elias Benbourenane", email = "eliasbenbourenane@gmail.com" },
+    { name = "LuceoEtzio" }
+]
+
+dependencies = [
+    "gitpython>=3.1.44",
+    "lxml>=6.0.0",
+    "pydantic>=2.11.7",
+    "requests>=2.32.4",
+    "ruamel-yaml>=0.18.14",
+]
+
+[project.urls]
+Homepage = "https://plexanibridge.elias.eu.org"
+Documentation = "https://plexanibridge.elias.eu.org"
+Source = "https://github.com/eliasbenb/PlexAniBridge-Mappings"
+Issues = "https://github.com/eliasbenb/PlexAniBridge-Mappings/issues"
+
+[tool.pyright]
+include = ["update_mappings.py"]
