@@ -114,8 +114,8 @@ The API is self documented with both [OpenAPI](https://plexanibridge-api.elias.e
 
 | Endpoint         | Method | Description                                           |
 | ---------------- | ------ | ----------------------------------------------------- |
-| `/api/v3/all`    | `GET`  | Returns all mappings in the `mappings.json` file.     |
-| `/api/v3/search` | `GET`  | Searches for all mappings that match any given ID(s). |
+| `/api/v2/all`    | `GET`  | Returns all mappings in the `mappings.json` file.     |
+| `/api/v2/search` | `GET`  | Searches for all mappings that match any given ID(s). |
 
 
 ## Contributing
