@@ -634,69 +634,65 @@ class AnimeIDCollector:
         params = {"query": query, "format": "json"}
         headers = {"Accept": "application/sparql-results+json"}
 
-        try:
-            response = self.session.get(endpoint_url, params=params, headers=headers)
-            response.raise_for_status()
-            results = response.json()
+        response = self.session.get(endpoint_url, params=params, headers=headers)
+        response.raise_for_status()
+        results = response.json()
 
-            for item in results.get("results", {}).get("bindings", []):
-                try:
-                    anilist_id = int(item["anilistId"]["value"])
-                except (KeyError, TypeError, ValueError):
-                    continue
+        for item in results.get("results", {}).get("bindings", []):
+            try:
+                anilist_id = int(item["anilistId"]["value"])
+            except (KeyError, TypeError, ValueError):
+                continue
 
-                ids: dict = {"anilist_id": anilist_id}
+            ids: dict = {"anilist_id": anilist_id}
 
-                try:
-                    ids["anidb_id"] = int(item["anidbId"]["value"])
-                except (KeyError, TypeError, ValueError):
-                    pass
-                try:
-                    ids["mal_id"] = int(item["malId"]["value"])
-                except (KeyError, TypeError, ValueError):
-                    pass
-                try:
-                    ids["imdb_id"] = item["imdbId"]["value"]
-                except (KeyError, TypeError, ValueError):
-                    pass
-                try:
-                    ids["tmdb_movie_id"] = int(item["tmdbMovieId"]["value"])
-                except (KeyError, TypeError, ValueError):
-                    pass
-                try:
-                    ids["tmdb_show_id"] = int(item["tmdbSeriesId"]["value"])
-                except (KeyError, TypeError, ValueError):
-                    pass
-                try:
-                    ids["tvdb_id"] = int(item["tvdbSeriesId"]["value"])
-                except (KeyError, TypeError, ValueError):
-                    pass
+            try:
+                ids["anidb_id"] = int(item["anidbId"]["value"])
+            except (KeyError, TypeError, ValueError):
+                pass
+            try:
+                ids["mal_id"] = int(item["malId"]["value"])
+            except (KeyError, TypeError, ValueError):
+                pass
+            try:
+                ids["imdb_id"] = item["imdbId"]["value"]
+            except (KeyError, TypeError, ValueError):
+                pass
+            try:
+                ids["tmdb_movie_id"] = int(item["tmdbMovieId"]["value"])
+            except (KeyError, TypeError, ValueError):
+                pass
+            try:
+                ids["tmdb_show_id"] = int(item["tmdbSeriesId"]["value"])
+            except (KeyError, TypeError, ValueError):
+                pass
+            try:
+                ids["tvdb_id"] = int(item["tvdbSeriesId"]["value"])
+            except (KeyError, TypeError, ValueError):
+                pass
 
-                entry = AniMap(**ids)
+            entry = AniMap(**ids)
 
-                if anilist_id in self.anilist_entries:
-                    existing_entry = self.anilist_entries[anilist_id]
-                    for key, value in ids.items():
-                        if not value:
-                            continue
-                        curr_value = getattr(existing_entry, key)
-                        if curr_value is None:
-                            setattr(existing_entry, key, value)
-                        elif isinstance(curr_value, list):
-                            if value not in curr_value:
-                                self.logger.debug(
-                                    f"Conflicting `{key}` for ID `{anilist_id}`, `{value} not in `{curr_value}`"
-                                )
-                        elif curr_value != value:
+            if anilist_id in self.anilist_entries:
+                existing_entry = self.anilist_entries[anilist_id]
+                for key, value in ids.items():
+                    if not value:
+                        continue
+                    curr_value = getattr(existing_entry, key)
+                    if curr_value is None:
+                        setattr(existing_entry, key, value)
+                    elif isinstance(curr_value, list):
+                        if value not in curr_value:
                             self.logger.debug(
-                                f"Conflicting `{key}` for ID `{anilist_id}`, `{value} != {curr_value}`"
+                                f"Conflicting `{key}` for ID `{anilist_id}`, `{value} not in `{curr_value}`"
                             )
-                else:
-                    self.anilist_entries[anilist_id] = entry
-                    self.problematic[anilist_id] = set()
-
-        except requests.RequestException as e:
-            self.logger.error(f"Error fetching data from Wikidata: {e}")
+                    elif curr_value != value:
+                        self.logger.debug(
+                            f"Conflicting `{key}` for ID `{anilist_id}`, `{value} != {curr_value}`"
+                        )
+            else:
+                self.anilist_entries[anilist_id] = entry
+                self.problematic[anilist_id] = set()
 
     def process_edits(self) -> None:
         """Process manual edits from mappings.edits.yaml.
