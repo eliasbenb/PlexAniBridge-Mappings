@@ -133,8 +133,7 @@ Find the AniList ID you want to correct, or add it if it's missing. Then, specif
 Let's say the automated script has incorrect `tvdb_id` and `tvdb_mappings` for AniList ID `12345`. You can correct it like this:
 
 ```yaml
-# Add or find the AniList ID at the root of the file.
-12345:
+12345: # Add or find the AniList ID at the root of the file.
   # Override the incorrect tvdb_id.
   tvdb_id: 98765
   # Provide the correct TVDB season-to-episode mapping.
@@ -144,6 +143,18 @@ Let's say the automated script has incorrect `tvdb_id` and `tvdb_mappings` for A
 ```
 
 The script will automatically apply these edits during its next run, and your changes will be reflected in `mappings.json`.
+
+**Writing Comments:**
+
+If you feel the need to explain your changes, you can add comments in the YAML file using the `#` symbol (not required for contributing). For example:
+
+```yaml
+12345: # This is a comment explaining why this mapping was changed.
+  # Another comment explaining the changes in more detail.
+  tvdb_id: 98765 # Corrected TVDB ID based on recent updates.
+```
+
+Make sure that your comments are **NOT** at the root level of the YAML file, as the script may not sort them correctly. Instead, place comments next to the specific fields you are editing or inside the mapping entry object in their own lines like in the example above.
 
 ## Acknowledgements
 
