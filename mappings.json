@@ -104370,9 +104370,7 @@
     "anidb_id": 19480,
     "mal_id": 59662,
     "tvdb_id": 423688,
-    "tvdb_mappings": {
-      "s2": ""
-    }
+    "tvdb_mappings": {}
   },
   "157693": {
     "anidb_id": 17734,
@@ -105420,7 +105418,7 @@
     "mal_id": 54633,
     "tvdb_id": 431703,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e4"
     }
   },
   "162209": {
@@ -112183,7 +112181,9 @@
     "anidb_id": 18722,
     "mal_id": 59177,
     "tvdb_id": 423075,
-    "tvdb_mappings": {}
+    "tvdb_mappings": {
+      "s2": ""
+    }
   },
   "178758": {
     "anidb_id": 18659,
@@ -114215,7 +114215,9 @@
     "anidb_id": 18984,
     "mal_id": 60285,
     "tvdb_id": 423732,
-    "tvdb_mappings": {}
+    "tvdb_mappings": {
+      "s1": "e12-e22"
+    }
   },
   "184279": {
     "anidb_id": 18985,
