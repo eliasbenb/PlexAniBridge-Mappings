@@ -1,6 +1,4 @@
 {
-  "title": "Anime ID Mappings",
-  "type": "object",
   "patternProperties": {
     "^[0-9]+$": {
       "description": "Model for storing anime ID mappings and related information.",
@@ -155,10 +153,12 @@
   },
   "properties": {
     "$includes": {
-      "type": "array",
       "items": {
         "type": "string"
-      }
+      },
+      "type": "array"
     }
-  }
+  },
+  "title": "Anime ID Mappings",
+  "type": "object"
 }

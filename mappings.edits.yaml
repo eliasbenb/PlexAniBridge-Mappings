@@ -8138,6 +8138,10 @@
   tvdb_id: 80470
   tvdb_mappings:
     s0: e4
+151799:
+  tvdb_id: 188551
+  tvdb_mappings:
+    s2: e1,e2-e3|-2,e4-e6|-3,e7-
 151896:
   tvdb_id: 281405
   tvdb_mappings:
@@ -8559,7 +8563,3 @@
   tmdb_movie_id: 763108
 189068:
   tmdb_movie_id: 946967
-151799:
-  tvdb_id: 188551
-  tvdb_mappings:
-    s2: e1,e2-e3|-2,e4-e6|-3,e7-
