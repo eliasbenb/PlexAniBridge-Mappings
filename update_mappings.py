@@ -29,6 +29,112 @@ except ImportError:
     sys.exit(1)
 
 
+class SerializationHandler:
+    """Elegant handler for YAML and JSON serialization with automatic sorting."""
+
+    def __init__(self):
+        self.yaml = YAML()
+        self.yaml.preserve_quotes = True
+        self.yaml.map_indent = 2
+        self.yaml.sequence_indent = 4
+        # Add custom representer for automatic sorting of regular dicts
+        self.yaml.representer.add_representer(dict, self._represent_sorted_dict)
+
+    @staticmethod
+    def sort_key(key: str | int) -> tuple:
+        """Universal sort key function for both YAML and JSON."""
+        if isinstance(key, str):
+            if key.startswith("$"):  # Special keys like $includes
+                return (-1, key)
+            if key.startswith("s") and key[1:].isdigit():  # Season keys like s1, s2
+                return (0, int(key[1:]))
+            if key.isdigit():  # Numeric string keys
+                return (1, int(key))
+        elif isinstance(key, int):
+            return (1, key)
+        return (2, str(key))  # Everything else sorted alphabetically
+
+    def _represent_sorted_dict(self, dumper, data):
+        """Custom representer that automatically sorts dictionary keys."""
+        return dumper.represent_mapping(
+            "tag:yaml.org,2002:map",
+            sorted(data.items(), key=lambda x: self.sort_key(x[0])),
+        )
+
+    def load_yaml(self, file_path: Path) -> Any:
+        """Load YAML file."""
+        with file_path.open("r") as f:
+            return self.yaml.load(f)
+
+    def save_yaml(self, data: Any, file_path: Path) -> None:
+        """Save YAML file with automatic sorting."""
+        # Sort the data recursively while preserving structure
+        sorted_data = self._sort_yaml_data(data)
+
+        with file_path.open("w", newline="\n") as f:
+            self.yaml.dump(sorted_data, f)
+
+    def _sort_yaml_data(self, data: Any) -> Any:
+        """Recursively sort YAML data while preserving CommentedMap structure."""
+        if isinstance(data, CommentedMap):
+            # Sort keys in place using move_to_end to preserve comments
+            sorted_keys = sorted(data.keys(), key=self.sort_key)
+            for key in sorted_keys:
+                data.move_to_end(key)
+
+            # Recursively sort nested structures
+            for key, value in data.items():
+                data[key] = self._sort_yaml_data(value)
+
+            return data
+        elif isinstance(data, dict):
+            # Regular dict - convert to sorted structure
+            return {
+                k: self._sort_yaml_data(v)
+                for k, v in sorted(data.items(), key=lambda x: self.sort_key(x[0]))
+            }
+        elif isinstance(data, list):
+            # Sort list contents recursively
+            return [self._sort_yaml_data(item) for item in data]
+        else:
+            return data
+
+    def save_json(self, data: Any, file_path: Path) -> None:
+        """Save JSON file with automatic sorting and formatting."""
+        encoder = SortingJSONEncoder()
+        with file_path.open("w", newline="\n") as f:
+            f.write(encoder.encode(data))
+
+
+class SortingJSONEncoder(json.JSONEncoder):
+    """Custom JSON encoder with automatic sorting and formatting."""
+
+    def __init__(self, **kwargs):
+        super().__init__(indent=2, **kwargs)
+
+    def encode(self, o):
+        """Override encode to apply sorting recursively."""
+        return super().encode(self._sort_recursively(o))
+
+    def _sort_recursively(self, obj: Any) -> Any:
+        """Recursively sort dictionaries and lists."""
+        if isinstance(obj, dict):
+            # Sort dictionary by keys using the same logic as YAML
+            sorted_dict = {}
+            for key in sorted(obj.keys(), key=SerializationHandler.sort_key):
+                sorted_dict[key] = self._sort_recursively(obj[key])
+            return sorted_dict
+        elif isinstance(obj, list):
+            # Sort lists of comparable items, otherwise preserve order
+            try:
+                return sorted([self._sort_recursively(item) for item in obj])
+            except TypeError:
+                # If items aren't comparable, just process them recursively
+                return [self._sort_recursively(item) for item in obj]
+        else:
+            return obj
+
+
 class TVDBMapping(BaseModel, validate_assignment=True):
     """Model for storing TVDB episode mappings to AniList episodes.
 
@@ -310,10 +416,7 @@ class AnimeIDCollector:
         self.session: requests.Session = requests.Session()
         self.generated_on: str = datetime.now(UTC).strftime("%B %d, %Y %I:%M %p")
 
-        self.yaml = YAML()
-        self.yaml.preserve_quotes = True
-        self.yaml.map_indent = 2
-        self.yaml.sequence_indent = 4
+        self.serializer = SerializationHandler()
 
         self.anilist_ep_counts: dict[int, int] = {}
         self.tvdb_ep_counts: dict[int, dict[str, int]] = {}
@@ -707,8 +810,7 @@ class AnimeIDCollector:
             self.logger.warning("mappings.edits.yaml not found")
             return
 
-        with edits_path.open("r") as f:
-            self.edits_yaml_content = self.yaml.load(f)
+        self.edits_yaml_content = self.serializer.load_yaml(edits_path)
 
         if not isinstance(self.edits_yaml_content, dict):
             self.logger.warning(
@@ -846,58 +948,34 @@ class AnimeIDCollector:
 
     def save_results(self) -> None:
         """Save processed anime entries to JSON file, organized by AniList ID."""
-
-        def sort_value(v: Any) -> Any:
-            if isinstance(v, dict):
-
-                def key_sort(k: str) -> tuple:
-                    if isinstance(k, str):
-                        if k.startswith("s") and k[1:].isdigit():
-                            return (0, int(k[1:]))
-                        if k.isdigit():
-                            return (1, int(k))
-                    return (2, k)
-
-                return {
-                    k: sort_value(v)
-                    for k, v in sorted(v.items(), key=lambda x: key_sort(x[0]))
-                }
-            return sorted(map(sort_value, v)) if isinstance(v, list) else v
-
+        # Generate and save schema
         schema = {
             "title": "Anime ID Mappings",
             "type": "object",
             "patternProperties": {"^[0-9]+$": AniMap.model_json_schema()},
             "properties": {"$includes": {"type": "array", "items": {"type": "string"}}},
         }
-        json.dump(
-            schema,
-            (self.base_dir / "mappings.schema.json").open("w", newline="\n"),
-            indent=2,
-        )
+        self.serializer.save_json(schema, self.base_dir / "mappings.schema.json")
 
+        # Merge entries
         if self.anidb_entries:
             self.anilist_entries.update(
                 {e.anilist_id: e for e in self.anidb_entries.values() if e.anilist_id}
             )
 
+        # Prepare output data
         output_dict = {
-            str(id): sort_value(
-                entry.model_dump(exclude={"anilist_id"}, exclude_none=True)
-            )
-            for id, entry in sorted(self.anilist_entries.items())
+            str(id): entry.model_dump(exclude={"anilist_id"}, exclude_none=True)
+            for id, entry in self.anilist_entries.items()
         }
-        json.dump(
-            output_dict,
-            (self.base_dir / "mappings.json").open("w", newline="\n"),
-            indent=2,
-        )
 
+        # Save JSON with automatic sorting
+        self.serializer.save_json(output_dict, self.base_dir / "mappings.json")
+
+        # Save YAML edits with automatic sorting (if they exist)
         edits_path = self.base_dir / "mappings.edits.yaml"
         if edits_path.exists() and self.edits_yaml_content is not None:
-            # Save the original structure with comments preserved
-            with edits_path.open("w", newline="\n") as f:
-                self.yaml.dump(self.edits_yaml_content, f)
+            self.serializer.save_yaml(self.edits_yaml_content, edits_path)
 
     def update_readme(self) -> None:
         """
