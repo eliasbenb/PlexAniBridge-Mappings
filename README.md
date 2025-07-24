@@ -84,14 +84,15 @@ This object defines the episode and season mappings between AniList and TVDB. Th
   * `e{start}`: The starting episode number of a range on TVDB.
   * `e{end}`: The ending episode number. If omitted (e.g., `e13-`), the range is open-ended.
   * `|{ratio}` (optional): A multiplier to handle different episode granularities.
-      * **Positive Ratio (e.g., `|2`)**: 1 TVDB episode is equivalent to 2 AniList episodes.
-      * **Negative Ratio (e.g., `|-2`)**: 2 TVDB episodes are equivalent to 1 AniList episode.
+      * **Positive Ratio (e.g., `|2`)**: 2 TVDB episodes are equivalent to 1 AniList episode.
+      * **Negative Ratio (e.g., `|-2`)**: 1 TVDB episode is equivalent to 2 AniList episodes.
 
 **Examples:**
 
 ```js
-// Maps Season 1 episodes 1-12. The |2 ratio means that every TVDB episode
-// in this range corresponds to 2 episodes on AniList.
+// Maps Season 1 episodes 1-12. The |2 ratio means that every 2 TVDB episodes
+// in this range correspond to 1 episode on AniList. Ranges must be divisible
+// by the ratio when positive.
 "s1": "e1-e12|2"
 
 // Maps all episodes in Season 2 starting from episode 13 onwards.
@@ -102,7 +103,7 @@ This object defines the episode and season mappings between AniList and TVDB. Th
 "s1": ""
 
 // Maps TVDB Season 1, episodes 4 through 6. The |-2 ratio means that
-// every 2 TVDB episodes in this range correspond to 1 episode on AniList.
+// every TVDB episode in this range corresponds to 2 episodes on AniList.
 "s1": "e4-e6|-2"
 ```
 
