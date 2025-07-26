@@ -49010,10 +49010,12 @@
   },
   "15863": {
     "anidb_id": 9452,
+    "imdb_id": "tt2703708",
     "mal_id": [
       15863,
       33024
     ],
+    "tmdb_show_id": 53724,
     "tvdb_id": 268284,
     "tvdb_mappings": {
       "s1": ""
