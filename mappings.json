@@ -6975,7 +6975,7 @@
     "tmdb_show_id": 34205,
     "tvdb_id": 107441,
     "tvdb_mappings": {
-      "s1": "e1-e12"
+      "s1": ""
     }
   },
   "777": {
@@ -113949,7 +113949,9 @@
     "mal_id": 60131,
     "tmdb_show_id": 274546,
     "tvdb_id": 455604,
-    "tvdb_mappings": {}
+    "tvdb_mappings": {
+      "s1": ""
+    }
   },
   "183128": {
     "anidb_id": 18930,
@@ -113957,7 +113959,9 @@
     "mal_id": 60130,
     "tmdb_show_id": 274548,
     "tvdb_id": 455605,
-    "tvdb_mappings": {}
+    "tvdb_mappings": {
+      "s1": ""
+    }
   },
   "183133": {
     "anidb_id": 18931,
