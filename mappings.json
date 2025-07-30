@@ -7334,7 +7334,6 @@
     "imdb_id": "tt7941838",
     "mal_id": 821,
     "tmdb_movie_id": 327796,
-    "tmdb_show_id": 40424,
     "tvdb_id": 70900,
     "tvdb_mappings": {
       "s0": "e3"
@@ -47928,6 +47927,7 @@
     "anidb_id": 9306,
     "imdb_id": "tt3124992",
     "mal_id": 14751,
+    "tmdb_show_id": 61339,
     "tvdb_id": 275039,
     "tvdb_mappings": {
       "s1": "e1-e14",
@@ -114452,7 +114452,8 @@
   "184951": {
     "anidb_id": 19010,
     "imdb_id": "tt36034547",
-    "mal_id": 60371
+    "mal_id": 60371,
+    "tmdb_show_id": 278043
   },
   "184982": {
     "anidb_id": 6883,
