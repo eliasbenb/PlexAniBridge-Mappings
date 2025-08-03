@@ -8431,6 +8431,11 @@
   tvdb_id: 344220
   tvdb_mappings:
     s0: e10
+173335:
+  tvdb_mappings:
+    # anilist entry contains episode 0
+    s0: e1
+    s1: e1-e12
 173533:
   tmdb_show_id: 46195
 173824:
