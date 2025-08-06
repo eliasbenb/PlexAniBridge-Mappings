@@ -8258,6 +8258,8 @@
   tvdb_id: 275039
   tvdb_mappings:
     s0: e5
+161410:
+  tvdb_mappings: # unaired and incorrectly mapped, correct when aired
 162291:
   tvdb_id: 284131
   tvdb_mappings:
@@ -8495,6 +8497,10 @@
 178729:
   tvdb_mappings:
     s1: e14-e26
+179706:
+  tvdb_id: 414057
+  tvdb_mappings:
+    s0: e5-e10
 179852:
   tvdb_id: 80470
   tvdb_mappings:
