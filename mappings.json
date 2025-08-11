@@ -658,7 +658,7 @@
     "tmdb_show_id": 34065,
     "tvdb_id": 78987,
     "tvdb_mappings": {
-      "s1": "e1-e23"
+      "s1": ""
     }
   },
   "69": {
@@ -104401,7 +104401,9 @@
     "mal_id": 59662,
     "tmdb_show_id": 107255,
     "tvdb_id": 423688,
-    "tvdb_mappings": {}
+    "tvdb_mappings": {
+      "s2": ""
+    }
   },
   "157693": {
     "anidb_id": 17734,
