@@ -2090,6 +2090,10 @@
 3287:
   imdb_id: tt4085894
   tmdb_movie_id: 351512
+3290:
+  tvdb_mappings:
+    s0: e2-e4
+    s1: e1-e23
 3318:
   tvdb_mappings:
     s0: e11-e14
@@ -2348,6 +2352,10 @@
     s3: e1-e13
 4382:
   tvdb_mappings: # explicitly left blank, do not change
+4420:
+  tvdb_id: 381505
+  tvdb_mappings:
+    s0: e1
 4437:
   tvdb_mappings:
     s0: e2
