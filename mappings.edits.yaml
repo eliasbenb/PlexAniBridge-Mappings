@@ -314,6 +314,10 @@
 418:
   tvdb_mappings:
     s0: e1
+420:
+  tvdb_id: 385812
+  tvdb_mappings:
+    s0: e1
 422:
   tvdb_mappings:
     s0: e2-e3
@@ -327,6 +331,8 @@
 429:
   tvdb_mappings:
     s0: e2
+433:
+  tvdb_id: # intentionally left blank
 435:
   tvdb_mappings:
     s1: e1-e20
@@ -693,6 +699,8 @@
     s2: e1-e35
     s3: e1-e25
     s4: e1-e27
+974:
+  tvdb_id: # intentionally left blank
 979:
   tvdb_mappings:
     s0: e3
@@ -5409,6 +5417,8 @@
 20928:
   tvdb_mappings:
     s11: e1-e13
+20932:
+  tvdb_id: # intentionally left blank
 20936:
   tvdb_mappings:
     s0: e1
@@ -8700,6 +8710,7 @@
   tvdb_mappings:
     s0: e3
 171630:
+  tvdb_id: 464521
   tvdb_mappings:
     s1: e1-
 171760:
