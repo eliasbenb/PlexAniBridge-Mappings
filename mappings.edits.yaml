@@ -3738,7 +3738,6 @@
   tvdb_mappings:
     s0: e2
 9793:
-  tvdb_id: 87851
   tvdb_mappings:
     s0: e11-e12
 9794:
@@ -4123,7 +4122,7 @@
   tvdb_mappings:
     s0: e1
 10804:
-  tvdb_id:
+  tvdb_id: 249870
   tvdb_mappings:
     s0: e1
 10805:
@@ -6564,7 +6563,6 @@
   tvdb_mappings:
     s0: e36
 87480:
-  tvdb_id: 295897
   tvdb_mappings:
     s0: e14-e20
 87486:
@@ -6750,7 +6748,6 @@
   tvdb_mappings:
     s0: e10-e16
 98344:
-  tvdb_id: 267437
   tvdb_mappings:
     s0: e7
 98378:
@@ -9170,9 +9167,6 @@
   tvdb_id: 384778
   tvdb_mappings:
     s0: e1-e12
-154525:
-  tvdb_mappings:
-    s0: e4-e5
 154678:
   tvdb_id: 414107
   tvdb_mappings:
