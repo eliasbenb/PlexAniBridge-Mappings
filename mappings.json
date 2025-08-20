@@ -85579,11 +85579,7 @@
   "116756": {
     "anidb_id": 15461,
     "imdb_id": "tt12007484",
-    "mal_id": 41497,
-    "tvdb_id": 353666,
-    "tvdb_mappings": {
-      "s0": "e9"
-    }
+    "mal_id": 41497
   },
   "116780": {
     "mal_id": 41768
@@ -86397,7 +86393,10 @@
     "imdb_id": "tt15447298",
     "mal_id": 44042,
     "tmdb_show_id": 122522,
-    "tvdb_id": 400547
+    "tvdb_id": 400547,
+    "tvdb_mappings": {
+      "s1": ""
+    }
   },
   "118124": {
     "anidb_id": 14072,
@@ -96504,7 +96503,9 @@
     "mal_id": 49842,
     "tmdb_movie_id": 997086,
     "tvdb_id": 371437,
-    "tvdb_mappings": {}
+    "tvdb_mappings": {
+      "s0": "e20"
+    }
   },
   "139363": {
     "mal_id": 36812
