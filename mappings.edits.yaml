@@ -75,6 +75,9 @@
 72:
   tvdb_mappings:
     s2: e1-e12
+75:
+  tvdb_mappings:
+    s1: e1-e24,e25-e26|2
 83:
   tvdb_mappings:
     s0: e1
@@ -308,6 +311,9 @@
   tvdb_id: 78916
   tvdb_mappings:
     s2: e1-e13
+400:
+  tvdb_mappings:
+    s1: e1-e15,e17-e22,e24-e26
 401:
   tvdb_mappings:
     s0: e6-e7
@@ -2189,6 +2195,10 @@
     s0: e3
 3391:
   tvdb_id: 356233
+3392:
+  tvdb_id: 159551
+  tvdb_mappings:
+    s1: e26
 3394:
   tvdb_mappings:
     s0: e1
@@ -2378,6 +2388,10 @@
     s0: e5
 4081:
   tmdb_show_id: 69500
+4082:
+  tvdb_id: 81877
+  tvdb_mappings:
+    s1: e26
 4097:
   imdb_id: tt10125674
 4099:
@@ -2486,6 +2500,10 @@
 4565:
   tvdb_mappings:
     s0: e4
+4650:
+  tvdb_id: 75911
+  tvdb_mappings:
+    s0: e1
 4664:
   tvdb_id: 70863
   tvdb_mappings:
@@ -2500,6 +2518,10 @@
   tvdb_id: 339733
   tvdb_mappings:
     s0: e3
+4715:
+  tvdb_id: 81807
+  tvdb_mappings:
+    s1: e13
 4772:
   tvdb_id: 79839
   tvdb_mappings:
@@ -4639,6 +4661,10 @@
 15963:
   tvdb_mappings:
     s0: e2
+15989:
+  tvdb_id: 87841
+  tvdb_mappings:
+    s2: e13-e16
 16001:
   imdb_id: tt2250034
   tmdb_show_id: 45807
@@ -5082,6 +5108,10 @@
   tvdb_id: 81073
   tvdb_mappings:
     s0: e19-e21
+20472:
+  tvdb_id: 267705
+  tvdb_mappings:
+    s1: e13
 20478:
   tmdb_show_id: 69500
   tvdb_mappings:
@@ -5683,8 +5713,8 @@
     s0: e13-e21
 21175:
   tvdb_mappings:
-    s1: e1-e13
-    s2: e1-e14
+    s1: e1-e14
+    s2: e1-e13
     s3: e1-e19
     s4: e1-e30
     s5: e1-e55
@@ -5897,6 +5927,10 @@
   tvdb_id: 289884
   tvdb_mappings:
     s0: e8
+21384:
+  tvdb_id: 145211
+  tvdb_mappings:
+    s3: e14
 21386:
   tvdb_mappings:
     s0: e1
@@ -7105,6 +7139,10 @@
     s4: e1-e8
     s5: e1-e10
     s6: e1-e6
+102401:
+  tvdb_id: 75911
+  tvdb_mappings:
+    s1: e16,e23
 102427:
   tvdb_mappings:
     s1: e1-e6
@@ -8739,6 +8777,10 @@
   tvdb_mappings:
     s2: e1,e2-e3|2,e4-e12|3,e13-
       # TVDB is split by segment, the episodes have different numbers of segments
+151803:
+  tvdb_id: 246381
+  tvdb_mappings:
+    s2: e14-e25
 151896:
   tvdb_id: 281405
   tvdb_mappings:
@@ -8907,6 +8949,10 @@
   tvdb_id: 413522
   tvdb_mappings:
     s0: e2
+165356:
+  tvdb_id: 393810
+  tvdb_mappings:
+    s2: e11-e15
 165557:
   tvdb_id: 354198
   tvdb_mappings:
