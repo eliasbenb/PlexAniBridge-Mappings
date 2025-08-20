@@ -5531,8 +5531,22 @@
     s0: e3
 21069:
   imdb_id: tt6768710
+  tvdb_id: 259863
+  tvdb_mappings:
+    s5: e4
+21070:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s5: e2
 21071:
   imdb_id: tt6479836
+  tvdb_id: 259863
+  tvdb_mappings:
+    s5: e1
+21072:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s5: e3
 21075:
   tvdb_mappings:
     s0: e1
@@ -5825,6 +5839,22 @@
   tvdb_mappings:
     s0: 
       e1-e4,e6-e10,e12-e16,e18-e22,e24-e28,e30-e34,e36-e40,e42-e46,e48-e52,e54-e58,e60-e64,e66-e70,e72
+21395:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s6: e3
+21396:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s6: e4
+21397:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s6: e1
+21398:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s6: e2
 21399:
   tvdb_id: 102261
   tvdb_mappings:
@@ -6113,8 +6143,23 @@
 21839:
   tvdb_mappings:
     s2: e1-e12
+21843:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s7: e4
+21844:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s7: e2
+21845:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s7: e3
 21846:
   imdb_id: tt28833138
+  tvdb_id: 259863
+  tvdb_mappings:
+    s7: e1
 21847:
   tvdb_id: 111011
   tvdb_mappings:
@@ -6635,6 +6680,22 @@
 100353:
   tvdb_mappings:
     s0: e7
+100358:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s8: e1
+100359:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s8: e2
+100360:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s8: e3
+100361:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s8: e4
 100451:
   imdb_id: tt10736506
   tvdb_mappings:
@@ -7286,6 +7347,22 @@
   tvdb_id: 83322
   tvdb_mappings:
     s0: e7-e8
+107857:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s9: e4
+107858:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s9: e3
+107859:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s9: e1
+107860:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s9: e2
 107881:
   tvdb_id: 344222
   tvdb_mappings:
@@ -7621,6 +7698,18 @@
   tvdb_id: 76547
   tvdb_mappings:
     s0: e14
+114945:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s10: e2
+114946:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s10: e3
+114948:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s10: e1
 114981:
   tvdb_id: 330692
   tvdb_mappings:
@@ -7978,6 +8067,10 @@
 130777:
   tvdb_mappings:
     s2: e1-e50
+130846:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s11: e3
 131045:
   tvdb_mappings:
     s0: e1
@@ -8086,6 +8179,18 @@
   tvdb_id: 400245
   tvdb_mappings:
     s0: e1-e3
+136138:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s11: e2
+136139:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s11: e1
+136140:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s11: e4
 136145:
   tvdb_id: 402033
   tvdb_mappings:
@@ -8547,10 +8652,26 @@
 155735:
   tvdb_mappings:
     s0: e6-e7
+155736:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s12: e3
 155739:
   tvdb_id: 71634
   tvdb_mappings:
     s0: e4
+155910:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s12: e1
+155911:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s12: e4
+155913:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s12: e2
 156001:
   tvdb_id: 407520
   tvdb_mappings:
@@ -8822,6 +8943,10 @@
   tvdb_id: 76665
   tvdb_mappings:
     s0: e5
+176881:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s13: e1
 177007:
   tvdb_id: 330692
   tvdb_mappings:
@@ -8927,6 +9052,18 @@
   tvdb_id: 72454
   tvdb_mappings:
     s0: e80
+184373:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s14: e2
+184757:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s13: e3
+184758:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s13: e4
 185643:
   tvdb_id: 358138
   tvdb_mappings:
@@ -8935,6 +9072,34 @@
   tvdb_id: 358138
   tvdb_mappings:
     s8: e1-e15
+185888:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s14: e3
+185889:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s14: e1
+185890:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s14: e4
+185898:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s15: e3
+185900:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s15: e2
+185901:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s15: e1
+185903:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s15: e4
 186148:
   tvdb_id: 431162
   tvdb_mappings:
@@ -8954,3 +9119,7 @@
   tvdb_id: 462022
   tvdb_mappings:
     s1: e1-e12
+191981:
+  tvdb_id: 259863
+  tvdb_mappings:
+    s13: e2
