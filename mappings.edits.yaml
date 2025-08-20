@@ -7633,6 +7633,9 @@
   tvdb_id: 320002
   tvdb_mappings:
     s0: e5
+116756:
+  tvdb_id:
+  tvdb_mappings: # intentionally left blank, was removed from tvdb
 116793:
   tvdb_id: 128411
   tvdb_mappings:
@@ -7670,6 +7673,9 @@
   tvdb_id: 320002
   tvdb_mappings:
     s0: e6
+118123:
+  tvdb_mappings:
+    s1: e1-
 118126:
   tvdb_id: 304475
   tvdb_mappings:
@@ -8139,6 +8145,9 @@
   tvdb_id: 76547
   tvdb_mappings:
     s0: e12
+139359:
+  tvdb_mappings:
+    s0: e20
 139409:
   tmdb_show_id: 106055
   tvdb_id: 400512
