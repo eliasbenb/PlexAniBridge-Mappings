@@ -111304,7 +111304,9 @@
     "imdb_id": "tt36987898",
     "mal_id": 58749,
     "tvdb_id": 411800,
-    "tvdb_mappings": {}
+    "tvdb_mappings": {
+      "s3": "e1-e10"
+    }
   },
   "177177": {
     "mal_id": 58751
