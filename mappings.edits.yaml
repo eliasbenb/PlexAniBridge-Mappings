@@ -1444,7 +1444,7 @@
     s0: e1
 1856:
   tvdb_mappings:
-    s0: e5|-2,e6-e10
+    s0: e4|-2,e5-e10
 1861:
   imdb_id: tt4086028
 1862:
@@ -3806,6 +3806,9 @@
 9047:
   tvdb_mappings:
     s0: e4
+9055:
+  tvdb_mappings:
+    s0: e1,e3,e8-e9
 9062:
   tmdb_show_id: 42942
   tvdb_id: 150471
@@ -6854,7 +6857,7 @@
 21447:
   tvdb_id: 275634
   tvdb_mappings:
-    s0: e10
+    s0: e10|-2
 21449:
   imdb_id: tt6608166
 21452:
@@ -10650,7 +10653,7 @@
 170661:
   tvdb_id: 429896
   tvdb_mappings:
-    s0: e1-e2|2
+    s0: e1-e2
 170893:
   tvdb_id: 368364
   tvdb_mappings:
