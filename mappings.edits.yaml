@@ -11139,6 +11139,7 @@
   tmdb_movie_id: 1189199
   tvdb_id: 102261
   tvdb_mappings:
+    # not currently in the Aired Order, do not add until it is
 182206:
   tmdb_movie_id: 1363974
 182317:
@@ -11147,7 +11148,6 @@
   tvdb_id: 305089
   tvdb_mappings:
     s0: e55-e70
-    # not currently in the Aired Order, do not add until it is
 182445:
   tvdb_id: 358612
   tvdb_mappings:
