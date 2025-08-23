@@ -20004,7 +20004,8 @@
     "imdb_id": "tt6878328",
     "mal_id": 2545,
     "tmdb_movie_id": 462950,
-    "tmdb_show_id": 96615
+    "tmdb_show_id": 96615,
+    "tvdb_id": 274382
   },
   "2546": {
     "anidb_id": 2300,
@@ -104258,7 +104259,7 @@
     "tmdb_show_id": 246862,
     "tvdb_id": 188551,
     "tvdb_mappings": {
-      "s2": "e1,e2-e3|2,e4-e12|3,e13-"
+      "s2": "e1,e2-e3|2,e4-e12|3,e13,e14-e15|2,e16-"
     }
   },
   "151801": {
