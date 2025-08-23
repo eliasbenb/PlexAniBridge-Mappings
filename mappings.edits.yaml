@@ -10495,7 +10495,7 @@
 151799:
   tvdb_id: 188551
   tvdb_mappings:
-    s2: e1,e2-e3|2,e4-e12|3,e13-
+    s2: e1,e2-e3|2,e4-e12|3,e13,e14-e15|2,e16-
       # TVDB is split by segment, the episodes have different numbers of segments
 151803:
   tvdb_id: 246381
