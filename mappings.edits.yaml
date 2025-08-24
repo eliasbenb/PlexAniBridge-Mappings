@@ -7947,7 +7947,7 @@
 99883:
   tvdb_id: 88161
   tvdb_mappings:
-    s0: e9-e11
+    s0: e9-e10,e11-e12|2
 99894:
   anidb_id: 13402
   mal_id: 36198
@@ -9826,7 +9826,6 @@
   tvdb_id: 346931
   tvdb_mappings:
     s0: e8
-
 131045:
   tvdb_mappings:
     s0: e1
@@ -10752,6 +10751,10 @@
   tvdb_id: 245821
   tvdb_mappings:
     s16: e14-e26
+165749:
+  tvdb_id: 79064
+  tvdb_mappings:
+    s2: e1-e6
 166060:
   tmdb_show_id: 30983
   tvdb_id: 72454
