@@ -940,7 +940,7 @@
       94,
       2743
     ],
-    "tmdb_show_id": 283589,
+    "tmdb_show_id": 294728,
     "tvdb_id": 74890,
     "tvdb_mappings": {
       "s1": ""
@@ -47467,10 +47467,12 @@
   },
   "13349": {
     "anidb_id": 9078,
+    "imdb_id": "tt2266670",
     "mal_id": [
       13349,
       16119
     ],
+    "tmdb_show_id": 45192,
     "tvdb_id": 259637,
     "tvdb_mappings": {
       "s1": ""
@@ -70898,9 +70900,7 @@
   },
   "100500": {
     "anidb_id": 13564,
-    "imdb_id": "tt8228732",
     "mal_id": 36754,
-    "tmdb_show_id": 78483,
     "tvdb_id": 339922,
     "tvdb_mappings": {
       "s1": ""
@@ -102404,9 +102404,7 @@
   },
   "146850": {
     "anidb_id": 17290,
-    "imdb_id": "tt19223420",
     "mal_id": 51462,
-    "tmdb_show_id": 196285,
     "tvdb_id": 418367,
     "tvdb_mappings": {
       "s1": ""
@@ -107584,7 +107582,6 @@
     "anidb_id": 17873,
     "imdb_id": "tt29716957",
     "mal_id": 54565,
-    "tmdb_show_id": 284397,
     "tvdb_id": 352408,
     "tvdb_mappings": {
       "s0": "e10-e12"
