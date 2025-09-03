@@ -60320,6 +60320,7 @@
       30355,
       31909
     ],
+    "tmdb_show_id": 63627,
     "tvdb_id": 293775,
     "tvdb_mappings": {
       "s1": ""
@@ -115906,7 +115907,6 @@
     "imdb_id": "tt33384612",
     "mal_id": 59848,
     "tmdb_movie_id": 1360829,
-    "tmdb_show_id": 271604,
     "tvdb_mappings": {
       "s1": "e1"
     }
@@ -117377,7 +117377,8 @@
   "185773": {
     "anidb_id": 19073,
     "imdb_id": "tt35114460",
-    "mal_id": 60610
+    "mal_id": 60610,
+    "tmdb_movie_id": 1406657
   },
   "185776": {
     "mal_id": 58968
