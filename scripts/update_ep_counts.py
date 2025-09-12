@@ -12,17 +12,24 @@ SKYHOOK_API_URL = "http://skyhook.sonarr.tv/v1/tvdb/shows/en"
 
 
 def create_batch_queries_anilist(
-    ids: list[str | int], batch_size: int = 250
-) -> list[str]:
+    ids: list[str | int], batch_size: int = 50
+) -> list[tuple[str, dict]]:
+    """Create batch queries for getting episode counts from AniList"""
     batches = []
     for i in range(0, len(ids), batch_size):
-        batch = ids[i : i + batch_size]
-        query = f"""
-query {{
-{"\n".join([f"    a{k}: Media(id: {k}) {{episodes}}" for k in batch])}
-}}
-            """
-        batches.append(query)
+        batch = [int(id_) for id_ in ids[i : i + batch_size]]
+        query = """
+        query($ids: [Int]) {
+            Page {
+                    media(id_in: $ids) {
+                    id
+                    episodes
+                }
+            }
+        }
+        """
+        variables = {"ids": batch}
+        batches.append((query, variables))
     return batches
 
 
@@ -83,16 +90,21 @@ def process_tvdb_id(tvdb_id: int | str) -> tuple[str, dict]:
 
 
 def update_anilist_counts(wanted_anilist: list[int | str]):
-    """Update AniList episode counts"""
+    """Update AniList episode counts using improved query method"""
     print("Updating AniList episode counts...")
     episode_counts_anilist: dict[str, int] = {}
     batch_queries_anilist = create_batch_queries_anilist(wanted_anilist)
-    for i, query in enumerate(batch_queries_anilist):
+
+    for i, (query, variables) in enumerate(batch_queries_anilist):
         print(f"Executing AniList batch {i + 1}/{len(batch_queries_anilist)}")
-        response = make_request_anilist(query)
-        data: dict[str, dict[str, dict[str, int]]] = response.get("data", {})
-        for k, v in data.items():
-            episode_counts_anilist[k.lstrip("a")] = v.get("episodes")
+        response = make_request_anilist(query, variables)
+
+        page_data = response.get("data", {}).get("Page", {})
+        media_list = page_data.get("media", [])
+
+        for media in media_list:
+            if media and media.get("id"):
+                episode_counts_anilist[str(media["id"])] = media.get("episodes")
 
     sorted_episode_counts_anilist = {
         k: episode_counts_anilist[k]
