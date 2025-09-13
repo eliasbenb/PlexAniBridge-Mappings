@@ -3439,9 +3439,6 @@
   tvdb_id: 80904
   tvdb_mappings:
     s0: e3
-6791:
-  tvdb_mappings:
-    s0: e14-e15
 6793:
   tmdb_show_id: 50712
   tvdb_id: 83996
@@ -9265,9 +9262,6 @@
   tvdb_id: 353666
   tvdb_mappings:
     s0: e5
-111048:
-  tvdb_mappings:
-    s1: e13-e24
 111137:
   tmdb_movie_id:
   -   699115
@@ -10094,7 +10088,6 @@
   tvdb_mappings:
     s0: e61
 133898:
-  tmdb_movie_id: 610150
   tvdb_id: 295068
   tvdb_mappings:
     s0: e4
@@ -11433,7 +11426,6 @@
   tvdb_mappings:
     s0: e66
 191974:
-  tvdb_id: 462022
   tvdb_mappings:
     s1: e1-e12
 191981:
