@@ -7369,7 +7369,7 @@
     "tmdb_show_id": 18960,
     "tvdb_id": 84957,
     "tvdb_mappings": {
-      "s1": "e1-e6"
+      "s1": ""
     }
   },
   "817": {
@@ -104677,7 +104677,6 @@
     "anidb_id": 17550,
     "imdb_id": "tt21975436",
     "mal_id": 52588,
-    "tmdb_show_id": 207468,
     "tvdb_id": 423075,
     "tvdb_mappings": {
       "s1": ""
@@ -116018,7 +116017,6 @@
   },
   "181449": {
     "anidb_id": 18866,
-    "imdb_id": "tt33384612",
     "mal_id": 59848,
     "tmdb_movie_id": 1360829,
     "tvdb_mappings": {
@@ -117944,7 +117942,9 @@
     "mal_id": 60506,
     "tmdb_show_id": 286426,
     "tvdb_id": 457737,
-    "tvdb_mappings": {}
+    "tvdb_mappings": {
+      "s1": ""
+    }
   },
   "186524": {
     "anidb_id": 19141,
@@ -118783,7 +118783,7 @@
     "mal_id": 61339,
     "tvdb_id": 368364,
     "tvdb_mappings": {
-      "s2": "e13-"
+      "s2": "e13-e24"
     }
   },
   "189383": {
