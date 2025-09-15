@@ -1,3 +1,7 @@
+"""Script to update and manage anime ID mappings from various sources."""
+
+import contextlib
+import itertools
 import json
 import logging
 import re
@@ -12,14 +16,6 @@ from pydantic import BaseModel, Field, field_validator, model_validator
 from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap
 
-if sys.version_info < (3, 11):
-    print(
-        f"Version Error: Version: {sys.version_info.major}.{sys.version_info.minor}.{
-            sys.version_info.micro
-        } incompatible please use Python 3.11+"
-    )
-    sys.exit(1)
-
 try:
     import requests
     from git import Repo
@@ -32,7 +28,8 @@ except ImportError:
 class SerializationHandler:
     """Elegant handler for YAML and JSON serialization with automatic sorting."""
 
-    def __init__(self):
+    def __init__(self) -> None:
+        """Initialize the SerializationHandler with YAML settings."""
         self.yaml = YAML()
         self.yaml.preserve_quotes = True
         self.yaml.map_indent = 2
@@ -109,7 +106,8 @@ class SerializationHandler:
 class SortingJSONEncoder(json.JSONEncoder):
     """Custom JSON encoder with automatic sorting and formatting."""
 
-    def __init__(self, **kwargs):
+    def __init__(self, **kwargs) -> None:
+        """Initialize the SortingJSONEncoder with indent settings."""
         super().__init__(indent=2, **kwargs)
 
     def encode(self, o):
@@ -148,11 +146,17 @@ class TVDBMapping(BaseModel, validate_assignment=True):
     end: int | None = Field(
         default=None,
         gt=0,
-        description="End of the episode range in the mapping. None indicates an open-ended range.",
+        description=(
+            "End of the episode range in the mapping. None indicates an open-ended "
+            "range."
+        ),
     )
     ratio: int = Field(
         default=1,
-        description="The 'worth' of each episode in the range. Positive values indicate that 1 TVDB episode corresponds to N AniList episodes, while negative values indicate that N TVDB episodes correspond to 1 AniList episode.",
+        description="The 'worth' of each episode in the range. Positive values "
+        "indicate that 1 TVDB episode corresponds to N AniList episodes, while "
+        "negative values indicate that N TVDB episodes correspond to 1 AniList "
+        "episode.",
     )
 
     @staticmethod
@@ -165,7 +169,7 @@ class TVDBMapping(BaseModel, validate_assignment=True):
         )
         return any(
             curr.end is None or curr.end >= next_range.start
-            for curr, next_range in zip(sorted_ranges, sorted_ranges[1:])
+            for curr, next_range in itertools.pairwise(sorted_ranges)
         )
 
     @classmethod
@@ -174,14 +178,16 @@ class TVDBMapping(BaseModel, validate_assignment=True):
 
         Args:
             season (int): Season number
-            s (str): Pattern string in format 'e{start}-e{end}|{ratio},e{start2}-e{end2}|{ratio2}'
+            s (str): Pattern string in format
+                'e{start}-e{end}|{ratio},e{start2}-e{end2}|{ratio2}'
                     Examples:
                     - 'e1-e12|2'
                     - 'e12-,e2'
                     - 'e1-e5,e8-e10'
                     - '' (empty string for full season)
+
         Returns:
-            Self | None: New TVDBMapping instance if pattern is valid, None otherwise
+            list[TVDBMapping]: List of parsed TVDBMapping instances
         """
         PATTERN = re.compile(
             r"""
@@ -245,7 +251,6 @@ class TVDBMapping(BaseModel, validate_assignment=True):
     @staticmethod
     def to_string(mappings: list["TVDBMapping"]) -> str:
         """Convert a list of TVDBMapping objects to their string representation.
-        Simplifies the output when possible.
 
         Args:
             mappings (list[TVDBMapping]): List of mapping objects
@@ -261,17 +266,18 @@ class TVDBMapping(BaseModel, validate_assignment=True):
             if mapping.start == 1 and mapping.end is None:
                 parts.append(f"e{mapping.start}-|{mapping.ratio}")
             elif mapping.start == mapping.end:
-                parts.append(
-                    f"e{mapping.start}{'' if mapping.ratio == 1 else f'|{mapping.ratio}'}"
-                )
+                ratio_suffix = "" if mapping.ratio == 1 else f"|{mapping.ratio}"
+                parts.append(f"e{mapping.start}{ratio_suffix}")
             else:
                 parts.append(
-                    f"e{mapping.start}-{f'e{mapping.end}' if mapping.end else ''}{'' if mapping.ratio == 1 else f'|{mapping.ratio}'}"
+                    f"e{mapping.start}-{f'e{mapping.end}' if mapping.end else ''}"
+                    f"{'' if mapping.ratio == 1 else f'|{mapping.ratio}'}"
                 )
         return ",".join(parts)
 
     @model_validator(mode="after")
     def validate_range(self) -> Self:
+        """Validate the episode range and ratio."""
         if self.ratio == 0:
             raise ValueError("Ratio must not be zero")
         if self.end is not None:
@@ -316,11 +322,15 @@ class AniMap(BaseModel, validate_assignment=True):
         default=None,
         title="TVDB Mappings",
         description=(
-            "Mapping of TVDB seasons to episode patterns.\n\nPattern Format: 'e{start}-e{end}|{ratio},e{start2}-e{end2}|{ratio2},...,e{startN}-e{endN}|{ratioN}'\n\n"
+            "Mapping of TVDB seasons to episode patterns.\n\nPattern Format: "
+            "'e{start}-e{end}|{ratio},e{start2}-e{end2}|{ratio2},...,e{startN}-e{endN}|{ratioN}'\n\n"
             "Attributes:\n"
             "\t- {start}: Start of the episode range\n"
             "\t- {end}: End of the episode range. None indicates an open-ended range.\n"
-            "\t- {ratio}: The 'worth' of each episode in the range. Positive values indicate that 1 TVDB episode corresponds to N AniList episodes, while negative values indicate that N TVDB episodes correspond to 1 AniList episode."
+            "\t- {ratio}: The 'worth' of each episode in the range. Positive values "
+            "indicate that 1 TVDB episode corresponds to N AniList episodes, while "
+            "negative values indicate that N TVDB episodes correspond to 1 AniList "
+            "episode."
         ),
         examples=[{"s1": "e1-e12|2", "s2": "e13-"}, {"s1": ""}, {"s1": "e4-e6|-2"}],
     )
@@ -328,6 +338,7 @@ class AniMap(BaseModel, validate_assignment=True):
     @field_validator("tvdb_mappings")
     @classmethod
     def validate_tvdb_mappings(cls, v: dict[str, str] | None) -> dict[str, str] | None:
+        """Validate TVDB mappings for correct format and overlapping ranges."""
         if not v:
             return v
 
@@ -344,9 +355,7 @@ class AniMap(BaseModel, validate_assignment=True):
         return v
 
     def model_dump(self, **kwargs) -> dict[str, Any]:
-        """Dumps the model to a dictionary, flattening single-item lists to scalar values
-        and simplifying TVDB mappings.
-        """
+        """Serializes the model, flattening to scalar values when possible."""
         data = super().model_dump(**kwargs)
 
         for key, value in data.items():
@@ -388,6 +397,7 @@ class Problem(BaseModel):
     details: str
 
     def __eq__(self, other: Any) -> bool:
+        """Equality comparison based on problem type."""
         if isinstance(other, ProblemEnum):
             return self.problem == other
         elif isinstance(other, Problem):
@@ -395,6 +405,7 @@ class Problem(BaseModel):
         return NotImplemented
 
     def __hash__(self) -> int:
+        """Hash based on problem type for use in sets."""
         return hash(self.problem)
 
 
@@ -402,8 +413,8 @@ class AnimeIDCollector:
     """A class to collect and aggregate anime IDs from various sources.
 
     This class handles the collection and processing of anime IDs from multiple sources
-    including Anime-Lists, Manami-Project, and AnimeAggregations. It consolidates the data
-    and saves it to a JSON file.
+    including Anime-Lists, Manami-Project, and AnimeAggregations. It consolidates the
+    data and saves it to a JSON file.
     """
 
     SCHEMA_VERSION = "v2"
@@ -518,6 +529,7 @@ class AnimeIDCollector:
 
     def process_anime_lists(self) -> None:
         """Process anime data from Anime-Lists XML source.
+
         Extracts anime IDs and related information from the Anime-Lists XML file
         and updates entries with TVDB mappings.
         """
@@ -545,8 +557,10 @@ class AnimeIDCollector:
                     self.problematic.setdefault(entry.anilist_id, set()).add(
                         Problem(
                             problem=ProblemEnum.UNKNOWN_TVDB_SEASON,
-                            details=f"Ignored ambiguous TVDB season from Anime-Lists `{tvdb_season}` "
-                            f"`{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}}}`",
+                            details=f"Ignored ambiguous TVDB season from Anime-Lists "
+                            f"`{tvdb_season}` "
+                            f"`{{anilist_id: {entry.anilist_id}, tvdb_id: "
+                            f"{entry.tvdb_id}, season: {tvdb_season}}}`",
                         )
                     )
                 return
@@ -555,8 +569,12 @@ class AnimeIDCollector:
                     self.problematic[entry.anilist_id].add(
                         Problem(
                             problem=ProblemEnum.NEGATIVE_EP_OFFSET,
-                            details=f"Ignored ambiguous negative episode offset from Anime-Lists "
-                            f"`{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}, offset: {episode_offset}}}`",
+                            details=(
+                                f"Ignored ambiguous negative episode offset from "
+                                f"Anime-Lists `{{anilist_id: {entry.anilist_id}, "
+                                f"tvdb_id: {entry.tvdb_id}, season: {tvdb_season}, "
+                                f"offset: {episode_offset}}}`"
+                            ),
                         )
                     )
                 return
@@ -579,8 +597,10 @@ class AnimeIDCollector:
                     self.problematic[entry.anilist_id].add(
                         Problem(
                             problem=ProblemEnum.UNKNOWN_ANILIST_EP_COUNT,
-                            details=f"AniList episode count is currently unknown (non-issue) "
-                            f"`{{anilist_id: {entry.anilist_id}}}`",
+                            details=(
+                                f"AniList episode count is currently unknown "
+                                f"`(non-issue) {{anilist_id: {entry.anilist_id}}}`"
+                            ),
                         )
                     )
                 return
@@ -590,8 +610,11 @@ class AnimeIDCollector:
                     self.problematic[entry.anilist_id].add(
                         Problem(
                             problem=ProblemEnum.UNKNOWN_TVDB_EP_COUNT,
-                            details=f"TVDB episode count is currently unknown (non-issue) "
-                            f"`{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}}}`",
+                            details=(
+                                f"TVDB episode count is currently unknown (non-issue) "
+                                f"`{{anilist_id: {entry.anilist_id}, tvdb_id: "
+                                f"{entry.tvdb_id}, season: {tvdb_season}}}`"
+                            ),
                         )
                     )
             elif anilist_ep_count > tvdb_ep_count - episode_offset:
@@ -599,8 +622,13 @@ class AnimeIDCollector:
                     self.problematic[entry.anilist_id].add(
                         Problem(
                             problem=ProblemEnum.EP_OVERFLOW,
-                            details=f"AniList episode count is larger than TVDB episode count (`{anilist_ep_count} > {tvdb_ep_count - episode_offset}`) "
-                            f"`{{anilist_id: {entry.anilist_id}, tvdb_id: {entry.tvdb_id}, season: {tvdb_season}, offset: {episode_offset}}}`",
+                            details=(
+                                f"AniList episode count is larger than TVDB episode "
+                                f"count (`{anilist_ep_count} > "
+                                f"{tvdb_ep_count - episode_offset}`) `{{anilist_id: "
+                                f"{entry.anilist_id}, tvdb_id: {entry.tvdb_id}, "
+                                f"season: {tvdb_season}, offset: {episode_offset}}}`"
+                            ),
                         )
                     )
                 return
@@ -656,8 +684,8 @@ class AnimeIDCollector:
     def process_aggregations(self) -> None:
         """Process anime data from AnimeAggregations.
 
-        Updates existing entries with additional IDs from the AnimeAggregations database,
-        including IMDB, MAL, and TMDB IDs.
+        Updates existing entries with additional IDs from the AnimeAggregations
+        database, including IMDB, MAL, and TMDB IDs.
         """
         self.logger.info("Scanning AnimeAggregations")
         content = json.loads(
@@ -717,7 +745,7 @@ class AnimeIDCollector:
         self.logger.info("Scanning Wikidata")
 
         query = """
-        SELECT DISTINCT ?item ?itemLabel ?anidbId ?anilistId ?malId ?imdbId ?plexId ?tmdbMovieId ?tmdbSeriesId ?tvdbMovieId ?tvdbSeriesId WHERE {
+        SELECT DISTINCT ?item ?itemLabel ?anidbId ?anilistId ?malId ?imdbId ?plexId?tmdbMovieId ?tmdbSeriesId ?tvdbMovieId ?tvdbSeriesId WHERE {
           ?item (p:P31/ps:P31/(wdt:P279*)) wd:Q1107.
           OPTIONAL { ?item wdt:P5646 ?anidbId. }
           ?item wdt:P8729 ?anilistId.
@@ -749,30 +777,18 @@ class AnimeIDCollector:
 
             ids: dict = {"anilist_id": anilist_id}
 
-            try:
+            with contextlib.suppress(KeyError, TypeError, ValueError):
                 ids["anidb_id"] = int(item["anidbId"]["value"])
-            except (KeyError, TypeError, ValueError):
-                pass
-            try:
+            with contextlib.suppress(KeyError, TypeError, ValueError):
                 ids["mal_id"] = int(item["malId"]["value"])
-            except (KeyError, TypeError, ValueError):
-                pass
-            try:
+            with contextlib.suppress(KeyError, TypeError, ValueError):
                 ids["imdb_id"] = item["imdbId"]["value"]
-            except (KeyError, TypeError, ValueError):
-                pass
-            try:
+            with contextlib.suppress(KeyError, TypeError, ValueError):
                 ids["tmdb_movie_id"] = int(item["tmdbMovieId"]["value"])
-            except (KeyError, TypeError, ValueError):
-                pass
-            try:
+            with contextlib.suppress(KeyError, TypeError, ValueError):
                 ids["tmdb_show_id"] = int(item["tmdbSeriesId"]["value"])
-            except (KeyError, TypeError, ValueError):
-                pass
-            try:
+            with contextlib.suppress(KeyError, TypeError, ValueError):
                 ids["tvdb_id"] = int(item["tvdbSeriesId"]["value"])
-            except (KeyError, TypeError, ValueError):
-                pass
 
             entry = AniMap(**ids)
 
@@ -787,11 +803,13 @@ class AnimeIDCollector:
                     elif isinstance(curr_value, list):
                         if value not in curr_value:
                             self.logger.debug(
-                                f"Conflicting `{key}` for ID `{anilist_id}`, `{value} not in `{curr_value}`"
+                                f"Conflicting `{key}` for ID `{anilist_id}`, `{value} "
+                                f"not in `{curr_value}`"
                             )
                     elif curr_value != value:
                         self.logger.debug(
-                            f"Conflicting `{key}` for ID `{anilist_id}`, `{value} != {curr_value}`"
+                            f"Conflicting `{key}` for ID `{anilist_id}`, `{value} != "
+                            f"{curr_value}`"
                         )
             else:
                 self.anilist_entries[anilist_id] = entry
@@ -828,7 +846,7 @@ class AnimeIDCollector:
             anilist_id = int(anilist_id_str)
 
             skip_entry = False
-            for key in fields.keys():
+            for key in fields:
                 if key not in AniMap.model_fields:
                     self.logger.warning(
                         f"Unknown field `{key}` in edit for ID `{anilist_id}`"
@@ -859,15 +877,17 @@ class AnimeIDCollector:
                 self.anilist_entries[anilist_id] = entry
                 self.problematic[anilist_id] = set()
 
-            if anilist_id in self.problematic:
-                if self.anilist_entries[anilist_id].tvdb_mappings:
-                    self.problematic[anilist_id] -= {
-                        ProblemEnum.EP_OVERFLOW,
-                        ProblemEnum.NEGATIVE_EP_OFFSET,
-                        ProblemEnum.UNKNOWN_TVDB_SEASON,
-                        ProblemEnum.UNKNOWN_TVDB_EP_COUNT,
-                        ProblemEnum.UNKNOWN_ANILIST_EP_COUNT,
-                    }
+            if (
+                anilist_id in self.problematic
+                and self.anilist_entries[anilist_id].tvdb_mappings
+            ):
+                self.problematic[anilist_id] -= {
+                    ProblemEnum.EP_OVERFLOW,
+                    ProblemEnum.NEGATIVE_EP_OFFSET,
+                    ProblemEnum.UNKNOWN_TVDB_SEASON,
+                    ProblemEnum.UNKNOWN_TVDB_EP_COUNT,
+                    ProblemEnum.UNKNOWN_ANILIST_EP_COUNT,
+                }
 
     def dump_problems(self) -> None:
         """Dump problematic entries to markdown file with detailed information."""
@@ -978,8 +998,7 @@ class AnimeIDCollector:
             self.serializer.save_yaml(self.edits_yaml_content, edits_path)
 
     def update_readme(self) -> None:
-        """
-        Update the README.md file with the latest generation timestamp.
+        """Update the README.md file with the latest generation timestamp.
 
         Only updates if changes were detected in JSON files.
         """
@@ -1004,8 +1023,7 @@ class AnimeIDCollector:
             self.logger.info("No Anime ID Changes Detected")
 
     def run(self) -> None:
-        """
-        Execute the complete anime ID collection process.
+        """Execute the complete anime ID collection process.
 
         Runs all processing steps in sequence and handles any errors that occur.
         """

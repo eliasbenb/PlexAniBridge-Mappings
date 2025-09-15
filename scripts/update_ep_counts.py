@@ -1,3 +1,5 @@
+"""Script to update episode counts from AniList and TVDB APIs."""
+
 import argparse
 import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -14,7 +16,7 @@ SKYHOOK_API_URL = "http://skyhook.sonarr.tv/v1/tvdb/shows/en"
 def create_batch_queries_anilist(
     ids: list[str | int], batch_size: int = 50
 ) -> list[tuple[str, dict]]:
-    """Create batch queries for getting episode counts from AniList"""
+    """Create batch queries for getting episode counts from AniList."""
     batches = []
     for i in range(0, len(ids), batch_size):
         batch = [int(id_) for id_ in ids[i : i + batch_size]]
@@ -34,6 +36,7 @@ def create_batch_queries_anilist(
 
 
 def make_request_anilist(query: str, variables: dict | str | None = None) -> dict:
+    """Make a request to AniList API with rate limit handling."""
     response = requests.post(
         ANILIST_API_URL,
         headers={
@@ -57,7 +60,7 @@ def make_request_anilist(query: str, variables: dict | str | None = None) -> dic
 
 
 def make_request_tvdb(tvdb_id: str | int) -> dict:
-    """Make a request to TVDB API for a specific series ID"""
+    """Make a request to TVDB API for a specific series ID."""
     response = requests.get(
         f"{SKYHOOK_API_URL}/{tvdb_id}",
         headers={
@@ -71,7 +74,7 @@ def make_request_tvdb(tvdb_id: str | int) -> dict:
 
 
 def process_tvdb_id(tvdb_id: int | str) -> tuple[str, dict]:
-    """Process a single TVDB ID and return its episode counts"""
+    """Process a single TVDB ID and return its episode counts."""
     try:
         series_data = make_request_tvdb(tvdb_id)
         seasons = series_data["seasons"]
@@ -90,7 +93,7 @@ def process_tvdb_id(tvdb_id: int | str) -> tuple[str, dict]:
 
 
 def update_anilist_counts(wanted_anilist: list[int | str]):
-    """Update AniList episode counts using improved query method"""
+    """Update AniList episode counts using improved query method."""
     print("Updating AniList episode counts...")
     episode_counts_anilist: dict[str, int] = {}
     batch_queries_anilist = create_batch_queries_anilist(wanted_anilist)
@@ -119,7 +122,7 @@ def update_anilist_counts(wanted_anilist: list[int | str]):
 
 
 def update_tvdb_counts(wanted_tvdb):
-    """Update TVDB episode counts"""
+    """Update TVDB episode counts."""
     print("Updating TVDB episode counts...")
     episode_counts_tvdb: dict[str, dict] = {}
 
@@ -154,7 +157,7 @@ def update_tvdb_counts(wanted_tvdb):
 
 
 def parse_arguments():
-    """Parse command line arguments"""
+    """Parse command line arguments."""
     parser = argparse.ArgumentParser(
         description="Update episode counts from AniList and/or TVDB"
     )
