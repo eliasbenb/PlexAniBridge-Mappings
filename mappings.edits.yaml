@@ -815,6 +815,8 @@
 908:
   tvdb_mappings:
     s0: e7-e9
+917:
+  tvdb_id:
 918:
   tvdb_mappings:
     s1: e1-e49
@@ -2263,6 +2265,8 @@
 2889:
   tvdb_mappings:
     s0: e4
+2891:
+  tvdb_id:
 2899:
   tvdb_id: 79682
   tvdb_mappings:
@@ -2493,6 +2497,8 @@
   tvdb_id: 82700
   tvdb_mappings:
     s0: e1-e2
+3446:
+  tvdb_id:
 3449:
   tvdb_id: 79881
   tvdb_mappings:
@@ -11811,6 +11817,8 @@
     s1: e1-
 195494:
   tmdb_movie_id: 1508427
+290344:
+  tvdb_id:
 357826:
   tvdb_id: 357826
   tvdb_mappings:
