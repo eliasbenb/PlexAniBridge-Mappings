@@ -4562,7 +4562,6 @@
   tvdb_mappings:
     s0: e3
 10573:
-  tvdb_id: 73532
   tvdb_mappings:
     s0: e42-45
 10581:
@@ -9310,7 +9309,6 @@
   tvdb_mappings:
     s0: e2
 108758:
-  tvdb_id: 267705
   tvdb_mappings:
     s0: e4
 108759:
@@ -11645,8 +11643,6 @@
     # not currently in the Aired Order, do not add until it is
 182206:
   tmdb_movie_id: 1363974
-182317:
-  tmdb_movie_id: 1363979
 182417:
   tvdb_id: 305089
   tvdb_mappings:
