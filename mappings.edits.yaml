@@ -3557,6 +3557,10 @@
   tvdb_id: 281405
   tvdb_mappings:
     s0: e30
+6999:
+  tvdb_id: 73532
+  tvdb_mappings:
+    s0: e40-e41
 7014:
   imdb_id: tt1686865
   tmdb_movie_id: 115969
@@ -4557,6 +4561,10 @@
   tvdb_id: 250317
   tvdb_mappings:
     s0: e3
+10573:
+  tvdb_id: 73532
+  tvdb_mappings:
+    s0: e42-45
 10581:
   tvdb_id: 80783
   tvdb_mappings:
@@ -5167,6 +5175,10 @@
   tvdb_id: 72393
   tvdb_mappings:
     s0: e11-e16
+13245:
+  tvdb_id: 254899
+  tvdb_mappings:
+    s0: e1-e7
 13247:
   imdb_id: tt2551708
   tmdb_movie_id: 491667
@@ -5210,6 +5222,10 @@
   tvdb_id: 252471
   tvdb_mappings:
     s0: e3-e13
+13587:
+  tvdb_id: 252232
+  tvdb_mappings:
+    s0: e1
 13667:
   tmdb_movie_id: 118406
   tvdb_mappings:
@@ -7196,6 +7212,10 @@
 21432:
   tvdb_mappings:
     s0: e1
+21434:
+  tvdb_id: 282040
+  tvdb_mappings:
+    s0: e1
 21436:
   tvdb_id: 292829
   tvdb_mappings:
@@ -9064,6 +9084,10 @@
   tmdb_movie_id: 570575
   tvdb_mappings:
     s1: e1
+106169:
+  tvdb_id: 344315
+  tvdb_mappings:
+    s0: e3
 106206:
   tmdb_movie_id: 566555
   tvdb_mappings:
@@ -9129,9 +9153,13 @@
   tvdb_mappings:
     s0: e1
 106895:
-  tvdb_id: 20955
+  tvdb_id: 295243
   tvdb_mappings:
     s0: e1-e3
+106896:
+  tvdb_id: 344315
+  tvdb_mappings:
+    s0: e4
 106915:
   tvdb_mappings:
     s0: e4|-3
@@ -9356,6 +9384,10 @@
   tvdb_id: 245821
   tvdb_mappings:
     s11: e1-e14
+109418:
+  tvdb_id: 344315
+  tvdb_mappings:
+    s0: e5
 109492:
   tvdb_id: 359095
   tvdb_mappings:
@@ -9390,6 +9422,10 @@
 110261:
   imdb_id: tt11803614
   tmdb_movie_id: 629014
+110265:
+  tvdb_id: 344315
+  tvdb_mappings:
+    s0: e6
 110270:
   tvdb_id: 371662
   tvdb_mappings:
@@ -10088,6 +10124,14 @@
   tvdb_id: 397250
   tvdb_mappings:
     s0: e1-e5
+127042:
+  tvdb_id: 252232
+  tvdb_mappings:
+    s0: e3-e7
+127045:
+  tvdb_id: 252232
+  tvdb_mappings:
+    s0: e8
 127090:
   tvdb_mappings:
     s1: e1-e12
@@ -10599,6 +10643,10 @@
     s0: e12
 142494:
   tmdb_movie_id: 913001
+142794:
+  tvdb_id: 76703
+  tvdb_mappings:
+    s0: e77-e79,e84
 142806:
   tvdb_id: 358138
   tvdb_mappings:
@@ -11071,6 +11119,10 @@
   tvdb_id: 76703
   tvdb_mappings:
     s0: e82
+158928:
+  tvdb_id: 405920
+  tvdb_mappings:
+    s0: e3
 158991:
   tvdb_id: 392925
   tvdb_mappings:
