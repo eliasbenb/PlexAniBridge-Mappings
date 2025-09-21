@@ -1467,6 +1467,10 @@
     s0: e18-e19
 1719:
   tmdb_show_id: 42828
+1728:
+  # there are two different TVDB entries with differing seasons and a merged plex entry
+  tvdb_id: # do not add until one of the TVDB entries gets deleted
+  tvdb_mappings:
 1729:
   tmdb_show_id: 42468
 1732:
