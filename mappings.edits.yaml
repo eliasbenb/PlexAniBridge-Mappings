@@ -11927,6 +11927,12 @@
   tmdb_movie_id: 1508427
 290344:
   tvdb_id:
+349691:
+  imdb_id: tt1178592
+  tmdb_movie_id: 258802
+  tvdb_id: 349691
+  tvdb_mappings:
+    s0: e7
 357826:
   tvdb_id: 357826
   tvdb_mappings:
