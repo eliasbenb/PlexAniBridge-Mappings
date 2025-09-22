@@ -998,7 +998,7 @@ class AnimeIDCollector:
             self.serializer.save_yaml(self.edits_yaml_content, edits_path)
 
     def update_readme(self) -> None:
-        """Update the README.md file with the latest generation timestamp.
+        """Update the README.md file with the generation timestamp and entry counts.
 
         Only updates if changes were detected in JSON files.
         """
@@ -1012,10 +1012,25 @@ class AnimeIDCollector:
             self.logger.info("Saving Anime ID Changes")
             readme_path = self.base_dir / "README.md"
 
+            mappings_count = len(self.anilist_entries)
+            edits_count = 0
+            if self.edits_yaml_content:
+                edits_count = len(
+                    [
+                        key
+                        for key in self.edits_yaml_content
+                        if not (isinstance(key, str) and key.startswith("$"))
+                    ]
+                )
+
+            mappings_badge = f"https://img.shields.io/badge/Mappings-{mappings_count:,}-blue?style=for-the-badge&logo=database&logoColor=white"
+            edits_badge = f"https://img.shields.io/badge/Edits-{edits_count:,}-purple?style=for-the-badge&logo=pencil&logoColor=white"
+
             with readme_path.open("r") as f:
                 data = f.readlines()
 
             data[2] = f"Last generated at: {self.generated_on} UTC\n"
+            data[4] = f"![Mappings]({mappings_badge}) ![Edits]({edits_badge})\n"
 
             with readme_path.open("w", newline="\n") as f:
                 f.writelines(data)
