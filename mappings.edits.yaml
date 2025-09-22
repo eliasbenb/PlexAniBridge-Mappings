@@ -12092,12 +12092,11 @@
   imdb_id: tt31152166
   tmdb_movie_id: 1189199
   tvdb_id: 102261
-  tvdb_mappings:
+  tvdb_mappings: # not currently in the Aired Order, do not add until it is
 182158:
   tvdb_id: 432845
   tvdb_mappings:
     s0: e1
-    # not currently in the Aired Order, do not add until it is
 182206:
   tmdb_movie_id: 1363974
 182417:
