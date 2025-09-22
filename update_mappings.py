@@ -745,7 +745,8 @@ class AnimeIDCollector:
         self.logger.info("Scanning Wikidata")
 
         query = """
-        SELECT DISTINCT ?item ?itemLabel ?anidbId ?anilistId ?malId ?imdbId ?plexId?tmdbMovieId ?tmdbSeriesId ?tvdbMovieId ?tvdbSeriesId WHERE {
+        SELECT DISTINCT ?item ?itemLabel ?anidbId ?anilistId ?malId ?imdbId ?plexId
+            ?tmdbMovieId ?tmdbSeriesId ?tvdbMovieId ?tvdbSeriesId WHERE {
           ?item (p:P31/ps:P31/(wdt:P279*)) wd:Q1107.
           OPTIONAL { ?item wdt:P5646 ?anidbId. }
           ?item wdt:P8729 ?anilistId.
@@ -756,7 +757,6 @@ class AnimeIDCollector:
           OPTIONAL { ?item wdt:P4983 ?tmdbSeriesId. }
           # OPTIONAL { ?item wdt:P12196 ?tvdbMovieId. }
           OPTIONAL { ?item wdt:P4835 ?tvdbSeriesId. }
-          # SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en". }
         }
         LIMIT 10000
         """
@@ -866,8 +866,11 @@ class AnimeIDCollector:
                         self.problematic[anilist_id].add(
                             Problem(
                                 problem=ProblemEnum.REDUNDANT_EDIT,
-                                details=f"The value for `{key}` is already `{value}` and is redundant in 'mappings.edits.yaml' "
-                                f"`{{anilist_id: {anilist_id_str}}}`",
+                                details=(
+                                    f"The value for `{key}` is already `{value}` "
+                                    "and is redundant in 'mappings.edits.yaml' "
+                                    f"`{{anilist_id: {anilist_id_str}}}`"
+                                ),
                             )
                         )
                     else:
@@ -915,10 +918,17 @@ class AnimeIDCollector:
             for anilist_id, problem in entries:
                 entry = self.anilist_entries.get(anilist_id)
 
-                links = f"<a href='https://anilist.co/anime/{anilist_id}'><img src='https://anilist.co/favicon.ico' alt='AniList' width='20' height='20'></a>"
-
+                links = (
+                    f"<a href='https://anilist.co/anime/{anilist_id}'><img src="
+                    "'https://anilist.co/favicon.ico' alt='AniList' width='20' "
+                    "height='20'></a>"
+                )
                 if entry and entry.tvdb_id:
-                    links += f" <a href='https://www.thetvdb.com/?tab=series&id={entry.tvdb_id}'><img src='https://thetvdb.com/images/icon.png' alt='TVDB' width='20' height='20'></a>"
+                    links += (
+                        f" <a href='https://www.thetvdb.com/?tab=series&id={entry.tvdb_id}'>"
+                        f"<img src='https://thetvdb.com/images/icon.png' alt='TVDB' "
+                        "width='20' height='20'></a>"
+                    )
 
                 if entry and entry.mal_id:
                     mal_ids = (
@@ -927,10 +937,18 @@ class AnimeIDCollector:
                         else entry.mal_id
                     )
                     for mal_id in mal_ids:
-                        links += f" <a href='https://myanimelist.net/anime/{mal_id}'><img src='https://myanimelist.net/favicon.ico' alt='MAL' width='20' height='20'></a>"
+                        links += (
+                            f" <a href='https://myanimelist.net/anime/{mal_id}'>"
+                            "<img src='https://myanimelist.net/favicon.ico' alt='MAL' "
+                            "width='20' height='20'></a>"
+                        )
 
                 if entry and entry.anidb_id:
-                    links += f" <a href='https://anidb.net/anime/{entry.anidb_id}'><img src='https://anidb.net/favicon.ico' alt='AniDB' width='20' height='20'></a>"
+                    links += (
+                        f" <a href='https://anidb.net/anime/{entry.anidb_id}'>"
+                        "<img src='https://anidb.net/favicon.ico' alt='AniDB' "
+                        "width='20' height='20'></a>"
+                    )
 
                 if entry and entry.imdb_id:
                     imdb_ids = (
@@ -939,7 +957,11 @@ class AnimeIDCollector:
                         else entry.imdb_id
                     )
                     for imdb_id in imdb_ids:
-                        links += f" <a href='https://www.imdb.com/title/{imdb_id}'><img src='https://www.imdb.com/favicon.ico' alt='IMDB' width='20' height='20'></a>"
+                        links += (
+                            f" <a href='https://www.imdb.com/title/{imdb_id}'>"
+                            f"<img src='https://www.imdb.com/favicon.ico' alt='IMDB' "
+                            "width='20' height='20'></a>"
+                        )
 
                 if entry and entry.tmdb_movie_id:
                     tmdb_ids = (
@@ -948,7 +970,11 @@ class AnimeIDCollector:
                         else entry.tmdb_movie_id
                     )
                     for tmdb_id in tmdb_ids:
-                        links += f" <a href='https://www.themoviedb.org/movie/{tmdb_id}'><img src='https://www.themoviedb.org/favicon.ico' alt='TMDB Movie' width='20' height='20'></a>"
+                        links += (
+                            f" <a href='https://www.themoviedb.org/movie/{tmdb_id}'>"
+                            "<img src='https://www.themoviedb.org/favicon.ico' "
+                            "alt='TMDB Movie' width='20' height='20'></a>"
+                        )
 
                 if entry and entry.tmdb_show_id:
                     tmdb_ids = (
@@ -957,7 +983,11 @@ class AnimeIDCollector:
                         else entry.tmdb_show_id
                     )
                     for tmdb_id in tmdb_ids:
-                        links += f" <a href='https://www.themoviedb.org/tv/{tmdb_id}'><img src='https://www.themoviedb.org/favicon.ico' alt='TMDB Show' width='20' height='20'></a>"
+                        links += (
+                            f" <a href='https://www.themoviedb.org/tv/{tmdb_id}'>"
+                            "<img src='https://www.themoviedb.org/favicon.ico' "
+                            "alt='TMDB Show' width='20' height='20'></a>"
+                        )
 
                 markdown_content += f"| {anilist_id} | {problem.details} | {links} |\n"
 
