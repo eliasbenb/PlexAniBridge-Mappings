@@ -1035,37 +1035,38 @@ class AnimeIDCollector:
         self.logger.info("Checking for changes")
         repo = Repo(path=self.base_dir)
 
+        readme_path = self.base_dir / "README.md"
+
+        mappings_count = len(self.anilist_entries)
+        edits_count = 0
+        if self.edits_yaml_content:
+            edits_count = len(
+                [
+                    key
+                    for key in self.edits_yaml_content
+                    if not (isinstance(key, str) and key.startswith("$"))
+                ]
+            )
+
+        mappings_badge = f"https://img.shields.io/badge/Mappings-{mappings_count:,}-blue?style=for-the-badge&logo=database&logoColor=white"
+        edits_badge = f"https://img.shields.io/badge/Edits-{edits_count:,}-purple?style=for-the-badge&logo=pencil&logoColor=white"
+
+        with readme_path.open("r") as f:
+            data = f.readlines()
+
         if any(
             item.a_path and item.a_path.endswith(".json")
             for item in repo.index.diff(None)
         ):
             self.logger.info("Saving Anime ID Changes")
-            readme_path = self.base_dir / "README.md"
-
-            mappings_count = len(self.anilist_entries)
-            edits_count = 0
-            if self.edits_yaml_content:
-                edits_count = len(
-                    [
-                        key
-                        for key in self.edits_yaml_content
-                        if not (isinstance(key, str) and key.startswith("$"))
-                    ]
-                )
-
-            mappings_badge = f"https://img.shields.io/badge/Mappings-{mappings_count:,}-blue?style=for-the-badge&logo=database&logoColor=white"
-            edits_badge = f"https://img.shields.io/badge/Edits-{edits_count:,}-purple?style=for-the-badge&logo=pencil&logoColor=white"
-
-            with readme_path.open("r") as f:
-                data = f.readlines()
-
             data[2] = f"Last generated at: {self.generated_on} UTC\n"
-            data[4] = f"![Mappings]({mappings_badge}) ![Edits]({edits_badge})\n"
-
-            with readme_path.open("w", newline="\n") as f:
-                f.writelines(data)
         else:
             self.logger.info("No Anime ID Changes Detected")
+
+        data[4] = f"![Mappings]({mappings_badge}) ![Edits]({edits_badge})\n"
+
+        with readme_path.open("w", newline="\n") as f:
+            f.writelines(data)
 
     def run(self) -> None:
         """Execute the complete anime ID collection process.
