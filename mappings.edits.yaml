@@ -6833,6 +6833,9 @@
   tvdb_id: 79099
   tvdb_mappings:
     s0: e16
+15227:
+  imdb_id: # intentionally left blank
+  tmdb_movie_id: # intentionally left blank
 15323:
   tmdb_show_id: 37854
   tvdb_id: 81797
@@ -11282,6 +11285,9 @@
   tvdb_id: 289882
   tvdb_mappings:
     s0: e4
+112135:
+  imdb_id: # intentionally left blank
+  tmdb_movie_id: # intentionally left blank
 112177:
   tvdb_id: 361713
   tvdb_mappings:
