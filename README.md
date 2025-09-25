@@ -238,9 +238,12 @@ Make sure that your comments are **NOT** at the root level of the YAML file, as 
   </details>
 
 </details>
+
+  -----
+
 <details>
   <summary><b>Unintuitive Entries</b></summary>
-  
+
   #### There are a small number of entries that do not behave as the average user might expect, but have been left this way for consistency's sake:
   -----
   <details>
@@ -257,6 +260,10 @@ Make sure that your comments are **NOT** at the root level of the YAML file, as 
   </details>
 
 </details>
+
+## Community Custom Mappings
+
+Community-maintained custom mappings are available in the [LuceoEtzio/PlexAniBridge-Custom-Mappings](https://github.com/LuceoEtzio/PlexAniBridge-Custom-Mappings) repository.
 
 ## Acknowledgements
 
