@@ -865,7 +865,6 @@
 849:
   tvdb_mappings: # explicitly left blank, do not change
 850:
-  tvdb_id: 85458
   tvdb_mappings:
     s1: e1-e13
 864:
@@ -4988,7 +4987,6 @@
   tvdb_mappings:
     s1: e1-e200
 7651:
-  imdb_id:
   tmdb_movie_id: 74799
 7666:
   tvdb_mappings:
@@ -6383,7 +6381,6 @@
     s0: e1,e3,e5,e7
 12279:
   tmdb_movie_id: 665530
-  tvdb_id: 71419
   tvdb_mappings:
     s0: e2
 12321:
@@ -6931,7 +6928,6 @@
     s0: e6-e7
 15847:
   tmdb_show_id: 45418
-  tvdb_id: 193821
   tvdb_mappings:
     s0: e1
 15879:
@@ -9680,7 +9676,6 @@
   tvdb_mappings:
     s0: e24-e32
 98746:
-  tvdb_id: 304476
   tvdb_mappings:
     s0: e2
 98759:
@@ -9710,7 +9705,6 @@
   tvdb_mappings:
     s0: e2
 98785:
-  tvdb_id: 304476
   tvdb_mappings:
     s0: e3
 98791:
