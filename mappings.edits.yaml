@@ -2949,6 +2949,7 @@
     s1: e1-e26
     s2: e1-e26
 2819:
+  tvdb_id: 138211
   tvdb_mappings:
     s1: e1-e32
     s2: e1-e11
