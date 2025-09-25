@@ -167,90 +167,92 @@ Make sure that your comments are **NOT** at the root level of the YAML file, as 
 <details>
   <summary><b>Uncorrectable Entries</b></summary>
 
-Some entries can be fully added to plex, but cannot be synced:
+  #### Some entries can be fully added to plex, but cannot be synced:
+  -----
 
   <details>
     <summary>The Melancholy of Haruhi Suzumiya</summary>
 
-    As Anilist has the second season with 28 episodes, which contains the episodes of the first season as well, TVDB having two 14 episode seasons, and the original airing being out of order, there is no default option that would satisfy most people, so it has been intentionally unmapped. However it is still syncable and users can use custom mappings to do so.
+  - As Anilist has the second season with 28 episodes, which contains the episodes of the first season as well, TVDB having two 14 episode seasons, and the original airing being out of order, there is no default option that would satisfy most people, so it has been intentionally unmapped. However it is still syncable and users can use custom mappings to do so.
 
   </details>
   <details>
     <summary>In This Corner of the World</summary>
 
-    Anilist has separate entries for the regular and extended edition of this film, which do not have unique entries on IMDb nor TMDB, so there is no way to know which it is, and it has been intentionally unmapped. However it is still syncable and users can use custom mappings to do so.
+  - Anilist has separate entries for the regular and extended edition of this film, which do not have unique entries on IMDb nor TMDB, so there is no way to know which it is, and it has been intentionally unmapped. However it is still syncable and users can use custom mappings to do so.
 
   </details>
   <details>
     <summary>The Seven Deadly Sins</summary>
 
-    Plex has an incorrect internal ID for the series. May be rectified in future.
+  - Plex has an incorrect internal ID for the series. May be rectified in future.
 
   </details>
   <details>
     <summary>Tegami Bachi - Letter Bee</summary>
 
-    Plex has an incorrect internal ID for the series. May be rectified in future.
+  - Plex has an incorrect internal ID for the series. May be rectified in future.
 
   </details>
   <details>
     <summary>Super Dragon Ball Heroes</summary>
 
-    Plex has an incorrect internal ID for the series. May be rectified in future.
+  - Plex has an incorrect internal ID for the series. May be rectified in future.
 
   </details>
   <details>
     <summary>Inazuma Eleven Ares</summary>
 
-    Plex has an incorrect internal ID for the series. May be rectified in future.
+  - Plex has an incorrect internal ID for the series. May be rectified in future.
 
   </details>
   <details>
     <summary>Super Gals!</summary>
 
-    There are duplicate TVDB entries with different season layouts that Plex has merged into one entry. Intentionally unmapped. May be rectified in future. However it is still syncable and users can use custom mappings to do so.
+  - There are duplicate TVDB entries with different season layouts that Plex has merged into one entry. Intentionally unmapped. May be rectified in future. However it is still syncable and users can use custom mappings to do so.
 
   </details>
   <details>
     <summary>Silver Fang</summary>
 
-    Plex has an incorrect internal ID for the series. May be rectified in future.
+  - Plex has an incorrect internal ID for the series. May be rectified in future.
 
   </details>
   <details>
     <summary>Nyanpire</summary>
 
-    Plex has an incorrect internal ID for the series. May be rectified in future.
+  - Plex has an incorrect internal ID for the series. May be rectified in future.
 
   </details>
   <details>
     <summary>The Daughter of Twenty Faces</summary>
 
-    Plex has an incorrect internal ID for the series. May be rectified in future.
+  - Plex has an incorrect internal ID for the series. May be rectified in future.
 
   </details>
   <details>
     <summary>Witchy Precure!/Mahoutsukai PreCure!</summary>
 
-    Plex has an incorrect internal ID for the series. May be rectified in future.
+  - Plex has an incorrect internal ID for the series. May be rectified in future.
 
   </details>
 
 </details>
 <details>
   <summary><b>Unintuitive Entries</b></summary>
-  There are a small number of entries that do not behave as the average user might expect, but have been left this way for consistency's sake:
-    
+  
+  #### There are a small number of entries that do not behave as the average user might expect, but have been left this way for consistency's sake:
+  -----
   <details>
     <summary>Monogatari Second Season</summary>
 
-    Anilist includes the three recap episodes that were not included in the Blu-ray release, and are not included in the TVDB season. Users may use custom mappings to ensure correct watch status without the recaps.
+  - Anilist includes the three recap episodes that were not included in the Blu-ray release, and are not included in the TVDB season. Users may use custom mappings to ensure correct watch status without the recaps.
 
   </details>
   <details>
     <summary>Cowboy Bebop</summary>
 
-    The TVDB Aired order presents the episodes by first air date, out of order. The DVD order's episodes are in order, but the specials are differently ordered, which would cause the wrong specials to be marked watched. Users may use custom mappings to ensure correct watch status.
+  - The TVDB Aired order presents the episodes by first air date, out of order. The DVD order's episodes are in order, but the specials are differently ordered, which would cause the wrong specials to be marked watched. Users may use custom mappings to ensure correct watch status.
 
   </details>
 
