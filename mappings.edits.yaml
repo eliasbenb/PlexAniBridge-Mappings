@@ -3651,6 +3651,8 @@
   tvdb_id: 82099
   tvdb_mappings:
     s1: e3
+3786:
+  tmdb_movie_id: 283566
 3787:
   imdb_id: tt0105293
   tmdb_movie_id: 215000
