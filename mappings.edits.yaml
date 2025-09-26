@@ -10820,7 +10820,8 @@
 104372:
   tvdb_id: 346869
   tvdb_mappings:
-    s3: e1-e19
+    s0: e4
+    s3: e1-e18
 104382:
   imdb_id: tt11078434
   tmdb_movie_id: 559562
