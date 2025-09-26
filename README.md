@@ -189,12 +189,6 @@ Make sure that your comments are **NOT** at the root level of the YAML file, as 
 
   </details>
   <details>
-    <summary>Tegami Bachi - Letter Bee</summary>
-
-  - Plex has an incorrect internal ID for the series. May be rectified in future.
-
-  </details>
-  <details>
     <summary>Super Dragon Ball Heroes</summary>
 
   - Plex has an incorrect internal ID for the series. May be rectified in future.
