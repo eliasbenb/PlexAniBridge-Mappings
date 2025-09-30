@@ -2705,7 +2705,6 @@
 2592:
   tmdb_movie_id: 88799
 2593:
-  imdb_id: tt1155650
   tmdb_movie_id: 23150
   tvdb_id: 82099
   tvdb_mappings:
@@ -8996,7 +8995,6 @@
   tvdb_mappings:
     s0: e4
 21470:
-  tmdb_movie_id: 374856
   tvdb_mappings:
     s0: e66
 21474:
@@ -9679,7 +9677,6 @@
   tvdb_mappings:
     s0: e15-e17
 98222:
-  tmdb_movie_id: 438058
   tvdb_mappings:
     s0: e68
 98225:
@@ -9731,7 +9728,6 @@
   tvdb_mappings:
     s0: e1
 98469:
-  imdb_id: tt7480958
   tmdb_movie_id: 467169
   tvdb_id: 79360
   tvdb_mappings:
@@ -11046,7 +11042,6 @@
   tvdb_mappings:
     s0: e3
 106206:
-  tmdb_movie_id: 566555
   tvdb_mappings:
     s0: e70
 106223:
@@ -11671,7 +11666,6 @@
 113538:
   tmdb_show_id: 60863
 113653:
-  tmdb_movie_id: 662638
   tvdb_id: 72454
   tvdb_mappings:
     s0: e72
@@ -12834,7 +12828,6 @@
   tvdb_mappings:
     s2: e1-e50
 142219:
-  tmdb_movie_id: 903939
   tvdb_id: 72454
   tvdb_mappings:
     s0: e78
@@ -13191,7 +13184,6 @@
   tvdb_mappings:
     s0: e1-e2
 151799:
-  tvdb_id: 188551
   tvdb_mappings:
     s2: e1,e2-e3|2,e4-e12|3,e13,e14-e15|2,e16-e21|3,e22-e23|2,e24-
       # TVDB is split by segment, the episodes have different numbers of segments
@@ -14123,8 +14115,6 @@
     s0: e1
 187362:
   imdb_id: tt37854073
-187892:
-  tmdb_movie_id: 1432547
 188037:
   tvdb_id: 358138
   tvdb_mappings:
