@@ -41408,10 +41408,12 @@
   },
   "9332": {
     "anidb_id": 7883,
+    "imdb_id": "tt34821547",
     "mal_id": [
       9332,
       10390
     ],
+    "tmdb_movie_id": 428861,
     "tvdb_id": 79099,
     "tvdb_mappings": {
       "s0": "e9-e11"
@@ -121680,10 +121682,8 @@
   },
   "191974": {
     "anidb_id": 19323,
-    "imdb_id": "tt36836504",
     "mal_id": 60572,
     "tmdb_show_id": 280078,
-    "tvdb_id": 462022,
     "tvdb_mappings": {
       "s1": "e1-e12"
     }

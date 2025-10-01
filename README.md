@@ -1,6 +1,6 @@
 # PlexAniBridge Mappings
 
-Last generated at: September 30, 2025 10:04 AM UTC
+Last generated at: October 01, 2025 12:04 AM UTC
 
 ![Mappings](https://img.shields.io/badge/Mappings-19,935-blue?style=for-the-badge&logo=database&logoColor=white) ![Edits](https://img.shields.io/badge/Edits-3,743-purple?style=for-the-badge&logo=pencil&logoColor=white)
 
