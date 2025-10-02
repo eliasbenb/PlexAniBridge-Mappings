@@ -15,7 +15,7 @@ _A huge thank you to the primary mappings maintainer, [@LuceoEtzio](https://gith
 - **Comprehensive Aggregation**: Gathers and merges ID data from multiple trusted sources.
 - **Automated Daily Updates**: A GitHub Action runs daily to refresh the mappings.
 - **Manual Overrides**: Easily correct or add mappings through a simple YAML edit file (`mappings.edits.yaml`).
-- **Detailed TVDB Mapping**: Supports complex TVDB season and episode mappings, including episode ranges, ratios, and offsets.
+- **Detailed TVDB Mapping**: Supports complex TVDB season and episode mappings, including split episode ranges, ratios, and offsets.
 - **Problem Reporting**: Automatically flags entries with inconsistencies that may require manual review.
 
 ## How It Works
