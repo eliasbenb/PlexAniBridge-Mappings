@@ -82,7 +82,7 @@ This file contains the complete set of ID mappings. The primary key for each ent
 
 ### The Mappings Object
 
-The `tmdb_mappings` and `tvdb_mappings` objects define the episode and season mappings between AniList and TVDB. The keys are season numbers (e.g., `"s1"`), and the values are string patterns that define the mapping rules.
+The `tmdb_mappings` and `tvdb_mappings` objects define the episode and season mappings between AniList and TMDB/TVDB. The keys are season numbers (e.g., `"s1"`), and the values are string patterns that define the mapping rules.
 
 _Note: while the `tmdb_mappings` field is supported, it is not maintained by this repository, so you will only find it in a small number of entries. In most cases, you should use the `tvdb_mappings` field instead._
 
