@@ -67,6 +67,34 @@
           "description": "The MyAnimeList ID(s)",
           "title": "MAL ID"
         },
+        "tmdb_mappings": {
+          "anyOf": [
+            {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Mapping of TMDB seasons to episode patterns.\n\nPattern Format: 'e{start}-e{end}|{ratio},e{start2}-e{end2}|{ratio2},...,e{startN}-e{endN}|{ratioN}'\n\nAttributes:\n\t- {start}: Start of the episode range\n\t- {end}: End of the episode range. None indicates an open-ended range.\n\t- {ratio}: The 'worth' of each episode in the range. Positive values indicate that 1 TMDB episode corresponds to N AniList episodes, while negative values indicate that N TMDB episodes correspond to 1 AniList episode.",
+          "examples": [
+            {
+              "s1": "e1-e12|2",
+              "s2": "e13-"
+            },
+            {
+              "s1": ""
+            },
+            {
+              "s1": "e4-e6|-2"
+            }
+          ],
+          "title": "TMDB Mappings"
+        },
         "tmdb_movie_id": {
           "anyOf": [
             {
