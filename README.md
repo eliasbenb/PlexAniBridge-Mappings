@@ -77,11 +77,14 @@ This file contains the complete set of ID mappings. The primary key for each ent
 | `tmdb_movie_id` | `int \| list[int]` | The TMDB Movie ID(s).                                                                   |
 | `tmdb_show_id`  | `int \| list[int]` | The TMDB Show ID(s).                                                                    |
 | `tvdb_id`       | `int`              | The TVDB ID.                                                                            |
+| `tmdb_mappings` | `object`           | An object mapping TMDB seasons to AniList episodes. See the detailed explanation below. |
 | `tvdb_mappings` | `object`           | An object mapping TVDB seasons to AniList episodes. See the detailed explanation below. |
 
-### The `tvdb_mappings` Object
+### The Mappings Object
 
-This object defines the episode and season mappings between AniList and TVDB. The keys are season numbers (e.g., `"s1"`), and the values are string patterns that define the mapping rules.
+The `tmdb_mappings` and `tvdb_mappings` objects define the episode and season mappings between AniList and TVDB. The keys are season numbers (e.g., `"s1"`), and the values are string patterns that define the mapping rules.
+
+_Note: while the `tmdb_mappings` field is supported, it is not maintained by this repository, so you will only find it in a small number of entries. In most cases, you should use the `tvdb_mappings` field instead._
 
 **Pattern Format**: `'e{start}-e{end}|{ratio},e{start2}-e{end2}|{ratio2},...'`
 
@@ -94,7 +97,7 @@ This object defines the episode and season mappings between AniList and TVDB. Th
 **Examples:**
 
 ```js
-// Maps Season 1 episodes 1-12. The |2 ratio means that every 2 TVDB episodes
+// Maps Season 1 episodes 1-12. The |2 ratio means that every 2 TMDB/TVDB episodes
 // in this range correspond to 1 episode on AniList. Ranges must be divisible
 // by the ratio when positive.
 "s1": "e1-e12|2"
@@ -106,8 +109,8 @@ This object defines the episode and season mappings between AniList and TVDB. Th
 // An empty string is the simplest form of mapping.
 "s1": ""
 
-// Maps TVDB Season 1, episodes 4 through 6. The |-2 ratio means that
-// every TVDB episode in this range corresponds to 2 episodes on AniList.
+// Maps TMDB/TVDB Season 1, episodes 4 through 6. The |-2 ratio means that
+// every TMDB/TVDB episode in this range corresponds to 2 episodes on AniList.
 "s1": "e4-e6|-2"
 ```
 
