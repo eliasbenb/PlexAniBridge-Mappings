@@ -133,13 +133,13 @@ class SortingJSONEncoder(json.JSONEncoder):
             return obj
 
 
-class TVDBMapping(BaseModel, validate_assignment=True):
-    """Model for storing TVDB episode mappings to AniList episodes.
+class EpisodeMapping(BaseModel, validate_assignment=True):
+    """Model for storing episode mappings between external sources and AniList.
 
     The model is used to validate and parse episode mappings from a string pattern.
     """
 
-    season: int = Field(ge=0, description="The TVDB season number")
+    season: int = Field(ge=0, description="The source season number")
     start: int = Field(
         default=1, gt=0, description="Start of the episode range in the mapping"
     )
@@ -154,13 +154,13 @@ class TVDBMapping(BaseModel, validate_assignment=True):
     ratio: int = Field(
         default=1,
         description="The 'worth' of each episode in the range. Positive values "
-        "indicate that 1 TVDB episode corresponds to N AniList episodes, while "
-        "negative values indicate that N TVDB episodes correspond to 1 AniList "
+        "indicate that 1 source episode corresponds to N AniList episodes, while "
+        "negative values indicate that N source episodes correspond to 1 AniList "
         "episode.",
     )
 
     @staticmethod
-    def check_overlap(ranges: list["TVDBMapping"]) -> bool:
+    def check_overlap(ranges: list["EpisodeMapping"]) -> bool:
         """Check if any episode ranges overlap."""
         if len(ranges) <= 1:
             return False
@@ -174,7 +174,7 @@ class TVDBMapping(BaseModel, validate_assignment=True):
 
     @classmethod
     def from_string(cls, season: int, s: str) -> list[Self]:
-        """Parse a string pattern into a TVDBMapping instance.
+        """Parse a string pattern into an EpisodeMapping instance.
 
         Args:
             season (int): Season number
@@ -187,7 +187,7 @@ class TVDBMapping(BaseModel, validate_assignment=True):
                     - '' (empty string for full season)
 
         Returns:
-            list[TVDBMapping]: List of parsed TVDBMapping instances
+            list[EpisodeMapping]: List of parsed EpisodeMapping instances
         """
         PATTERN = re.compile(
             r"""
@@ -249,11 +249,11 @@ class TVDBMapping(BaseModel, validate_assignment=True):
         return episode_ranges
 
     @staticmethod
-    def to_string(mappings: list["TVDBMapping"]) -> str:
-        """Convert a list of TVDBMapping objects to their string representation.
+    def to_string(mappings: list["EpisodeMapping"]) -> str:
+        """Convert a list of EpisodeMapping objects to their string representation.
 
         Args:
-            mappings (list[TVDBMapping]): List of mapping objects
+            mappings (list[EpisodeMapping]): List of mapping objects
 
         Returns:
             str: Simplified string representation
@@ -318,6 +318,22 @@ class AniMap(BaseModel, validate_assignment=True):
     tvdb_id: int | None = Field(
         default=None, title="TVDB ID", description="The TVDB ID"
     )
+    tmdb_mappings: dict[str, str] | None = Field(
+        default=None,
+        title="TMDB Mappings",
+        description=(
+            "Mapping of TMDB seasons to episode patterns.\n\nPattern Format: "
+            "'e{start}-e{end}|{ratio},e{start2}-e{end2}|{ratio2},...,e{startN}-e{endN}|{ratioN}'\n\n"
+            "Attributes:\n"
+            "\t- {start}: Start of the episode range\n"
+            "\t- {end}: End of the episode range. None indicates an open-ended range.\n"
+            "\t- {ratio}: The 'worth' of each episode in the range. Positive values "
+            "indicate that 1 TMDB episode corresponds to N AniList episodes, while "
+            "negative values indicate that N TMDB episodes correspond to 1 AniList "
+            "episode."
+        ),
+        examples=[{"s1": "e1-e12|2", "s2": "e13-"}, {"s1": ""}, {"s1": "e4-e6|-2"}],
+    )
     tvdb_mappings: dict[str, str] | None = Field(
         default=None,
         title="TVDB Mappings",
@@ -335,22 +351,24 @@ class AniMap(BaseModel, validate_assignment=True):
         examples=[{"s1": "e1-e12|2", "s2": "e13-"}, {"s1": ""}, {"s1": "e4-e6|-2"}],
     )
 
-    @field_validator("tvdb_mappings")
+    @field_validator("tmdb_mappings", "tvdb_mappings")
     @classmethod
-    def validate_tvdb_mappings(cls, v: dict[str, str] | None) -> dict[str, str] | None:
-        """Validate TVDB mappings for correct format and overlapping ranges."""
+    def validate_episode_mappings(
+        cls, v: dict[str, str] | None
+    ) -> dict[str, str] | None:
+        """Validate episode mappings for correct format and overlapping ranges."""
         if not v:
             return v
 
         season_groups = {}
         for season_str, mapping_str in v.items():
             season = int(season_str.lstrip("s"))
-            mappings = TVDBMapping.from_string(season, mapping_str)
+            mappings = EpisodeMapping.from_string(season, mapping_str)
             if not mappings:
                 raise ValueError(f"Invalid mapping: {mapping_str}")
             season_groups.setdefault(season, []).extend(mappings)
 
-        if any(TVDBMapping.check_overlap(maps) for maps in season_groups.values()):
+        if any(EpisodeMapping.check_overlap(maps) for maps in season_groups.values()):
             raise ValueError("Overlapping episode ranges detected")
         return v
 
@@ -364,17 +382,18 @@ class AniMap(BaseModel, validate_assignment=True):
             if value is not None and isinstance(value, list) and len(value) == 1:
                 data[key] = value[0]
 
-        if data.get("tvdb_mappings"):
-            simplified_mappings = {}
-            for season_str, mapping_str in data["tvdb_mappings"].items():
-                season = int(season_str.lstrip("s"))
+        for field in ("tmdb_mappings", "tvdb_mappings"):
+            if data.get(field):
+                simplified_mappings = {}
+                for season_str, mapping_str in data[field].items():
+                    season = int(season_str.lstrip("s"))
 
-                mappings = TVDBMapping.from_string(season, mapping_str)
-                simplified_str = TVDBMapping.to_string(mappings)
+                    mappings = EpisodeMapping.from_string(season, mapping_str)
+                    simplified_str = EpisodeMapping.to_string(mappings)
 
-                simplified_mappings[season_str] = simplified_str
+                    simplified_mappings[season_str] = simplified_str
 
-            data["tvdb_mappings"] = simplified_mappings
+                data[field] = simplified_mappings
 
         return data
 
