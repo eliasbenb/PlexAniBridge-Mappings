@@ -18,7 +18,7 @@ export interface AniMap {
     imdb_id: string | string[] | null;
     mal_id: number | number[] | null;
     tmdb_movie_id: number | number[] | null;
-    tmdb_show_id: number | number[] | null;
+    tmdb_show_id: number | null;
     tvdb_id: number | null;
     tvdb_mappings: Record<string, string> | null;
 }
@@ -49,8 +49,12 @@ export const AniMapSchema = z.object({
     imdb_id: z.union([z.string(), z.array(z.string()), z.null()]),
     mal_id: z.union([z.number().int(), z.array(z.number().int()), z.null()]),
     tmdb_movie_id: z.union([z.number().int(), z.array(z.number().int()), z.null()]),
-    tmdb_show_id: z.union([z.number().int(), z.array(z.number().int()), z.null()]),
+    tmdb_show_id: z.number().int().nullable(),
     tvdb_id: z.number().int().nullable(),
+    tmdb_mappings: z.record(
+        z.string(),
+        z.string()
+    ).nullable(),
     tvdb_mappings: z.record(
         z.string(),
         z.string()
@@ -99,12 +103,9 @@ export const AniMapSchema = z.object({
             example: 532067
         },
         tmdb_show_id: {
-            oneOf: [
-                { type: 'integer' },
-                { type: 'array', items: { type: 'integer' } },
-                { type: 'null' }
-            ],
-            description: 'The matching TMDB ID(s) for the show entry. Can be a single ID or an array of IDs',
+            type: 'integer',
+            nullable: true,
+            description: 'The matching TMDB ID for the show entry',
             example: 83095
         },
         tvdb_id: {
@@ -112,6 +113,16 @@ export const AniMapSchema = z.object({
             nullable: true,
             description: 'The matching TVDB ID for the show entry',
             example: 333234
+        },
+        tmdb_mappings: {
+            type: 'object',
+            nullable: true,
+            additionalProperties: { type: 'string' },
+            description: 'A dictionary mapping TMDB seasons to episode patterns',
+            example: {
+                's0': 'e1',
+                's1': 'e1-e13'
+            }
         },
         tvdb_mappings: {
             type: 'object',
@@ -132,6 +143,10 @@ export const AniMapSchema = z.object({
         tmdb_movie_id: null,
         tmdb_show_id: 83095,
         tvdb_id: 333234,
+        tmdb_mappings: {
+            's0': 'e1',
+            's1': 'e1-e13'
+        },
         tvdb_mappings: {
             's0': 'e1',
             's1': 'e1-e13'

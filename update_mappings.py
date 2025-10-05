@@ -312,8 +312,8 @@ class AniMap(BaseModel, validate_assignment=True):
     tmdb_movie_id: int | list[int] | None = Field(
         default=None, title="TMDB Movie ID", description="The TMDB movie ID(s)"
     )
-    tmdb_show_id: int | list[int] | None = Field(
-        default=None, title="TMDB Show ID", description="The TMDB show ID(s)"
+    tmdb_show_id: int | None = Field(
+        default=None, title="TMDB Show ID", description="The TMDB show ID"
     )
     tvdb_id: int | None = Field(
         default=None, title="TVDB ID", description="The TVDB ID"
@@ -407,6 +407,7 @@ class ProblemEnum(StrEnum):
     UNKNOWN_TVDB_SEASON = "Unknown TVDB Season"
     UNKNOWN_TVDB_EP_COUNT = "Unknown TVDB Episode Count"
     UNKNOWN_ANILIST_EP_COUNT = "Unknown AniList Episode Count"
+    AMBIGUOUS_TMDB_SHOW = "Ambiguous TMDB Show Mapping"
 
 
 class Problem(BaseModel):
@@ -438,6 +439,44 @@ class AnimeIDCollector:
 
     SCHEMA_VERSION = "v2"
     SCHEMA_URL = f"https://raw.githubusercontent.com/eliasbenb/PlexAniBridge-Mappings/{SCHEMA_VERSION}/mappings.schema.json"
+    LINK_CONFIGS = (
+        (
+            "tvdb_id",
+            "https://www.thetvdb.com/?tab=series&id={value}",
+            "https://thetvdb.com/images/icon.png",
+            "TVDB",
+        ),
+        (
+            "mal_id",
+            "https://myanimelist.net/anime/{value}",
+            "https://myanimelist.net/favicon.ico",
+            "MAL",
+        ),
+        (
+            "anidb_id",
+            "https://anidb.net/anime/{value}",
+            "https://anidb.net/favicon.ico",
+            "AniDB",
+        ),
+        (
+            "imdb_id",
+            "https://www.imdb.com/title/{value}",
+            "https://www.imdb.com/favicon.ico",
+            "IMDB",
+        ),
+        (
+            "tmdb_movie_id",
+            "https://www.themoviedb.org/movie/{value}",
+            "https://www.themoviedb.org/favicon.ico",
+            "TMDB Movie",
+        ),
+        (
+            "tmdb_show_id",
+            "https://www.themoviedb.org/tv/{value}",
+            "https://www.themoviedb.org/favicon.ico",
+            "TMDB Show",
+        ),
+    )
 
     def __init__(self) -> None:
         """Initialize the AnimeIDCollector with necessary attributes and setup."""
@@ -457,6 +496,30 @@ class AnimeIDCollector:
         self.problematic: dict[int, set[Problem]] = {}
 
         self.edits_yaml_content: CommentedMap | None = None
+
+    def _remove_problem(self, anilist_id: int, problem_type: ProblemEnum) -> None:
+        """Remove a problem of the given type for the specified AniList entry."""
+        problems = self.problematic.get(anilist_id)
+        if not problems:
+            return
+
+        self.problematic[anilist_id] = {
+            problem for problem in problems if problem.problem != problem_type
+        }
+
+    @staticmethod
+    def _icon_link(url: str, icon: str, alt: str) -> str:
+        """Generate an HTML link with an icon."""
+        return (
+            f"<a href='{url}'><img src='{icon}' alt='{alt}' width='20' height='20'></a>"
+        )
+
+    @staticmethod
+    def _iter_values(value: Any) -> list[Any]:
+        """Normalize scalar or list values to a list."""
+        if isinstance(value, list):
+            return value
+        return [value]
 
     def _setup_logger(self) -> logging.Logger:
         """Set up and configure the logger.
@@ -668,6 +731,57 @@ class AnimeIDCollector:
                 imdb_ids = imdb_id.split(",")
                 entry.imdb_id = imdb_ids[0] if len(imdb_ids) == 1 else imdb_ids
 
+        def process_tmdb_ids(
+            entry: AniMap, tmdb_show_id: str | None, tmdb_movie_id: str | None
+        ) -> None:
+            if tmdb_show_id:
+                tmdb_show_id = tmdb_show_id.strip()
+                if tmdb_show_id.isdigit():
+                    parsed_tmdb_show_id = int(tmdb_show_id)
+                    if entry.tmdb_show_id is None:
+                        entry.tmdb_show_id = parsed_tmdb_show_id
+                        if entry.anilist_id is not None:
+                            self._remove_problem(
+                                entry.anilist_id, ProblemEnum.AMBIGUOUS_TMDB_SHOW
+                            )
+                    elif entry.tmdb_show_id != parsed_tmdb_show_id:
+                        self.logger.debug(
+                            (
+                                "Conflicting TMDB show ID for AniDB %s "
+                                "(existing: %s, anime-lists: %s)"
+                            ),
+                            entry.anidb_id,
+                            entry.tmdb_show_id,
+                            parsed_tmdb_show_id,
+                        )
+                else:
+                    self.logger.debug(
+                        "Non-numeric TMDB show ID `%s` for AniDB %s",
+                        tmdb_show_id,
+                        entry.anidb_id,
+                    )
+
+            if tmdb_movie_id:
+                tmdb_movie_id = tmdb_movie_id.strip()
+                if tmdb_movie_id.isdigit():
+                    parsed_tmdb_movie_id = int(tmdb_movie_id)
+                    if entry.tmdb_movie_id is None:
+                        entry.tmdb_movie_id = parsed_tmdb_movie_id
+                    elif isinstance(entry.tmdb_movie_id, list):
+                        if parsed_tmdb_movie_id not in entry.tmdb_movie_id:
+                            entry.tmdb_movie_id.append(parsed_tmdb_movie_id)
+                            entry.tmdb_movie_id.sort()
+                    elif entry.tmdb_movie_id != parsed_tmdb_movie_id:
+                        entry.tmdb_movie_id = sorted(
+                            {entry.tmdb_movie_id, parsed_tmdb_movie_id}
+                        )
+                else:
+                    self.logger.debug(
+                        "Non-numeric TMDB movie ID `%s` for AniDB %s",
+                        tmdb_movie_id,
+                        entry.anidb_id,
+                    )
+
         content = self._fetch_url(
             "https://raw.githubusercontent.com/Anime-Lists/anime-lists/master/anime-list-master.xml",
             as_bytes=True,
@@ -699,6 +813,12 @@ class AnimeIDCollector:
             imdb_id = get_xpath_str(anime, "@imdbid")
             if imdb_id is not None:
                 process_imdb_id(entry, imdb_id)
+
+            process_tmdb_ids(
+                entry,
+                get_xpath_str(anime, "@tmdbtv"),
+                get_xpath_str(anime, "@tmdbid"),
+            )
 
     def process_aggregations(self) -> None:
         """Process anime data from AnimeAggregations.
@@ -741,15 +861,52 @@ class AnimeIDCollector:
                 )
 
             if "TMDB" in resources:
-                tv_ids = [
-                    int(id[3:]) for id in resources["TMDB"] if id.startswith("tv")
-                ]
+                tv_ids = sorted(
+                    {int(id[3:]) for id in resources["TMDB"] if id.startswith("tv")}
+                )
                 movie_ids = [
                     int(id[6:]) for id in resources["TMDB"] if id.startswith("movie")
                 ]
 
-                if tv_ids and not entry.tmdb_show_id:
-                    entry.tmdb_show_id = tv_ids[0] if len(tv_ids) == 1 else tv_ids
+                if tv_ids:
+                    if len(tv_ids) > 1:
+                        if entry.anilist_id is not None:
+                            problems = self.problematic.setdefault(
+                                entry.anilist_id, set()
+                            )
+                            details = (
+                                "Multiple TMDB show IDs detected in AnimeAggregations "
+                                "`{show_ids}` `{context}`"
+                            ).format(
+                                show_ids=tv_ids,
+                                context={
+                                    "anilist_id": entry.anilist_id,
+                                    "anidb_id": entry.anidb_id,
+                                },
+                            )
+                            problems.add(
+                                Problem(
+                                    problem=ProblemEnum.AMBIGUOUS_TMDB_SHOW,
+                                    details=details,
+                                )
+                            )
+                        else:
+                            self.logger.warning(
+                                (
+                                    "Multiple TMDB show IDs detected in "
+                                    "AnimeAggregations for AniDB %s: %s"
+                                ),
+                                entry.anidb_id,
+                                tv_ids,
+                            )
+                    elif entry.tmdb_show_id is None:
+                        entry.tmdb_show_id = tv_ids[0]
+                        if entry.anilist_id is not None:
+                            self._remove_problem(
+                                entry.anilist_id,
+                                ProblemEnum.AMBIGUOUS_TMDB_SHOW,
+                            )
+
                 if movie_ids and not entry.tmdb_movie_id:
                     entry.tmdb_movie_id = (
                         movie_ids[0] if len(movie_ids) == 1 else movie_ids
@@ -819,6 +976,10 @@ class AnimeIDCollector:
                     curr_value = getattr(existing_entry, key)
                     if curr_value is None:
                         setattr(existing_entry, key, value)
+                        if key == "tmdb_show_id":
+                            self._remove_problem(
+                                anilist_id, ProblemEnum.AMBIGUOUS_TMDB_SHOW
+                            )
                     elif isinstance(curr_value, list):
                         if value not in curr_value:
                             self.logger.debug(
@@ -894,6 +1055,10 @@ class AnimeIDCollector:
                         )
                     else:
                         setattr(existing_entry, key, value)
+                        if key == "tmdb_show_id" and value is not None:
+                            self._remove_problem(
+                                anilist_id, ProblemEnum.AMBIGUOUS_TMDB_SHOW
+                            )
             else:
                 entry = AniMap(anilist_id=anilist_id, **fields)
                 self.anilist_entries[anilist_id] = entry
@@ -936,79 +1101,29 @@ class AnimeIDCollector:
 
             for anilist_id, problem in entries:
                 entry = self.anilist_entries.get(anilist_id)
+                links = [
+                    self._icon_link(
+                        f"https://anilist.co/anime/{anilist_id}",
+                        "https://anilist.co/favicon.ico",
+                        "AniList",
+                    )
+                ]
 
-                links = (
-                    f"<a href='https://anilist.co/anime/{anilist_id}'><img src="
-                    "'https://anilist.co/favicon.ico' alt='AniList' width='20' "
-                    "height='20'></a>"
+                if entry:
+                    for attr, url_template, icon, alt in self.LINK_CONFIGS:
+                        attr_value = getattr(entry, attr, None)
+                        if not attr_value:
+                            continue
+                        for value in self._iter_values(attr_value):
+                            links.append(
+                                self._icon_link(
+                                    url_template.format(value=value), icon, alt
+                                )
+                            )
+
+                markdown_content += (
+                    f"| {anilist_id} | {problem.details} | {' '.join(links)} |\n"
                 )
-                if entry and entry.tvdb_id:
-                    links += (
-                        f" <a href='https://www.thetvdb.com/?tab=series&id={entry.tvdb_id}'>"
-                        f"<img src='https://thetvdb.com/images/icon.png' alt='TVDB' "
-                        "width='20' height='20'></a>"
-                    )
-
-                if entry and entry.mal_id:
-                    mal_ids = (
-                        [entry.mal_id]
-                        if isinstance(entry.mal_id, int)
-                        else entry.mal_id
-                    )
-                    for mal_id in mal_ids:
-                        links += (
-                            f" <a href='https://myanimelist.net/anime/{mal_id}'>"
-                            "<img src='https://myanimelist.net/favicon.ico' alt='MAL' "
-                            "width='20' height='20'></a>"
-                        )
-
-                if entry and entry.anidb_id:
-                    links += (
-                        f" <a href='https://anidb.net/anime/{entry.anidb_id}'>"
-                        "<img src='https://anidb.net/favicon.ico' alt='AniDB' "
-                        "width='20' height='20'></a>"
-                    )
-
-                if entry and entry.imdb_id:
-                    imdb_ids = (
-                        [entry.imdb_id]
-                        if isinstance(entry.imdb_id, str)
-                        else entry.imdb_id
-                    )
-                    for imdb_id in imdb_ids:
-                        links += (
-                            f" <a href='https://www.imdb.com/title/{imdb_id}'>"
-                            f"<img src='https://www.imdb.com/favicon.ico' alt='IMDB' "
-                            "width='20' height='20'></a>"
-                        )
-
-                if entry and entry.tmdb_movie_id:
-                    tmdb_ids = (
-                        [entry.tmdb_movie_id]
-                        if isinstance(entry.tmdb_movie_id, int)
-                        else entry.tmdb_movie_id
-                    )
-                    for tmdb_id in tmdb_ids:
-                        links += (
-                            f" <a href='https://www.themoviedb.org/movie/{tmdb_id}'>"
-                            "<img src='https://www.themoviedb.org/favicon.ico' "
-                            "alt='TMDB Movie' width='20' height='20'></a>"
-                        )
-
-                if entry and entry.tmdb_show_id:
-                    tmdb_ids = (
-                        [entry.tmdb_show_id]
-                        if isinstance(entry.tmdb_show_id, int)
-                        else entry.tmdb_show_id
-                    )
-                    for tmdb_id in tmdb_ids:
-                        links += (
-                            f" <a href='https://www.themoviedb.org/tv/{tmdb_id}'>"
-                            "<img src='https://www.themoviedb.org/favicon.ico' "
-                            "alt='TMDB Show' width='20' height='20'></a>"
-                        )
-
-                markdown_content += f"| {anilist_id} | {problem.details} | {links} |\n"
 
             markdown_content += "\n"
 
