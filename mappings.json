@@ -1164,7 +1164,7 @@
     "tmdb_show_id": 34767,
     "tvdb_id": 79782,
     "tvdb_mappings": {
-      "s1": "e1-e26"
+      "s1": ""
     }
   },
   "114": {
@@ -1667,7 +1667,7 @@
     "tmdb_show_id": 26340,
     "tvdb_id": 79520,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e13"
     }
   },
   "161": {
@@ -2526,7 +2526,7 @@
     "tmdb_show_id": 47134,
     "tvdb_id": 92391,
     "tvdb_mappings": {
-      "s1": "e1-e39"
+      "s1": ""
     }
   },
   "245": {
@@ -4956,7 +4956,7 @@
     "anidb_id": 575,
     "imdb_id": "tt0433498",
     "mal_id": 486,
-    "tmdb_show_id": 74097,
+    "tmdb_show_id": 34166,
     "tvdb_id": 79179,
     "tvdb_mappings": {
       "s1": ""
@@ -12172,6 +12172,7 @@
       3466
     ],
     "tmdb_movie_id": 1173976,
+    "tmdb_show_id": 34166,
     "tvdb_id": 79179,
     "tvdb_mappings": {
       "s0": "e2"
@@ -13953,7 +13954,7 @@
     "anidb_id": 4638,
     "imdb_id": "tt0968237",
     "mal_id": 1594,
-    "tmdb_show_id": 246495,
+    "tmdb_show_id": 8974,
     "tvdb_id": 79106,
     "tvdb_mappings": {
       "s2": ""
@@ -18402,6 +18403,7 @@
     "imdb_id": "tt0994793",
     "mal_id": 2175,
     "tmdb_movie_id": 833013,
+    "tmdb_show_id": 34166,
     "tvdb_id": 79179,
     "tvdb_mappings": {
       "s0": "e3"
@@ -34453,7 +34455,12 @@
     }
   },
   "6291": {
-    "mal_id": 6291
+    "mal_id": 6291,
+    "tmdb_show_id": 39379,
+    "tvdb_id": 78914,
+    "tvdb_mappings": {
+      "s0": "e3"
+    }
   },
   "6293": {
     "anidb_id": 9345,
@@ -73010,7 +73017,6 @@
     "imdb_id": "tt10388584",
     "mal_id": 38897,
     "tmdb_movie_id": 658436,
-    "tmdb_show_id": 63576,
     "tvdb_id": 269319,
     "tvdb_mappings": {
       "s0": "e26"
@@ -74325,7 +74331,6 @@
   },
   "101100": {
     "mal_id": 36833,
-    "tmdb_show_id": 63576,
     "tvdb_id": 269319,
     "tvdb_mappings": {
       "s0": "e25"
@@ -108468,7 +108473,8 @@
     "mal_id": 52289
   },
   "154178": {
-    "mal_id": 52977
+    "mal_id": 52977,
+    "tmdb_show_id": 136763
   },
   "154195": {
     "anidb_id": 18147,
@@ -113811,7 +113817,6 @@
     "imdb_id": "tt30761056",
     "mal_id": 56671,
     "tmdb_movie_id": 1179822,
-    "tmdb_show_id": 110911,
     "tvdb_id": 389459,
     "tvdb_mappings": {
       "s0": "e1"
@@ -116102,7 +116107,7 @@
     "mal_id": 58172,
     "tvdb_id": 446389,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e13"
     }
   },
   "175033": {
@@ -121233,7 +121238,11 @@
   },
   "185801": {
     "anidb_id": 19075,
-    "mal_id": 60619
+    "mal_id": 60619,
+    "tvdb_id": 446389,
+    "tvdb_mappings": {
+      "s2": ""
+    }
   },
   "185804": {
     "mal_id": 34717
@@ -121592,7 +121601,7 @@
     "mal_id": 60781,
     "tvdb_id": 459058,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e11"
     }
   },
   "186198": {
