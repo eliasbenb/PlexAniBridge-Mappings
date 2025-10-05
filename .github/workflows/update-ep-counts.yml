@@ -2,18 +2,19 @@ name: Episode Count Update
 
 on:
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: "0 0 * * 0"
   workflow_dispatch:
     inputs:
       source:
-        description: 'Source to update (anilist, tvdb, or both)'
+        description: "Source to update (anilist, tmdb, tvdb, or all)"
         required: true
-        default: 'both'
+        default: "all"
         type: choice
         options:
           - anilist
+          - tmdb
           - tvdb
-          - both
+          - all
 
 jobs:
   update-episode-counts:
@@ -39,10 +40,14 @@ jobs:
 
       - name: Run Update Episode Counts (scheduled)
         if: github.event_name == 'schedule'
-        run: python scripts/update_ep_counts.py --source both
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: python scripts/update_ep_counts.py --source all
 
       - name: Run Update Episode Counts (manual)
         if: github.event_name == 'workflow_dispatch'
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: python scripts/update_ep_counts.py --source ${{ github.event.inputs.source }}
 
       - name: Check Diff
