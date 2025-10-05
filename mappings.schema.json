@@ -120,17 +120,11 @@
               "type": "integer"
             },
             {
-              "items": {
-                "type": "integer"
-              },
-              "type": "array"
-            },
-            {
               "type": "null"
             }
           ],
           "default": null,
-          "description": "The TMDB show ID(s)",
+          "description": "The TMDB show ID",
           "title": "TMDB Show ID"
         },
         "tvdb_id": {
