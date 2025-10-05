@@ -1,8 +1,10 @@
-"""Script to update episode counts from AniList and TVDB APIs."""
+"""Script to update episode counts from AniList, TVDB, and TMDB APIs."""
 
 import argparse
 import json
+import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from functools import lru_cache
 from pathlib import Path
 from time import sleep
 from typing import Any
@@ -10,6 +12,7 @@ from typing import Any
 import requests
 
 ANILIST_API_URL = "https://graphql.anilist.co"
+TMDB_API_URL = "https://api.themoviedb.org/3"
 SKYHOOK_API_URL = "http://skyhook.sonarr.tv/v1/tvdb/shows/en"
 
 
@@ -59,10 +62,10 @@ def make_request_anilist(query: str, variables: dict | str | None = None) -> dic
     return response.json()
 
 
-def make_request_tvdb(tvdb_id: str | int) -> dict:
+def make_request_tvdb(tvdb_show_id: int | str) -> dict:
     """Make a request to TVDB API for a specific series ID."""
     response = requests.get(
-        f"{SKYHOOK_API_URL}/{tvdb_id}",
+        f"{SKYHOOK_API_URL}/{tvdb_show_id}",
         headers={
             "Content-Type": "application/json",
             "Accept": "application/json",
@@ -73,8 +76,71 @@ def make_request_tvdb(tvdb_id: str | int) -> dict:
     return response.json()
 
 
-def process_tvdb_id(tvdb_id: int | str) -> tuple[str, dict]:
-    """Process a single TVDB ID and return its episode counts."""
+@lru_cache(maxsize=1)
+def get_tmdb_api_key() -> str:
+    """Retrieve and cache the TMDB API key from the environment."""
+    api_key = os.environ.get("TMDB_API_KEY")
+    if not api_key:
+        raise RuntimeError(
+            "TMDB_API_KEY environment variable is not set. "
+            "Please provide a valid TMDB API key."
+        )
+    return api_key
+
+
+def make_request_tmdb(tmdb_show_id: int | str) -> dict:
+    """Make a request to the TMDB API with rate limit handling."""
+    headers = {
+        "Accept": "application/json",
+        "Authorization": f"Bearer {get_tmdb_api_key()}",
+    }
+
+    while True:
+        response = requests.get(f"{TMDB_API_URL}/tv/{tmdb_show_id}", headers=headers)
+
+        if response.status_code == 429:
+            retry_after = int(response.headers.get("Retry-After", 10))
+            print(f"TMDB rate limit exceeded, waiting {retry_after} seconds")
+            sleep(retry_after + 1)
+            continue
+
+        if response.status_code == 429:
+            retry_after = int(response.headers.get("Retry-After", 10))
+            print(f"TMDB rate limit exceeded, waiting {retry_after} seconds")
+            sleep(retry_after + 1)
+            continue
+
+        try:
+            response.raise_for_status()
+        except requests.exceptions.HTTPError as e:
+            print(f"Error fetching TMDB endpoint {tmdb_show_id}: {response.text}")
+            raise e
+
+        return response.json()
+
+
+def process_tmdb_show_id(tmdb_id: int | str) -> tuple[str, dict[str, int | None]]:
+    """Process a single TMDB show ID and return its episode counts by season."""
+    try:
+        show_data = make_request_tmdb(tmdb_id)
+        seasons = show_data.get("seasons", [])
+
+        episode_counts = {}
+        for season in seasons:
+            season_number = season.get("season_number")
+            if season_number is None:
+                continue
+            episode_count = season.get("episode_count")
+            episode_counts[str(season_number)] = episode_count
+
+        return str(tmdb_id), episode_counts
+    except Exception as e:
+        print(f"Error processing TMDB show ID {tmdb_id}: {e}")
+        return str(tmdb_id), {}
+
+
+def process_tvdb_show_id(tvdb_id: int | str) -> tuple[str, dict]:
+    """Process a single TVDB show ID and return its episode counts."""
     try:
         series_data = make_request_tvdb(tvdb_id)
         seasons = series_data["seasons"]
@@ -121,6 +187,47 @@ def update_anilist_counts(wanted_anilist: list[int | str]):
     return episode_counts_anilist
 
 
+def update_tmdb_counts(wanted_tmdb: list[int | str]):
+    """Update TMDB show episode counts."""
+    if not wanted_tmdb:
+        print("No TMDB show IDs found to process.")
+        return {}
+
+    print("Updating TMDB show episode counts...")
+
+    unique_ids = sorted({int(str(tmdb_id)) for tmdb_id in wanted_tmdb})
+    episode_counts_tmdb: dict[str, dict[str, int | None]] = {}
+
+    total_ids = len(unique_ids)
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        future_to_id = {
+            executor.submit(process_tmdb_show_id, tmdb_id): tmdb_id
+            for tmdb_id in unique_ids
+        }
+
+        for i, future in enumerate(as_completed(future_to_id), 1):
+            tmdb_id = future_to_id[future]
+            print(f"Processing TMDB show ID {tmdb_id} ({i}/{total_ids})")
+            tmdb_id_str, counts = future.result()
+            episode_counts_tmdb[tmdb_id_str] = counts
+
+    sorted_episode_counts_tmdb = {
+        tmdb_id: {
+            season: counts[season]
+            for season in sorted(counts.keys(), key=lambda x: int(x))
+        }
+        for tmdb_id, counts in sorted(
+            episode_counts_tmdb.items(), key=lambda x: int(x[0])
+        )
+    }
+
+    with Path("data/tmdb_episode_counts.json").open("w", newline="\n") as f:
+        json.dump(sorted_episode_counts_tmdb, f, indent=2)
+
+    print("TMDB show episode counts updated successfully!")
+    return episode_counts_tmdb
+
+
 def update_tvdb_counts(wanted_tvdb):
     """Update TVDB episode counts."""
     print("Updating TVDB episode counts...")
@@ -129,7 +236,7 @@ def update_tvdb_counts(wanted_tvdb):
     total_ids = len(wanted_tvdb)
     with ThreadPoolExecutor(max_workers=20) as executor:
         future_to_id = {
-            executor.submit(process_tvdb_id, tvdb_id): tvdb_id
+            executor.submit(process_tvdb_show_id, tvdb_id): tvdb_id
             for tvdb_id in wanted_tvdb
         }
 
@@ -163,9 +270,11 @@ def parse_arguments():
     )
     parser.add_argument(
         "--source",
-        choices=["anilist", "tvdb", "both"],
-        default="both",
-        help="Specify which source to update: anilist, tvdb, or both (default: both)",
+        choices=["anilist", "tmdb", "tvdb", "all"],
+        default="all",
+        help=(
+            "Specify which source to update: anilist, tmdb, tvdb, all (default: all)"
+        ),
     )
     return parser.parse_args()
 
@@ -179,17 +288,27 @@ if __name__ == "__main__":
         mappings: dict[str, dict[str, Any]] = json.load(f)
 
     wanted_anilist = []
+    wanted_tmdb = []
     wanted_tvdb = []
     for anilist_id_str, entry in mappings.items():
+        tmdb_show_id = entry.get("tmdb_show_id")
+        if tmdb_show_id:
+            wanted_tmdb.append(tmdb_show_id)
+
         tvdb_id = entry.get("tvdb_id")
         if tvdb_id:
             wanted_anilist.append(anilist_id_str)
             wanted_tvdb.append(tvdb_id)
 
-    if args.source in ["anilist", "both"]:
+    if args.source in ("anilist", "all"):
         update_anilist_counts(wanted_anilist)
 
-    if args.source in ["tvdb", "both"]:
+    if args.source in ("tvdb", "all"):
         update_tvdb_counts(wanted_tvdb)
 
-    print(f"Update completed for source(s): {args.source}")
+    if args.source in ("tmdb", "all"):
+        update_tmdb_counts(wanted_tmdb)
+
+    completed_sources = "anilist, tvdb, tmdb" if args.source == "all" else args.source
+
+    print(f"Update completed for source(s): {completed_sources}")
