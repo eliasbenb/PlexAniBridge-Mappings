@@ -439,6 +439,44 @@ class AnimeIDCollector:
 
     SCHEMA_VERSION = "v2"
     SCHEMA_URL = f"https://raw.githubusercontent.com/eliasbenb/PlexAniBridge-Mappings/{SCHEMA_VERSION}/mappings.schema.json"
+    LINK_CONFIGS = (
+        (
+            "tvdb_id",
+            "https://www.thetvdb.com/?tab=series&id={value}",
+            "https://thetvdb.com/images/icon.png",
+            "TVDB",
+        ),
+        (
+            "mal_id",
+            "https://myanimelist.net/anime/{value}",
+            "https://myanimelist.net/favicon.ico",
+            "MAL",
+        ),
+        (
+            "anidb_id",
+            "https://anidb.net/anime/{value}",
+            "https://anidb.net/favicon.ico",
+            "AniDB",
+        ),
+        (
+            "imdb_id",
+            "https://www.imdb.com/title/{value}",
+            "https://www.imdb.com/favicon.ico",
+            "IMDB",
+        ),
+        (
+            "tmdb_movie_id",
+            "https://www.themoviedb.org/movie/{value}",
+            "https://www.themoviedb.org/favicon.ico",
+            "TMDB Movie",
+        ),
+        (
+            "tmdb_show_id",
+            "https://www.themoviedb.org/tv/{value}",
+            "https://www.themoviedb.org/favicon.ico",
+            "TMDB Show",
+        ),
+    )
 
     def __init__(self) -> None:
         """Initialize the AnimeIDCollector with necessary attributes and setup."""
@@ -468,6 +506,20 @@ class AnimeIDCollector:
         self.problematic[anilist_id] = {
             problem for problem in problems if problem.problem != problem_type
         }
+
+    @staticmethod
+    def _icon_link(url: str, icon: str, alt: str) -> str:
+        """Generate an HTML link with an icon."""
+        return (
+            f"<a href='{url}'><img src='{icon}' alt='{alt}' width='20' height='20'></a>"
+        )
+
+    @staticmethod
+    def _iter_values(value: Any) -> list[Any]:
+        """Normalize scalar or list values to a list."""
+        if isinstance(value, list):
+            return value
+        return [value]
 
     def _setup_logger(self) -> logging.Logger:
         """Set up and configure the logger.
@@ -1049,79 +1101,29 @@ class AnimeIDCollector:
 
             for anilist_id, problem in entries:
                 entry = self.anilist_entries.get(anilist_id)
+                links = [
+                    self._icon_link(
+                        f"https://anilist.co/anime/{anilist_id}",
+                        "https://anilist.co/favicon.ico",
+                        "AniList",
+                    )
+                ]
 
-                links = (
-                    f"<a href='https://anilist.co/anime/{anilist_id}'><img src="
-                    "'https://anilist.co/favicon.ico' alt='AniList' width='20' "
-                    "height='20'></a>"
+                if entry:
+                    for attr, url_template, icon, alt in self.LINK_CONFIGS:
+                        attr_value = getattr(entry, attr, None)
+                        if not attr_value:
+                            continue
+                        for value in self._iter_values(attr_value):
+                            links.append(
+                                self._icon_link(
+                                    url_template.format(value=value), icon, alt
+                                )
+                            )
+
+                markdown_content += (
+                    f"| {anilist_id} | {problem.details} | {' '.join(links)} |\n"
                 )
-                if entry and entry.tvdb_id:
-                    links += (
-                        f" <a href='https://www.thetvdb.com/?tab=series&id={entry.tvdb_id}'>"
-                        f"<img src='https://thetvdb.com/images/icon.png' alt='TVDB' "
-                        "width='20' height='20'></a>"
-                    )
-
-                if entry and entry.mal_id:
-                    mal_ids = (
-                        [entry.mal_id]
-                        if isinstance(entry.mal_id, int)
-                        else entry.mal_id
-                    )
-                    for mal_id in mal_ids:
-                        links += (
-                            f" <a href='https://myanimelist.net/anime/{mal_id}'>"
-                            "<img src='https://myanimelist.net/favicon.ico' alt='MAL' "
-                            "width='20' height='20'></a>"
-                        )
-
-                if entry and entry.anidb_id:
-                    links += (
-                        f" <a href='https://anidb.net/anime/{entry.anidb_id}'>"
-                        "<img src='https://anidb.net/favicon.ico' alt='AniDB' "
-                        "width='20' height='20'></a>"
-                    )
-
-                if entry and entry.imdb_id:
-                    imdb_ids = (
-                        [entry.imdb_id]
-                        if isinstance(entry.imdb_id, str)
-                        else entry.imdb_id
-                    )
-                    for imdb_id in imdb_ids:
-                        links += (
-                            f" <a href='https://www.imdb.com/title/{imdb_id}'>"
-                            f"<img src='https://www.imdb.com/favicon.ico' alt='IMDB' "
-                            "width='20' height='20'></a>"
-                        )
-
-                if entry and entry.tmdb_movie_id:
-                    tmdb_ids = (
-                        [entry.tmdb_movie_id]
-                        if isinstance(entry.tmdb_movie_id, int)
-                        else entry.tmdb_movie_id
-                    )
-                    for tmdb_id in tmdb_ids:
-                        links += (
-                            f" <a href='https://www.themoviedb.org/movie/{tmdb_id}'>"
-                            "<img src='https://www.themoviedb.org/favicon.ico' "
-                            "alt='TMDB Movie' width='20' height='20'></a>"
-                        )
-
-                if entry and entry.tmdb_show_id:
-                    tmdb_ids = (
-                        [entry.tmdb_show_id]
-                        if isinstance(entry.tmdb_show_id, int)
-                        else entry.tmdb_show_id
-                    )
-                    for tmdb_id in tmdb_ids:
-                        links += (
-                            f" <a href='https://www.themoviedb.org/tv/{tmdb_id}'>"
-                            "<img src='https://www.themoviedb.org/favicon.ico' "
-                            "alt='TMDB Show' width='20' height='20'></a>"
-                        )
-
-                markdown_content += f"| {anilist_id} | {problem.details} | {links} |\n"
 
             markdown_content += "\n"
 
