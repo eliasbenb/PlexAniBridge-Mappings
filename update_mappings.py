@@ -312,8 +312,8 @@ class AniMap(BaseModel, validate_assignment=True):
     tmdb_movie_id: int | list[int] | None = Field(
         default=None, title="TMDB Movie ID", description="The TMDB movie ID(s)"
     )
-    tmdb_show_id: int | list[int] | None = Field(
-        default=None, title="TMDB Show ID", description="The TMDB show ID(s)"
+    tmdb_show_id: int | None = Field(
+        default=None, title="TMDB Show ID", description="The TMDB show ID"
     )
     tvdb_id: int | None = Field(
         default=None, title="TVDB ID", description="The TVDB ID"
@@ -407,6 +407,7 @@ class ProblemEnum(StrEnum):
     UNKNOWN_TVDB_SEASON = "Unknown TVDB Season"
     UNKNOWN_TVDB_EP_COUNT = "Unknown TVDB Episode Count"
     UNKNOWN_ANILIST_EP_COUNT = "Unknown AniList Episode Count"
+    AMBIGUOUS_TMDB_SHOW = "Ambiguous TMDB Show Mapping"
 
 
 class Problem(BaseModel):
@@ -457,6 +458,16 @@ class AnimeIDCollector:
         self.problematic: dict[int, set[Problem]] = {}
 
         self.edits_yaml_content: CommentedMap | None = None
+
+    def _remove_problem(self, anilist_id: int, problem_type: ProblemEnum) -> None:
+        """Remove a problem of the given type for the specified AniList entry."""
+        problems = self.problematic.get(anilist_id)
+        if not problems:
+            return
+
+        self.problematic[anilist_id] = {
+            problem for problem in problems if problem.problem != problem_type
+        }
 
     def _setup_logger(self) -> logging.Logger:
         """Set up and configure the logger.
@@ -741,15 +752,52 @@ class AnimeIDCollector:
                 )
 
             if "TMDB" in resources:
-                tv_ids = [
-                    int(id[3:]) for id in resources["TMDB"] if id.startswith("tv")
-                ]
+                tv_ids = sorted(
+                    {int(id[3:]) for id in resources["TMDB"] if id.startswith("tv")}
+                )
                 movie_ids = [
                     int(id[6:]) for id in resources["TMDB"] if id.startswith("movie")
                 ]
 
-                if tv_ids and not entry.tmdb_show_id:
-                    entry.tmdb_show_id = tv_ids[0] if len(tv_ids) == 1 else tv_ids
+                if tv_ids:
+                    if len(tv_ids) > 1:
+                        if entry.anilist_id is not None:
+                            problems = self.problematic.setdefault(
+                                entry.anilist_id, set()
+                            )
+                            details = (
+                                "Multiple TMDB show IDs detected in AnimeAggregations "
+                                "`{show_ids}` `{context}`"
+                            ).format(
+                                show_ids=tv_ids,
+                                context={
+                                    "anilist_id": entry.anilist_id,
+                                    "anidb_id": entry.anidb_id,
+                                },
+                            )
+                            problems.add(
+                                Problem(
+                                    problem=ProblemEnum.AMBIGUOUS_TMDB_SHOW,
+                                    details=details,
+                                )
+                            )
+                        else:
+                            self.logger.warning(
+                                (
+                                    "Multiple TMDB show IDs detected in "
+                                    "AnimeAggregations for AniDB %s: %s"
+                                ),
+                                entry.anidb_id,
+                                tv_ids,
+                            )
+                    elif entry.tmdb_show_id is None:
+                        entry.tmdb_show_id = tv_ids[0]
+                        if entry.anilist_id is not None:
+                            self._remove_problem(
+                                entry.anilist_id,
+                                ProblemEnum.AMBIGUOUS_TMDB_SHOW,
+                            )
+
                 if movie_ids and not entry.tmdb_movie_id:
                     entry.tmdb_movie_id = (
                         movie_ids[0] if len(movie_ids) == 1 else movie_ids
@@ -819,6 +867,10 @@ class AnimeIDCollector:
                     curr_value = getattr(existing_entry, key)
                     if curr_value is None:
                         setattr(existing_entry, key, value)
+                        if key == "tmdb_show_id":
+                            self._remove_problem(
+                                anilist_id, ProblemEnum.AMBIGUOUS_TMDB_SHOW
+                            )
                     elif isinstance(curr_value, list):
                         if value not in curr_value:
                             self.logger.debug(
@@ -894,6 +946,10 @@ class AnimeIDCollector:
                         )
                     else:
                         setattr(existing_entry, key, value)
+                        if key == "tmdb_show_id" and value is not None:
+                            self._remove_problem(
+                                anilist_id, ProblemEnum.AMBIGUOUS_TMDB_SHOW
+                            )
             else:
                 entry = AniMap(anilist_id=anilist_id, **fields)
                 self.anilist_entries[anilist_id] = entry
