@@ -49,7 +49,7 @@ export const AniMapSchema = z.object({
     imdb_id: z.union([z.string(), z.array(z.string()), z.null()]),
     mal_id: z.union([z.number().int(), z.array(z.number().int()), z.null()]),
     tmdb_movie_id: z.union([z.number().int(), z.array(z.number().int()), z.null()]),
-    tmdb_show_id: z.union([z.number().int(), z.array(z.number().int()), z.null()]),
+    tmdb_show_id: z.number().int().nullable(),
     tvdb_id: z.number().int().nullable(),
     tvdb_mappings: z.record(
         z.string(),
@@ -99,12 +99,9 @@ export const AniMapSchema = z.object({
             example: 532067
         },
         tmdb_show_id: {
-            oneOf: [
-                { type: 'integer' },
-                { type: 'array', items: { type: 'integer' } },
-                { type: 'null' }
-            ],
-            description: 'The matching TMDB ID(s) for the show entry. Can be a single ID or an array of IDs',
+            type: 'integer',
+            nullable: true,
+            description: 'The matching TMDB ID for the show entry',
             example: 83095
         },
         tvdb_id: {

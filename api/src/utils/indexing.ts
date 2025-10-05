@@ -50,8 +50,6 @@ export function createIndexes(mappings: AnimeMappings): Indexes {
 
         if (typeof mapping.tmdb_show_id === 'number') {
             addToIndex('tmdb_show_id', mapping.tmdb_show_id, id);
-        } else if (Array.isArray(mapping.tmdb_show_id)) {
-            mapping.tmdb_show_id.forEach(tmdbId => addToIndex('tmdb_show_id', tmdbId, id));
         }
     });
 
