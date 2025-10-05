@@ -1,6 +1,6 @@
 # PlexAniBridge Mappings
 
-Last generated at: October 05, 2025 06:04 AM UTC
+Last generated at: October 05, 2025 12:00 PM UTC
 
 ![Mappings](https://img.shields.io/badge/Mappings-19,936-blue?style=for-the-badge&logo=database&logoColor=white) ![Edits](https://img.shields.io/badge/Edits-4,381-purple?style=for-the-badge&logo=pencil&logoColor=white)
 
@@ -75,7 +75,7 @@ This file contains the complete set of ID mappings. The primary key for each ent
 | `imdb_id`       | `str \| list[str]` | The IMDb ID(s) in `tt...` format.                                                       |
 | `mal_id`        | `int \| list[int]` | The MyAnimeList ID(s).                                                                  |
 | `tmdb_movie_id` | `int \| list[int]` | The TMDB Movie ID(s).                                                                   |
-| `tmdb_show_id`  | `int \| list[int]` | The TMDB Show ID(s).                                                                    |
+| `tmdb_show_id`  | `int`              | The TMDB Show ID.                                                                       |
 | `tvdb_id`       | `int`              | The TVDB ID.                                                                            |
 | `tmdb_mappings` | `object`           | An object mapping TMDB seasons to AniList episodes. See the detailed explanation below. |
 | `tvdb_mappings` | `object`           | An object mapping TVDB seasons to AniList episodes. See the detailed explanation below. |
