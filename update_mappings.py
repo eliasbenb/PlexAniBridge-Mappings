@@ -679,6 +679,57 @@ class AnimeIDCollector:
                 imdb_ids = imdb_id.split(",")
                 entry.imdb_id = imdb_ids[0] if len(imdb_ids) == 1 else imdb_ids
 
+        def process_tmdb_ids(
+            entry: AniMap, tmdb_show_id: str | None, tmdb_movie_id: str | None
+        ) -> None:
+            if tmdb_show_id:
+                tmdb_show_id = tmdb_show_id.strip()
+                if tmdb_show_id.isdigit():
+                    parsed_tmdb_show_id = int(tmdb_show_id)
+                    if entry.tmdb_show_id is None:
+                        entry.tmdb_show_id = parsed_tmdb_show_id
+                        if entry.anilist_id is not None:
+                            self._remove_problem(
+                                entry.anilist_id, ProblemEnum.AMBIGUOUS_TMDB_SHOW
+                            )
+                    elif entry.tmdb_show_id != parsed_tmdb_show_id:
+                        self.logger.debug(
+                            (
+                                "Conflicting TMDB show ID for AniDB %s "
+                                "(existing: %s, anime-lists: %s)"
+                            ),
+                            entry.anidb_id,
+                            entry.tmdb_show_id,
+                            parsed_tmdb_show_id,
+                        )
+                else:
+                    self.logger.debug(
+                        "Non-numeric TMDB show ID `%s` for AniDB %s",
+                        tmdb_show_id,
+                        entry.anidb_id,
+                    )
+
+            if tmdb_movie_id:
+                tmdb_movie_id = tmdb_movie_id.strip()
+                if tmdb_movie_id.isdigit():
+                    parsed_tmdb_movie_id = int(tmdb_movie_id)
+                    if entry.tmdb_movie_id is None:
+                        entry.tmdb_movie_id = parsed_tmdb_movie_id
+                    elif isinstance(entry.tmdb_movie_id, list):
+                        if parsed_tmdb_movie_id not in entry.tmdb_movie_id:
+                            entry.tmdb_movie_id.append(parsed_tmdb_movie_id)
+                            entry.tmdb_movie_id.sort()
+                    elif entry.tmdb_movie_id != parsed_tmdb_movie_id:
+                        entry.tmdb_movie_id = sorted(
+                            {entry.tmdb_movie_id, parsed_tmdb_movie_id}
+                        )
+                else:
+                    self.logger.debug(
+                        "Non-numeric TMDB movie ID `%s` for AniDB %s",
+                        tmdb_movie_id,
+                        entry.anidb_id,
+                    )
+
         content = self._fetch_url(
             "https://raw.githubusercontent.com/Anime-Lists/anime-lists/master/anime-list-master.xml",
             as_bytes=True,
@@ -710,6 +761,12 @@ class AnimeIDCollector:
             imdb_id = get_xpath_str(anime, "@imdbid")
             if imdb_id is not None:
                 process_imdb_id(entry, imdb_id)
+
+            process_tmdb_ids(
+                entry,
+                get_xpath_str(anime, "@tmdbtv"),
+                get_xpath_str(anime, "@tmdbid"),
+            )
 
     def process_aggregations(self) -> None:
         """Process anime data from AnimeAggregations.
