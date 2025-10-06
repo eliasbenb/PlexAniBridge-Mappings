@@ -2,7 +2,6 @@ import { OpenAPIRoute } from 'chanfana';
 import { z } from 'zod';
 import { AppContext } from '../../types';
 import { getMappings } from '../../utils/cache';
-import { DEFAULT_CDN_URL } from '../../config/constants';
 import { AniMapSchema, ErrorSchemas } from '../../types';
 
 export class GetAllMappings extends OpenAPIRoute {
@@ -46,8 +45,7 @@ export class GetAllMappings extends OpenAPIRoute {
 
     async handle(c: AppContext) {
         try {
-            const url = c.env.CDN_URL || DEFAULT_CDN_URL;
-            const { mappings } = await getMappings(url);
+            const { mappings } = await getMappings();
 
             const { page, limit } = (await this.getValidatedData<typeof this.schema>()).query;
             const start = (page - 1) * limit;

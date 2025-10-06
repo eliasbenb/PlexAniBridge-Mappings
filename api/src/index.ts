@@ -1,14 +1,8 @@
 import { fromHono } from 'chanfana';
 import { Hono } from 'hono';
-import { Context } from 'hono';
 import { errorMiddleware } from './middleware/error';
 import { GetAllMappings, SearchMappings } from './routes/v2';
-
-export type Env = {
-	CDN_URL: string;
-}
-
-export type AppContext = Context<{ Bindings: Env }>;
+import { Env } from './types';
 
 const app = new Hono<{ Bindings: Env }>();
 const openapi = fromHono(app, {

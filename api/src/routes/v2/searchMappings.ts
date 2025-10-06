@@ -2,7 +2,6 @@ import { OpenAPIRoute } from 'chanfana';
 import { z } from 'zod';
 import { AppContext } from '../../types';
 import { getMappings } from '../../utils/cache';
-import { DEFAULT_CDN_URL } from '../../config/constants';
 import { AniMapSchema, ErrorSchemas } from '../../types';
 
 export class SearchMappings extends OpenAPIRoute {
@@ -62,8 +61,7 @@ export class SearchMappings extends OpenAPIRoute {
                 }, 400);
             }
 
-            const url = c.env.CDN_URL || DEFAULT_CDN_URL;
-            const { mappings, indexes } = await getMappings(url);
+            const { mappings, indexes } = await getMappings();
 
             const resultIds = new Map<string, boolean>();
             let hasResults = false;

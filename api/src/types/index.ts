@@ -2,9 +2,7 @@ import { z } from 'zod';
 
 import { Context } from 'hono';
 
-export type Env = {
-    CDN_URL: string;
-}
+export type Env = Record<string, never>;
 
 export type AppContext = Context<{ Bindings: Env }>;
 
@@ -33,11 +31,6 @@ export interface Indexes {
     tvdb_id: Record<string, string[]>;
 }
 
-export interface CacheEntry {
-    data: AnimeMappings;
-    indexes: Indexes;
-    timestamp: number;
-}
 
 export const AniMapSchema = z.object({
     anidb_id: z.number().nullable().openapi({

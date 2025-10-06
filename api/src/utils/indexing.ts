@@ -28,6 +28,7 @@ export function createIndexes(mappings: AnimeMappings): Indexes {
     Object.entries(mappings).forEach(([id, mapping]) => {
         addToIndex('anidb_id', mapping.anidb_id, id);
         addToIndex('anilist_id', mapping.anilist_id, id);
+        addToIndex('tmdb_show_id', mapping.tmdb_show_id, id);
         addToIndex('tvdb_id', mapping.tvdb_id, id);
 
         if (typeof mapping.imdb_id === 'string') {
@@ -46,10 +47,6 @@ export function createIndexes(mappings: AnimeMappings): Indexes {
             addToIndex('tmdb_movie_id', mapping.tmdb_movie_id, id);
         } else if (Array.isArray(mapping.tmdb_movie_id)) {
             mapping.tmdb_movie_id.forEach(tmdbId => addToIndex('tmdb_movie_id', tmdbId, id));
-        }
-
-        if (typeof mapping.tmdb_show_id === 'number') {
-            addToIndex('tmdb_show_id', mapping.tmdb_show_id, id);
         }
     });
 
