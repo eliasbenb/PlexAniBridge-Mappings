@@ -1,6 +1,6 @@
 [project]
 name = "plexanibridge-mappings"
-version = "3.0.0"
+version = "2.1"
 description = "PlexAniBridge Mappings Aggregator"
 readme = "README.md"
 requires-python = ">=3.13"

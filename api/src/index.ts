@@ -4,12 +4,16 @@ import { errorMiddleware } from './middleware/error';
 import { GetAllMappings, SearchMappings } from './routes/v2';
 import { Env } from './types';
 
+import pkg from '../package.json';
+
+const version = pkg.version;
+
 const app = new Hono<{ Bindings: Env }>();
 const openapi = fromHono(app, {
 	schema: {
 		info: {
 			title: 'PlexAniBridge Mappings API',
-			version: '2.0',
+			version: version,
 			description: 'API to query the PlexAniBridge mappings database',
 			license: {
 				name: 'MIT',

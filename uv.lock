@@ -130,7 +130,7 @@ wheels = [
 
 [[package]]
 name = "plexanibridge-mappings"
-version = "3.0.0"
+version = "2.1"
 source = { virtual = "." }
 dependencies = [
     { name = "gitpython" },
