@@ -34,11 +34,8 @@ jobs:
         with:
           enable-cache: true
 
-      - name: Set up Python
-        run: uv python install
-
       - name: Install dependencies
-        run: uv sync --frozen --no-dev --no-editable
+        run: uv sync --frozen --no-dev --no-editable --python=3.13
 
       - name: Run Update Anime IDs
         run: uv run python update_mappings.py
