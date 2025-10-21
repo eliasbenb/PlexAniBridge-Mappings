@@ -125362,6 +125362,7 @@
   },
   "187464": {
     "anidb_id": 19202,
+    "imdb_id": "tt37532319",
     "mal_id": 61159,
     "tmdb_show_id": 285788,
     "tvdb_id": 461118,
@@ -126420,7 +126421,10 @@
     "mal_id": 61917,
     "tmdb_show_id": 294867,
     "tvdb_id": 465214,
-    "tvdb_mappings": {}
+    "tvdb_mappings": {
+      "s0": "e1",
+      "s1": "e1-e12"
+    }
   },
   "195173": {
     "mal_id": 61922
