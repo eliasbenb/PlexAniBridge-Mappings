@@ -1,5 +1,9 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/eliasbenb/PlexAniBridge-Mappings/v2/mappings.schema.json
 
+195153:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e12
 5:
   tvdb_mappings:
     s0: e3
@@ -2311,9 +2315,9 @@
     s4: e1-e3
 2269:
   tmdb_movie_id:
-  -   215608
-  -   408145
-  -   407909
+    - 215608
+    - 408145
+    - 407909
   tvdb_id: 254931
   tvdb_mappings:
     s0: e2-e4
@@ -3042,11 +3046,11 @@
   tmdb_movie_id: 73792
 2994:
   imdb_id:
-  -   tt3355694
-  -   tt3355698
+    - tt3355694
+    - tt3355698
   tmdb_movie_id:
-  -   51482
-  -   68555
+    - 51482
+    - 68555
   tvdb_id: 79481
   tvdb_mappings:
     s0: e1-e2
@@ -4802,7 +4806,8 @@
     s0: e4-e5
 6867:
   tvdb_mappings:
-    s1: e1-e7,e8|-2
+    s1:
+      e1-e7,e8|-2
       # the 8th episode was originally split in two, anilist retains that count
 6877:
   tvdb_mappings:
@@ -4971,9 +4976,9 @@
     s0: e9
 7270:
   tmdb_movie_id:
-  -   25446
-  -   27837
-  -   30807
+    - 25446
+    - 27837
+    - 30807
   tvdb_id: 80675
   tvdb_mappings:
     s0: e1-e3
@@ -5202,8 +5207,8 @@
     s0: e27
 8079:
   tmdb_movie_id:
-  -   746634
-  -   746632
+    - 746634
+    - 746632
 8089:
   imdb_id: tt1794963
 8097:
@@ -7324,7 +7329,8 @@
     s0: e3
 17074:
   tvdb_mappings:
-    s0: e7-e9
+    s0:
+      e7-e9
       # anilist count includes the recaps not present in the BD version
     s3: e1-e23
 17080:
@@ -8415,7 +8421,8 @@
     s0: e1-e11
 20906:
   tvdb_mappings:
-    s4: e1-e5,e7-e22,e24-e26
+    s4:
+      e1-e5,e7-e22,e24-e26
       # TVDB uses the original Italian broadcast of 26 episodes, anilist uses the later Japanese with 24 and two specials
 20907:
   tvdb_mappings:
@@ -8981,8 +8988,7 @@
   tmdb_show_id: 63187
   tvdb_id: 293119
   tvdb_mappings:
-    s0: 
-      e1-e4,e6-e10,e12-e16,e18-e22,e24-e28,e30-e34,e36-e40,e42-e46,e48-e52,e54-e58,e60-e64,e66-e70,e72
+    s0: e1-e4,e6-e10,e12-e16,e18-e22,e24-e28,e30-e34,e36-e40,e42-e46,e48-e52,e54-e58,e60-e64,e66-e70,e72
 21392:
   tvdb_id: 317830
   tvdb_mappings:
@@ -9457,7 +9463,8 @@
     s0: e1-e35
 21804:
   tvdb_mappings:
-    s1: e1-e24|-5
+    s1:
+      e1-e24|-5
       # originally aired as 120 short episodes, TVDB uses the combined version
 21806:
   imdb_id: tt17319094
@@ -9476,7 +9483,8 @@
   tmdb_show_id: 31572
   tvdb_id: 71863
   tvdb_mappings:
-    s4: e6,e23
+    s4:
+      e6,e23
       # anilist uses Japanese airing and considers these two episodes as specials
 21831:
   tmdb_show_id: 37854
@@ -9736,7 +9744,8 @@
     s0: e4
 98031:
   tvdb_mappings:
-    s1: e1-e10|-2
+    s1:
+      e1-e10|-2
       # japanese version combined episodes, TVDB uses that count, anilist uses chinese
 98033:
   tmdb_show_id: 62741
@@ -11585,8 +11594,8 @@
 109821:
   imdb_id: tt30853483
   tmdb_movie_id:
-  -   1020496
-  -   1155647
+    - 1020496
+    - 1155647
 110173:
   tvdb_id: 358331
   tvdb_mappings:
@@ -11699,9 +11708,9 @@
     s0: e7
 111137:
   tmdb_movie_id:
-  -   699115
-  -   1257584
-  -   1257585
+    - 699115
+    - 1257584
+    - 1257585
 111144:
   imdb_id: tt2549176
   tmdb_show_id: 107974
@@ -12386,9 +12395,9 @@
     s0: e1
 124756:
   imdb_id:
-  -   tt20561132
-  -   tt20602938
-  -   tt20609980
+    - tt20561132
+    - tt20602938
+    - tt20609980
   tmdb_show_id: 76757
   tvdb_id: 338455
   tvdb_mappings:
@@ -12696,8 +12705,8 @@
     s0: e4
 132096:
   mal_id:
-  -   48590
-  -   49483
+    - 48590
+    - 49483
   tmdb_show_id: 69291
   tvdb_id: 318893
   tvdb_mappings:
@@ -13179,7 +13188,8 @@
     s1: e1-e61
 144676:
   tvdb_mappings:
-    s1: e1-e12|-5
+    s1:
+      e1-e12|-5
       # originally aired as 60 short episodes, TVDB uses the combined version
 144687:
   tvdb_id: 414107
@@ -13473,7 +13483,7 @@
     s0: e1-e2
 151799:
   tvdb_mappings:
-    s2: 
+    s2:
       e1,e2-e3|2,e4-e12|3,e13,e14-e15|2,e16-e21|3,e22-e23|2,e24-e26|3,e27-e30|2
       # TVDB is split by segment, the episodes have different numbers of segments
 151803:
