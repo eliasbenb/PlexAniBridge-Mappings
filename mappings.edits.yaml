@@ -14516,19 +14516,11 @@
   tvdb_id: 461883
   tvdb_mappings:
     s0: e1
-263214:
-  tvdb_id: 263214
-  tvdb_mappings:
-    s1: e1-e12
 290344:
   tvdb_id:
-349691:
-  imdb_id: tt1178592
-  tmdb_movie_id: 258802
+213:
+  anidb_id: 249
+  mal_id: 213
   tvdb_id: 349691
   tvdb_mappings:
-    s0: e7
-357826:
-  tvdb_id: 357826
-  tvdb_mappings:
-    s2: e1-e12
+    s1: e1-e3
