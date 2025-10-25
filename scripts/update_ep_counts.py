@@ -361,8 +361,10 @@ if __name__ == "__main__":
 
         tvdb_id = entry.get("tvdb_id")
         if tvdb_id:
-            wanted_anilist.append(anilist_id_str)
             wanted_tvdb.append(tvdb_id)
+
+        if tmdb_show_id or tvdb_id:
+            wanted_anilist.append(anilist_id_str)
 
     if args.source in ("anilist", "all"):
         update_anilist_counts(wanted_anilist)
