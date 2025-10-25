@@ -164,6 +164,12 @@
   tmdb_show_id: 96326
   tvdb_mappings:
     s0: e1-e3
+213:
+  anidb_id: 249
+  mal_id: 213
+  tvdb_id: 349691
+  tvdb_mappings:
+    s1: e1-e3
 216:
   tmdb_movie_id: 258802
   tvdb_id: 349691
@@ -14518,9 +14524,3 @@
     s0: e1
 290344:
   tvdb_id:
-213:
-  anidb_id: 249
-  mal_id: 213
-  tvdb_id: 349691
-  tvdb_mappings:
-    s1: e1-e3
