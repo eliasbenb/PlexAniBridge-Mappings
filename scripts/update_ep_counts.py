@@ -16,28 +16,6 @@ TMDB_API_URL = "https://api.themoviedb.org/3"
 SKYHOOK_API_URL = "http://skyhook.sonarr.tv/v1/tvdb/shows/en"
 
 
-def create_batch_queries_anilist(
-    ids: list[str | int], batch_size: int = 50
-) -> list[tuple[str, dict]]:
-    """Create batch queries for getting episode counts from AniList."""
-    batches = []
-    for i in range(0, len(ids), batch_size):
-        batch = [int(id_) for id_ in ids[i : i + batch_size]]
-        query = """
-        query($ids: [Int]) {
-            Page {
-                    media(id_in: $ids) {
-                    id
-                    episodes
-                }
-            }
-        }
-        """
-        variables = {"ids": batch}
-        batches.append((query, variables))
-    return batches
-
-
 def make_request_anilist(query: str, variables: dict | str | None = None) -> dict:
     """Make a request to AniList API with rate limit handling."""
     response = requests.post(
@@ -60,6 +38,88 @@ def make_request_anilist(query: str, variables: dict | str | None = None) -> dic
         print(f"Error: {response.text}")
         raise e
     return response.json()
+
+
+def fetch_all_anilist_episode_counts(
+    *, per_page: int = 50, pages_per_request: int = 83
+) -> dict[str, int | None]:
+    """Fetch all AniList anime IDs and episode counts via paginated batching."""
+    per_page = max(1, min(int(per_page), 50))
+    pages_per_request = max(1, int(pages_per_request))
+
+    all_counts: dict[str, int | None] = {}
+    seen: set[int] = set()
+    current_page = 1
+
+    while True:
+        batch_var_defs = ["$perPage: Int!"]
+        request_vars: dict[str, Any] = {"perPage": per_page}
+        page_aliases: list[tuple[str, str, int]] = []
+
+        for idx in range(pages_per_request):
+            alias = f"batch{idx + 1}"
+            page_var = f"page_{idx + 1}"
+            page_number = current_page + idx
+            batch_var_defs.append(f"${page_var}: Int!")
+            request_vars[page_var] = page_number
+            page_aliases.append((alias, page_var, page_number))
+
+        query_sections = [
+            f"""
+            {alias}: Page(page: ${page_var}, perPage: $perPage) {{
+                pageInfo {{ hasNextPage }}
+                media(type: ANIME, sort: ID) {{
+                    id
+                    episodes
+                }}
+            }}
+            """
+            for alias, page_var, _page_number in page_aliases
+        ]
+
+        query = f"""
+        query ({", ".join(batch_var_defs)}) {{
+            {" ".join(query_sections)}
+        }}
+        """
+
+        print(
+            "Requesting AniList pages "
+            f"{current_page}..{current_page + pages_per_request - 1}"
+        )
+
+        response = make_request_anilist(query, request_vars)
+        data = response.get("data", {}) or {}
+
+        stop = False
+        for alias, _page_var, _page_number in page_aliases:
+            page_data = data.get(alias) or {}
+            media_list = page_data.get("media") or []
+
+            for media in media_list:
+                try:
+                    anime_id = int(media.get("id"))
+                except (TypeError, ValueError):
+                    continue
+                if anime_id in seen:
+                    continue
+                seen.add(anime_id)
+                all_counts[str(anime_id)] = media.get("episodes")
+
+            if not media_list:
+                stop = True
+                break
+
+            page_info = page_data.get("pageInfo") or {}
+            if not page_info.get("hasNextPage"):
+                stop = True
+                break
+
+        current_page += pages_per_request
+        if stop:
+            break
+
+    return all_counts
 
 
 def make_request_tvdb(tvdb_show_id: int | str) -> dict:
@@ -161,19 +221,23 @@ def process_tvdb_show_id(tvdb_id: int | str) -> tuple[str, dict]:
 def update_anilist_counts(wanted_anilist: list[int | str]):
     """Update AniList episode counts using improved query method."""
     print("Updating AniList episode counts...")
-    episode_counts_anilist: dict[str, int] = {}
-    batch_queries_anilist = create_batch_queries_anilist(wanted_anilist)
+    all_episode_counts = fetch_all_anilist_episode_counts()
 
-    for i, (query, variables) in enumerate(batch_queries_anilist):
-        print(f"Executing AniList batch {i + 1}/{len(batch_queries_anilist)}")
-        response = make_request_anilist(query, variables)
+    episode_counts_anilist: dict[str, int | None] = {}
+    missing_ids: list[str] = []
 
-        page_data = response.get("data", {}).get("Page", {})
-        media_list = page_data.get("media", [])
+    for anime_id in wanted_anilist:
+        anime_id_str = str(anime_id)
+        if anime_id_str in all_episode_counts:
+            episode_counts_anilist[anime_id_str] = all_episode_counts[anime_id_str]
+        else:
+            missing_ids.append(anime_id_str)
 
-        for media in media_list:
-            if media and media.get("id"):
-                episode_counts_anilist[str(media["id"])] = media.get("episodes")
+    if missing_ids:
+        print(
+            "Warning: Missing episode counts for AniList IDs: "
+            + ", ".join(sorted(missing_ids, key=int))
+        )
 
     sorted_episode_counts_anilist = {
         k: episode_counts_anilist[k]
