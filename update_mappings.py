@@ -1099,7 +1099,7 @@ class AnimeIDCollector:
             markdown_content += "| AniList ID | Details | Links |\n"
             markdown_content += "|-----------|---------|-------|\n"
 
-            for anilist_id, problem in entries:
+            for anilist_id, problem in sorted(entries, key=lambda x: x[0]):
                 entry = self.anilist_entries.get(anilist_id)
                 links = [
                     self._icon_link(
