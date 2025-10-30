@@ -14,4 +14,5 @@
     "ruff.fixAll": true,
     "ruff.importStrategy": "fromEnvironment",
     "ruff.organizeImports": true,
+    "yaml.maxItemsComputed": 50000
 }
