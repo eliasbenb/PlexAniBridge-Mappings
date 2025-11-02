@@ -32,12 +32,13 @@ The mapping process is powered by a Python script that performs the following st
 
 The final mappings are a result of data aggregated from the following sources:
 
-| Source                                                                                             | Description                                                  |
-| -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
-| [Anime-Lists/anime-lists](https://github.com/Anime-Lists/anime-lists/)                             | Maps AniDB IDs to TVDB series IDs and IMDb IDs.              |
-| [manami-project/anime-offline-database](https://github.com/manami-project/anime-offline-database/) | Maps AniDB IDs to MyAnimeList IDs and AniList IDs.           |
-| [notseteve/AnimeAggregations](https://github.com/notseteve/AnimeAggregations)                      | Maps AniDB links to TMDB IDs, IMDb IDs, and MyAnimeList IDs. |
-| [Wikidata](https://query.wikidata.org/)                                                            | Provides various cross-database links via SPARQL queries.    |
+| Source                                                                                                  | Description                                                  |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| [Anime-Lists/anime-lists](https://github.com/Anime-Lists/anime-lists/)                                  | Maps AniDB IDs to TVDB series IDs and IMDb IDs.              |
+| [manami-project/anime-offline-database](https://github.com/manami-project/anime-offline-database/)      | Maps AniDB IDs to MyAnimeList IDs and AniList IDs.           |
+| [notseteve/AnimeAggregations](https://github.com/notseteve/AnimeAggregations)                           | Maps AniDB links to TMDB IDs, IMDb IDs, and MyAnimeList IDs. |
+| [Wikidata](https://query.wikidata.org/)                                                                 | Provides various cross-database links via SPARQL queries.    |
+| [LuceoEtzio/PlexAniBridge-Custom-Mappings](https://github.com/LuceoEtzio/PlexAniBridge-Custom-Mappings) | Provides episode mappings for TMDB and alternate show orders |
 
 ## Mappings Schema
 
@@ -80,11 +81,14 @@ This file contains the complete set of ID mappings. The primary key for each ent
 | `tmdb_mappings` | `object`           | An object mapping TMDB seasons to AniList episodes. See the detailed explanation below. |
 | `tvdb_mappings` | `object`           | An object mapping TVDB seasons to AniList episodes. See the detailed explanation below. |
 
-### The Mappings Object
+### The Episode Mappings Object
 
-The `tmdb_mappings` and `tvdb_mappings` objects define the episode and season mappings between AniList and TMDB/TVDB. The keys are season numbers (e.g., `"s1"`), and the values are string patterns that define the mapping rules.
+The `tmdb_mappings` and `tvdb_mappings` objects define the episode and season mappings between AniList and TMDB/TVDB. The keys represent a season (e.g., `"s1"`), and the values are string patterns that define the mapping rules.
 
-_Note: while the `tmdb_mappings` field is supported, it is not maintained by this repository, so you will only find it in a small number of entries. In most cases, you should use the `tvdb_mappings` field instead._
+> [!NOTE]
+> The PlexAniBridge-Mappings repository only supports (the default) aired order mappings for TVDB and TMDB. If you are looking alternate orders such as DVD or absolute order, check out the [LuceoEtzio/PlexAniBridge-Custom-Mappings](https://github.com/LuceoEtzio/PlexAniBridge-Custom-Mappings) repository.
+
+
 
 **Pattern Format**: `'e{start}-e{end}|{ratio},e{start2}-e{end2}|{ratio2},...'`
 
