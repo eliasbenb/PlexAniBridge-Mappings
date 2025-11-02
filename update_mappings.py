@@ -995,6 +995,41 @@ class AnimeIDCollector:
                 self.anilist_entries[anilist_id] = entry
                 self.problematic[anilist_id] = set()
 
+    def process_luceo(self) -> None:
+        """Process anime data from Luceo's TMDB mappings.
+
+        We only extract TMDB mappings from this source and ignore all other fields.
+        """
+        self.logger.info("Scanning Luceo's TMDB Mappings")
+        content: dict[str, Any] = self.serializer.yaml.load(
+            self._fetch_url(
+                "https://raw.githubusercontent.com"
+                "/LuceoEtzio/PlexAniBridge-Custom-Mappings/main/All TMDB.yaml"
+            )
+        )
+
+        for anilist_id_str, fields in content.items():
+            try:
+                anilist_id = int(anilist_id_str)
+            except (TypeError, ValueError):
+                continue
+
+            if "tmdb_mappings" not in fields:
+                continue
+
+            if anilist_id not in self.anilist_entries:
+                entry = AniMap(anilist_id=anilist_id)
+                self.anilist_entries[anilist_id] = entry
+
+            entry = self.anilist_entries[anilist_id]
+            try:
+                entry.tmdb_mappings = fields["tmdb_mappings"]
+            except (TypeError, ValueError):
+                self.logger.warning(
+                    f"Invalid tmdb_mappings for AniList ID `{anilist_id}`"
+                )
+                continue
+
     def process_edits(self) -> None:
         """Process manual edits from mappings.edits.yaml.
 
@@ -1216,6 +1251,7 @@ class AnimeIDCollector:
             self.process_anime_lists()
             self.process_aggregations()
             self.process_wikidata()
+            self.process_luceo()
             self.process_edits()
 
             self.dump_problems()
