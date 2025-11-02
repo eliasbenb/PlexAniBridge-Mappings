@@ -12136,6 +12136,9 @@
       1293,
       1481
     ],
+    "tmdb_mappings": {
+      "s1": "e1-e46|2,e47-e218"
+    },
     "tmdb_show_id": 34163,
     "tvdb_id": 75113,
     "tvdb_mappings": {
