@@ -6964,6 +6964,7 @@
     s1: e1-e14
     s2: e1-e12
 14807:
+  tmdb_show_id: # left intentionally blank
   tvdb_mappings:
     s0: e3
 14837:
@@ -8079,6 +8080,7 @@
   tvdb_mappings:
     s0: e1
 20697:
+  tmdb_show_id: # left intentionally blank
   tvdb_mappings:
     s0: e4
 20707:
