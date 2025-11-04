@@ -371,6 +371,7 @@
   tvdb_mappings:
     s0: e6-e7
 418:
+  tmdb_show_id: # left intentionally blank
   tvdb_mappings:
     s0: e1
 420:
@@ -761,6 +762,8 @@
     s0: e3
 791:
   tmdb_movie_id: 22679
+792:
+  tmdb_show_id: # left intentionally blank
 793:
   tmdb_movie_id: 38567
   tvdb_mappings:
@@ -779,6 +782,7 @@
     s8: e1-e34
     s9: e1-e38
 814:
+  tmdb_show_id: 27845
   tvdb_mappings:
     s0: e5
 815:
@@ -973,6 +977,7 @@
   tvdb_mappings:
     s0: e9-e10
 1010:
+  tmdb_show_id: # left intentionally blank
   tvdb_mappings:
     s0: e11
 1011:
@@ -1677,6 +1682,7 @@
     s1: e1-e26
     s2: e1-e25
 1709:
+  tmdb_show_id: 60572
   tvdb_mappings:
     s0: e4
 1710:
@@ -1925,6 +1931,10 @@
   tvdb_mappings:
     s1: e25-e39
 1911:
+  tmdb_movie_id:
+  -   426183
+  -   552490
+  tmdb_show_id: # left intentionally blank
   tvdb_mappings:
     s0: e10-e11
 1912:
@@ -2421,11 +2431,13 @@
 2384:
   imdb_id: tt2848176
 2385:
+  tmdb_movie_id: 464154
   tmdb_show_id: 37854
   tvdb_id: 81797
   tvdb_mappings:
     s0: e5
 2386:
+  tmdb_movie_id: 464198
   tmdb_show_id: 37854
   tvdb_id: 81797
   tvdb_mappings:
@@ -2559,6 +2571,7 @@
   tvdb_mappings:
     s0: e4-e7
 2490:
+  tmdb_movie_id: 464305
   tmdb_show_id: 37854
   tvdb_id: 81797
   tvdb_mappings:
@@ -4602,6 +4615,8 @@
   tvdb_id: 80644
   tvdb_mappings:
     s0: e3
+6361:
+  tmdb_show_id: 27866
 6368:
   tmdb_show_id: 43318
   tvdb_id: 84677
@@ -4775,6 +4790,8 @@
   tvdb_id: 102481
   tvdb_mappings:
     s0: e1
+6749:
+  tmdb_show_id: 27845
 6772:
   imdb_id: tt1663145
   tmdb_movie_id: 55426
@@ -5446,7 +5463,7 @@
   tvdb_mappings:
     s0: e36
 8740:
-  tmdb_show_id: 37854
+  tmdb_show_id: # left intentionally blank
 8767:
   tvdb_id: 80583
   tvdb_mappings:
@@ -5815,7 +5832,7 @@
   tvdb_mappings:
     s0: e1-e3,e5,e7
 9999:
-  tmdb_show_id: 37854
+  tmdb_show_id: # left intentionally blank
 10005:
   tvdb_id: 182391
   tvdb_mappings:
@@ -6281,6 +6298,8 @@
 10849:
   tvdb_mappings:
     s0: e8
+10862:
+  tmdb_show_id: 27845
 10863:
   tmdb_show_id: 42509
   tvdb_id: 244061
@@ -6505,7 +6524,7 @@
 11995:
   imdb_id: tt33334997
 12001:
-  tmdb_show_id: 37854
+  tmdb_show_id: # left intentionally blank
 12015:
   imdb_id: tt2507174
   tmdb_movie_id: 178592
@@ -7112,6 +7131,7 @@
   tvdb_mappings:
     s0: e3-e6
 15711:
+  tmdb_show_id: 36041
   tvdb_id: 181851
   tvdb_mappings:
     s0: e1-e2
@@ -7210,6 +7230,7 @@
   tvdb_mappings:
     s0: e7
 16239:
+  tmdb_show_id: 37854
   tvdb_id: 81797
   tvdb_mappings:
     s0: e24
@@ -7630,6 +7651,7 @@
   tvdb_mappings:
     s0: e1-e5
 19123:
+  tmdb_show_id: 37854
   tvdb_id: 81797
   tvdb_mappings:
     s0: e28
@@ -8364,6 +8386,7 @@
   tvdb_mappings:
     s0: e9
 20883:
+  tmdb_show_id: 72699
   tvdb_id: 284132
   tvdb_mappings:
     s0: e1-e14
@@ -8751,6 +8774,7 @@
     s0: e2
     s1: e1-e12
 21230:
+  tmdb_show_id: 37854
   tvdb_id: 81797
   tvdb_mappings:
     s0: e30
@@ -9557,7 +9581,9 @@
   tvdb_mappings:
     s0: e8
 21880:
-  tmdb_show_id: 37854
+  tmdb_movie_id:
+  -   779813
+  tmdb_show_id: # left intentionally blank
   tvdb_id: 81797
   tvdb_mappings:
     s0: e35
@@ -10165,6 +10191,7 @@
   tvdb_mappings:
     s0: e1
 99302:
+  tmdb_show_id: 37854
   tvdb_id: 81797
   tvdb_mappings:
     s0: e36
@@ -10252,6 +10279,9 @@
   tvdb_mappings:
     s0: e1
 100049:
+  tmdb_movie_id:
+  -   532321
+  -   566451
   tvdb_mappings:
     s0: e26,e28
 100071:
@@ -10454,10 +10484,12 @@
   tvdb_mappings:
     s0: e1-e6
 100980:
+  tmdb_show_id: 71493
   tvdb_id: 284263
   tvdb_mappings:
     s0: e5
 100981:
+  tmdb_show_id: 71493
   tvdb_id: 284263
   tvdb_mappings:
     s0: e6
@@ -10658,6 +10690,7 @@
   tvdb_mappings:
     s0: e2
 101918:
+  tmdb_show_id: 37854
   tvdb_id: 81797
   tvdb_mappings:
     s0: e37
@@ -10907,6 +10940,8 @@
   tvdb_id: 259634
   tvdb_mappings:
     s0: e2
+102608:
+  tmdb_show_id: 36041
 102609:
   tmdb_show_id: 36041
   tvdb_id: 193811
@@ -11205,6 +11240,8 @@
   tvdb_id: 283929
   tvdb_mappings:
     s0: e11
+105616:
+  tmdb_show_id: 60572
 105662:
   tmdb_show_id: 80671
   tvdb_id: 346931
@@ -12718,6 +12755,8 @@
   tvdb_id: 392212
   tvdb_mappings:
     s0: e1
+131923:
+  tmdb_show_id: 92602
 131944:
   tvdb_id: 347425
   tvdb_mappings:
@@ -12874,6 +12913,11 @@
   tvdb_id: 395746
   tvdb_mappings:
     s0: e1
+136110:
+  tmdb_show_id: 37807
+  tvdb_id: 387655
+  tvdb_mappings:
+    s0: e1-e7
 136137:
   tvdb_id: 400245
   tvdb_mappings:
@@ -13536,6 +13580,10 @@
   tvdb_id: 294002
   tvdb_mappings:
     s0: e45-e57
+151987:
+  tmdb_show_id: 117061
+152001:
+  tmdb_show_id: 107003
 152005:
   tmdb_show_id: 93653
   tvdb_id: 368565
@@ -13568,6 +13616,8 @@
   tvdb_id: 74796
   tvdb_mappings:
     s0: e1
+154081:
+  tmdb_show_id: 80713
 154100:
   tvdb_id: 262098
   tvdb_mappings:
@@ -13587,6 +13637,8 @@
   tmdb_show_id: 136763
 154197:
   tmdb_show_id: 62104
+154198:
+  tmdb_show_id: 80713
 154386:
   tvdb_id: 384778
   tvdb_mappings:
@@ -13597,10 +13649,14 @@
     s0: e3
 154539:
   tmdb_show_id: 45997
+154541:
+  tmdb_show_id: 85937
 154678:
   tvdb_id: 414107
   tvdb_mappings:
     s0: e2
+154955:
+  tmdb_show_id: 135334
 154956:
   tmdb_show_id: 74092
   tvdb_id: 332994
@@ -13686,6 +13742,8 @@
   tvdb_id: 386714
   tvdb_mappings:
     s0: e13
+157287:
+  tmdb_show_id: 117706
 157294:
   tmdb_show_id: 194718
   tvdb_id: 412957
@@ -13778,6 +13836,10 @@
     s0: e5
 161410:
   tvdb_mappings: # unaired and incorrectly mapped, correct when aired
+162284:
+  tmdb_show_id: 154098
+162285:
+  tmdb_show_id: 154098
 162291:
   tmdb_show_id: 62104
   tvdb_id: 284131
@@ -13965,6 +14027,8 @@
 169362:
   tvdb_mappings:
     s0: e1
+169373:
+  tmdb_show_id: 213326
 169403:
   imdb_id: tt31806053
   tvdb_id: 442938
@@ -13975,6 +14039,8 @@
   tvdb_id: 426080
   tvdb_mappings:
     s0: e1-e12
+169516:
+  tmdb_show_id: 117706
 169692:
   tmdb_show_id: 90660
   tvdb_id: 354179
@@ -14127,6 +14193,8 @@
   tvdb_id: 436899
   tvdb_mappings:
     s0: e1-e12
+174504:
+  tmdb_show_id: 94649
 174842:
   tvdb_id: 167921
   tvdb_mappings:
@@ -14171,6 +14239,7 @@
   tvdb_mappings:
     s2: e1-e12
 176218:
+  tmdb_movie_id: 1172229
   tvdb_id: 418123
   tvdb_mappings:
     s0: e3
@@ -14214,6 +14283,8 @@
   tvdb_id: 259863
   tvdb_mappings:
     s13: e1
+176909:
+  tmdb_show_id: 216467
 177007:
   tmdb_show_id: 76075
   tvdb_id: 330692
@@ -14264,6 +14335,11 @@
   tvdb_mappings:
     s0: e1
     s1: e1-e17
+178084:
+  tmdb_show_id: 105009
+  tvdb_id: 393478
+  tvdb_mappings:
+    s0: e26-e43
 178436:
   imdb_id: tt36206675
   tmdb_movie_id: 1363564
@@ -14545,6 +14621,10 @@
   tvdb_id: 449407
   tvdb_mappings:
     s0: e1
+189513:
+  tmdb_show_id: 209867
+189891:
+  tmdb_show_id: 277881
 190327:
   tmdb_show_id: 45790
 191884:
