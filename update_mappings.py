@@ -31,7 +31,7 @@ class SerializationHandler:
     def __init__(self) -> None:
         """Initialize the SerializationHandler with YAML settings."""
         self.yaml = YAML()
-        self.yaml.indent(mapping=2, sequence=2, offset=0)
+        self.yaml.indent(mapping=2, sequence=4, offset=2)
         self.yaml.preserve_quotes = True
         self.yaml.map_indent = 2
         self.yaml.sequence_indent = 4
