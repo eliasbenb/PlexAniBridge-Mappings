@@ -33,8 +33,7 @@ class SerializationHandler:
         self.yaml = YAML()
         self.yaml.indent(mapping=2, sequence=4, offset=2)
         self.yaml.preserve_quotes = True
-        self.yaml.map_indent = 2
-        self.yaml.sequence_indent = 4
+        self.yaml.width = 4096  # Prevent line wrapping
         # Add custom representer for automatic sorting of regular dicts
         self.yaml.representer.add_representer(dict, self._represent_sorted_dict)
 
