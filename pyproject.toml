@@ -1,9 +1,10 @@
 [project]
-name = "plexanibridge-mappings"
+name = "PlexAniBridge-Mappings"
 version = "2.1"
-description = "PlexAniBridge Mappings Aggregator"
+description = "PlexAniBridge mappings repository with automated aggregation, validation, and manual curation."
 readme = "README.md"
 requires-python = ">=3.13"
+license = { text = "MIT" }
 
 authors = [
     { name = "Elias Benbourenane", email = "eliasbenbourenane@gmail.com" }
@@ -14,11 +15,11 @@ maintainers = [
 ]
 
 dependencies = [
-    "gitpython>=3.1.44",
-    "lxml>=6.0.0",
-    "pydantic>=2.11.7",
-    "requests>=2.32.4",
-    "ruamel-yaml>=0.18.14",
+    "gitpython>=3.1.45",
+    "lxml>=6.0.2",
+    "pydantic>=2.12.3",
+    "requests>=2.32.5",
+    "ruamel-yaml>=0.18.16",
 ]
 
 [project.urls]
@@ -27,11 +28,7 @@ Documentation = "https://plexanibridge.elias.eu.org"
 Source = "https://github.com/eliasbenb/PlexAniBridge-Mappings"
 Issues = "https://github.com/eliasbenb/PlexAniBridge-Mappings/issues"
 
-[tool.pyright]
-include = ["update_mappings.py"]
-
 [tool.ruff]
-include = ["pyproject.toml", "src/**/*.py", "scripts/**/*.py"]
 indent-width = 4
 line-length = 88
 
@@ -41,25 +38,12 @@ indent-style = "space"
 quote-style = "double"
 
 [tool.ruff.lint]
-select = ["E", "F", "UP", "B", "SIM", "I", "D", "RUF"]
-
-[tool.ruff.lint.flake8-bugbear]
-extend-immutable-calls = [
-    "fastapi.Body",
-    "fastapi.Cookie",
-    "fastapi.Depends",
-    "fastapi.File",
-    "fastapi.Form",
-    "fastapi.Header",
-    "fastapi.Path",
-    "fastapi.Query",
-    "fastapi.Security",
-]
+select = ["B", "D", "DOC", "E", "F", "I", "RUF", "SIM", "UP", "W"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
 [dependency-groups]
 dev = [
-    "ruff>=0.12.3",
+    "ruff>=0.14.3",
 ]
