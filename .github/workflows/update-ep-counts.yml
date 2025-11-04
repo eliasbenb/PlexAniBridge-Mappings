@@ -27,28 +27,24 @@ jobs:
       - name: Check Out Repo
         uses: actions/checkout@v5
 
-      - name: Setup Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.x"
-          cache: "pip"
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v7
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install requests
+          uv sync --frozen --no-dev
 
       - name: Run Update Episode Counts (scheduled)
         if: github.event_name == 'schedule'
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
-        run: python scripts/update_ep_counts.py --source all
+        run: uv run scripts/update_ep_counts.py --source all
 
       - name: Run Update Episode Counts (manual)
         if: github.event_name == 'workflow_dispatch'
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
-        run: python scripts/update_ep_counts.py --source ${{ github.event.inputs.source }}
+        run: uv run scripts/update_ep_counts.py --source ${{ github.event.inputs.source }}
 
       - name: Check Diff
         id: verify_diff
