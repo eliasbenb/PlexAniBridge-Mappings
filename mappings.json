@@ -9672,6 +9672,9 @@
       "tt4789002"
     ],
     "mal_id": 1008,
+    "tmdb_mappings": {
+      "s0": "e10-e11"
+    },
     "tmdb_show_id": 57706,
     "tvdb_id": 76932,
     "tvdb_mappings": {
