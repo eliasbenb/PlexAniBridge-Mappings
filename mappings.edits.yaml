@@ -2510,7 +2510,6 @@
 2265:
   imdb_id: tt0092106
   tmdb_movie_id: 1857
-  tmdb_show_id: # intentionally left blank
   tvdb_id: 72499
   tvdb_mappings:
     s0: e2
@@ -6507,7 +6506,6 @@
 10592:
   imdb_id: tt6423446
   tmdb_movie_id: 314102
-  tmdb_show_id: # intentionally left blank
   tvdb_id: 78953
   tvdb_mappings:
     s0: e1
@@ -7139,14 +7137,12 @@
 13117:
   imdb_id: tt3856638
   tmdb_movie_id: 297676
-  tmdb_show_id: # intentionally left blank
   tvdb_id: 151281
   tvdb_mappings:
     s0: e3
 13119:
   imdb_id: tt5825186
   tmdb_movie_id: 380770
-  tmdb_show_id: # intentionally left blank
   tvdb_id: 151281
   tvdb_mappings:
     s0: e4
@@ -7793,7 +7789,6 @@
 17187:
   imdb_id: tt2636124
   tmdb_movie_id: 196750
-  tmdb_show_id: # intentionally left blank
   tvdb_id: 293491
   tvdb_mappings:
     s0: e2
@@ -7938,7 +7933,6 @@
     s0: e1
 18109:
   tmdb_movie_id: 196759
-  tmdb_show_id: # intentionally left blank
   tvdb_id: 325541
   tvdb_mappings:
     s0: e1
@@ -8088,21 +8082,18 @@
 19191:
   imdb_id: tt3017864
   tmdb_movie_id: 212168
-  tmdb_show_id: # intentionally left blank
   tvdb_id: 293491
   tvdb_mappings:
     s0: e3
 19193:
   imdb_id: tt3579524
   tmdb_movie_id: 240341
-  tmdb_show_id: # intentionally left blank
   tvdb_id: 293491
   tvdb_mappings:
     s0: e4
 19195:
   imdb_id: tt4016942
   tmdb_movie_id: 279254
-  tmdb_show_id: # intentionally left blank
   tvdb_id: 293491
   tvdb_mappings:
     s0: e5
@@ -9886,7 +9877,6 @@
   tvdb_mappings:
     s0: e2
 21770:
-  tmdb_show_id: # intentionally left blank
   tvdb_id: 74633
   tvdb_mappings:
     s0: e1
@@ -10949,7 +10939,6 @@
   tvdb_mappings:
     s0: e33-e38
 100878:
-  tmdb_show_id: # intentionally left blank
   tvdb_mappings:
     s0: e15
 100912:
@@ -11067,7 +11056,6 @@
   tvdb_mappings:
     s0: e7
 101369:
-  tmdb_show_id: # intentionally left blank
   tvdb_id: 74633
   tvdb_mappings:
     s0: e2
@@ -12629,7 +12617,6 @@
 116923:
   tmdb_show_id: 92579
 116962:
-  tmdb_show_id: # intentionally left blank
   tvdb_id: 301920
   tvdb_mappings:
     s0: e9
@@ -13139,8 +13126,6 @@
   tmdb_show_id: 106782
 128703:
   tmdb_show_id: 94541
-128740:
-  tmdb_show_id: # intentionally left blank
 128827:
   tvdb_id: 245821
   tvdb_mappings:
