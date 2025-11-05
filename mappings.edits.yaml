@@ -5772,6 +5772,11 @@
 8609:
   tvdb_mappings:
     s0: e30
+8619:
+  tmdb_show_id: 37867
+  tvdb_id: 131471
+  tvdb_mappings:
+    s0: e7
 8635:
   tvdb_mappings:
     s0: e3
@@ -6625,6 +6630,8 @@
   tmdb_show_id: # intentionally left blank
   tvdb_mappings:
     s0: e22
+10765:
+  tmdb_show_id: 30982
 10766:
   tvdb_mappings:
     s0: e34,e36
@@ -6769,6 +6776,8 @@
   tvdb_id: 263688
   tvdb_mappings:
     s0: e1-e3
+11099:
+  tmdb_show_id: 39659
 11103:
   tvdb_id: 263214
   tvdb_mappings:
@@ -6890,6 +6899,7 @@
   imdb_id: tt8339440
   tmdb_movie_id: 390539
 11889:
+  tmdb_show_id: 63463
   tvdb_id: 249865
   tvdb_mappings:
     s0: e2
@@ -8344,6 +8354,7 @@
   tvdb_mappings:
     s0: e1-e6
 20523:
+  tmdb_show_id: 80500
   tvdb_id: 273009
   tvdb_mappings:
     s0: e7-e12
@@ -13576,6 +13587,11 @@
   tvdb_id: 75112
   tvdb_mappings:
     s0: e16
+139079:
+  tmdb_show_id: 104699
+  tvdb_id: 383837
+  tvdb_mappings:
+    s0: e2-e11
 139179:
   tmdb_show_id: 30983
   tvdb_id: 72454
@@ -13779,6 +13795,8 @@
   tvdb_id: 262098
   tvdb_mappings:
     s0: e52
+144992:
+  tmdb_show_id: 133197
 145405:
   tmdb_show_id: 40424
   tvdb_id: 70900
@@ -14336,6 +14354,8 @@
     s0: e5
 161410:
   tvdb_mappings: # unaired and incorrectly mapped, correct when aired
+161923:
+  tmdb_show_id: 88803
 162284:
   tmdb_show_id: 154098
 162285:
@@ -14398,6 +14418,8 @@
   tvdb_id: 347215
   tvdb_mappings:
     s0: e17
+165056:
+  tmdb_show_id: 88803
 165253:
   tmdb_movie_id: 1129610
   tvdb_id: 413522
@@ -14468,6 +14490,8 @@
   tvdb_id: 328827
   tvdb_mappings:
     s0: e13
+166988:
+  tmdb_show_id: 207521
 167140:
   tmdb_show_id: 134742
   tvdb_id: 410425
@@ -14516,6 +14540,11 @@
   tvdb_id: 419448
   tvdb_mappings:
     s0: e1
+168999:
+  tmdb_show_id: 216269
+  tvdb_id: 428350
+  tvdb_mappings:
+    s0: e1-e6
 169000:
   imdb_id: tt30008198
   tmdb_movie_id: 1193662
@@ -14988,6 +15017,8 @@
     s0: e8
 184143:
   tmdb_show_id: 113808
+184288:
+  tmdb_show_id: 249031
 184369:
   tvdb_id: 72454
   tvdb_mappings:
@@ -15016,6 +15047,7 @@
   tvdb_mappings:
     s13: e4
 184762:
+  tmdb_show_id: 69500
   tvdb_id: 82788
   tvdb_mappings:
     s0: e15
