@@ -9422,6 +9422,7 @@
   "988": {
     "anidb_id": 2881,
     "mal_id": 988,
+    "tmdb_show_id": 195323,
     "tvdb_id": 301328,
     "tvdb_mappings": {
       "s1": ""
@@ -9431,6 +9432,7 @@
     "anidb_id": 1835,
     "mal_id": 989,
     "tmdb_movie_id": 407045,
+    "tmdb_show_id": 195323,
     "tvdb_id": 301328,
     "tvdb_mappings": {
       "s0": "e1"
@@ -15510,6 +15512,7 @@
     "anidb_id": 146,
     "imdb_id": "tt0367369",
     "mal_id": 1710,
+    "tmdb_show_id": 5653,
     "tvdb_id": 72172,
     "tvdb_mappings": {
       "s1": "e1-e56"
@@ -17363,6 +17366,7 @@
   "1936": {
     "anidb_id": 2022,
     "mal_id": 1936,
+    "tmdb_show_id": 217602,
     "tvdb_id": 81183,
     "tvdb_mappings": {
       "s1": ""
@@ -18799,6 +18803,7 @@
     "anidb_id": 2912,
     "imdb_id": "tt0961185",
     "mal_id": 2111,
+    "tmdb_movie_id": 87073,
     "tmdb_show_id": 5653,
     "tvdb_id": 72172,
     "tvdb_mappings": {
@@ -22833,9 +22838,10 @@
   "2684": {
     "anidb_id": 5224,
     "mal_id": 2684,
+    "tmdb_show_id": 44750,
     "tvdb_id": 156221,
     "tvdb_mappings": {
-      "s1": "e1-e13"
+      "s2": "e1-e13"
     }
   },
   "2685": {
@@ -23768,6 +23774,7 @@
   "2803": {
     "anidb_id": 1710,
     "mal_id": 2803,
+    "tmdb_show_id": 89506,
     "tvdb_id": 264657,
     "tvdb_mappings": {
       "s1": "e1-e46"
@@ -25525,6 +25532,7 @@
   "3114": {
     "anidb_id": 3948,
     "mal_id": 3114,
+    "tmdb_show_id": 26574,
     "tvdb_id": 392061,
     "tvdb_mappings": {
       "s1": "e1-e52"
@@ -30691,6 +30699,7 @@
   "4332": {
     "anidb_id": 1576,
     "mal_id": 4332,
+    "tmdb_show_id": 89455,
     "tvdb_id": 174131,
     "tvdb_mappings": {
       "s1": "e1-e13",
@@ -33908,6 +33917,7 @@
   "5440": {
     "anidb_id": 3154,
     "mal_id": 5440,
+    "tmdb_show_id": 110064,
     "tvdb_id": 272339,
     "tvdb_mappings": {
       "s1": "e1-e48"
@@ -34004,6 +34014,7 @@
   "5475": {
     "anidb_id": 2551,
     "mal_id": 5475,
+    "tmdb_show_id": 45549,
     "tvdb_id": 405892,
     "tvdb_mappings": {
       "s1": ""
@@ -35434,6 +35445,7 @@
   "6012": {
     "anidb_id": 3653,
     "mal_id": 6012,
+    "tmdb_show_id": 68461,
     "tvdb_id": 393958,
     "tvdb_mappings": {
       "s1": ""
@@ -40544,6 +40556,7 @@
     "anidb_id": 2549,
     "imdb_id": "tt1525650",
     "mal_id": 8011,
+    "tmdb_show_id": 68607,
     "tvdb_id": 405890,
     "tvdb_mappings": {
       "s1": ""
