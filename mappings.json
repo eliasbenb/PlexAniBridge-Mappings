@@ -9431,6 +9431,9 @@
   "989": {
     "anidb_id": 1835,
     "mal_id": 989,
+    "tmdb_mappings": {
+      "s0": "e1"
+    },
     "tmdb_movie_id": 407045,
     "tmdb_show_id": 195323,
     "tvdb_id": 301328,
@@ -130463,6 +130466,9 @@
     "mal_id": 61846,
     "tmdb_show_id": 296047,
     "tvdb_id": 464719
+  },
+  "198767": {
+    "mal_id": 62897
   },
   "198966": {
     "mal_id": 62516
