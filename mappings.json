@@ -130451,7 +130451,10 @@
     "imdb_id": "tt38491451",
     "mal_id": 62405,
     "tmdb_show_id": 299778,
-    "tvdb_id": 467641
+    "tvdb_id": 467641,
+    "tvdb_mappings": {
+      "s1": "e1-e8"
+    }
   },
   "198374": {
     "anidb_id": 19564
