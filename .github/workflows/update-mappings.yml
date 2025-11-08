@@ -36,7 +36,7 @@ jobs:
         run: uv sync --frozen --no-dev
 
       - name: Run Update Anime IDs
-        run: uv run python update_mappings.py
+        run: uv run update_mappings.py
 
       - name: Display Problems Report
         run: |
