@@ -124,12 +124,12 @@
     s1: e1-e25
     s2: e1-e24
 135:
-  tvdb_mappings:
+  tvdb_mappings: 
     s1: e1-e30
     s2: e1-e30
     s3: e1-e15
 150:
-  tvdb_mappings:
+  tvdb_mappings: 78960
     s1: e1-e13
     s2: e1-e12
     s3: e1-e13
