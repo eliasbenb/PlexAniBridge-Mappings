@@ -2363,7 +2363,6 @@
     s4: e1-e25
 2111:
   tmdb_movie_id: 87073
-  tmdb_show_id: 5653
   tvdb_id: 72172
   tvdb_mappings:
     s0: e1
@@ -3072,7 +3071,6 @@
     s1: e1-e3
   tmdb_show_id: 300130
 2742:
-  tmdb_show_id: 44195
   tvdb_id: 433092
   tvdb_mappings:
     s1: e1-e26
@@ -6448,8 +6446,6 @@
   tvdb_mappings:
     s0: e1
     s2: e1-e9
-10470:
-  tmdb_movie_id: 566054
 10471:
   tmdb_show_id: 44742
   tvdb_id: 261387
@@ -6840,9 +6836,6 @@
   tvdb_id: 75414
   tvdb_mappings:
     s0: e8
-11313:
-  tvdb_mappings:
-    s0: e1-e2
 11359:
   tmdb_show_id: 61709
   tvdb_id: 88031
@@ -8559,9 +8552,6 @@
   tvdb_id: 403849
   tvdb_mappings:
     s0: e1
-20715:
-  tvdb_mappings:
-    s0: e3-e4
 20716:
   tvdb_id: 289796
   tvdb_mappings:
@@ -13039,7 +13029,6 @@
   tvdb_mappings:
     s0: e100
 126830:
-  tvdb_id: 443905
   tvdb_mappings:
     s1: e1-e12
 126835:
