@@ -179,7 +179,6 @@
 212:
   tmdb_show_id: # intentionally left blank
 213:
-  anidb_id: 249
   mal_id: 213
   tvdb_id: 349691
   tvdb_mappings:
@@ -5590,7 +5589,6 @@
   tvdb_mappings:
     s0: e4
 8100:
-  imdb_id: tt1754177
   tmdb_movie_id: 73529
 8108:
   tvdb_mappings:
@@ -6536,7 +6534,6 @@
   tvdb_mappings:
     s0: e1
 10624:
-  imdb_id: tt2048804
   tmdb_movie_id: 73530
 10628:
   tvdb_id: 305488
@@ -10421,7 +10418,6 @@
   tvdb_mappings:
     s0: e1
 98542:
-  imdb_id: tt9864008
   mal_id: 32717
   tmdb_show_id: 65929
   tvdb_id: 309143
