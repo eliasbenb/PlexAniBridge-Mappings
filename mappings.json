@@ -61887,7 +61887,9 @@
   },
   "20581": {
     "anidb_id": 10353,
+    "imdb_id": "tt16757068",
     "mal_id": 21707,
+    "tmdb_movie_id": 568641,
     "tmdb_show_id": 108906,
     "tvdb_id": 255925,
     "tvdb_mappings": {
@@ -119852,7 +119854,9 @@
     "mal_id": 55772,
     "tmdb_show_id": 76757,
     "tvdb_id": 338455,
-    "tvdb_mappings": {}
+    "tvdb_mappings": {
+      "s5": "e1-e13"
+    }
   },
   "166522": {
     "anidb_id": 18082,
