@@ -15350,6 +15350,9 @@
   tvdb_id: 445390
   tvdb_mappings:
     s0: e1-e4
+194884:
+  tvdb_mappings:
+    s0: e15-e16
 195153:
   tvdb_mappings:
     s0: e1
@@ -15366,5 +15369,11 @@
 198188:
   tvdb_mappings:
     s1: e1-e8
+199112:
+  anidb_id: 19601
+  tmdb_show_id: 277513
+  tvdb_id: 456835
+  tvdb_mappings:
+    s0: e1-e5
 290344:
   tvdb_id:
