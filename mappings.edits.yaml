@@ -6347,6 +6347,7 @@
   tvdb_mappings:
     s0: e1-e2
 10218:
+  anidb_id: 7991
   imdb_id: tt2210479
   tmdb_movie_id: 113082
   tvdb_id: 425148
@@ -6948,12 +6949,14 @@
   tvdb_mappings:
     s0: e1
 12113:
+  anidb_id: 7991
   imdb_id: tt2358911
   tmdb_movie_id: 118412
   tvdb_id: 425148
   tvdb_mappings:
     s0: e2
 12115:
+  anidb_id: 7991
   imdb_id: tt2358913
   tmdb_movie_id: 144288
   tvdb_id: 425148
@@ -14269,6 +14272,7 @@
   tvdb_mappings:
     s0: e14
 155011:
+  anidb_id: 7991
   imdb_id: tt22445494
   tmdb_show_id: 211057
   tvdb_id: 425148
