@@ -7815,7 +7815,10 @@
     "mal_id": 812,
     "tmdb_show_id": 42698,
     "tvdb_id": 80113,
-    "tvdb_mappings": {}
+    "tvdb_mappings": {
+      "s0": "e1",
+      "s1": "e1-e12"
+    }
   },
   "813": {
     "anidb_id": 1530,
