@@ -823,6 +823,10 @@
 807:
   tmdb_movie_id: 42180
   tmdb_show_id: # intentionally left blank
+812:
+  tvdb_mappings:
+    s0: e1
+    s1: e1-e12
 813:
   tvdb_mappings:
     s1: e1-e39
