@@ -1346,7 +1346,7 @@
     "tmdb_show_id": 34826,
     "tvdb_id": 79025,
     "tvdb_mappings": {
-      "s1": "e1-e13"
+      "s1": ""
     }
   },
   "126": {
@@ -1971,7 +1971,7 @@
     "tmdb_show_id": 8779,
     "tvdb_id": 77248,
     "tvdb_mappings": {
-      "s1": "e1-e26"
+      "s1": ""
     }
   },
   "183": {
@@ -2457,7 +2457,7 @@
     "tmdb_show_id": 34698,
     "tvdb_id": 79205,
     "tvdb_mappings": {
-      "s1": "e1-e27"
+      "s1": ""
     }
   },
   "231": {
@@ -2974,7 +2974,7 @@
     "tmdb_show_id": 16830,
     "tvdb_id": 71278,
     "tvdb_mappings": {
-      "s1": "e1-e13"
+      "s1": ""
     }
   },
   "271": {
@@ -2994,7 +2994,7 @@
     "tmdb_show_id": 1041,
     "tvdb_id": 78947,
     "tvdb_mappings": {
-      "s1": "e1-e26"
+      "s1": ""
     }
   },
   "273": {
@@ -3856,7 +3856,7 @@
     "tmdb_show_id": 37858,
     "tvdb_id": 79151,
     "tvdb_mappings": {
-      "s1": "e1-e24"
+      "s1": ""
     }
   },
   "357": {
@@ -3874,7 +3874,7 @@
     "tmdb_show_id": 98747,
     "tvdb_id": 83395,
     "tvdb_mappings": {
-      "s1": "e1-e6"
+      "s1": ""
     }
   },
   "359": {
@@ -4606,7 +4606,7 @@
     "tmdb_show_id": 43341,
     "tvdb_id": 82706,
     "tvdb_mappings": {
-      "s1": "e1-e6"
+      "s1": ""
     }
   },
   "433": {
@@ -6627,7 +6627,7 @@
     "tmdb_show_id": 34125,
     "tvdb_id": 72432,
     "tvdb_mappings": {
-      "s1": "e1-e12"
+      "s1": ""
     }
   },
   "647": {
@@ -7249,7 +7249,7 @@
     "tmdb_show_id": 132251,
     "tvdb_id": 185861,
     "tvdb_mappings": {
-      "s1": "e1-e2"
+      "s1": ""
     }
   },
   "731": {
@@ -10033,7 +10033,7 @@
     "tmdb_show_id": 35236,
     "tvdb_id": 79355,
     "tvdb_mappings": {
-      "s1": "e1-e76"
+      "s1": ""
     }
   },
   "1051": {
@@ -13696,7 +13696,7 @@
     "tmdb_show_id": 34857,
     "tvdb_id": 72394,
     "tvdb_mappings": {
-      "s1": "e1-e26"
+      "s1": ""
     }
   },
   "1493": {
@@ -13705,7 +13705,7 @@
     "tmdb_show_id": 34857,
     "tvdb_id": 72394,
     "tvdb_mappings": {
-      "s2": "e1-e26"
+      "s2": ""
     }
   },
   "1494": {
@@ -19821,7 +19821,7 @@
     "tmdb_show_id": 26396,
     "tvdb_id": 137331,
     "tvdb_mappings": {
-      "s1": ""
+      "s1": "e1-e30"
     }
   },
   "2235": {
@@ -22419,7 +22419,7 @@
     "tmdb_show_id": 37798,
     "tvdb_id": 131361,
     "tvdb_mappings": {
-      "s1": "e1-e130"
+      "s1": ""
     }
   },
   "2613": {
@@ -24050,7 +24050,9 @@
     "mal_id": 2823,
     "tmdb_show_id": 65136,
     "tvdb_id": 80397,
-    "tvdb_mappings": {}
+    "tvdb_mappings": {
+      "s1": ""
+    }
   },
   "2824": {
     "anidb_id": 4044,
@@ -91167,9 +91169,7 @@
     "mal_id": 39960,
     "tmdb_show_id": 87473,
     "tvdb_id": 360553,
-    "tvdb_mappings": {
-      "s2": ""
-    }
+    "tvdb_mappings": {}
   },
   "110120": {},
   "110121": {},
@@ -107168,10 +107168,12 @@
   },
   "137819": {
     "anidb_id": 16533,
+    "imdb_id": "tt15684222",
     "mal_id": 49590,
     "tmdb_mappings": {
       "s1": "e1-e6"
     },
+    "tmdb_movie_id": 970468,
     "tmdb_show_id": 130996,
     "tvdb_id": 140751,
     "tvdb_mappings": {
@@ -115128,7 +115130,7 @@
     "tmdb_show_id": 63926,
     "tvdb_id": 293088,
     "tvdb_mappings": {
-      "s3": ""
+      "s3": "e1-e12"
     }
   },
   "153818": {
@@ -124189,7 +124191,9 @@
     "mal_id": 58524,
     "tmdb_show_id": 229443,
     "tvdb_id": 436603,
-    "tvdb_mappings": {}
+    "tvdb_mappings": {
+      "s2": ""
+    }
   },
   "176373": {},
   "176430": {
@@ -125946,7 +125950,8 @@
   "178868": {
     "anidb_id": 18729,
     "imdb_id": "tt32813343",
-    "mal_id": 59204
+    "mal_id": 59204,
+    "tmdb_show_id": 303272
   },
   "178869": {
     "anidb_id": 18730,
@@ -126596,7 +126601,7 @@
     "tmdb_show_id": 105075,
     "tvdb_id": 379282,
     "tvdb_mappings": {
-      "s0": "e2-"
+      "s0": "e2-e3"
     }
   },
   "179840": {
@@ -126899,7 +126904,10 @@
   },
   "180136": {
     "anidb_id": 18854,
-    "mal_id": 59741
+    "imdb_id": "tt33334216",
+    "mal_id": 59741,
+    "tmdb_show_id": 270603,
+    "tvdb_id": 453028
   },
   "180157": {
     "mal_id": 59456
@@ -133126,6 +133134,9 @@
   },
   "206298": {
     "mal_id": 63326
+  },
+  "206819": {
+    "mal_id": 63366
   },
   "290344": {}
 }
