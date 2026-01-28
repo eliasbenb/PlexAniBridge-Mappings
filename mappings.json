@@ -5899,7 +5899,6 @@
     "anidb_id": 65,
     "imdb_id": "tt0368185",
     "mal_id": 564,
-    "tmdb_movie_id": 445011,
     "tmdb_show_id": 34688,
     "tvdb_id": 79714,
     "tvdb_mappings": {
@@ -79025,7 +79024,7 @@
     }
   },
   "100790": {
-    "anidb_id": 16946,
+    "anidb_id": 13203,
     "imdb_id": "tt14209702",
     "mal_id": 35656,
     "tmdb_show_id": 96117,
