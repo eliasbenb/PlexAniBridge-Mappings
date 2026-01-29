@@ -496,7 +496,6 @@
     s3: e1-e52
     s4: e1-e24
 484:
-  tmdb_movie_id: 155765
   tmdb_show_id: # intentionally left blank
   tvdb_mappings:
     s0: e1
@@ -593,7 +592,6 @@
   tvdb_mappings:
     s1: e1-e13
 570:
-  tmdb_movie_id: 823
   tvdb_id: # intentionally left blank
 574:
   tmdb_show_id: 45503
@@ -2252,7 +2250,6 @@
 2033:
   tmdb_movie_id: 39962
 2043:
-  imdb_id: tt0131160
   tvdb_mappings:
     s1: e1-e36
 2045:
@@ -3109,7 +3106,6 @@
 2759:
   tmdb_show_id: # intentionally left blank
 2761:
-  tmdb_movie_id: 67851
   tmdb_show_id: # intentionally left blank
 2768:
   imdb_id: tt4672394
@@ -3595,8 +3591,6 @@
   tvdb_id: 80812
   tvdb_mappings:
     s0: e1-e6
-3306:
-  imdb_id: tt3974580
 3318:
   tvdb_mappings:
     s0: e11-e14
@@ -3614,7 +3608,6 @@
 3336:
   tmdb_movie_id: 226790
 3345:
-  tmdb_show_id: 124358
   tvdb_id: 379972
   tvdb_mappings:
     s0: e1
@@ -3923,13 +3916,11 @@
 3778:
   tmdb_movie_id: 701932
 3782:
-  imdb_id: tt1155651
   tmdb_movie_id: 23151
   tvdb_id: 82099
   tvdb_mappings:
     s1: e2
 3783:
-  imdb_id: tt1155652
   tmdb_movie_id: 23153
   tvdb_id: 82099
   tvdb_mappings:
@@ -4255,7 +4246,6 @@
   tvdb_mappings:
     s0: e1
 4280:
-  imdb_id: tt1233474
   tmdb_movie_id: 23154
   tvdb_id: 82099
   tvdb_mappings:
@@ -4560,13 +4550,11 @@
     s2: e1-e38,e39-e50|2
     # the first 38 episodes were regular length, episodes 39-50 were half length, anilist combines them
 5204:
-  imdb_id: tt1343089
   tmdb_movie_id: 23166
   tvdb_id: 82099
   tvdb_mappings:
     s1: e6
 5205:
-  imdb_id: tt1345776
   tmdb_movie_id: 23167
   tvdb_id: 82099
   tvdb_mappings:
@@ -5281,7 +5269,6 @@
   tvdb_mappings:
     s0: e21
 7059:
-  imdb_id: tt1827378
   tmdb_show_id: 43079
 7060:
   tvdb_mappings:
@@ -5368,7 +5355,6 @@
   tmdb_show_id: # intentionally left blank
 7337:
   imdb_id: tt2653882
-  tmdb_movie_id: 119441
   tmdb_show_id: # intentionally left blank
   tvdb_mappings:
     s0: e4
@@ -9333,7 +9319,6 @@
   tvdb_mappings:
     s0: e1
 21296:
-  tmdb_movie_id: 374853
   tvdb_id: 336385
   tvdb_mappings:
     s0: e1
@@ -10426,7 +10411,6 @@
   tvdb_mappings:
     s0: e1
 98542:
-  tmdb_show_id: 65929
   tvdb_id: 309143
   tvdb_mappings:
     s2: e1-e50
@@ -11003,7 +10987,6 @@
   tvdb_mappings:
     s0: e4
 101097:
-  imdb_id: tt12209234
   tmdb_show_id: 78482
   tvdb_id: 345381
   tvdb_mappings:
@@ -13022,7 +13005,6 @@
     s0: e4
 126287:
   imdb_id: tt13680598
-  tmdb_movie_id: 766423
 126318:
   tvdb_mappings:
     s3: e10-e13
@@ -13568,7 +13550,6 @@
   tvdb_mappings:
     s5: e1-e12
 137735:
-  tvdb_id: 326270
   tvdb_mappings:
     s3: e1-e17
 137742:
@@ -13617,7 +13598,6 @@
   tvdb_mappings:
     s0: e2
 138425:
-  tvdb_id: 337936
   tvdb_mappings:
     s0: e2
 138522:
@@ -13723,7 +13703,6 @@
   tvdb_mappings:
     s0: e38
 140337:
-  imdb_id: tt35658228
   tmdb_show_id: # intentionally left blank
 140700:
   imdb_id: tt16156710
@@ -14497,7 +14476,6 @@
   tmdb_show_id: 156563
 162890:
   imdb_id: tt27182605
-  tmdb_show_id: 222624
   tvdb_id: 465543
   tvdb_mappings:
     s1: e1-e12
@@ -15026,7 +15004,6 @@
     s3: e1-e10
 177191:
   tmdb_show_id: 84669
-  tvdb_id: 355966
   tvdb_mappings:
     s0: e4-e5
 177405:
@@ -15059,15 +15036,12 @@
   tvdb_mappings:
     s0: e24
 178707:
-  tmdb_movie_id: 1310387
   tvdb_id: 278329
   tvdb_mappings:
     s0: e10
 178729:
   tvdb_mappings:
     s1: e14-e26
-179062:
-  tmdb_show_id: 88046
 179126:
   tvdb_id: 444726
   tvdb_mappings:
@@ -15158,8 +15132,6 @@
   tvdb_id: 432845
   tvdb_mappings:
     s0: e1
-182206:
-  tmdb_movie_id: 1363974
 182417:
   tmdb_show_id: 65942
   tvdb_id: 305089
@@ -15243,7 +15215,6 @@
   tvdb_mappings:
     s0: e6-e7
 185505:
-  tvdb_id: 457734
   tvdb_mappings:
     s1: e1-e12
 185643:
@@ -15258,8 +15229,6 @@
   tvdb_id: 314088
   tvdb_mappings:
     s4: e1-e26
-185753:
-  tmdb_show_id: 154526
 185834:
   tvdb_id: 381536
   tvdb_mappings:
@@ -15348,8 +15317,6 @@
   tmdb_show_id: 209867
 189891:
   tmdb_show_id: 277881
-190327:
-  tmdb_show_id: 45790
 191884:
   tvdb_id: 71863
   tvdb_mappings:
@@ -15381,9 +15348,6 @@
   tvdb_id: 445390
   tvdb_mappings:
     s0: e1-e4
-194884:
-  tvdb_mappings:
-    s0: e15-e16
 195153:
   tvdb_mappings:
     s0: e1
