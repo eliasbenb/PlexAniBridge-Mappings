@@ -316,6 +316,7 @@
   tvdb_mappings:
     s1: e1-e50
 312:
+  tmdb_show_id: 121914
   tvdb_id: 338806
   tvdb_mappings:
     s1: e14-e25
@@ -324,6 +325,7 @@
   tvdb_mappings:
     s0: e1
 314:
+  tmdb_show_id: 298064
   tvdb_id: 338806
   tvdb_mappings:
     s0: e1-e13
@@ -5757,6 +5759,7 @@
   tvdb_mappings:
     s0: e1
 8542:
+  tmdb_show_id: 132562
   tvdb_id: 338806
   tvdb_mappings:
     s1: e1-e25
