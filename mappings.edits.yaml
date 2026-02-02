@@ -1764,6 +1764,10 @@
   tvdb_id: 300269
   tvdb_mappings:
     s1: e1-e51
+1577:
+  tvdb_id: 80054
+  tvdb_mappings:
+    s1: e1-e4
 1584:
   tvdb_mappings:
     s0: e5-e6
@@ -13650,6 +13654,10 @@
 139359:
   tvdb_mappings:
     s0: e20
+139386:
+  tvdb_id: 151281
+  tvdb_mappings:
+    s0: e12-e14
 139409:
   tmdb_show_id: 106055
   tvdb_id: 400512
