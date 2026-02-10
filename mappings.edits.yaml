@@ -12219,6 +12219,9 @@
   tmdb_movie_id:
     - 1020496
     - 1155647
+110090:
+  tvdb_mappings:
+    s2: e1-e12
 110173:
   tvdb_id: 358331
   tvdb_mappings:
@@ -15495,6 +15498,3 @@
     s0: e1-e5
 290344:
   tvdb_id:
-110090:
-  tvdb_mappings:
-    s2: e1-e12
