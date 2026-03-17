@@ -921,6 +921,10 @@ class AnimeIDCollector:
         self.logger.info("Scanning Wikidata")
 
         query = """
+        PREFIX wd: <http://www.wikidata.org/entity/>
+        PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+        PREFIX p: <http://www.wikidata.org/prop/>
+        PREFIX ps: <http://www.wikidata.org/prop/statement/>
         SELECT DISTINCT ?item ?itemLabel ?anidbId ?anilistId ?malId ?imdbId ?plexId
             ?tmdbMovieId ?tmdbSeriesId ?tvdbMovieId ?tvdbSeriesId WHERE {
           ?item (p:P31/ps:P31/(wdt:P279*)) wd:Q1107.
@@ -937,9 +941,13 @@ class AnimeIDCollector:
         LIMIT 10000
         """
 
-        endpoint_url = "https://query.wikidata.org/sparql"
+        # https://query.wikidata.org/sparql (robots policy blocking usage)
+        endpoint_url = "https://qlever.dev/api/wikidata"
         params = {"query": query, "format": "json"}
-        headers = {"Accept": "application/sparql-results+json"}
+        headers = {
+            "Accept": "application/sparql-results+json",
+            "User-Agent": "PlexAniBridge-Mappings/2.1 (https://github.com/eliasbenb/PlexAniBridge-Mappings)",
+        }
 
         response = self.session.get(endpoint_url, params=params, headers=headers)
         response.raise_for_status()
