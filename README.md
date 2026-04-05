@@ -1,3 +1,9 @@
+> [!IMPORTANT]
+>
+> **This repository was archived on April 5, 2026 and is no longer maintained.**
+>
+> It has been superseded by [anibridge/anibridge-mappings](https://github.com/anibridge/anibridge-mappings), which introduces a new schema and architecture. The legacy mappings will remain accessible but will not receive further updates. Please migrate to the new repository.
+
 # PlexAniBridge Mappings
 
 Last generated at: April 05, 2026 11:03 AM UTC
